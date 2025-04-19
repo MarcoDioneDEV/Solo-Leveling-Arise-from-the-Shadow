@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Solo Leveling Arise</title>
+<title>Solo Leveling: Arise from the Shadow</title>
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="https://static6.depositphotos.com/1005348/605/i/450/depositphotos_6050169-stock-photo-electric-3d-letter-on-white.jpg"/>
     <link rel="stylesheet" href="style.css" />
@@ -41,19 +41,6 @@
     <div class="grid-container">
       <!-- Início do menu da direita -->
       <div class="grid-item1">
-        <!--Início dos videos -->
-        <br />
-        <iframe
-          width="320"
-          height="200"
-          src="https://www.youtube.com/embed/0HwnlgjICx4?si=8G4ph7Puz6meOWx6&autoplay=1&mute=1&loop=1&playlist=0HwnlgjICx4"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
- <!--Fim dos videos -->
 
   <!--Início da tarefa diária-->
   <h1>Tarefas diárias</h1>
@@ -97,122 +84,247 @@
   </fieldset><br>
     <!--Fim da tarefa diária-->
 
+
+
 <!-- teste -->
 <fieldset class="temafieldset">
 <div class="abas">
   <div class="botoes">
-    <button class="botao ativo" onclick="abrirAba(1)">Treino</button>
-    <button class="botao" onclick="abrirAba(2)" id="idAlertaNoMenuAtributos">Atributos</button>
+    <button class="botao ativo" onclick="abrirAba(1)" id="idAlertaNoMenuAtributos">Atributos</button>
+    <button class="botao" onclick="abrirAba(2)" id="idAlertaNoMenuHabilidade" >Habilidades</button>
     <button class="botao" onclick="abrirAba(3)" id="idAlertaNoMenuLoja">Loja</button>
     <button class="botao" onclick="abrirAba(4)" id="idAlertaNoMenuInventario">Inventário</button>
-    <button class="botao" onclick="abrirAba(5)" id="idAlertaNoMenuHabilidade">Habilidades</button>
+    <button class="botao" onclick="abrirAba(5)" >Arise</button>
   </div>
   <div class="conteudo">
     <div class="aba ativo" id="aba1">
- <!--Início do Treino diário-->
-      <h2>Treinamento de Força</h2>
+ 
+ <!--Início dos Pontos de atributos-->
+ <h1>Pontos de atributos</h1>
+             
+ <h3 id="idatributo" class="sublinhado">Disponíveis: 0</h3>
+ <h4 id="idatributopercepcao"></h4>
 
-      <h3 class="sublinhado">Objetivo do dia</h3>
+ <!--Início dos Atributos-->
+ <!--AGILIDADE-->
+  <h2 id="idagilidade">🦵 Agilidade: 10</h2>
+  <h2 class="PontosExtras">
+    <em id="idRetornoArrancadaNoStatus"></em>
+    <em id="idRetornoAssassinaNoStatus"></em>
+    <em id="idRetornoColeira1"></em>
+    <em id="idRetornoFurtividadeNoStatus"></em>
+  </h2>
+  <button class="botaoNovo" onclick="funcaoatribuiragilidade()">Agilidade: Distribuir pontos</button>
+<!--AGILIDADE-->
 
-          <h4>
-            Treino diário chegou: 100 flexões, 100 abdominais, 100
-            agachamentos e 10km de corrida.
-          </h4>
+  <!--FORÇA-->
+  <h2 id="idforca">💪 Força: 10</h2>
+  <h2 class="PontosExtras">
+    <em id="idRetornoCompraEspadaComum2"></em>
+    <em id="idRetornoCompraEspadaComum3"></em>
+    <em id="idRetornoCompraEspadaComum4"></em>
+    <em id="idRetornoElmo"></em>
+    <em id="idRetornoCompraAssassinaCavaleiros"></em>
+  </h2>
+  <button class="botaoNovo" onclick="funcaoatribuirforca()">Força: Distribuir pontos</button>
+<!--FORÇA-->
 
-          <button class="blob" onclick="misaoDiaria()">
-            🤸 Realizar treinamento 🏃</button
-          ><br />
-          <h4 id="idtreino"></h4>
+  <!--INTELIGENCIA-->
+  <h2 id="idinteligencia">🧠 Inteligência: 10</h2>
+  <button class="botaoNovo" onclick="funcaoatribuirinteligencia()"> 🧠 Inteligência: distribuir pontos</button>
+   <!--INTELIGENCIA-->
 
-          <details>
-            <summary class="sumario">Nota</summary>
+    <!--PERCEPÇÃO-->
+<h2 id="idpercepcao">👀 Percepção: 10</h2>
+<h2 class="PontosExtras">
+  <em id="idRetornoColeira2"></em>
+</h2>
+ <button class="botaoNovo" onclick="funcaoatribuirpercepcao()">Percepção: Distribuir pontos </button>
+ <!--PERCEPÇÃO-->
 
-            <h4>
-              Melhore seu atributo "Força" para realizar um treino mais
-              eficiente. Lembrando que os treinos irão gerar 1% de "Fadiga".
-            </h4>
+<!--Fim dos Pontos de atributos-->
 
-            <h4 class="sumario">Exemplos:</h4>
-            <ul>
-              <li>Força 10 gera 2% do Treino</li>
-              <li>Força 11 gera 3% do Treino</li>
-              <li>...</li>
-              <li>Força 107 gera 99% do Treino</li>
-              <li>Força 108 gera 100% do Treino</li>
-            </ul>
-
-            <br />
-          </details>
- <!--Fim do Treino diário-->
 
     </div>
     <div class="aba" id="aba2">
 
-             <!--Início dos Pontos de atributos-->
-             <h1>Pontos de atributos</h1>
-             
-               <h3 id="idatributo" class="sublinhado">Disponíveis: 0</h3>
-               <br />
-               <button class="botaoNovo" onclick="funcaoatribuirforca()">
-                 💪 Força: distribuir pontos
-               </button>
-               <details>
-                 <summary><em class="sumario">Nota</em></summary>
-                 <ul>
-                   <li>
-                     Melhore seu atributo "Força" para conseguir atacar os inimigos.
-                     Sua Força deverar ser maior que a "Agilidade" dos oponentes.
-                   </li>
-                 </ul>
-               </details>
-     
-               <button class="botaoNovo" onclick="funcaoatribuiragilidade()">
-                 🦵 Agilidade: distribuir pontos
-               </button>
-               <details>
-                 <summary><em class="sumario">Nota</em></summary>
-                 <ul>
-                   <li>
-                     Melhore seu atributo "Agilidade" para conseguir se
-                     desviar/defender dos ataques dos inimigos.
-                   </li>
-                 </ul>
-               </details>
-     
-               <button class="botaoNovo" onclick="funcaoatribuirpercepcao()">
-                 👀 Percepção: distribuir pontos
-               </button>
-               <details>
-                 <summary><em class="sumario">Nota</em></summary>
-                 <ul>
-                   <li>
-                     Melhore seu atributo "Percepção" para conseguir encontrar e
-                     minerar Cristais de Mana de forma mais eficiente.
-                   </li>
-                   <li>
-                     Melhore seu atributo "Percepção" para encontrar mostros fracos
-                     que estejam se escondendo de você.
-                   </li>
-                 </ul>
-               </details>
-     
-               <button class="botaoNovo" onclick="funcaoatribuirinteligencia()">
-                 🧠 Inteligência: distribuir pontos
-               </button>
-               <details>
-                 <summary><em class="sumario">Nota</em></summary>
-                 <ul>
-                   <li>
-                     Melhore seu atributo "Inteligência" para conseguir criar planos
-                     para derrotar mostros com ataques mágicos.
-                   </li>
-                 </ul>
-               </details>
+      <!--INÍCIO DAS HABILIDADES-->
+      <h1>Habilidades</h1>
+        
+      <h3 class="sublinhado" id="idAumentoDoNivelDaMana">🪄 Mana: 10/20</h3>
+
+      <h3 class="sublinhado" id="idContarExperienciaNoQuadroHabilidades">
+        Pontos de experiência: 0
+      </h3>
+
+
+<!--Início do menu de Habilidades-->
+<div class="abasHabilidades">
+  <div class="botoesHabilidades">
+    <button class="botaoHabilidades ativo" onclick="abrirAbaHabilidades(1)">Healer e Mago</button>
+    <button class="botaoHabilidades" onclick="abrirAbaHabilidades(2)">Assassino</button>
+    <button class="botaoHabilidades" onclick="abrirAbaHabilidades(3)">Fighters e Rangers</button>
+    <button class="botaoHabilidades" onclick="abrirAbaHabilidades(4)">Tankers</button>
+    
+  </div>
+  <div class="conteudoHabilidades">
+    <div class="abaHabilidades ativo" id="abaHabilidades1">
+  
+      <h4>Clique nas imagens para interagir.</h4>
+
       
 
-               <h4 id="idatributopercepcao"></h4>
+      <!--Início da habilidade Saúde e longevidade-->
+      <img class="imgMenor" onclick="FuncaoSaudeElogenvidade()"   src="https://i0.wp.com/metagalaxia.com.br/wp-content/uploads/2024/01/Solo-Leveling-9.webp?resize=1024%2C582"/>
+        <br>
+        <h4 id="idRetornoSaudeElogenvidade"></h4>
+      <details>
+        <summary class="sumario" id="idCheckSaudelongevidade">
+          ⛔ Habilidade: Saúde e longevidade
+        </summary>
+        
+
+        <h4 class="sublinhado">
+          <br>[Missão secreta: Coragem dos fracos] <br><br>
+          O grande conjurador de feitiços Kandiaru te presenteou com uma
+          benção especial. Com a benção de Kandiaru você irá se curar de
+          pequenos ataques. 
+          <br><br>
+          Use 25 pontos de experiência para subir o nível da Habilidade.
+          <br><br>
+        </h4>
+<h4 class="sublinhado" id="SaudeElogenvidadeUpleve"><br>
+Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida.<br><br> </h4>
+
+<button class="botaoNovo" onclick="FuncaoSaudeElogenvidadeUplevel()"> Subir de nível </button>
+
+      </details> <br />
+      <!-- Fim da habilidade Saúde e longevidade -->
+
+      <!--Início da habilidade Elixir da Vida-->
+      <img class="imgMenor" onclick="FuncaoSaudeElogenvidade()"   
+      src="https://static.wikia.nocookie.net/solo-leveling/images/a/a4/HWOL1.jpg/revision/latest/scale-to-width-down/250?cb=20210424211046"/>
+        <br>
+        <h4 id="idRetornoSaudeElogenvidade"></h4>
+      <details>
+        <summary class="sumario" id="idCheckSaudelongevidade">
+          ⛔ Habilidade: Elixir da Vida
+        </summary>
+        
+
+        <h4 class="sublinhado">
+          <br>[Missão: Castelo Demoníaco] <br><br>
+         No castelo do Rei Demônio, você pode obter os 3 ingredientes para o Elixir da Vida, que cura qualquer doença por meio de uma magia poderosa.<br><br>
+        </h4>
+
+<ul>
+  <br>
+  <li>❌ Fragmento da árvore do mundo</li><br>
+  <li>❌ Água nascente da floresta ecoante</li><br>
+  <li>❌ Lágrima do Monarca</li><br>
+</ul>
+
+<button class="botaoNovo">Criar</button>
+
+      </details> <br />
+      <!-- Fim da habilidade Elixir da Vida -->
+
+    </div>
+    <div class="abaHabilidades" id="abaHabilidades2">
+    
+      <h4>Clique nas imagens para interagir.</h4>
+
+       <!-- Início da habilidade Intenção Assassina -->
+       <img class="imgMenor" onclick="FuncaoAssassina()" src="https://i.ytimg.com/vi/pZbtp3USHYY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCCnNhPgQCHBqI1NvUmj-uTOmFT4A"
+       />
+       <br>
+       <h4 id="idRetornoAssassina"></h4>
+         <details>
+           <summary class="sumario" id="idCheckAssassina">
+             ⛔ Habilidade: Intenção Assassina
+           </summary>
+          
+   
+           <h4 class="sublinhado">
+             <br />[Classe: Assassino] <br /><br />
+             Buff que melhora sua "Agilidade" em 5 pontos. Essa habilidade pode
+             ser usada ao derrotar o Grupo de Caçadores, este buff pode ser
+             usado por 4 pontos de Mana. Os buff tem duração de 1 ataque.
+             <br />
              
-             <!--Fim dos Pontos de atributos-->
+           </h4>
+         </details>
+         <br />
+         <!--Fim da habilidade da Intenção Assassina-->
+   
+         <!--Início da habilidade Furtividade-->
+         <img  class="imgMenor" onclick="FuncaoFurtividade()" src="https://images.alphacoders.com/109/1093511.png"/>
+           <br />
+           <h4 id="idRetornoFurtividade"></h4>
+         <details>
+           <summary class="sumario" id="idCheckFurtividade">
+             ⛔ Habilidade: Furtividade
+           </summary>            
+   
+           <h4 class="sublinhado">
+             <br />[Classe: Assassino] <br /><br />
+             Buff que melhora sua "Agilidade" em 30 pontos. Essa habilidade
+             pode ser usada ao derrotar o Mr Kang, este buff pode ser usado por
+             15 pontos de Mana. Os buff tem duração de 1 ataque.
+             <br />
+           </h4>
+   
+           
+         </details>
+         <br> <br>
+         <!--Fim da habilidade da Furtividade-->
+
+    </div>
+    <div class="abaHabilidades" id="abaHabilidades3">
+      
+      <h4>Clique nas imagens para interagir.</h4>
+
+      <!-- Início da habilidade Arrancada -->
+      <img class="imgMenor" onclick="FuncaoArrancada()"  src="https://uploads.jovemnerd.com.br/wp-content/uploads/2024/02/solo_leveling_previa_6__cw249jft.jpg"
+    />
+    <br>
+    <h4 id="idRetornoArrancada"></h4>
+      <details>
+        <summary class="sumario" id="idCheckArrancada">
+          ⛔ Habilidade: Arrancada
+        </summary>            
+
+        <h4 class="sublinhado">
+          <br />[Aprimoramento físico] <br /><br />
+           Essa habilidade pode ser usada ao derrotar a Kasaka, este buff pode ser usado por 6 pontos de Mana. Os buff tem duração de 1 ataque.
+           <br><br>
+          Use 45 pontos de experiência para subir o nível da Habilidade.
+          <br />
+          <br />
+        </h4>
+
+<h4 class="sublinhado" id="idRetornoArrancadaUplevel">
+          <br>
+          Buff que melhora sua Agilidade em 10 pontos.
+          <br />
+          <br />
+        </h4>
+<button class="botaoNovo" onclick="FuncaoArrancadaUplevel()"> Subir de nível </button>
+</details><br>
+      <!--Fim da habilidade Arrancada-->
+
+    </div>
+    <div class="abaHabilidades" id="abaHabilidades4">
+       <h4>Clique nas imagens para interagir.</h4>
+      <p>EM DESENVOLVIMENTO </p>
+    </div>
+    
+  </div>
+</div>  
+<!--Fim do menu de Habilidades-->
+
+    <!--Fim das habilidades-->
+
     </div>
     <div class="aba" id="aba3">
       
@@ -441,123 +553,63 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
     </div>
     <div class="aba" id="aba5">
      
-        <!--INÍCIO DAS HABILIDADES-->
-        <h1>Habilidades</h1>
-        
-          <h3 class="sublinhado" id="idContarExperienciaNoQuadroHabilidades">
-            Pontos de experiência: 0
-          </h3>
-          <h4>Clique nas imagens para interagir.</h4>
+      <!--Início da aba Arise-->
 
-          <!--Início da habilidade Saúde e longevidade-->
-          <img class="imgMenor" onclick="FuncaoSaudeElogenvidade()"   src="https://i0.wp.com/metagalaxia.com.br/wp-content/uploads/2024/01/Solo-Leveling-9.webp?resize=1024%2C582"/>
-            <br>
-            <h4 id="idRetornoSaudeElogenvidade"></h4>
-          <details>
-            <summary class="sumario" id="idCheckSaudelongevidade">
-              ⛔ Habilidade: Saúde e longevidade
-            </summary>
-            
+  <!--Início da habilidade Extração de Sombras-->
+<details>
+  <summary class="sumario" id="idCheckExtracao">
+    ⛔ Habilidade: Extração de Sombra
+  </summary>
+  <br />
+  <img
+    class="imgMenor"
+    src="https://animeflix.com.br/wp-content/uploads/2025/02/solo-leveling-monarca-das-sombras-696x392.jpg"
+  />
+  <br />
 
-            <h4 class="sublinhado">
-              <br>[Missão secreta: Coragem dos fracos] <br><br>
-              O grande conjurador de feitiços Kandiaru te presenteou com uma
-              benção especial. Com a benção de Kandiaru você irá se curar de
-              pequenos ataques. 
-              <br><br>
-              Use 25 pontos de experiência para subir o nível da Habilidade.
-              <br><br>
-            </h4>
- <h4 class="sublinhado" id="SaudeElogenvidadeUpleve"><br>
-  Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida.<br><br> </h4>
+  <h4 class="sublinhado">
+    <br />[Habilidade exclusiva da classe Monarca das Sombras] <br /><br />
+   Extrai mana de um corpo cuja a vida chegou ao fim e a transforma em  um soldado das Sombras.
+    <br />
+    <br />
+  </h4>
 
-<button class="botaoNovo" onclick="FuncaoSaudeElogenvidadeUplevel()"> Subir de nível </button>
- 
-          </details> <br />
-          <!-- Fim da habilidade Saúde e longevidade -->
-         
+<fieldset class="sublinhado">
+<h3 >[Igris Nível 7]<br>Rank Cavaleiro</h3> 
+<br>
+<img class="img1" src="https://i.ytimg.com/vi/WouuRxJi_tg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCkpfPUlmpzp4lsoZiYBOvidaAT3w"/>
+<br><br>
+<h3 class="luta">🦵 Agilidade: 100 <br> 💪 Força: 120 <br> 👀 Percepção: 80 <br> 🧠 Inteligência: 60</h3>
+<h3 >Necessário 20 Pontos de Mana</h3>
+<button class="botaoNovo" onclick="FuncaoExtracao1()"> Erga-se </button>
 
-          <!-- Início da habilidade Arrancada -->
-          <img class="imgMenor" onclick="FuncaoArrancada()"  src="https://uploads.jovemnerd.com.br/wp-content/uploads/2024/02/solo_leveling_previa_6__cw249jft.jpg"
-        />
-        <br>
-        <h4 id="idRetornoArrancada"></h4>
-          <details>
-            <summary class="sumario" id="idCheckArrancada">
-              ⛔ Habilidade: Arrancada
-            </summary>            
+  <h4 id="idRetornoExtracao1"></h4>
+</fieldset>
 
-            <h4 class="sublinhado">
-              <br />[Aprimoramento físico] <br /><br />
-               Essa habilidade pode ser usada ao derrotar a Kasaka, este buff pode ser usado por 6 pontos de Mana. Os buff tem duração de 1 ataque.
-               <br><br>
-              Use 45 pontos de experiência para subir o nível da Habilidade.
-              <br />
-              <br />
-            </h4>
+<fieldset class="sublinhado">
+<h3 >[Magos das Sombras Nível 1]<br> Rank Normal</h3>
+<br>
+<img class="img1" src="https://preview.redd.it/4hwzwdio9tce1.png?auto=webp&s=a2bc4f454e79e7d5c532a4f2fb8c0a3eb7c4cfa6"/>
+<br><br>
+<h3 class="luta">🦵 Agilidade: 145 <br> 💪 Força: 140 <br> 👀 Percepção: 85 <br> 🧠 Inteligência: 65</h3>
 
- <h4 class="sublinhado" id="idRetornoArrancadaUplevel">
-              <br>
-              Buff que melhora sua Agilidade em 10 pontos.
-              <br />
-              <br />
-            </h4>
-<button class="botaoNovo" onclick="FuncaoArrancadaUplevel()"> Subir de nível </button>
- </details><br>
-          <!--Fim da habilidade Arrancada-->
+<h3 >Necessário 10 Pontos de Mana</h3>
+<button class="botaoNovo" onclick="FuncaoExtracao2()"> Erga-se </button>
 
-          
+  <h4 id="idRetornoExtracao2"></h4>
 
-          <!-- Início da habilidade Intenção Assassina -->
-          <img class="imgMenor" onclick="FuncaoAssassina()" src="https://i.ytimg.com/vi/pZbtp3USHYY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCCnNhPgQCHBqI1NvUmj-uTOmFT4A"
-        />
-        <br>
-        <h4 id="idRetornoAssassina"></h4>
-          <details>
-            <summary class="sumario" id="idCheckAssassina">
-              ⛔ Habilidade: Intenção Assassina
-            </summary>
-           
+  
+<br />
+</fieldset>
+<br />
 
-            <h4 class="sublinhado">
-              <br />[Classe: Assassino] <br /><br />
-              Buff que melhora sua "Agilidade" em 5 pontos. Essa habilidade pode
-              ser usada ao derrotar o Grupo de Caçadores, este buff pode ser
-              usado por 4 pontos de Mana. Os buff tem duração de 1 ataque.
-              <br />
-              
-            </h4>
-          </details>
-          <br />
-          <!--Fim da habilidade da Intenção Assassina-->
+<br>
 
-          <!--Início da habilidade Furtividade-->
-          <img  class="imgMenor" onclick="FuncaoFurtividade()" src="https://images.alphacoders.com/109/1093511.png"/>
-            <br />
-            <h4 id="idRetornoFurtividade"></h4>
-          <details>
-            <summary class="sumario" id="idCheckFurtividade">
-              ⛔ Habilidade: Furtividade
-            </summary>            
+</details>
+<br />
+<!-- Fim da habilidade da Extração de Sombras -->
+ <!--Fim da aba Arise-->
 
-            <h4 class="sublinhado">
-              <br />[Classe: Assassino] <br /><br />
-              Buff que melhora sua "Agilidade" em 30 pontos. Essa habilidade
-              pode ser usada ao derrotar o Mr Kang, este buff pode ser usado por
-              15 pontos de Mana. Os buff tem duração de 1 ataque.
-              <br />
-            </h4>
-
-            
-          </details>
-          <br />
-          <!--Fim da habilidade da Furtividade-->
-
- 
-
-       
-        <br />
-        <!--Fim das habilidades-->
     </div>
   </div>
 </div>
@@ -583,25 +635,18 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
       <!-- Fim do menu da direita -->
 
       <!--Início da apresenção Solo Leveling-->
+     
       <div class="grid-item2">
-        <br />
-        <img
-          class="pipoca"
-          src="https://i.scdn.co/image/ab67616d00001e021d2529155c665c44f457e170"
-        />
-
+ <!--Início dos videos -->
+ <br><iframe width="320" height="200"  src="https://www.youtube.com/embed/0HwnlgjICx4?si=8G4ph7Puz6meOWx6&autoplay=1&mute=1&loop=1&playlist=0HwnlgjICx4" title="YouTube video player"  frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>
+ <!--Fim dos videos -->
         <h1>Solo Leveling</h1>
         <h3>
           Considerado o mais fraco da humanidade. Ele sobrevive a uma masmorra
           dupla e é escolhido por um programa misterioso como seu único jogador.
           O programa lhe dá a habilidade de aumentar sua força, possivelmente
           além de qualquer limite conhecido.
-        </h3>
-        <br /><br />
-
-
-
-      </div>
+        </h3> <br><br></div>
       <!-- Fim da apresenção Solo Leveling -->
 
 
@@ -618,18 +663,14 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
 
       <!-- Início do Nível -->
       <div class="grid-item3">
-        <h1 id="idnivel" style="text-align: center; font-size: 50px">
-          Nível: 1
-        </h1>
-        <details>
-          <summary><em class="sumario">Nota</em></summary>
-
-          <h3>
+        <h1 id="idnivel" style="text-align: center; font-size: 50px">Nível: 1</h1>
+        <details><summary><em class="sumario">Nota</em></summary><h3>
             Para subir de Nível ganhe e adicione Pontos nos seus atributos, a
             cada 6 pontos você irá subir um Nível.
-            <br />
+            <br>
           </h3>
         </details>
+        <br>
       </div>
       <!--Fim do Nível-->
 
@@ -704,39 +745,10 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
       </div>
       <!-- Fim da fadiga -->
 
-      <!--Início dos Atributos-->
-      <div class="grid-item3">
-        <h2 id="idagilidade">🦵 Agilidade: 10</h2>
-        <h2 class="PontosExtras">
-          <em id="idRetornoArrancadaNoStatus"></em>
-          <em id="idRetornoAssassinaNoStatus"></em>
-          <em id="idRetornoColeira1"></em>
-          <em id="idRetornoFurtividadeNoStatus"></em>
-        </h2>
-
-        <h2 id="idforca">💪 Força: 10</h2>
-        <h2 class="PontosExtras">
-          <em id="idRetornoCompraEspadaComum2"></em>
-          <em id="idRetornoCompraEspadaComum3"></em>
-          <em id="idRetornoCompraEspadaComum4"></em>
-          <em id="idRetornoElmo"></em>
-          <em id="idRetornoCompraAssassinaCavaleiros"></em>
-        </h2>
-      </div>
-
-      <div class="grid-item3">
-        <h2 id="idAumentoDoNivelDaMana">🪄 Mana: 10/20</h2>
-        <h2 id="idpercepcao">👀 Percepção: 10</h2>
-        <h2 class="PontosExtras">
-          <em id="idRetornoColeira2"></em>
-        </h2>
-        <h2 id="idinteligencia">🧠 Inteligência: 10</h2>
-        <br /><br />
-      </div>
-      <!--Fim dos Atributos-->
+      
 
       <!--Início da Dugeon de Mineração-->
-      <div class="grid-item2">
+      <div class="grid-item3">
         <h1>Cristais de Mana</h1>
 
         <div class="cards-container">
@@ -755,13 +767,13 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
 
         <h3>Dungeon de mineração: Cristais de Mana</h3>
 
-        <h3>Rank: Indeterminado ⭐⭐⭐⭐⭐</h3>
+        
         <button class="pedra" onclick="deus()">Pedra</button>
         <br />
         <br />
 
         <details>
-          <summary class="sumario">Desafia masmora</summary>
+          <summary class="sumario">EXPLORAR DANGEON</summary>
           <br />
 
           <h4>
@@ -801,9 +813,130 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
       </div>
       <!-- Fim da Dugeon de Mineração -->
 
-      <time id="idDIVEsconderKandiaru">
+       <!-- INÍCIO do Treino diário -->
+       <div class="grid-item3" >
+        <h1>Missão Diária</h1>
+
+        <div class="cards-container">
+          <div class="card-1 flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+<img class="img1" src="https://i0.wp.com/otakuorbit.com/wp-content/uploads/2024/04/Solo-12-1.png?ssl=1" alt=""
+                />
+              </div>
+              <div class="flip-card-back">
+ <img class="img1" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/02/jin-woo-chased-by-monster-in-the-desert-in-solo-leveling-episode-3.jpg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Missão de Penalidade: Sobrevivência<br>
+        Treino Diário: Ganho de Força</h3>
+        
+        <button class="demonio"> Centopeias </button>
+        <button class="AtaqueFisico">Ataque físico</button>
+
+        <br /><br />
+
+        <details>
+          <summary class="sumario">REALIZAR O TREINO</summary>
+          <br />
+
+          <h4>
+           Ao realizar a "Missão Diária" você pode optar por duas atividades.
+           <ul>
+            <li>Treino Diário: Realizar o treino diário e ganhar 1 Ponto de Atributo em Força.</li><br>
+            <li>Missão de Penalidade: Sobreviver a Centopeias Gigantes do Deserto com Dentes Envenenados, caso você vença receberar 20 Pontos de experiência,
+               caso não derrote a Centopeia você ainda receberar 2 pontos de experiência.</li>
+          </ul>
+          </h4>
+
+          <!--Início do Treino diário-->
+          <details>
+            <summary class="sumario"><h3>Treino Diário: Ganho de Força</h3></summary>
+      
+
+      <h3 class="sublinhado">Objetivo do dia</h3>
+
+          <h4>
+            Treino diário chegou: 100 flexões, 100 abdominais, 100
+            agachamentos e 10km de corrida.
+          </h4>
+
+          <button class="blob" onclick="misaoDiaria()">
+            🤸 Realizar treinamento 🏃</button
+          ><br />
+          <h4 id="idtreino"></h4>
+
+          <details>
+            <summary class="sumario">Nota</summary>
+
+            <h3>
+              Melhore seu atributo "Força" para realizar um treino mais
+              eficiente. Lembrando que os treinos irão gerar 1% de "Fadiga".
+            </h3>
+
+            <h4 class="sumario">Exemplos:</h4>
+            <ul>
+              <li>Força 10 gera 2% do Treino</li>
+              <li>Força 11 gera 3% do Treino</li>
+              <li>...</li>
+              <li>Força 107 gera 99% do Treino</li>
+              <li>Força 108 gera 100% do Treino</li>
+            </ul>
+            <br>
+          </details>
+          <br><br>
+          </details>
+ <!--Fim do Treino diário-->
+
+  <!--Início da luta do Centopeia-->
+  <details>
+    <summary class="sumario"><h3>Missão de Penalidade: Sobrevivência</h3></summary>
+          <fieldset class="temafieldset">
+            <h3 class="sublinhado">Status da Centopeia</h3>
+
+            <fieldset class="luta">
+         
+              <h3 class="luta" id="idVidaCentopeias">❤️ Vida: 50%</h3>
+              <h3 class="luta" id="idFadigaCentopeias">🪫Fadiga : 50%</h3>
+              <h3 class="luta" id="idAgilidadeCentopeias">🦵 Agilidade: 50</h3>
+              <h3 class="luta" id="idForcaCentopeias">💪 Força: 50</h3>
+              <button class="botaoNovo" id="idPopulacaoCentopeias">🚶‍♂️População: 0/?</button>
+              <button class="botaoNovo" id="idexperienciaCentopeias">🏆 Experiência: 0</button>
+              
+              <br /><br />
+            </fieldset>
+
+            <h3 class="sublinhado">Quadro de notificações</h3>
+            <h3 class="luta" id="idQuadroDeRetornoCentopeias">
+              Você quer desafiar as Centopeias?
+            </h3>
+
+            <button
+              class="blob"
+              onclick="LutaContraCentopeiasBotao()"
+              id="idLutaContraCentopeiasBotao"
+            >
+              Sim
+            </button>
+
+            <button class="blob" onclick="AnalisarLutaContraCentopeiasBotao()">
+              Analisar Luta
+            </button>
+          </fieldset>
+        </details>
+        <br />
+      </details> <br><br>
+          <!--Fim da luta do Centopeia-->
+      </div> 
+      <!-- FIM do Treino diário -->
+
+      
 
       <!-- INÍCIO da Dangeon Dupla -->
+      <time id="idDIVEsconderKandiaru">
       <div class="grid-item3" >
         <h1>Kandiaru</h1>
 
@@ -848,7 +981,7 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
               <h3 class="luta" id="idVidaKandiaru">❤️ Vida: 100%</h3>
               <h3 class="luta" id="idFadigaKandiaru">🪫Fadiga : 0%</h3>
               <h3 class="luta" id="idAgilidadeKandiaru">🦵 Agilidade: 9</h3>
-              <h3 class="luta" id="idInteligenciaKandiaru">🧠 Inteligência: 12
+              <h3 class="luta" id="idInteligenciaKandiaru">🧠 Inteligência: 11
               </h3>
               <button class="botaoNovo" id="idKandiaru">⚔️ Rounds da batalha: 0/1
               </button>
@@ -875,13 +1008,13 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
       <!-- FIM da Dangeon Dupla -->
-    </time>
-    <time id="idDIVEsconderGoblin">
+    
+   
 
       <!-- INÍCIO DO GOBLIN -->
-     
+      <time id="idDIVEsconderGoblin">
       <div class="grid-item3" >
         <h1>Goblin</h1>
 
@@ -923,9 +1056,7 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
               <h3 class="luta" id="idFadigaGoblin">🪫Fadiga: 30%</h3>
               <h3 class="luta" id="idAgilidadeGoblin">🦵 Agilidade: 11</h3>
               <h3 class="luta" id="idForcaGoblin">💪 Força: 15</h3>
-              <button class="botaoNovo" id="idexperiencia">
-                🏆 Experiência: 0
-              </button>
+              <button class="botaoNovo" id="idexperiencia">🏆 Experiência: 0</button>
               <button class="botaoNovo" id="idPedrasDeEssenciaGoblin">
                 💎 Pedras de Essência: 0
               </button>
@@ -952,11 +1083,12 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
       <!-- FIM DO GOBLIN -->
 
-      </time>
+      
       <!-- INÍCIO DO Lycan -->
+      <time id="idDIVEsconderLycan">
       <div class="grid-item3">
         <h1>Lycan com Presas de Aço</h1>
 
@@ -1033,11 +1165,11 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
       <!-- FIM DO Lycan -->
 
       <!-- INÍCIO DO Kasaka  -->
-      
+      <time id="idDIVEsconderKasaka">
       <div class="grid-item3">
         <h1>Kasaka Azul de Presas Venenosas</h1>
 
@@ -1111,11 +1243,11 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
       <!-- FIM DO Kasaka  -->
 
       <!-- INÍCIO dos Insectoids  -->
-     
+      <time id="idDIVEsconderInsectoids">
       <div class="grid-item3">
         <h1>Insectoids</h1>
 
@@ -1189,11 +1321,11 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
       <!-- FIM dos Insectoids -->
 
       <!-- INÍCIO da Aranha Gigante -->
-      
+      <time id="idDIVEsconderAranha">
       <div class="grid-item3">
         <h1>Aranha Gigante</h1>
 
@@ -1264,11 +1396,11 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
       <!-- FIM da Aranha Gigante -->
 
       <!--  INÍCIO dos Caçadores -->
-      
+      <time id="idDIVEsconderCacadores">
       <div class="grid-item3">
         <h1>Grupo de Caçadores</h1>
 
@@ -1345,11 +1477,11 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
       <!--FIM dos Caçadores-->
 
       <!--  INÍCIO  do Cerberus, Guardião do Inferno-->
-      
+      <time id="idDIVEsconderCerberus">
       <div class="grid-item3">
         <h1>Cerberus Guardião do Inferno</h1>
 
@@ -1422,10 +1554,11 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
+<!--  Fim  do Cerberus, Guardião do Inferno-->
 
       <!--  INÍCIO  do Mr. Kang-->
-    
+      <time id="idDIVEsconderKang">
       <div class="grid-item3">
         <h1>Mr. Kang</h1>
 
@@ -1500,9 +1633,11 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
+ <!--  Fim  do Mr. Kang-->
 
       <!--  INÍCIO  do Yoo Jin-Ho-->
+      <time id="idDIVEsconderYoo">
       <div class="grid-item3">
         <h1>Yoo Jin-Ho</h1>
 
@@ -1575,9 +1710,11 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
+ <!--  Fim  do Yoo Jin-Ho-->
 
       <!-- INÍCIO do Igris-->
+      <time id="idDIVEsconderIgris">
       <div class="grid-item3">
         <h1>Cavaleiro Comandante Igris - O Vermelho-Sangue</h1>
 
@@ -1651,9 +1788,11 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
+ <!-- Fim do Igris-->
 
             <!--  INÍCIO  dos magos -->
+            <time id="idDIVEsconderMagos">
       <div class="grid-item3">
         <h1>6 Magos Necromantes</h1>
 
@@ -1721,82 +1860,30 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
           </fieldset>
         </details>
         <br />
-      </div>
+      </div></time>
       <!--FIM dos Magos-->
+
+ <!--Início da apresenção Solo Leveling-->
+ <div class="grid-item2">
+  <br />
+    
+  <iframe width="320" height="200" src="https://www.youtube.com/embed/C0zMWogztQs?si=csHDN8bzlSMBr7Hg&autoplay=1&mute=1&loop=1&playlist=C0zMWogztQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <h1>Solo Leveling: Arise from the Shadow</h1>
+    
+ <h3>Através de batalhas implacáveis, Jinwoo aprimorou suas habilidades e eventualmente completou uma " Missão de Troca de Classe ", 
+  adquirindo o título de "Monarca das Sombras", que lhe permite comandar um exército de soldados das sombras. Agora, 
+  movido pela esperança de curar sua mãe doente, Jinwoo parte em uma nova jornada para obter materiais para o "Elixir da Vida".</h3>
+  <br /><br />
+</div>
+<!-- Fim da apresenção Solo Leveling -->
+
+
 
       <!--INÍCIO DO banner final-->
       <div class="grid-item4"></div>
       <!-- FIM DO banner final  -->
 
-       <!--Início da da habilidade Extração de Sombra -->
-       <div class="grid-item7">
-        <br />
-
-        <h1>Arise from the Shadow</h1>
-        <h3>
-Através de batalhas implacáveis, Jinwoo aprimorou suas habilidades e eventualmente completou uma " Missão de Troca de Classe ",
- adquirindo o título de "Monarca das Sombras", que lhe permite comandar um exército de soldados das sombras. 
- Agora, movido pela esperança de curar sua mãe doente, Jinwoo parte em uma nova jornada para obter materiais para o "Elixir da Vida".
-        </h3>
-        <br /><br />
-<!--Início da habilidade Extração de Sombras-->
-<details>
-  <summary class="sumario" id="idCheckExtracao">
-    ⛔ Habilidade: Extração de Sombra
-  </summary>
-  <br />
-  <img
-    class="imgMenor"
-    src="https://animeflix.com.br/wp-content/uploads/2025/02/solo-leveling-monarca-das-sombras-696x392.jpg"
-  />
-  <br />
-
-  <h4 class="sublinhado">
-    <br />[Habilidade exclusiva da classe Monarca das Sombras] <br /><br />
-   Extrai mana de um corpo cuja a vida chegou ao fim e a transforma em  um soldado das Sombras.
-    <br />
-    <br />
-  </h4>
-
-<fieldset class="sublinhado">
-<h3 >[Igris Nível 7]<br>Rank Cavaleiro</h3> 
-<br>
-<img class="img1" src="https://i.ytimg.com/vi/WouuRxJi_tg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCkpfPUlmpzp4lsoZiYBOvidaAT3w"/>
-<br><br>
-<h3 class="luta">🦵 Agilidade: 100 <br> 💪 Força: 120 <br> 👀 Percepção: 80 <br> 🧠 Inteligência: 60</h3>
-<h3 >Necessário 20 Pontos de Mana</h3>
-<button class="botaoNovo" onclick="FuncaoExtracao1()"> Erga-se </button>
-
-  <h4 id="idRetornoExtracao1"></h4>
-</fieldset>
-
-<fieldset class="sublinhado">
-<h3 >[Magos das Sombras Nível 1]<br> Rank Normal</h3>
-<br>
-<img class="img1" src="https://preview.redd.it/4hwzwdio9tce1.png?auto=webp&s=a2bc4f454e79e7d5c532a4f2fb8c0a3eb7c4cfa6"/>
-<br><br>
-<h3 class="luta">🦵 Agilidade: 145 <br> 💪 Força: 140 <br> 👀 Percepção: 85 <br> 🧠 Inteligência: 65</h3>
-
-<h3 >Necessário 10 Pontos de Mana</h3>
-<button class="botaoNovo" onclick="FuncaoExtracao2()"> Erga-se </button>
-
-  <h4 id="idRetornoExtracao2"></h4>
-
-  
-<br />
-</fieldset>
-<br />
-<iframe width="320" height="200" src="https://www.youtube.com/embed/CRZsOOOvg1I?si=knBLpsxTc8Tw4f-y&autoplay=1&mute=1&loop=1&playlist=CRZsOOOvg1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-<br>
-
-</details>
-<br />
-<!-- Fim da habilidade da Extração de Sombras -->
-
-
-      </div>
-      <!-- Fim da habilidade Extração de Sombra -->
+       
 
       
     </div>
