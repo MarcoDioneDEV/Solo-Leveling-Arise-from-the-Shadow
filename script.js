@@ -1,5 +1,5 @@
 var nivel = 1;
-var EqualizadoDoNivel = 2;
+var EqualizadoDoNivel = 1;
 var cristal = 0;
 var ouro = 0;
 var PedraDeEssencia = 0;
@@ -12,6 +12,7 @@ var forca = 10;
 var percepcao = 10;
 var inteligencia = 10;
 
+var experienciaCentopeias = 0;
 var experienciaYoo = 0;
 var experienciaParaUsarNasHabilidades = 0;
 var experienciaKang = 0;
@@ -38,7 +39,7 @@ var AumentoDoNivelDaMana = 20;
 var SomaDoIndicadorDoNivel = 6;
 var SomaDaPocaoDeRecuperacao = 0;
 var SomaDaPocaoDeVida = 0;
-var SomaDoNivel = 0;
+var SomaDoNivel = 1;
 var SomaDaPercepcao = 0;
 var SomaDaForca = 0;
 var SomaDosCristais = 0;
@@ -57,6 +58,7 @@ var EspadaEquipada = 0;
 var KasakaEquipada = 0;
 var ColeiraEquipada = 0;
 
+var Centopeias = 0;
 var Magos = 0;
 var Yoo = 0;
 var Igris = 0;
@@ -239,8 +241,7 @@ function funcaominerarcristal() {
     document.getElementById("idcristalinventario").innerHTML =
       "⚠️ Cristais de Mana: " + cristal;
 
-      document.getElementById("idAlertaNoMenuInventario").innerHTML =
-      "⚠️ Inventário";
+     
 
     document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
 
@@ -254,6 +255,9 @@ function funcaominerarcristal() {
 
 /* Início da função minerar cristais ATÉ A FADIGA SER 100*/
 function funcaominerarcristalAteAfadigaSer100() {
+
+  document.getElementById("idAlertaNoMenuInventario").innerHTML =
+  "⚠️ Inventário";
 
   /* Início apagar as mensagem de RETORNO */
   document.getElementById("idQuadroDeRetornoKandiaru").innerHTML =
@@ -635,7 +639,7 @@ function misaoDiaria() {
     progresso.setAttribute("style", "width: " + fadiga + "%");
   }
 
-  if (treino > 99 && RecompensaDaMisaoDiaria === 0) {
+  else if (treino > 99 && RecompensaDaMisaoDiaria === 0) {
     RecompensaDaMisaoDiaria = 1;
 
     treino = 100;
@@ -651,9 +655,8 @@ function misaoDiaria() {
     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
 
     alert("Receba a recompensa pelo Treino Diário [1 Ponto de atributo Força]",);
-
-    
-
+  } else if (fadiga > 99 && RecompensaDaMisaoDiaria === 0){
+    document.getElementById("idtreino").innerHTML = "⚠️ Você está com a Fadiga no máximo";
   }
 }
 /*Fim da função Treinamento de força*/
@@ -1536,12 +1539,12 @@ function AnalisarLutaContraKandiaruBotao() {
 
   if (inteligencia < 12) {
     document.getElementById("idInteligenciaKandiaru").innerHTML =
-      "🧠 Inteligência: 12/" + inteligencia + " ❌";
+      "🧠 Inteligência: 11/" + inteligencia + " ❌";
   }
 
   if (inteligencia > 11) {
     document.getElementById("idInteligenciaKandiaru").innerHTML =
-      "🧠 Inteligência: 12/" + inteligencia + " ✅";
+      "🧠 Inteligência: 11/" + inteligencia + " ✅";
   }
 
   if (vida !== 100) {
@@ -2231,19 +2234,8 @@ function AnalisarLutaContraKasakaBotao() {
 function deus() {
 
 
-
-  /*
   
-  document.getElementById("idDIVEsconderKandiaru").innerHTML = "";
-  document.getElementById("idDIVEsconderGoblin").innerHTML = "";
-  document.getElementById("idDIVEsconderLycan").innerHTML = "";
-  document.getElementById("idDIVEsconderKasaka").innerHTML = "";
-  document.getElementById("idDIVEsconderInsectoids").innerHTML = "";
-  document.getElementById("idDIVEsconderAranha").innerHTML = "";
-  document.getElementById("idDIVEsconderCacadores").innerHTML = "";
-  document.getElementById("idDIVEsconderCerberus").innerHTML = "";
-  document.getElementById("idDIVEsconderKang").innerHTML = "";
-*/
+
 
   agilidade = 700;
   forca = 550;
@@ -2303,6 +2295,9 @@ function deus() {
   /* INÍCIO VENDER CRISTAIS DE MANA*/
   function funcaovendercristal() {
     
+    document.getElementById("idAlertaNoMenuInventario").innerHTML =
+    "Inventário";
+
      /*Início da função vender cristais 100*/
   if (cristal > 99)
     if (cristal > 99) {
@@ -2844,7 +2839,190 @@ function deus() {
   
   /* FIM DO BOTÃO ANALISAR LUTA dos Insectoids */
   
+  /*INÍCIO DA LUTA Centopeias*/
+  function LutaContraCentopeiasBotao() {
+
+    document.getElementById("idAlertaNoMenuHabilidade").innerHTML =
+    "⚠️ Habilidades";
+
+    if (vida < 50 || fadiga > 50) {
+      document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
+        "Vida ou Fadiga insuficiente";
+    } 
+    
+else if (
+      vida > 49 &&
+      fadiga < 51 &&
+      forca > 50 &&
+      agilidade > 50
+    ) {
+      vida = vida - 50;
+      if (vida < 1) {
+        vida = 0;
+      }
   
+      progresso2.setAttribute("style", "width: " + vida + "%");
+      document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+  
+      fadiga = fadiga + 50;
+      if (fadiga > 99) {
+        fadiga = 100;
+      }
+      progresso.setAttribute("style", "width: " + fadiga + "%");
+      document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+  
+      Centopeias = Centopeias + 1;
+      document.getElementById("idPopulacaoCentopeias").innerHTML =
+        "🚶‍♂️População: " + Centopeias + "/?";
+  
+      document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
+        "✨ VITÓRIA ✨ Você derrotou uma Centopeia [Recompensa: 20 pontos de experiência]";
+  
+      experienciaCentopeias = experienciaCentopeias + 20;
+      experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 20;
+      document.getElementById("idexperienciaCentopeias").innerHTML =
+        "🏆 Experiência: " + experienciaCentopeias;
+  
+      document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+  
+      document.getElementById("idLutaContraCentopeiasBotao").innerHTML = "Lutar novamente";
+
+  
+        document.getElementById("idAlertaNoMenuHabilidade").innerHTML =
+          "⚠️ Habilidade";
+  
+        /* Início de remover Arrancada*/
+  if (Arrancada === 1){
+  
+  Arrancada = 0;
+  
+  if (ArrancadaNivel2 === 0){
+  agilidade = agilidade - 10;
+  }
+  if (ArrancadaNivel2 === 1){
+  agilidade = agilidade - 20;
+  }
+  
+   document.getElementById("idagilidade").innerHTML =
+        "🦵 Agilidade: " + agilidade;
+  
+  document.getElementById("idCheckArrancada").innerHTML =
+        "Habilidade: Arrancada";
+  
+  document.getElementById("idRetornoArrancadaNoStatus").innerHTML = "";
+  
+  }
+  /* Fim de remover Arrancada*/
+  
+  /* Início de remover Intenção Assassina */
+  if (Assassina === 1){
+  
+  Assassina = 0;
+  
+  if (ArrancadaNivel2 === 0){
+  agilidade = agilidade - 10;
+  }
+  if (ArrancadaNivel2 === 1){
+  agilidade = agilidade - 20;
+  }
+  
+   document.getElementById("idagilidade").innerHTML =
+        "🦵 Agilidade: " + agilidade;
+  
+  document.getElementById("idCheckAssassina").innerHTML =
+        "Habilidade:  Intenção Assassina";
+  
+  document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
+  
+  }
+  /*Fim de remover Intenção Assassina*/
+  
+
+    } else {
+      vida = vida - 50;
+      if (vida < 1) {
+        vida = 0;
+      }
+      progresso2.setAttribute("style", "width: " + vida + "%");
+      document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+  
+      fadiga = fadiga + 50;
+      if (fadiga > 99) {
+        fadiga = 100;
+      }
+      progresso.setAttribute("style", "width: " + fadiga + "%");
+      document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+  
+      document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
+        "☠️ DERROTA ☠️ - [Recompensa: 2 pontos de experiência]";
+  
+        experienciaCentopeias = experienciaCentopeias + 2;
+        experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 2;
+        document.getElementById("idexperienciaCentopeias").innerHTML = "🏆 Experiência: " + experienciaCentopeias;
+    
+        document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+
+      document.getElementById("idLutaContraInsectoidsBotao").innerHTML =
+        "Tentar novamente";
+
+       
+    }
+  }
+  /*FIM DA LUTA Centopeia*/
+
+  /*INÍCIO DO BOTÃO ANALISAR LUTA Centopeia*/
+  function AnalisarLutaContraCentopeiasBotao() {
+    document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
+      "Análise dos seus Status e das Centopeias";
+  
+    document.getElementById("idLutaContraCentopeiasBotao").innerHTML =
+      "Seguir com a Luta";
+  
+    if (vida < 50) {
+      document.getElementById("idVidaCentopeias").innerHTML =
+        "❤️ Vida: 50%/" + vida + "%" + " ❌";
+    }
+  
+    if (vida > 49) {
+      document.getElementById("idVidaCentopeias").innerHTML =
+        "❤️ Vida: 50%/" + vida + "%" + " ✅";
+    }
+  
+    if (fadiga > 50) {
+      document.getElementById("idFadigaCentopeias").innerHTML =
+        "🪫Fadiga: 50%/: " + fadiga + "%" + " ❌";
+    }
+  
+    if (fadiga < 51) {
+      document.getElementById("idFadigaCentopeias").innerHTML =
+        "🪫Fadiga: 50%/: " + fadiga + "%" + " ✅";
+    }
+  
+    if (agilidade < 51) {
+      document.getElementById("idAgilidadeCentopeias").innerHTML =
+        "🦵 Agilidade: 50/" + agilidade + " ❌";
+    }
+  
+    if (agilidade > 50) {
+      document.getElementById("idAgilidadeCentopeias").innerHTML =
+        "🦵 Agilidade: 50/" + agilidade + " ✅";
+    }
+  
+    if (forca > 50) {
+      document.getElementById("idForcaCentopeias").innerHTML =
+        "💪 Força: 50/" + forca + " ✅";
+    }
+  
+    if (forca < 51) {
+      document.getElementById("idForcaCentopeias").innerHTML =
+        "💪 Força: 50/" + forca + " ❌";
+    }
+
+  
+  }
+  
+  /* FIM DO BOTÃO ANALISAR LUTA Centopeia */
+
   /* INÍCIO DA LUTA da Aranha Gigante */
   function LutaContraAranhaBotao() {
    if (vida < 50 || fadiga > 40) {
@@ -4817,7 +4995,7 @@ function deus() {
    if (agilidade > 140) {
     document.getElementById(
       "idAgilidadeMagos").innerHTML =
-     "🦵 Agilidade: 140" +
+     "🦵 Agilidade: 140/" +
      agilidade + " ✅";
    }
   
@@ -4997,6 +5175,20 @@ function deus() {
   document.getElementById("idClasse").innerHTML =
           "Classe: Necromante [Monarca das Sombras]";
   
+/*Apagar todos os cards*/
+  document.getElementById("idDIVEsconderKandiaru").innerHTML = "";
+  document.getElementById("idDIVEsconderGoblin").innerHTML = "";
+  document.getElementById("idDIVEsconderLycan").innerHTML = "";
+  document.getElementById("idDIVEsconderKasaka").innerHTML = "";
+  document.getElementById("idDIVEsconderInsectoids").innerHTML = "";
+  document.getElementById("idDIVEsconderAranha").innerHTML = "";
+  document.getElementById("idDIVEsconderCacadores").innerHTML = "";
+  document.getElementById("idDIVEsconderCerberus").innerHTML = "";
+  document.getElementById("idDIVEsconderKang").innerHTML = "";
+  document.getElementById("idDIVEsconderYoo").innerHTML = "";
+  document.getElementById("idDIVEsconderIgris").innerHTML = "";
+  document.getElementById("idDIVEsconderMagos").innerHTML = "";
+/*Apagar todos os cards*/
    } else {
     vida = vida - 100;
     if (vida < 1) {
@@ -5292,4 +5484,20 @@ function abrirAba(id) {
 }
 /*Fim abas do menu lateral esquerdo*/
   
-  
+  /*Início abas do menu Habilidades*/
+ function abrirAbaHabilidades(id) {
+      const abasHabilidades = document.querySelectorAll('.abaHabilidades');
+      const botoesHabilidades = document.querySelectorAll('.botaoHabilidades');
+    
+      abasHabilidades.forEach((abaHabilidades) => {
+        abaHabilidades.classList.remove('ativo');
+      });
+    
+      botoesHabilidades.forEach((botaoHabilidades) => {
+        botaoHabilidades.classList.remove('ativo');
+      });
+    
+      document.getElementById(`abaHabilidades${id}`).classList.add('ativo');
+      botoesHabilidades[id - 1].classList.add('ativo');
+    }
+     /*Fim abas do menu Habilidades*/
