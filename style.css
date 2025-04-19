@@ -160,7 +160,7 @@ background-size: 100%;
 
 .grid-item1{
 margin: 2px;
-grid-row: span 12;
+grid-row: span 13;
 background-color: #092857;
   text-align: center;
   padding: 5px 10px 5px 10px;
@@ -526,3 +526,41 @@ border-radius: 10px;
   display: block;
 }
 /* teste */
+
+/* Início abas do menu Habilidades */
+.abasHabilidades {
+  width: 100%;
+}
+
+.botoesHabilidades {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.botaoHabilidades {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.botaoHabilidades.ativo {
+  background-color: #031833;
+  color: #fff;
+}
+
+.conteudoHabilidades {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.abaHabilidades {
+  display: none;
+}
+
+.abaHabilidades.ativo {
+  display: block;
+}
+/* Fim abas do menu Habilidades */
