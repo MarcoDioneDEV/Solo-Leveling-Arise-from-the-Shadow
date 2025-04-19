@@ -23,7 +23,7 @@ var experienciaKasaka = 0;
 var experienciaInsectoids = 0;
 var experienciaCacadores = 0;
 
-var atributo = 1000;
+var atributo = 0;
 var treino = 0;
 var dia = 1;
 
