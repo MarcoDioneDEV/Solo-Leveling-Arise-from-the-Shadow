@@ -7,6 +7,7 @@ var PedraDeEssencia = 0;
 var vida = 100;
 var fadiga = 0;
 var mana = 10;
+var AumentoDoNivelDaMana = 20;
 var agilidade = 10;
 var forca = 10;
 var percepcao = 10;
@@ -34,7 +35,7 @@ var RecompensaDoTitulo50Cristais = 0;
 var RecompensaDoTitulo999Cristais = 0;
 var RecompensaDaMisaoDiaria = 0;
 var RecompensaDiaria = 0;
-var AumentoDoNivelDaMana = 20;
+
 
 var SomaDoIndicadorDoNivel = 6;
 var SomaDaPocaoDeRecuperacao = 0;
@@ -51,6 +52,8 @@ var SomaPedraDeEssenciaKasaka = 0;
 var SomaPedraDeEssenciaCacadores = 0;
 var SomaDaPedraDeEssenciaParaMissaDiaria = 0;
 
+var ToqueDoDominadorEquipada = 0;
+var EscudoEquipada = 0;
 var ElmoEquipada = 0;
 var AssassinaCavaleirosEquipada = 0;
 var EspadaSimplesEquipada = 0;
@@ -58,6 +61,8 @@ var EspadaEquipada = 0;
 var KasakaEquipada = 0;
 var ColeiraEquipada = 0;
 
+var TurnoDeLutaCentopeia = 0;
+var VitoriaContraAsCentopeias = 0;
 var Centopeias = 0;
 var Magos = 0;
 var Yoo = 0;
@@ -77,6 +82,8 @@ var PopulacaoKasaka = 0;
 
 var Kandiaru = 1;
 
+var Provocar = 0;
+var Fortalecimento = 0;
 var Arrancada = 0;
 var ArrancadaEmUso = 0;
 var Assassina = 0;
@@ -88,29 +95,122 @@ var ArrancadaNivel2 = 0;
 var SombraIgris = 0;
 var SombraMago = 0;
 
+var ElixirDaVida = 0;
+var FragmentoDaAvoreDaVida = 0;
+var AguaNascenteDaFlorestaEcoante = 0;
+var SanguePurificadoDoMonarcaDemoniaco = 0;
+
+TituloLordeDaMineracaoEstaEmUso = 0;
+TituloEntusiastaEstaEmUso = 0;
+TituloExterminadorDeGoblinsEstaEmUso = 0;
+
+/*início da fução Deus*/
+var Deus = 0;
+function deus() {
+  alert("Você achou um Easter Egg e virou Deus no jogo, aproveite os prêmios");
+  if (Deus === 0){
+    Deus = 1;
+  
+    agilidade = 510;
+    forca = 620;
+    percepcao = 610;
+    inteligencia = 640;
+    experienciaParaUsarNasHabilidades = 760;
+  
+mana = 100;
+    ouro = 7450;
+    cristal = 2000000;
+    SomaDosCristais =  3910;
+
+    atributo = 1000;
+    SomaDaPocaoDeRecuperacao = 250;
+    vida = 100;
+    SomaDaPocaoDeVida = 125;
+    FragmentoDaAvoreDaVida = 1000;
+AguaNascenteDaFlorestaEcoante = 1;
+SanguePurificadoDoMonarcaDemoniaco = 1;
+SomaDaPedraDeEssenciaParaMissaDiaria = 36;
+
+Lycan = 20;
+Goblin = 8;
+
+  }
+
+  else if(Deus === 1){  /*pontos equivalente a todo a primeira parte do Jogo*/
+
+  agilidade = 55;
+  forca = 60;
+  percepcao = 61;
+  inteligencia = 64;
+  experienciaParaUsarNasHabilidades = 106;
+  
+  fadiga = 0;
+  vida = 100;
+  
+  cristal = 2;
+  SomaDosCristais =  13162;
+  ouro = 470;
+  SomaDaPocaoDeRecuperacao = 354;
+  SomaDaPocaoDeVida = 157;
+  SomaDaPedraDeEssenciaParaMissaDiaria = 36;
+  dia = 9;
+  nivel = 45;
+  
+  SomaDaPresaDeLycan = 20;
+  PresaDeLycan = 20;
+  Lycan = 20;
+  Kasaka = 1;
+  Kandiaru = 2;
+  Cacadores = 1;
+  Kang = 1;
+  Cerberus = 1;
+  Igris = 3;
+  Magos = 1;
+  
+
+
+  mana = 30;
+  AumentoDoNivelDaMana = 50;
+  atributo = 0;
+}
+    
+  }
+  
+  /*fim da fução Deus*/
+
 /*Início da função minerar cristais*/
 function funcaominerarcristal() {
+  
   /* Início apagar as mensagem de RETORNO */
-  document.getElementById("idQuadroDeRetornoKandiaru").innerHTML =
-    "Você quer desafiar o Kandiaru?";
-  document.getElementById("idQuadroDeRetornoGoblin").innerHTML =
-    "Você quer desafiar o Goblin?";
-  document.getElementById("idRetornoMissaoDiaria").innerHTML = "";
-  document.getElementById("idatributopercepcao").innerHTML = "";
-  document.getElementById("idRetornoCompraPocaoRecuperacao").innerHTML = "";
-  document.getElementById("idRetornoCompraPocaoVida").innerHTML = "";
-  document.getElementById("idRetornoCompraPocaoMana").innerHTML = "";
-  document.getElementById("idRetornoCompraEspadaComum").innerHTML = "";
-  document.getElementById("idRetornoCompraEspada").innerHTML = "";
-  document.getElementById("idvenderpresa").innerHTML = "";
-  document.getElementById("idRetornoEquiparAssassinaCavaleiros").innerHTML = "";
-  document.getElementById("idRetornoEquiparElmo").innerHTML = "";
-  document.getElementById("idRetornoEquiparColeira").innerHTML = "";
-  document.getElementById("idRetornoEquiparKasaka").innerHTML = "";
-  document.getElementById("idvendercristal").innerHTML = "";
-  document.getElementById("idvenderpedra").innerHTML = "";
-  document.getElementById("idminerarcristal").innerHTML = "";
-   document.getElementById("idTituloAlerta").innerHTML = "";
+  document.getElementById("idRetornoMissaoDiaria").innerHTML = "";   /* Remover Missão diária */
+  document.getElementById("idatributopercepcao").innerHTML = ""; /* Remover Pontos de atributo */
+  document.getElementById("idminerarcristal").innerHTML = "";  /* Remover Mensagem que mostra quantos Cristais foram minerados */
+  document.getElementById("idTituloAlerta").innerHTML = ""; /* Remover Alerta dos títulos */
+
+  document.getElementById("idRetornoTrocarXPporAprimoramentoDoDespertar",).innerHTML = ""; /* Remover Habilidade Segundo despertar */
+  document.getElementById("idRetornoSaudeElogenvidade",).innerHTML = ""; /* Remover Habilidade Saúde e longevidade */
+  document.getElementById("idRetornoElixirDaVida",).innerHTML = ""; /* Remover Habilidade Elixir da vida */
+  document.getElementById("idRetornoAssassina",).innerHTML = ""; /* Remover Habilidade intenção assassina */
+  document.getElementById("idRetornoFurtividade",).innerHTML = ""; /* Remover Habilidade Furtividade */
+  document.getElementById("idRetornoArrancada",).innerHTML = ""; /* Remover Habilidade Arrancada */
+  document.getElementById("idRetornoFortalecimento",).innerHTML = ""; /* Remover Habilidade Fortalecimento */
+  document.getElementById("idRetornoProvocar",).innerHTML = ""; /* Remover Habilidade provocar */
+
+  document.getElementById("idRetornoCompraPocaoRecuperacao").innerHTML = ""; /* Remover Poção de Recuperação */
+  document.getElementById("idRetornoCompraPocaoVida").innerHTML = ""; /* Remover Poção de Vida */
+  document.getElementById("idRetornoCompraPocaoMana").innerHTML = ""; /* Remover Poção de Mana */
+  document.getElementById("idRetornoCompraEspadaComum").innerHTML = ""; /* Remover Adaga */
+  document.getElementById("idRetornoCompraEspada").innerHTML = ""; /* Remover Espada */
+  document.getElementById("idRetornoCompraEscudo").innerHTML = ""; /* Remover Defesa Divina */
+  document.getElementById("idRetornoEquiparAssassinaCavaleiros").innerHTML = ""; /* Remover Assassina de Cavaleiros */
+
+  document.getElementById("idvendercristal").innerHTML = ""; /* Remover Item Cristal de mana */
+  document.getElementById("idvenderpedra").innerHTML = ""; /* Remover Item Pedra de essencia */
+  document.getElementById("idvenderpresa").innerHTML = ""; /* Remover Item presa de Lycan */
+  document.getElementById("idRetornoEquiparKasaka").innerHTML = ""; /* Remover Item Equipamento Kasaka */
+  document.getElementById("idRetornoEquiparColeira").innerHTML = ""; /* Remover Item Equipamento Coleira do Cerberus  */
+  document.getElementById("idRetornoEquiparToqueDoDominadorEquipada").innerHTML = ""; /* Remover Item Equipamento Toque do dominador  */
+  document.getElementById("idRetornoEquiparElmo").innerHTML = ""; /* Remover Item Equipamento Elmo do Igris  */
   /*Fim apagar as mensagem de RETORNO*/
 
   if (fadiga < 100) {
@@ -135,47 +235,47 @@ function funcaominerarcristal() {
     }
 
     if (SomaDosCristais > 999 && RecompensaDoTitulo50Cristais === 0) {
+  
       RecompensaDoTitulo50Cristais = 1;
-      atributo = atributo + 1;
+      
       alert(
-        "Parabéns você trocou de Título e ganhou 1 Ponto de atributo. Novo título: Entusiasta da Mineração",
+        "Parabéns você trocou de Título e ganhou 5 Pontos de experiência. Novo título: Entusiasta da Mineração",
       );
-      document.getElementById("idtitulo").innerHTML =
-        "Título: Entusiasta da Mineração";
+      document.getElementById("idtitulo").innerHTML = "Novo Título disponível";
 
-        document.getElementById("idTituloAlerta").innerHTML =
-        "⚠️";
+        document.getElementById("idTituloAlerta").innerHTML =   "⚠️";
 
-      document.getElementById("idCheckEntusiasta").innerHTML =
-        "✅ Título Entusiata da Mineração: Obtida ao minerar 1000 Cristais de mana.";
+      document.getElementById("idCheckEntusiasta").innerHTML = "⚠️ Título: Entusiata da Mineração";
+      document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+      document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+      document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
 
-      document.getElementById("idatributo").innerHTML =
-        "Disponíveis: " + atributo;
+        experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 5;
+        document.getElementById( "idContarExperienciaNoQuadroHabilidades", ).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+        document.getElementById("idAlertaNoMenuHabilidade").innerHTML = "⚠️ Habilidades";
 
-        document.getElementById("idAlertaNoMenuAtributos").innerHTML =
-        "⚠️ Atributos";
+    
     }
 
     if (SomaDosCristais > 3999 && RecompensaDoTitulo999Cristais === 0) {
       RecompensaDoTitulo999Cristais = 1;
-      atributo = atributo + 1;
+  
       alert(
-        "Parabéns você trocou de Título e ganhou 1 Ponto de atributo. Novo título: Lorde da Mineração",
+        "Parabéns você trocou de Título e ganhou 5 Pontos de experiência. Novo título: Lorde da Mineração",
       );
-      document.getElementById("idtitulo").innerHTML =
-        "Título: Lorde da Mineração";
+      document.getElementById("idtitulo").innerHTML =  "Novo Título disponível";
 
-         document.getElementById("idTituloAlerta").innerHTML =
-        "⚠️";
+         document.getElementById("idTituloAlerta").innerHTML = "⚠️";
 
-      document.getElementById("idCheckLorde").innerHTML =
-        "✅ Título Lorde da Mineração: Obtida ao minerar 4000 Cristais de mana.";
+      document.getElementById("idCheckLordeDaMineracao").innerHTML =   "⚠️ Título: Lorde da Mineração";
 
-      document.getElementById("idatributo").innerHTML =
-        "Disponíveis: " + atributo;
+      document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+      document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
 
-        document.getElementById("idAlertaNoMenuAtributos").innerHTML =
-        "⚠️ Atributos";
+        experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 5;
+        document.getElementById( "idContarExperienciaNoQuadroHabilidades", ).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+        document.getElementById("idAlertaNoMenuHabilidade").innerHTML = "⚠️ Habilidades";
+        
     }
 
     document.getElementById("idminerarcristal").innerHTML =
@@ -260,21 +360,35 @@ function funcaominerarcristalAteAfadigaSer100() {
   "⚠️ Inventário";
 
   /* Início apagar as mensagem de RETORNO */
-  document.getElementById("idQuadroDeRetornoKandiaru").innerHTML =
-    "Você quer desafiar o Kandiaru?";
-  document.getElementById("idQuadroDeRetornoGoblin").innerHTML =
-    "Você quer desafiar o Goblin?";
-  document.getElementById("idRetornoMissaoDiaria").innerHTML = "";
-  document.getElementById("idatributopercepcao").innerHTML = "";
-  document.getElementById("idRetornoCompraPocaoRecuperacao").innerHTML = "";
-  document.getElementById("idRetornoCompraPocaoVida").innerHTML = "";
-  document.getElementById("idRetornoCompraPocaoMana").innerHTML = "";
-  document.getElementById("idRetornoCompraEspadaComum").innerHTML = "";
-  document.getElementById("idRetornoCompraEspada").innerHTML = "";
-  document.getElementById("idvendercristal").innerHTML = "";
-  document.getElementById("idvenderpedra").innerHTML = "";
-  document.getElementById("idminerarcristal").innerHTML = "";
-   document.getElementById("idTituloAlerta").innerHTML = "";
+  document.getElementById("idRetornoMissaoDiaria").innerHTML = "";   /* Remover Missão diária */
+  document.getElementById("idatributopercepcao").innerHTML = ""; /* Remover Pontos de atributo */
+  document.getElementById("idminerarcristal").innerHTML = "";  /* Remover Mensagem que mostra quantos Cristais foram minerados */
+  document.getElementById("idTituloAlerta").innerHTML = ""; /* Remover Alerta dos títulos */
+
+  document.getElementById("idRetornoTrocarXPporAprimoramentoDoDespertar",).innerHTML = ""; /* Remover Habilidade Segundo despertar */
+  document.getElementById("idRetornoSaudeElogenvidade",).innerHTML = ""; /* Remover Habilidade Saúde e longevidade */
+  document.getElementById("idRetornoElixirDaVida",).innerHTML = ""; /* Remover Habilidade Elixir da vida */
+  document.getElementById("idRetornoAssassina",).innerHTML = ""; /* Remover Habilidade intenção assassina */
+  document.getElementById("idRetornoFurtividade",).innerHTML = ""; /* Remover Habilidade Furtividade */
+  document.getElementById("idRetornoArrancada",).innerHTML = ""; /* Remover Habilidade Arrancada */
+  document.getElementById("idRetornoFortalecimento",).innerHTML = ""; /* Remover Habilidade Fortalecimento */
+  document.getElementById("idRetornoProvocar",).innerHTML = ""; /* Remover Habilidade provocar */
+
+  document.getElementById("idRetornoCompraPocaoRecuperacao").innerHTML = ""; /* Remover Poção de Recuperação */
+  document.getElementById("idRetornoCompraPocaoVida").innerHTML = ""; /* Remover Poção de Vida */
+  document.getElementById("idRetornoCompraPocaoMana").innerHTML = ""; /* Remover Poção de Mana */
+  document.getElementById("idRetornoCompraEspadaComum").innerHTML = ""; /* Remover Adaga */
+  document.getElementById("idRetornoCompraEspada").innerHTML = ""; /* Remover Espada */
+  document.getElementById("idRetornoCompraEscudo").innerHTML = ""; /* Remover Defesa Divina */
+  document.getElementById("idRetornoEquiparAssassinaCavaleiros").innerHTML = ""; /* Remover Assassina de Cavaleiros */
+
+  document.getElementById("idvendercristal").innerHTML = ""; /* Remover Item Cristal de mana */
+  document.getElementById("idvenderpedra").innerHTML = ""; /* Remover Item Pedra de essencia */
+  document.getElementById("idvenderpresa").innerHTML = ""; /* Remover Item presa de Lycan */
+  document.getElementById("idRetornoEquiparKasaka").innerHTML = ""; /* Remover Item Equipamento Kasaka */
+  document.getElementById("idRetornoEquiparColeira").innerHTML = ""; /* Remover Item Equipamento Coleira do Cerberus  */
+  document.getElementById("idRetornoEquiparToqueDoDominadorEquipada").innerHTML = ""; /* Remover Item Equipamento Toque do dominador  */
+  document.getElementById("idRetornoEquiparElmo").innerHTML = ""; /* Remover Item Equipamento Elmo do Igris  */
   /*Fim apagar as mensagem de RETORNO*/
 
   while (fadiga < 100) {
@@ -299,22 +413,23 @@ function funcaominerarcristalAteAfadigaSer100() {
     }
 
     if (SomaDosCristais > 999 && RecompensaDoTitulo50Cristais === 0) {
+  
       RecompensaDoTitulo50Cristais = 1;
       atributo = atributo + 1;
       alert(
         "Parabéns você trocou de Título e ganhou 1 Ponto de atributo. Novo título: Entusiasta da Mineração",
       );
-      document.getElementById("idtitulo").innerHTML =
-        "Título: Entusiasta da Mineração";
+      document.getElementById("idtitulo").innerHTML = "Novo Título disponível";
 
-        document.getElementById("idTituloAlerta").innerHTML =
-        "⚠️";
+        document.getElementById("idTituloAlerta").innerHTML =  "⚠️";
 
-      document.getElementById("idCheckEntusiasta").innerHTML =
-        "✅ Título Entusiata da Mineração: Obtida ao minerar 1000 Cristais de mana.";
+      document.getElementById("idCheckEntusiasta").innerHTML =   "⚠️ Título: Entusiata da Mineração";
 
-      document.getElementById("idatributo").innerHTML =
-        "Disponíveis: " + atributo;
+      document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+      document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
+      document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+
+      document.getElementById("idatributo").innerHTML =    "Disponíveis: " + atributo;
     }
 
     if (SomaDosCristais > 3999 && RecompensaDoTitulo999Cristais === 0) {
@@ -323,14 +438,15 @@ function funcaominerarcristalAteAfadigaSer100() {
       alert(
         "Parabéns você trocou de Título e ganhou 1 Ponto de atributo. Novo título: Lorde da Mineração",
       );
-      document.getElementById("idtitulo").innerHTML =
-        "Título: Lorde da Mineração";
+     
+      document.getElementById("idtitulo").innerHTML =  "Novo Título disponível";
 
-         document.getElementById("idTituloAlerta").innerHTML =
-        "⚠️";
+      document.getElementById("idTituloAlerta").innerHTML = "⚠️";
 
-      document.getElementById("idCheckLorde").innerHTML =
-        "✅ Título Lorde da Mineração: Obtida ao minerar 4000 Cristais de mana.";
+   document.getElementById("idCheckLordeDaMineracao").innerHTML =   "⚠️ Título: Lorde da Mineração";
+
+   document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+   document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
 
       document.getElementById("idatributo").innerHTML =
         "Disponíveis: " + atributo;
@@ -473,18 +589,18 @@ function funcaoComprarPocaoVida() {
 
     if (SomaDaPocaoDeVida > 99 && RecompensaDaClasseHealer === 0) {
       RecompensaDaClasseHealer = 1;
-      atributo = atributo + 5;
+    
       alert(
-        "Parabéns você trocou de Título e ganhou 5 Ponto de atributo. Novo título: Healer",
+        "Parabéns você trocou de Título e ganhou 10 Ponto de experiência. Novo título: Aprendiz de Curandeiro",
       );
       document.getElementById("idCheckHealer").innerHTML =
-        "✅ Título Healer: Obtida ao comprar 100 poções de vida.";
+        "✅ Título Aprendiz de Curandeiro: Obtida ao comprar 100 poções de vida.";
       document.getElementById("idtitulo").innerHTML = "Título: Healer";
-      document.getElementById("idatributo").innerHTML =
-        "Disponíveis: " + atributo;
-
-        document.getElementById("idAlertaNoMenuAtributos").innerHTML =
-        "⚠️ Atributos";
+      
+      experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 10;
+      document.getElementById( "idContarExperienciaNoQuadroHabilidades", ).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+      document.getElementById("idAlertaNoMenuHabilidade").innerHTML = "⚠️ Habilidades";
+        
 
     }
 
@@ -529,9 +645,9 @@ function funcaoComprarPocaoVida() {
     }
     if (dia === 9) {
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
-        "Faça a compra de 150 Poções de Vida na loja: " +
+        "Faça a compra de 125 Poções de Vida na loja: " +
         SomaDaPocaoDeVida +
-        "/150";
+        "/125";
     }
     if (dia === 10) {
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
@@ -559,7 +675,8 @@ function funcaoComprarPocaoMana() {
     document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
 
     document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-      "🪄 Mana: " + mana + "/" + AumentoDoNivelDaMana;
+      "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
 
     document.getElementById("idRetornoCompraPocaoMana").innerHTML =
       "Mana restaurada";
@@ -596,6 +713,36 @@ function funcaoComprarEspada() {
   }
 }
 
+/*início da função comprar Escudo*/
+function funcaoComprarEscudo() {
+  if (EscudoEquipada === 1) {
+    document.getElementById("idRetornoCompraEscudo").innerHTML =
+      "Escudo já equipada";
+  } else if (ouro > 114 && EscudoEquipada === 0) {
+    EscudoEquipada = 1;
+    ouro = ouro - 115;
+
+    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+    document.getElementById("idRetornoCompraEscudo").innerHTML =
+      "Escudo comprado e equipado com sucesso";
+
+    document.getElementById("idCheckCompraEscudo").innerHTML = "✅ Defesa Divina";
+
+    agilidade = agilidade + 15;
+    percepcao = percepcao + 5;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+
+    document.getElementById("idRetornoEscudoNoStatus").innerHTML = "+ 15";
+    document.getElementById("idRetornoEscudoNoStatus2").innerHTML = "+ 5";
+  } else {
+    document.getElementById("idRetornoCompraEscudo").innerHTML =
+      "Ouro insuficiente";
+  }
+}
+/*Fim da função comprar Escudo*/
+
 /*início da função comprar ADAGA*/
 function funcaoComprarEspadaComum() {
   if (EspadaSimplesEquipada === 1) {
@@ -625,46 +772,64 @@ function funcaoComprarEspadaComum() {
 
 /*início da função Treino diário*/
 function misaoDiaria() {
-  if (treino < 100 && RecompensaDaMisaoDiaria === 0 && fadiga < 100) {
+
+  if (TurnoDeLutaCentopeia === 1){
+    document.getElementById("idtreino").innerHTML = "⛔ Você optou por realizar a Missão de Penalidade: Sobrevivência";
+  }
+
+  else if (fadiga > 99 && RecompensaDaMisaoDiaria === 0){
+    document.getElementById("idtreino").innerHTML = "⚠️ Você está com a Fadiga no máximo";
+  }
+
+  else if (treino < 100 && RecompensaDaMisaoDiaria === 0 && fadiga < 100 && TurnoDeLutaCentopeia === 0) {
     SomaDaForca = forca - 8;
     treino = treino + SomaDaForca;
 
     fadiga = fadiga + 1;
-
     document.getElementById("idtreino").innerHTML =
       "⚠️ Treino: " + treino + "%";
-
     document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
-
-    progresso.setAttribute("style", "width: " + fadiga + "%");
-  }
-
-  else if (treino > 99 && RecompensaDaMisaoDiaria === 0) {
-    RecompensaDaMisaoDiaria = 1;
-
-    treino = 100;
-
-    document.getElementById("idtreino").innerHTML = "✅ Treino: 100% ";
-
-    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
-
     progresso.setAttribute("style", "width: " + fadiga + "%");
 
+    if (treino > 99 && RecompensaDaMisaoDiaria === 0) {
+      RecompensaDaMisaoDiaria = 1;
+  
+      treino = 100;
+  
+      document.getElementById("idtreino").innerHTML = "✅ Treino: 100% ";
+  
+      document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+  
+      progresso.setAttribute("style", "width: " + fadiga + "%");
+  
+  
+      forca = forca + 1;
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
 
-    forca = forca + 1;
-    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+      alert("Receba a recompensa pelo Treino Diário [1 Ponto de atributo Força]",);
+  
+      /* início da função subir de nível */
 
-    alert("Receba a recompensa pelo Treino Diário [1 Ponto de atributo Força]",);
-  } else if (fadiga > 99 && RecompensaDaMisaoDiaria === 0){
-    document.getElementById("idtreino").innerHTML = "⚠️ Você está com a Fadiga no máximo";
-  }
+    SomaDoNivel = SomaDoNivel + 1;
+    if (SomaDoNivel > SomaDoIndicadorDoNivel) {
+      document.getElementById("idnivel").innerHTML = "Nível: " + EqualizadoDoNivel;
+
+      alert("Level Up");
+
+      EqualizadoDoNivel = EqualizadoDoNivel + 1;
+      SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
+    }
+    /* Fim da função subir de nível */
+      
+    } 
+  }  
 }
 /*Fim da função Treinamento de força*/
 
 /*início da função Objetivo do dia(MISSÃO DIÁRIA)*/
 function misaoDiariaReceberRecompensa() {
-  /*Início apagar as mensagem de RETORNO*/
 
+  /*Início apagar as mensagem de RETORNO*/
   document.getElementById("idQuadroDeRetornoKandiaru").innerHTML =
     "Você quer desafiar o Kandiaru?";
   document.getElementById("idQuadroDeRetornoGoblin").innerHTML =
@@ -681,6 +846,7 @@ function misaoDiariaReceberRecompensa() {
   document.getElementById("idminerarcristal").innerHTML = "";
    document.getElementById("idTituloAlerta").innerHTML = "";
   /* Fim apagar as mensagem de RETORNO */
+
   if (dia === 1) {
     if (SomaDosCristais > 9 && RecompensaDiaria === 0) {
       RecompensaDiaria = 1;
@@ -688,7 +854,7 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById("idRetornoMissaoDiaria").innerHTML = "";
 
       document.getElementById("idRetornoMissaoDiariaTreino").innerHTML =
-        "Faça 100% do Treinamento de força";
+        "Faça a Missão Diária, você pode escolher entre Ganho de Força ou Sobrevivencia";
 
       fadiga = 0;
       document.getElementById("idfadiga").innerHTML =
@@ -764,6 +930,7 @@ function misaoDiariaReceberRecompensa() {
 
       RecompensaDaMisaoDiaria = 0;
       treino = 0;
+      TurnoDeLutaCentopeia = 0;
       RecompensaDaMisaoDiaria = 0;
       document.getElementById("idtreino").innerHTML = "Um novo dia começou";
     } else {
@@ -819,6 +986,7 @@ function misaoDiariaReceberRecompensa() {
         "/5";
 
       treino = 0;
+      TurnoDeLutaCentopeia = 0;
       RecompensaDaMisaoDiaria = 0;
       document.getElementById("idtreino").innerHTML = "Um novo dia começou";
     } else {
@@ -876,6 +1044,7 @@ function misaoDiariaReceberRecompensa() {
         "/10";
 
       treino = 0;
+      TurnoDeLutaCentopeia = 0;
       RecompensaDaMisaoDiaria = 0;
       document.getElementById("idtreino").innerHTML = "Um novo dia começou";
     } else {
@@ -924,15 +1093,8 @@ function misaoDiariaReceberRecompensa() {
         "/10";
 
       alert(
-        "Receba as recompensas do dia 5 [3 Pontos de atributos - Recuperação total da Fadiga - Caixa misteriosa contém 1 Ponto extra de Atributo]",
+        "Receba as recompensas do dia 5 [3 Pontos de atributos - Recuperação total da Fadiga - Caixa misteriosa vazia]",
       );
-
-         atributo = atributo + 1;
-      document.getElementById("idatributo").innerHTML =
-        "Disponíveis: " + atributo;
-
-        document.getElementById("idAlertaNoMenuAtributos").innerHTML =
-        "⚠️ Atributos";
 
       document.getElementById(
         "idRetornoMissaoDiariaPocaoDeRecuperacao",
@@ -947,6 +1109,7 @@ function misaoDiariaReceberRecompensa() {
         "/30";
 
       treino = 0;
+      TurnoDeLutaCentopeia = 0;
       RecompensaDaMisaoDiaria = 0;
       document.getElementById("idtreino").innerHTML = "Um novo dia começou";
     } else {
@@ -1008,6 +1171,7 @@ function misaoDiariaReceberRecompensa() {
         "/50";
 
       treino = 0;
+      TurnoDeLutaCentopeia = 0;
       RecompensaDaMisaoDiaria = 0;
       document.getElementById("idtreino").innerHTML = "Um novo dia começou";
 
@@ -1080,6 +1244,7 @@ function misaoDiariaReceberRecompensa() {
         "/100";
 
       treino = 0;
+      TurnoDeLutaCentopeia = 0;
       RecompensaDaMisaoDiaria = 0;
       document.getElementById("idtreino").innerHTML = "Um novo dia começou";
     } else {
@@ -1138,13 +1303,14 @@ function misaoDiariaReceberRecompensa() {
         "/250";
 
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
-        "Faça a compra de 150 Poções de Vida na loja: " +
+        "Faça a compra de 125 Poções de Vida na loja: " +
         SomaDaPocaoDeVida +
-        "/150";
+        "/125";
 
       document.getElementById("idMissaoDiariaPedrasDeEssencia").innerHTML = "";
 
       treino = 0;
+      TurnoDeLutaCentopeia = 0;
       RecompensaDaMisaoDiaria = 0;
       document.getElementById("idtreino").innerHTML = "Um novo dia começou";
     } else {
@@ -1155,7 +1321,7 @@ function misaoDiariaReceberRecompensa() {
 
   if (dia === 9) {
     if (
-      SomaDaPocaoDeVida > 149 &&
+      SomaDaPocaoDeVida > 124 &&
       SomaDosCristais > 9999 &&
       RecompensaDiaria === 8 &&
       treino === 100 &&
@@ -1205,6 +1371,7 @@ function misaoDiariaReceberRecompensa() {
         "/180";
 
       treino = 0;
+      TurnoDeLutaCentopeia = 0;
       RecompensaDaMisaoDiaria = 0;
       document.getElementById("idtreino").innerHTML = "Um novo dia começou";
     } else {
@@ -1278,6 +1445,11 @@ progresso.setAttribute("style", "width: " + fadiga + "%");
 const progresso2 = document.querySelector(".barraVida div");
 
 progresso2.setAttribute("style", "width: " + vida + "%");
+
+const progresso3 = document.querySelector(".barraMana div");
+
+progresso3.setAttribute("style", "width: " + mana + "%");
+
 /* Barra de vida e fadiga */
 
 /* INÍCIO DA LUTA GOBLIN */
@@ -1323,31 +1495,30 @@ function LutaContraGoblinBotao() {
     document.getElementById("idPedrasDeEssenciaGoblin").innerHTML =
       "💎 Pedras de Essência: " + SomaPedraDeEssenciaGoblin;
 
-    document.getElementById("idpedrainventario").innerHTML =
-      "⚠️ Pedras de Essência: " + PedraDeEssencia;
+    document.getElementById("idpedrainventario").innerHTML =  "⚠️ Pedras de Essência: " + PedraDeEssencia;
+
+      document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
 
     document.getElementById("idQuadroDeRetornoGoblin").innerHTML =
-      "✨ VITÓRIA ✨ Você derrotou um Goblin [Recompensas: 1 ponto de experiência - 5 pontos distribuidos em seus atributos - 1 Pedra de essência]";
+      "✨ VITÓRIA ✨ Você derrotou um Goblin [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - 1 Pedra de essência]";
 
     if (Goblin > 9) {
       atributo = atributo + 1;
-      alert(
-        "Parabéns você trocou de Título e ganhou 1 Ponto de atributo. Novo título: Exterminador de Goblins",
-      );
-      document.getElementById("idtitulo").innerHTML =
-        "Título: Exterminador de Goblins";
+      alert("Parabéns você trocou de Título e ganhou 1 Ponto de atributo. Novo título: Exterminador de Goblins", );
 
- document.getElementById("idTituloAlerta").innerHTML =
-        "⚠️";
+      document.getElementById("idtitulo").innerHTML = "Novo Título disponível";
 
-        document.getElementById("idAlertaNoMenuAtributos").innerHTML =
-        "⚠️ Atributos";
+ document.getElementById("idTituloAlerta").innerHTML = "⚠️";
 
-      document.getElementById("idCheckGoblin").innerHTML =
-        "✅ Título Exterminador de Goblins: Obtida ao derrotar todos os Goblins.";
+        document.getElementById("idAlertaNoMenuAtributos").innerHTML =  "⚠️ Atributos";
 
-      document.getElementById("idatributo").innerHTML =
-        "Disponíveis: " + atributo;  
+        document.getElementById("idCheckGoblins").innerHTML =   "⚠️ Título: Exterminador de Goblins";
+
+        document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+        document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+        document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
+
+      document.getElementById("idatributo").innerHTML = "Disponíveis: " + atributo;  
 
     }
 
@@ -1464,7 +1635,7 @@ function LutaContraKandiaruBotao() {
     document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
 
     document.getElementById("idQuadroDeRetornoKandiaru").innerHTML =
-      "✨ VITÓRIA ✨ Você sobreviveu ao Templo de Cartenon [Recompensas: Habilidade Saúde e longevidade -  5 pontos distribuidos em seus atributos]";
+      "✨ VITÓRIA ✨ Você sobreviveu ao Templo de Cartenon [Recompensas: Habilidade Saúde e longevidade -  4 pontos distribuidos em seus atributos]";
 
 document.getElementById("idCheckSaudelongevidade").innerHTML =
       "⚠️ Habilidade: Saúde e longevidade";
@@ -1717,7 +1888,8 @@ function FuncaoSaudeElogenvidade() {
       mana = 0;
     }
     document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-      "🪄 Mana: " + mana + "/" + AumentoDoNivelDaMana;
+      "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
 
     vida = 100;
     progresso2.setAttribute("style", "width: " + vida + "%");
@@ -1744,7 +1916,8 @@ if (SaudeElogenvidadeNivel2 === 1){
       mana = 0;
     }
     document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-      "🪄 Mana: " + mana + "/" + AumentoDoNivelDaMana;
+    "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
 
     vida = 100;
     progresso2.setAttribute("style", "width: " + vida + "%");
@@ -1851,11 +2024,12 @@ function LutaContraLycanBotao() {
     document.getElementById("idPresaDeLycan").innerHTML =
       "💰 Presas de Lycan: " + SomaDaPresaDeLycan;
 
-    document.getElementById("idPresainventario").innerHTML =
-      "⚠️ Presa de Lycan: " + PresaDeLycan;
+    document.getElementById("idPresainventario").innerHTML = "⚠️ Presa de Lycan: " + PresaDeLycan;
+
+    document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
 
     document.getElementById("idQuadroDeRetornoLycan").innerHTML =
-      "✨ VITÓRIA ✨ Você derrotou um Lycan [Recompensas: 2 pontos de experiência - 5 pontos distribuidos em seus atributos - 1 Presa de Lycan]";
+      "✨ VITÓRIA ✨ Você derrotou um Lycan [Recompensas: 2 pontos de experiência - 4 pontos distribuidos em seus atributos - 1 Presa de Lycan]";
 
     if (Lycan > 19) {
       atributo = atributo + 1;
@@ -1865,8 +2039,9 @@ function LutaContraLycanBotao() {
       document.getElementById("idtitulo").innerHTML =
         "Título: Assassino de Lobos";
 
- document.getElementById("idTituloAlerta").innerHTML =
-        "⚠️";
+ document.getElementById("idTituloAlerta").innerHTML =  "⚠️";
+
+ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
 
       document.getElementById("idCheckLobos").innerHTML =
         "✅ Título Assassino de Lobos: Obtida ao derrotar todos os Lycan.";
@@ -2073,11 +2248,12 @@ function LutaContraKasakaBotao() {
 
     document.getElementById("idPedrasDeEssenciaKasaka").innerHTML =
       "💎 Pedras de Essência: " + SomaPedraDeEssenciaKasaka;
-    document.getElementById("idpedrainventario").innerHTML =
-      "⚠️ Pedras de Essência: " + PedraDeEssencia;
+    document.getElementById("idpedrainventario").innerHTML = "⚠️ Pedras de Essência: " + PedraDeEssencia;
+
+      document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
 
     document.getElementById("idQuadroDeRetornoKasaka").innerHTML =
-      "✨ VITÓRIA ✨ Você derrotou a Kasaka [Recompensas: 4 pontos de experiência - 5 pontos distribuidos em seus atributos - 1 Pedra de essência - Adaga Presa Venenosa de Kasaka - Habilidade: Arrancada]";
+      "✨ VITÓRIA ✨ Você derrotou a Kasaka [Recompensas: 4 pontos de experiência - 4 pontos distribuidos em seus atributos - 1 Pedra de essência - Adaga Presa Venenosa de Kasaka - Habilidade: Arrancada]";
 
     document.getElementById("idCheckArrancada").innerHTML =
       "⚠️ Habilidade: Arrancada";
@@ -2227,49 +2403,6 @@ function AnalisarLutaContraKasakaBotao() {
 
 /*FIM DO BOTÃO ANALISAR LUTA Kasaka*/
 
-
-
-/*início da fução Deus Nível */
-
-function deus() {
-
-
-  
-
-
-  agilidade = 700;
-  forca = 550;
-  percepcao = 600;
-  inteligencia = 600;
-  experienciaParaUsarNasHabilidades = 750;
-  
-  fadiga = 0;
-  vida = 100;
-  
-  cristal = 70000;
-  SomaDosCristais =  70000;
-  ouro = 2800;
-  SomaDaPocaoDeRecuperacao = 2300;
-  SomaDaPocaoDeVida = 13000;
-  SomaDaPedraDeEssenciaParaMissaDiaria = 120;
-  
-  SomaDaPresaDeLycan = 20;
-  PresaDeLycan = 20;
-  Lycan = 20;
-  Kasaka = 1;
-  Cerberus = 1;
-  Kandiaru = 1;
-  Cacadores = 1;
-  Kang = 1;
-  
-  atributo = 100;
-  
-  
-  
-    alert("Você achou um Easter Egg e virou Deus no jogo, aproveite os prêmios");
-  }
-  
-  /*fim da fução Deus*/
   
   /*Início da função vender Presas de Lycan*/
   
@@ -2278,7 +2411,7 @@ function deus() {
       PresaDeLycan = PresaDeLycan - 1;
   
       document.getElementById("idvenderpresa").innerHTML =
-        "Notificação: Venda realizada com sucesso";
+        "Venda realizada com sucesso";
   
       document.getElementById("idPresainventario").innerHTML =
         "Presa de Lycan: " + PresaDeLycan;
@@ -2301,8 +2434,9 @@ function deus() {
      /*Início da função vender cristais 100*/
   if (cristal > 99)
     if (cristal > 99) {
-      document.getElementById("idvendercristal").innerHTML =
-        "Notificação: Venda realizada com sucesso";
+
+       document.getElementById("idvendercristal").innerHTML =
+        "Venda realizada com sucesso";
   
       cristal = cristal - 100;
   
@@ -2315,6 +2449,9 @@ function deus() {
       ouro = ouro + 10;
   
       document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+        
+
     } else {
       document.getElementById("idminerarcristal").innerHTML = "";
   
@@ -2333,8 +2470,12 @@ function deus() {
     /* Início da função vender cristais 10*/
     else {
     if (cristal > 9) {
+
+ 
+     
+
       document.getElementById("idvendercristal").innerHTML =
-        "Notificação: Venda realizada com sucesso";
+        "Venda realizada com sucesso";
   
         document.getElementById("idAlertaNoMenuInventario").innerHTML =
         "Inventário";
@@ -2350,6 +2491,7 @@ function deus() {
       ouro = ouro + 1;
   
       document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
     } else {
       document.getElementById("idminerarcristal").innerHTML = "";
   
@@ -2373,8 +2515,10 @@ function deus() {
   
   function funcaovendercristal100() {
     if (cristal > 99) {
+
+
       document.getElementById("idvendercristal").innerHTML =
-        "Notificação: Venda realizada com sucesso";
+        "Venda realizada com sucesso";
   
       cristal = cristal - 100;
   
@@ -2406,14 +2550,13 @@ function deus() {
   
   function funcaovenderpedra() {
   
-    document.getElementById("idAlertaNoMenuInventario").innerHTML =
-          "Inventário";
+    document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
   
     if (PedraDeEssencia > 0) {
       PedraDeEssencia = PedraDeEssencia - 1;
   
       document.getElementById("idvenderpedra").innerHTML =
-        "Notificação: Venda realizada com sucesso";
+        "Venda realizada com sucesso";
   
       document.getElementById("idpedrainventario").innerHTML =
         "Pedra de Essência: " + PedraDeEssencia;
@@ -2481,7 +2624,8 @@ function deus() {
   
       document.getElementById("idItemColeiraAdquirida").innerHTML =
         "✅ Coleira do Guardião";
-  
+
+        document.getElementById("idAlertaNoMenuInventario").innerHTML =  "Inventário";
   
       document.getElementById("idRetornoColeira1").innerHTML = "+ 20";
         document.getElementById("idRetornoColeira2").innerHTML = "+ 20";
@@ -2493,44 +2637,95 @@ function deus() {
   
   /* Fim da função equipar Coleira do Guardião */
   
-  /* Início da habilidade Arrancada
-  function FuncaoArrancada() {
-    if (Kasaka === 0) {
-      document.getElementById("idRetornoArrancada").innerHTML =
-        "Habilidade será desbloqueada ao derrotar a Kasaka";
+  /* início da função equipar Toque do Dominador*/
+  
+  function funcaoEquiparToqueDoDominador() {
+    if (ToqueDoDominadorEquipada === 1) {
+      document.getElementById("idRetornoEquiparToqueDoDominadorEquipada").innerHTML =
+        "Habilidade já em uso";
+    } 
+    
+    else if (Igris < 3 && ToqueDoDominadorEquipada === 0){
+      document.getElementById("idRetornoEquiparToqueDoDominadorEquipada").innerHTML =
+        "Necessário derrotar o Cavaleiro Comandante Igris o Vermelho-Sangue para adquirir essa Habilidade";
     }
+    
+    else if (Igris === 3 && ToqueDoDominadorEquipada === 0) {
+      ToqueDoDominadorEquipada = 1;
   
-    if (Kasaka > 0 && Arrancada === 1) {
-      document.getElementById("idRetornoArrancada").innerHTML =
-        "Buff já aplicado";
+      inteligencia = inteligencia + 10;
+    document.getElementById(
+      "idinteligencia").innerHTML ="🧠 Inteligência: " + inteligencia;
+
+      document.getElementById("idRetornoToqueDoDominadorEquipada").innerHTML = "+ 10";
+  
+      document.getElementById("idRetornoEquiparToqueDoDominadorEquipada").innerHTML =
+        "Habilidade em uso";
+  
+      document.getElementById("idItemToqueDoDominadorAdquirida").innerHTML =
+        "✅ Toque do Dominador";
+
+        document.getElementById("idAlertaNoMenuInventario").innerHTML =  "Inventário";
+        
+    } 
+  }
+  
+  /* Fim da função equipar Toque do Dominador */
+
+  /* início do Elixir da Vida */
+  
+  function FuncaoElixirDaVida() {
+
+    if (Cerberus < 1) {
+      document.getElementById("idRetornoElixirDaVida").innerHTML =
+        "Necessário derrotar o Cerberus Guardião do Inferno para adquirir essa Habilidade";
+    } 
+    
+    else if(Cerberus > 0 && ElixirDaVida === 0 && FragmentoDaAvoreDaVida !== 1 && AguaNascenteDaFlorestaEcoante !== 1 && SanguePurificadoDoMonarcaDemoniaco !== 1){
+      document.getElementById("idRetornoElixirDaVida").innerHTML =
+      "Ceberus derrotado [Necessário todos os ingredientes para criar o Elixir da Vida]";
+      document.getElementById("idAlertaNoMenuHabilidade").innerHTML = "Habilidades";
     }
+
+    else if(Cerberus > 0 && ElixirDaVida === 0 && FragmentoDaAvoreDaVida === 1 && AguaNascenteDaFlorestaEcoante === 1 && SanguePurificadoDoMonarcaDemoniaco === 1) {
+      ElixirDaVida = 1;
   
-    if (Kasaka > 0 && Arrancada === 0 && mana > 5) {
-      Arrancada = 1;
-      agilidade = agilidade + 10;
   
-      document.getElementById("idagilidade").innerHTML =
-        "🦵 Agilidade: " + agilidade;
+      document.getElementById("idRetornoElixirDaVida").innerHTML =
+        "Elixir da Vida criado com sucesso. Toque na imagem novamente quando quiser usar!";
   
-      document.getElementById("idRetornoArrancadaNoStatus").innerHTML = " + 10";
+        document.getElementById("idCheckElixirDaVida").innerHTML =
+        "✅ Habilidade: Elixir da Vida";
   
-      document.getElementById("idCheckArrancada").innerHTML =
-        "✅ Habilidade: Arrancada";
+    } else if(ElixirDaVida === 1) {
+      ElixirDaVida = 2;
+
+      vida = 100;
+      progresso2.setAttribute("style", "width: " + vida + "%");
+      document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
   
-      mana = mana - 6;
+      fadiga = 0;
+      progresso.setAttribute("style", "width: " + fadiga + "%");
+      document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+      mana = 100;
+      if (mana > AumentoDoNivelDaMana) {
+        mana = AumentoDoNivelDaMana;
+      }
       document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-        "🪄 Mana: " + mana + "/" + AumentoDoNivelDaMana;
+      "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
+
+      document.getElementById("idRetornoElixirDaVida").innerHTML =
+        "Você usou o Elixir da Vida";
   
-      document.getElementById("idRetornoArrancada").innerHTML = "Buff aplicado";
-    }
-  
-    if (Kasaka > 0 && Arrancada === 0 && mana < 6) {
-      document.getElementById("idRetornoArrancada").innerHTML =
-        "Mana insuficiente";
+      document.getElementById("idCheckElixirDaVida").innerHTML =
+        "⛔Habilidade: Elixir da Vida (Não pode mais ser usada)";
     }
   }
-   Fim da habilidade Arrancada */
   
+  /* Fim do Elixir da Vida */
+
   /* início da função comprar poção de recuperação */
   function funcaoComprarPocaoRecuperacao() {
   
@@ -2787,12 +2982,12 @@ function deus() {
   
     if (fadiga > 80) {
       document.getElementById("idFadigaInsectoids").innerHTML =
-        "🪫Fadiga: 80%/: " + fadiga + "%" + " ❌";
+        "🪫Fadiga: 80%/" + fadiga + "%" + " ❌";
     }
   
     if (fadiga < 81) {
       document.getElementById("idFadigaInsectoids").innerHTML =
-        "🪫Fadiga: 20%/: " + fadiga + "%" + " ✅";
+        "🪫Fadiga: 20%/" + fadiga + "%" + " ✅";
     }
   
     if (agilidade < 31) {
@@ -2842,52 +3037,49 @@ function deus() {
   /*INÍCIO DA LUTA Centopeias*/
   function LutaContraCentopeiasBotao() {
 
-    document.getElementById("idAlertaNoMenuHabilidade").innerHTML =
-    "⚠️ Habilidades";
-
-    if (vida < 50 || fadiga > 50) {
+   
+    if (vida < 50 || fadiga > 49 && TurnoDeLutaCentopeia === 0) {
       document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
         "Vida ou Fadiga insuficiente";
     } 
+
+    else if (TurnoDeLutaCentopeia === 1){
+      document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
+        "Você já realizou a Missão de Penalidade: Sobrevivência";
+    }
     
-else if (
-      vida > 49 &&
-      fadiga < 51 &&
-      forca > 50 &&
-      agilidade > 50
-    ) {
-      vida = vida - 50;
-      if (vida < 1) {
-        vida = 0;
-      }
-  
+else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLutaCentopeia === 0 && treino < 100 && Centopeias < 3) {
+ 
+  document.getElementById("idAlertaNoMenuHabilidade").innerHTML =
+    "⚠️ Habilidades";
+
+      treino = 100;
+      document.getElementById("idtreino").innerHTML = "⛔ Você optou por realizar a Missão de Penalidade: Sobrevivência ";
+
+      TurnoDeLutaCentopeia = 1;
+
+      vida = vida - 50; if (vida < 1) { vida = 0;}
       progresso2.setAttribute("style", "width: " + vida + "%");
       document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
   
-      fadiga = fadiga + 50;
-      if (fadiga > 99) {
-        fadiga = 100;
-      }
+      fadiga = fadiga + 50; if (fadiga > 99) { fadiga = 100; }
       progresso.setAttribute("style", "width: " + fadiga + "%");
       document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
   
       Centopeias = Centopeias + 1;
       document.getElementById("idPopulacaoCentopeias").innerHTML =
-        "🚶‍♂️População: " + Centopeias + "/?";
-  
-      document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
-        "✨ VITÓRIA ✨ Você derrotou uma Centopeia [Recompensa: 20 pontos de experiência]";
-  
+        "🚶‍♂️População: " + Centopeias + "/3";
+
       experienciaCentopeias = experienciaCentopeias + 20;
       experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 20;
-      document.getElementById("idexperienciaCentopeias").innerHTML =
-        "🏆 Experiência: " + experienciaCentopeias;
-  
+      document.getElementById("idexperienciaCentopeias").innerHTML = "🏆 Experiência: " + experienciaCentopeias;
       document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
   
       document.getElementById("idLutaContraCentopeiasBotao").innerHTML = "Lutar novamente";
 
-  
+      document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
+      "✨ VITÓRIA ✨ Você derrotou uma Centopeia [Recompensa: 20 pontos de experiência]";
+      VitoriaContraAsCentopeias = 1;
         document.getElementById("idAlertaNoMenuHabilidade").innerHTML =
           "⚠️ Habilidade";
   
@@ -2936,20 +3128,23 @@ else if (
   
   }
   /*Fim de remover Intenção Assassina*/
-  
+  } 
+    
+    else if(vida > 49 && fadiga < 51 && forca < 51 &&  agilidade < 51 && TurnoDeLutaCentopeia === 0 && treino < 100){
 
-    } else {
-      vida = vida - 50;
-      if (vida < 1) {
-        vida = 0;
-      }
+      document.getElementById("idAlertaNoMenuHabilidade").innerHTML =
+    "⚠️ Habilidades";
+
+      treino = 100;
+      document.getElementById("idtreino").innerHTML = "Você optou por realizar a Missão de Penalidade: Sobrevivência ";
+
+      TurnoDeLutaCentopeia = 1;
+
+      vida = vida - 50; if (vida < 1) {  vida = 0; }
       progresso2.setAttribute("style", "width: " + vida + "%");
       document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
   
-      fadiga = fadiga + 50;
-      if (fadiga > 99) {
-        fadiga = 100;
-      }
+      fadiga = fadiga + 50; if (fadiga > 99) { fadiga = 100;  }
       progresso.setAttribute("style", "width: " + fadiga + "%");
       document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
   
@@ -2959,19 +3154,28 @@ else if (
         experienciaCentopeias = experienciaCentopeias + 2;
         experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 2;
         document.getElementById("idexperienciaCentopeias").innerHTML = "🏆 Experiência: " + experienciaCentopeias;
-    
         document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
 
-      document.getElementById("idLutaContraInsectoidsBotao").innerHTML =
-        "Tentar novamente";
-
-       
+      document.getElementById("idLutaContraInsectoidsBotao").innerHTML = "Tentar novamente";     
     }
+
+    else if (TurnoDeLutaCentopeia === 0 && treino > 99){
+      document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
+        "⛔ Você optou por realizar o Treino Diário: Ganho de Força";
+    }
+
+    else if (Centopeias === 3){    
+      document.getElementById("idQuadroDeRetornoCentopeias").innerHTML = "Você Já derrotou as 3 Centopeias ";   
+    }
+
+
   }
   /*FIM DA LUTA Centopeia*/
 
   /*INÍCIO DO BOTÃO ANALISAR LUTA Centopeia*/
   function AnalisarLutaContraCentopeiasBotao() {
+
+ 
     document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
       "Análise dos seus Status e das Centopeias";
   
@@ -2990,12 +3194,12 @@ else if (
   
     if (fadiga > 50) {
       document.getElementById("idFadigaCentopeias").innerHTML =
-        "🪫Fadiga: 50%/: " + fadiga + "%" + " ❌";
+        "🪫Fadiga: 50%/" + fadiga + "%" + " ❌";
     }
   
     if (fadiga < 51) {
       document.getElementById("idFadigaCentopeias").innerHTML =
-        "🪫Fadiga: 50%/: " + fadiga + "%" + " ✅";
+        "🪫Fadiga: 50%/" + fadiga + "%" + " ✅";
     }
   
     if (agilidade < 51) {
@@ -3018,7 +3222,7 @@ else if (
         "💪 Força: 50/" + forca + " ❌";
     }
 
-  
+
   }
   
   /* FIM DO BOTÃO ANALISAR LUTA Centopeia */
@@ -3030,7 +3234,9 @@ else if (
       "idQuadroDeRetornoAranha")
      .innerHTML =
      "Vida ou Fadiga insuficiente";
-   } else if (vida > 0 && fadiga <
+   } 
+   
+   else if (vida > 0 && fadiga <
     101 && Aranha > 0) {
     document.getElementById(
       "idQuadroDeRetornoAranha")
@@ -3080,14 +3286,14 @@ else if (
      "💎 Pedras de Essência: " +
      SomaPedraDeEssenciaAranha;
     document.getElementById(
-      "idpedrainventario").innerHTML =
-     "⚠️ Pedras de Essência: " +
-     PedraDeEssencia;
+      "idpedrainventario").innerHTML =  "⚠️ Pedras de Essência: " +  PedraDeEssencia;
   
+      document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
+
     document.getElementById(
       "idQuadroDeRetornoAranha")
      .innerHTML =
-     "✨ VITÓRIA ✨ Você derrotou a Aranha Gigante [Recompensas: 1 ponto de experiência - 5 pontos distribuidos em seus atributos - 1 Pedra de essência]";
+     "✨ VITÓRIA ✨ Você derrotou a Aranha Gigante [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - 1 Pedra de essência]";
   
   
     SomaDaPedraDeEssenciaParaMissaDiaria
@@ -3357,7 +3563,7 @@ else if (
     document.getElementById(
       "idQuadroDeRetornoCacadores")
      .innerHTML =
-     "✨ VITÓRIA ✨ Você derrotou um Caçador [Recompensas: 1 ponto de experiência - 5 pontos distribuidos em seus atributos - Habilidade Intenção Assassina]";
+     "✨ VITÓRIA ✨ Você derrotou um Caçador [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - Habilidade Intenção Assassina]";
   
   
    document.getElementById("idCheckAssassina").innerHTML =
@@ -3634,7 +3840,8 @@ else if (
   
       mana = mana - 4;
       document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-        "🪄 Mana: " + mana + "/" + AumentoDoNivelDaMana;
+      "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
   
       document.getElementById("idRetornoAssassina").innerHTML = "Buff aplicado";
     }
@@ -3659,7 +3866,7 @@ else if (
     document.getElementById(
       "idQuadroDeRetornoCerberus")
      .innerHTML =
-     "✨ Você derrotou o Cerberus ✨";
+     "✨ Você já derrotou o Cerberus ✨";
    } else if (
     vida === 100 &&
     fadiga === 0 &&
@@ -3699,13 +3906,12 @@ else if (
     document.getElementById(
       "idQuadroDeRetornoCerberus")
      .innerHTML =
-     "✨ VITÓRIA ✨ Você derrotou o Cerbero [Recompensas: 1 ponto de experiência - 5 pontos distribuidos em seus atributos - 1 Pedra de essência - Coleira do Guardião]";
+     "✨ VITÓRIA ✨ Você derrotou o Cerbero [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - 1 Pedra de essência - Coleira do Guardião - Habilidade: Elixir da Vida]";
   
-  document.getElementById(
-      "idItemColeiraAdquirida")
-     .innerHTML =
-     "⚠️ Coleira do Guardião";
-  
+  document.getElementById("idItemColeiraAdquirida").innerHTML = "⚠️ Coleira do Guardião";
+  document.getElementById("idCheckElixirDaVida").innerHTML = "⚠️ Habilidade: Elixir da Vida";
+  document.getElementById("idAlertaNoMenuHabilidade").innerHTML = "⚠️ Habilidades";
+  document.getElementById("idAlertaNoMenuInventario").innerHTML =  "⚠️ Inventário";
   
   
   
@@ -3929,12 +4135,14 @@ else if (
   
   /* INÍCIO DA LUTA DO MR. KANG */
   function LutaContraKangBotao() {
-   if (vida < 51 || fadiga > 69) {
+   if (vida < 50 || fadiga > 70) {
     document.getElementById(
       "idQuadroDeRetornoKang")
      .innerHTML =
      "Vida ou Fadiga insuficiente";
-   } else if (vida > 0 && fadiga <
+   } 
+   
+   else if (vida > 0 && fadiga <
     100 && Kang > 0) {
     document.getElementById(
       "idQuadroDeRetornoKang")
@@ -3980,7 +4188,7 @@ else if (
     document.getElementById(
       "idQuadroDeRetornoKang")
      .innerHTML =
-     "✨ VITÓRIA ✨ Você derrotou o Mr. Kang [Recompensas: 1 ponto de experiência - 5 pontos distribuidos em seus atributos - Habilidade: Furtividade]";
+     "✨ VITÓRIA ✨ Você derrotou o Mr. Kang [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - Habilidade: Furtividade]";
   
    document.getElementById(
       "idCheckFurtividade")
@@ -4149,17 +4357,11 @@ else if (
    }
   
    if (fadiga > 70) {
-    document.getElementById(
-      "idFadigaKang").innerHTML =
-     "🪫Fadiga: 30%/" +
-     fadiga + "%" + " ❌";
+    document.getElementById("idFadigaKang").innerHTML = "🪫Fadiga: 30%/" +  fadiga + "%" + " ❌";
    }
   
-   if (fadiga < 69) {
-    document.getElementById(
-      "idFadigaKang").innerHTML =
-     "🪫Fadiga: 30%/" +
-     fadiga + "%" + " ✅";
+   if (fadiga < 71 ) {
+    document.getElementById("idFadigaKang").innerHTML = "🪫Fadiga: 30%/" +  fadiga + "%" + " ✅";
    }
   
    if (agilidade < 86) {
@@ -4244,8 +4446,9 @@ else if (
   
       mana = mana - 15;
       document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-        "🪄 Mana: " + mana + "/" + AumentoDoNivelDaMana;
-  
+      "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
+
       document.getElementById("idRetornoFurtividade").innerHTML = "Buff aplicado";
     }
   
@@ -4259,8 +4462,94 @@ else if (
    
   }
   /* Fim da habilidade Furtividade */
+
+  /*Início da habilidade Provocar*/
+  function FuncaoProvocar() {
   
-  /* INÍCIO DO BOTÃO ANALISAR  DA LUTA DO Igris */
+  if (Provocar === 1) {
+      document.getElementById("idRetornoProvocar").innerHTML =
+        "Buff já aplicado";
+    }
+  
+    if (Provocar === 0 && mana > 29) {
+      Provocar = 1;
+      
+  
+  agilidade = agilidade + 40;
+    percepcao = percepcao + 10;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  
+      document.getElementById("idRetornoProvocarNoStatus").innerHTML = " + 40";
+      document.getElementById("idRetornoProvocarNoStatus2").innerHTML = " + 10";
+  
+      document.getElementById("idCheckProvocar").innerHTML =
+        "✅ Habilidade: Provocar";
+  
+      mana = mana - 30;
+      document.getElementById("idAumentoDoNivelDaMana").innerHTML =
+      "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
+
+      document.getElementById("idRetornoProvocar").innerHTML = "Buff aplicado";
+    }
+  
+    if (Provocar === 0 && mana < 30) {
+      document.getElementById("idRetornoProvocar").innerHTML =
+        "Mana insuficiente";
+    }
+  
+   
+  }
+  /* Fim da habilidade Provocar */
+
+  /*Início da habilidade Fortalecimento*/
+  function FuncaoFortalecimento() {
+  
+    if (Fortalecimento === 1) {
+        document.getElementById("idRetornoFortalecimento").innerHTML =
+          "Buff já aplicado";
+      }
+    
+      if (Fortalecimento === 0 && mana > 29) {
+        Fortalecimento = 1;
+        
+    
+        agilidade = agilidade + 10;
+        forca = forca + 10;
+        percepcao = percepcao + 10;
+        inteligencia = inteligencia + 10;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = " + 10";
+        document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = " + 10";
+        document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = " + 10";
+        document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = " + 10";
+    
+        document.getElementById("idCheckFortalecimento").innerHTML =
+          "✅ Habilidade: Fortalecimento";
+    
+        mana = mana - 30;
+        document.getElementById("idAumentoDoNivelDaMana").innerHTML =
+        "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+        progresso3.setAttribute("style", "width: " + mana + "%");
+  
+        document.getElementById("idRetornoFortalecimento").innerHTML = "Buff aplicado";
+      }
+    
+      if (Fortalecimento === 0 && mana < 30) {
+        document.getElementById("idRetornoFortalecimento").innerHTML =
+          "Mana insuficiente";
+      }
+    
+     
+    }
+    /* Fim da habilidade Fortalecimento */
+  
+  /* INÍCIO DO BOTÃO ANALISAR LUTA DO Igris */
   function AnalisarLutaContraIgrisBotao() {
    document.getElementById(
      "idQuadroDeRetornoIgris")
@@ -4310,7 +4599,7 @@ else if (
    if (agilidade > 120) {
     document.getElementById(
       "idAgilidadeIgris").innerHTML =
-     "🦵 Agilidade: 120" +
+     "🦵 Agilidade: 120/" +
      agilidade + " ✅";
    }
   
@@ -4432,7 +4721,48 @@ else if (
   
   }
   /*Fim de remover Furtividade*/
+
+   /* Início de remover Provocar */
+   if (Provocar === 1){
   
+    Provocar = 0;
+    
+    document.getElementById("idCheckProvocar").innerHTML =
+          "Habilidade: Provocar";
+    
+          agilidade = agilidade - 40;
+          percepcao = percepcao - 10;
+          document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+          document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        
+            document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+            document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";    
+    }
+    /*Fim de remover Provocar*/  
+
+    /* Início de remover Fortalecimento */
+   if (Fortalecimento === 1){
+  
+    Fortalecimento = 0;
+    
+    agilidade = agilidade - 10;
+        forca = forca - 10;
+        percepcao = percepcao - 10;
+        inteligencia = inteligencia - 10;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+    
+        document.getElementById("idCheckFortalecimento").innerHTML =
+          "Habilidade: Fortalecimento";   
+    }
+    /*Fim de remover Fortalecimento*/ 
   
     /* Início de remover Arrancada */
   if (Arrancada === 1){
@@ -4479,19 +4809,18 @@ else if (
      document.getElementById(
       "idQuadroDeRetornoIgris")
      .innerHTML =
-     "✨ VITÓRIA ✨ Você derrotou o Igris [Recompensas: Elmo do Cavaleiro Carmesim - Assassina de Cavaleiros disponível para compra - Novo título: Aquele que Superou a Adversidade]";
+     "✨ VITÓRIA ✨ Você derrotou o Igris [Recompensas: Elmo do Cavaleiro Carmesim - Assassina de Cavaleiros disponível para compra - Novo título: Aquele que Superou a Adversidade - Habilidade: Toque do Dominador]";
   
-     document.getElementById("idItemAssassinaCavaleirosAdquirida").innerHTML =
-        "⚠️ Assassina de Cavaleiros";
+     document.getElementById("idItemAssassinaCavaleirosAdquirida").innerHTML = "⚠️ Assassina de Cavaleiros";
   
-        document.getElementById("idItemElmoAdquirida").innerHTML =
-        "⚠️ Elmo do Cavaleiro Carmesim";
+        document.getElementById("idItemElmoAdquirida").innerHTML =  "⚠️ Elmo do Cavaleiro Carmesim";
+
+        document.getElementById("idItemToqueDoDominadorAdquirida").innerHTML =  "⚠️ Toque do Dominador";
+        
   
-  document.getElementById("idCheckAdversidade").innerHTML =
-          "✅ Título Aquele que Superou a Adversidade: Obtida ao derrotar o Igris.";
+  document.getElementById("idCheckAdversidade").innerHTML = "✅ Título Aquele que Superou a Adversidade: Obtida ao derrotar o Igris.";
   
-        document.getElementById("idtitulo").innerHTML =
-          "Título: Aquele que Superou a Adversidade";
+        document.getElementById("idtitulo").innerHTML = "Título: Aquele que Superou a Adversidade";
   
           alert(
           "Parabéns você trocou de Título. Novo título: Aquele que Superou a Adversidade",
@@ -4583,7 +4912,7 @@ else if (
   document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
   
   }
-  /* Fim de remover Intenção Assassina 12345678910*/
+  /* Fim de remover Intenção Assassina */
   
    } else {
     vida = vida - 100;
@@ -4800,7 +5129,48 @@ else if (
   }
   /*Fim de remover Furtividade*/
   
+  /* Início de remover Provocar */
+  if (Provocar === 1){
   
+    Provocar = 0;
+    
+    document.getElementById("idCheckProvocar").innerHTML =
+          "Habilidade: Provocar";
+    
+          agilidade = agilidade - 40;
+          percepcao = percepcao - 10;
+          document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+          document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        
+            document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+            document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";    
+    }
+    /*Fim de remover Provocar*/  
+
+     /* Início de remover Fortalecimento */
+   if (Fortalecimento === 1){
+  
+    Fortalecimento = 0;
+    
+    agilidade = agilidade - 10;
+        forca = forca - 10;
+        percepcao = percepcao - 10;
+        inteligencia = inteligencia - 10;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+    
+        document.getElementById("idCheckFortalecimento").innerHTML =
+          "Habilidade: Fortalecimento";   
+    }
+    /*Fim de remover Fortalecimento*/ 
+
     /* Início de remover Arrancada */
   if (Arrancada === 1){
   
@@ -4958,10 +5328,7 @@ else if (
     "Seguir com a Luta";
   
    if (vida < 100) {
-    document.getElementById(
-      "idVidaMagos").innerHTML =
-     "❤️ Vida: 100%/" + vida +
-     "%" + " ❌";
+    document.getElementById("idVidaMagos").innerHTML = "❤️ Vida: 100%/" + vida + "%" + " ❌";
    }
   
    if (vida === 100) {
@@ -5051,55 +5418,43 @@ else if (
       "idQuadroDeRetornoMagos")
      .innerHTML =
      "Vida ou Fadiga insuficiente";
-   } else if (vida > 0 && fadiga <
-    100 && Magos === 1) {
+   } 
+   
+   else if (vida > 0 && fadiga < 100 && Magos === 1) {
     document.getElementById(
       "idQuadroDeRetornoMagos")
      .innerHTML =
      "✨ Você já derrotou os Magos ✨";
-   } else if (
-    vida === 100 &&
-    fadiga === 0 &&
-    forca > 145 &&
-    agilidade > 140 &&
-    Magos === 0 &&
-    percepcao > 85 &&
-    inteligencia > 65
-   ) {
+   } 
+   
+   else if (vida === 100 && fadiga === 0 && forca > 145 && agilidade > 140 &&  Magos === 0 && percepcao > 85 && inteligencia > 65) {
+
+    document.getElementById("trocar-conteudo").innerHTML = "Clique aqui para aceitar a Classe Necromante [Monarca das Sombras]";
+
+    alert("Aonde o Jogador vai, o anjo da morte o segue. Qualquer caminho que o Jogador seguir estará repleto de cadáveres e o fedor de sangue permanecerá. Além disso, o Jogador anseia por grande poder e abriu seu próprio caminho sem depender de outros. Sua sede de poder invoca os espíritos que vagam pelo vale da morte. Os fantasmas convocados pelo exército das sombras seguirão as ordens do Jogador e obedecerão apenas o Jogador. Sua classe foi alterada para: Necromante - Monarca das Sombras");
+   
+    document.getElementById("idQuadroDeRetornoMagos").innerHTML = "✨ VITÓRIA ✨ Você derrotou os 6 Magos";
+    document.getElementById("idChecDosMagos").innerHTML = "⚠️ 6 Magos das Sombras";
+    document.getElementById("idChecDoIgris").innerHTML = "⚠️ Igris - O Vermelho-Sangue";
     vida = vida - 100;
-    if (vida < 1) {
-     vida = 0;
-    }
-  
-    progresso2.setAttribute("style",
-     "width: " + vida + "%");
-    document.getElementById("idvida")
-     .innerHTML = "❤️ Vida: " + vida +
-     "%";
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
   
     fadiga = fadiga + 100;
-    if (fadiga > 99) {
-     fadiga = 100;
-    }
-    progresso.setAttribute("style",
-     "width: " + fadiga + "%");
-    document.getElementById(
-      "idfadiga").innerHTML =
-     "🪫Fadiga: " + fadiga + "%";
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
   
-  Magos = 1;
+ Magos = 1;
     
   
+     document.getElementById("idLutaContraMagosBotao") .innerHTML = "Magos derrotado";
+
+
   
-    document.getElementById(
-      "idQuadroDeRetornoMagos")
-     .innerHTML =
-     "✨ VITÓRIA ✨";
-    
-     document.getElementById("idCheckExtracao").innerHTML =
-        "⚠️ Habilidade: Extração de Sombra";
+   
+ 
   
-  
+
      /*Início de remover Furtividade*/
   if (Furtividade === 1){
   
@@ -5118,8 +5473,49 @@ else if (
   }
   /*Fim de remover Furtividade*/
   
+  /* Início de remover Provocar*/
+   if (Provocar === 1){
   
-    /* Início de remover Arrancada */
+    Provocar = 0;
+    
+    document.getElementById("idCheckProvocar").innerHTML =
+          "Habilidade: Provocar";
+    
+          agilidade = agilidade - 40;
+          percepcao = percepcao - 10;
+          document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+          document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        
+            document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+            document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";    
+    }
+    /*Fim de remover Provocar*/  
+
+     /* Início de remover Fortalecimento */ 
+   if (Fortalecimento === 1){
+  
+    Fortalecimento = 0;
+    
+    agilidade = agilidade - 10;
+        forca = forca - 10;
+        percepcao = percepcao - 10;
+        inteligencia = inteligencia - 10;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+    
+        document.getElementById("idCheckFortalecimento").innerHTML =
+          "Habilidade: Fortalecimento";   
+    }
+    /*Fim de remover Fortalecimento*/ 
+    
+    /* Início de remover Arrancada */ 
   if (Arrancada === 1){
   
   Arrancada = 0;
@@ -5142,7 +5538,7 @@ else if (
   }
   /*Fim de remover Arrancada*/
   
-  /* Início de remover Intenção Assassina */
+  /* Início de remover Intenção Assassina */ 
   if (Assassina === 1){
   
   Assassina = 0;
@@ -5164,36 +5560,14 @@ else if (
   
   }
   /*Fim de remover Intenção Assassina*/
+
+ 
   
-    document.getElementById(
-      "idLutaContraMagosBotao")
-     .innerHTML =
-     "Magos derrotado";
-  
-    alert("Aonde o Jogador vai, o anjo da morte o segue. Qualquer caminho que o Jogador seguir estará repleto de cadáveres e o fedor de sangue permanecerá. Além disso, o Jogador anseia por grande poder e abriu seu próprio caminho sem depender de outros. Sua sede de poder invoca os espíritos que vagam pelo vale da morte. Os fantasmas convocados pelo exército das sombras seguirão as ordens do Jogador e obedecerão apenas o Jogador. [Sua classe foi alterada para: Necromante - Monarca das Sombras]");
-  
-  document.getElementById("idClasse").innerHTML =
-          "Classe: Necromante [Monarca das Sombras]";
-  
-/*Apagar todos os cards*/
-  document.getElementById("idDIVEsconderKandiaru").innerHTML = "";
-  document.getElementById("idDIVEsconderGoblin").innerHTML = "";
-  document.getElementById("idDIVEsconderLycan").innerHTML = "";
-  document.getElementById("idDIVEsconderKasaka").innerHTML = "";
-  document.getElementById("idDIVEsconderInsectoids").innerHTML = "";
-  document.getElementById("idDIVEsconderAranha").innerHTML = "";
-  document.getElementById("idDIVEsconderCacadores").innerHTML = "";
-  document.getElementById("idDIVEsconderCerberus").innerHTML = "";
-  document.getElementById("idDIVEsconderKang").innerHTML = "";
-  document.getElementById("idDIVEsconderYoo").innerHTML = "";
-  document.getElementById("idDIVEsconderIgris").innerHTML = "";
-  document.getElementById("idDIVEsconderMagos").innerHTML = "";
-/*Apagar todos os cards*/
-   } else {
+   } 
+   
+   else {
     vida = vida - 100;
-    if (vida < 1) {
-     vida = 0;
-    }
+    
   
     progresso2.setAttribute("style",
      "width: " + vida + "%");
@@ -5202,9 +5576,7 @@ else if (
      "%";
   
     fadiga = fadiga + 100;
-    if (fadiga > 99) {
-     fadiga = 100;
-    }
+    
     progresso.setAttribute("style",
      "width: " + fadiga + "%");
     document.getElementById(
@@ -5255,7 +5627,8 @@ function FuncaoArrancada() {
 
     mana = mana - 6;
     document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-      "🪄 Mana: " + mana + "/" + AumentoDoNivelDaMana;
+      "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
 
     document.getElementById("idRetornoArrancada").innerHTML = "Buff aplicado";
   }
@@ -5290,7 +5663,8 @@ if (ArrancadaNivel2 === 1){
 
     mana = mana - 6;
     document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-      "🪄 Mana: " + mana + "/" + AumentoDoNivelDaMana;
+      "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
 
     document.getElementById("idRetornoArrancada").innerHTML = "Buff aplicado";
   }
@@ -5410,55 +5784,238 @@ function funcaoatribuirpercepcao() {
 /*Fim da fução atribuir pontos na PERCEPÇÃO*/
 
 /*Início da habilidade Extração de Sombras IGRIS*/
-function FuncaoExtracao1() {
+function FuncaoExtracaoIgris() {
 
-  if (Magos === 0){
+  if (Magos < 2){
     document.getElementById("idRetornoExtracao1").innerHTML =
-      "Habilidade exclussiva da Classe Monarca das Sombras";
+      "Habilidade exclussiva da Classe Necromante [Monarca das Sombras] - Derrote os 6 Magos para utilizar essa Habilidade!";
   }
 
-    else if (Magos > 0 && mana === 20 && SombraIgris === 0){
+  else if (SombraIgris === 1){
+    document.getElementById("idRetornoExtracao1").innerHTML =
+     "Igris já está em batalha!";
+  }
+
+    else if (Magos > 1 && mana > 49 && SombraIgris === 0){
       SombraIgris = 1;
-    document.getElementById("idRetornoExtracao1").innerHTML =
-      "Alma extraída com sucesso";
+    document.getElementById("idRetornoExtracao1").innerHTML = "Alma extraída com sucesso";
 
-       document.getElementById("idCheckExtracao").innerHTML =
-      "Habilidade: Extração de Sombra";
+       document.getElementById("idChecDoIgris").innerHTML = "✅ Igris - O Vermelho-Sangue";
 
-      mana = mana - 20;
+      mana = mana - 50;
+      document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
 
-       document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-      "🪄 Mana: " + mana + "/" + AumentoDoNivelDaMana;
+
+      agilidade = agilidade + 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "+ 100";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+      forca = forca + 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "+ 120";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+      percepcao = percepcao + 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "+ 80";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+      inteligencia = inteligencia + 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "+ 60";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
   }
-   else if (Magos > 0 && mana < 20 && SombraIgris === 0){
+   else if (Magos > 1 && mana < 50 && SombraIgris === 0){
      document.getElementById("idRetornoExtracao1").innerHTML =
       "Mana insuficiente";
    }
+
+ 
+  
 }
 /*Fim da habilidade Extração de Sombras IGRIS*/
 
 /*Início da habilidade Extração de Sombras MAGOS*/
-function FuncaoExtracao2() {
+function FuncaoExtracaoMagos() {
 
-  if (Magos === 0){
-    document.getElementById("idRetornoExtracao2").innerHTML =
-      "Habilidade exclussiva da Classe Monarca das Sombras";
+  if (Magos < 2){
+    document.getElementById("idRetornoExtracaoMagos").innerHTML =
+      "Habilidade exclussiva da Classe Necromante [Monarca das Sombras] - Derrote os 6 Magos para utilizar essa Habilidade!";
   }
 
-    else if (Magos > 0 && mana > 9 && SombraMago === 0){
-      SombraMago = 1;
-    document.getElementById("idRetornoExtracao2").innerHTML =
-      "Alma extraída com sucesso";
-
-      document.getElementById("idCheckExtracao").innerHTML =
-      "Habilidade: Extração de Sombra";
-
- mana = mana - 10;
-
-       document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-      "🪄 Mana: " + mana + "/" + AumentoDoNivelDaMana;
+  else if (SombraMago === 6){
+    document.getElementById("idRetornoExtracaoMagos").innerHTML =
+     "Todos os 6 Magos já estão em batalha!";
   }
-  else if (Magos > 0 && mana < 10 && SombraMago === 0){
+
+    else if (Magos > 1 &&  mana > 9 && SombraMago === 0){
+      SombraMago = SombraMago + 1;
+    document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída com sucesso [1 Mago no campo de batalha]";
+
+      document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
+
+      mana = mana - 10;
+      document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
+
+      agilidade = agilidade + 24;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 24";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+      forca = forca + 23;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "+ 23";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+      percepcao = percepcao + 14;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "+ 14";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+      inteligencia = inteligencia + 11;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "+ 11";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+  }
+
+  else if (Magos > 1 &&  mana > 9 && SombraMago === 1){
+    SombraMago = SombraMago + 1;
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída com sucesso [2 Mago no campo de batalha]";
+
+    document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
+
+    mana = mana - 10;
+    document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+
+    agilidade = agilidade + 24;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 48";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+    forca = forca + 23;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "+ 43";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+    percepcao = percepcao + 14;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "+ 28";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+    inteligencia = inteligencia + 11;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "+ 22";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+
+else if (Magos > 1 &&  mana > 9 && SombraMago === 2){
+  SombraMago = SombraMago + 1;
+document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída com sucesso [3 Mago no campo de batalha]";
+
+  document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
+
+  mana = mana - 10;
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+
+  agilidade = agilidade + 24;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 72";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+  forca = forca + 23;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "+ 63";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+  percepcao = percepcao + 14;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "+ 42";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+  inteligencia = inteligencia + 11;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "+ 33";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+
+else if (Magos > 1 &&  mana > 9 && SombraMago === 3){
+  SombraMago = SombraMago + 1;
+document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída com sucesso [4 Mago no campo de batalha]";
+
+  document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
+
+  mana = mana - 10;
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+
+  agilidade = agilidade + 24;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 96";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+  forca = forca + 23;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "+ 86";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+  percepcao = percepcao + 14;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "+ 56";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+  inteligencia = inteligencia + 11;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "+ 44";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+
+else if (Magos > 1 &&  mana > 9 && SombraMago === 4){
+  SombraMago = SombraMago + 1;
+document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída com sucesso [5 Mago no campo de batalha]";
+
+  document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
+
+  mana = mana - 10;
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+
+  agilidade = agilidade + 24;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 120";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+  forca = forca + 23;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "+ 109";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+  percepcao = percepcao + 14;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "+ 70";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+  inteligencia = inteligencia + 11;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "+ 55";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+
+else if (Magos > 1 &&  mana > 9 && SombraMago === 5){
+  SombraMago = SombraMago + 1;
+document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída com sucesso [6 Mago no campo de batalha]";
+
+  document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
+
+  mana = mana - 10;
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+
+  agilidade = agilidade + 24;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 144";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+  forca = forca + 23;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "+ 132";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+  percepcao = percepcao + 14;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "+ 84";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+  inteligencia = inteligencia + 11;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "+ 66";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+
+  else if (Magos > 1 && mana < 10 && SombraMago === 0){
      document.getElementById("idRetornoExtracao2").innerHTML =
       "Mana insuficiente";
   }
@@ -5501,3 +6058,406 @@ function abrirAba(id) {
       botoesHabilidades[id - 1].classList.add('ativo');
     }
      /*Fim abas do menu Habilidades*/
+
+       /*Início abas do menu Treino*/
+ function abrirAbaTreino(id) {
+  const abasTreino = document.querySelectorAll('.abaTreino');
+  const botoesTreino = document.querySelectorAll('.botaoTreino');
+
+  abasTreino.forEach((abaTreino) => {
+    abaTreino.classList.remove('ativo');
+  });
+
+  botoesTreino.forEach((botaoTreino) => {
+    botaoTreino.classList.remove('ativo');
+  });
+
+  document.getElementById(`abaTreino${id}`).classList.add('ativo');
+  botoesTreino[id - 1].classList.add('ativo');
+}
+ /*Fim abas do menu Treino*/
+
+  /*Início abas do menu Classes e Títulos*/
+  function abrirAbaArise(id) {
+    const abasArise = document.querySelectorAll('.abaArise');
+    const botoesArise = document.querySelectorAll('.botaoArise');
+  
+    abasArise.forEach((abaArise) => {
+      abaArise.classList.remove('ativo');
+    });
+  
+    botoesArise.forEach((botaoArise) => {
+      botaoArise.classList.remove('ativo');
+    });
+  
+    document.getElementById(`abaArise${id}`).classList.add('ativo');
+    botoesArise[id - 1].classList.add('ativo');
+  }
+   /*Fim abas do menu Classes e Títulos*/
+
+ /*Início abas do menu Loja*/
+ function abrirAbaLoja(id) {
+  const abasLoja = document.querySelectorAll('.abaLoja');
+  const botoesLoja = document.querySelectorAll('.botaoLoja');
+
+  abasLoja.forEach((abaLoja) => {
+    abaLoja.classList.remove('ativo');
+  });
+
+  botoesLoja.forEach((botaoLoja) => {
+    botaoLoja.classList.remove('ativo');
+  });
+
+  document.getElementById(`abaLoja${id}`).classList.add('ativo');
+  botoesLoja[id - 1].classList.add('ativo');
+}
+ /*Fim abas do menu Loja*/
+
+ /*Início abas do menu Inventario*/
+ function abrirAbaInventario(id) {
+  const abasInventario = document.querySelectorAll('.abaInventario');
+  const botoesInventario = document.querySelectorAll('.botaoInventario');
+
+  abasInventario.forEach((abaInventario) => {
+    abaInventario.classList.remove('ativo');
+  });
+
+  botoesInventario.forEach((botaoInventario) => {
+    botaoInventario.classList.remove('ativo');
+  });
+
+  document.getElementById(`abaInventario${id}`).classList.add('ativo');
+  botoesInventario[id - 1].classList.add('ativo');
+}
+ /*Fim abas do menu Inventario*/
+
+ 
+/*INÍCIO DA HABILIDADE APRIMORAMENTO DO SEGUNDO DESPERTAR*/
+function FuncaoTrocarXPporAprimoramentoDoDespertar() {
+
+ if (AumentoDoNivelDaMana === 100){
+    document.getElementById(
+      "idRetornoTrocarXPporAprimoramentoDoDespertar",).innerHTML = "Você chegou no nível máximo";
+  }
+  else if (experienciaParaUsarNasHabilidades > 0 ) {
+  experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades - 1;
+   AumentoDoNivelDaMana = AumentoDoNivelDaMana + 1;
+ 
+   document.getElementById("idAumentoDoNivelDaMana").innerHTML =
+   "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+   progresso3.setAttribute("style", "width: " + mana + "%");
+
+   document.getElementById("idRetornoTrocarXPporAprimoramentoDoDespertar",).innerHTML = "Limite da Mana Atual: " +  AumentoDoNivelDaMana + "%";
+ 
+   document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " +  experienciaParaUsarNasHabilidades;
+ 
+  } else if (Kandiaru < 1) {
+   document.getElementById(
+     "idRetornoTrocarXPporAprimoramentoDoDespertar",).innerHTML = "Habilidade será liberada ao derrotar o Kandiaru";
+  } else if (experienciaParaUsarNasHabilidades < 1){
+   document.getElementById(
+     "idRetornoTrocarXPporAprimoramentoDoDespertar",).innerHTML = "Você não tem Ponto de experiência";
+  }
+ }
+ /*FIM DA HABILIDADE APRIMORAMENTO DO SEGUNDO DESPERTAR*/
+
+
+
+
+
+
+
+
+
+ /*INÍCIO DO TÍTULO ENTUSIASTA DA MINERAÇÃO*/
+function FuncaoTrocarTituloEntusiasta() {
+  if (SomaDosCristais > 999 && TituloEntusiastaEstaEmUso === 0){
+
+    TituloEntusiastaEstaEmUso = 1;
+
+    document.getElementById("idTituloAlerta").innerHTML =   "";
+    document.getElementById("idtitulo").innerHTML = "Título: Entusiata da Mineração";
+    document.getElementById("idCheckEntusiasta").innerHTML =  "✅ Título: Entusiata da Mineração";
+    document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "Título em Uso";
+   
+    document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+    document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+
+    percepcao = percepcao + 5;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+    document.getElementById("idPontosExtrasEntusiasta").innerHTML = "+ 5";
+
+    /*início Remover os outros títulos*/
+    if(TituloLordeDaMineracaoEstaEmUso === 1){
+      TituloLordeDaMineracaoEstaEmUso = 0;
+    document.getElementById("idCheckLordeDaMineracao").innerHTML = "Título: Lorde da Mineração";
+    document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+    document.getElementById("idPontosExtrasLordeDaMineracao").innerHTML = "";
+    percepcao = percepcao - 10;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+    }
+
+    if(TituloExterminadorDeGoblinsEstaEmUso === 1){
+      TituloExterminadorDeGoblinsEstaEmUso = 0;
+      document.getElementById("idCheckGoblins").innerHTML =  "Título: Exterminador de Goblins";
+      document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+         document.getElementById("idPontosExtrasGoblins1").innerHTML = "";
+      document.getElementById("idPontosExtrasGoblins2").innerHTML = "";
+      document.getElementById("idPontosExtrasGoblins3").innerHTML = "";
+      document.getElementById("idPontosExtrasGoblins4").innerHTML = "";
+    }
+ /*Fim Remover os outros títulos*/
+
+  }
+  else if (SomaDosCristais > 999 && TituloEntusiastaEstaEmUso === 1){
+    document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "Título já está em Uso";
+  }
+
+  else{
+    document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "Você ainda não conseguiu esse Título";
+  }
+}
+ /*FIM DO TÍTULO ENTUSIASTA DA MINERAÇÃO*/
+
+
+ /*INÍCIO DO TÍTULO LORDE DA MINERAÇÃO*/
+function FuncaoTrocarTituloLordeDaMineracao() {
+  if (SomaDosCristais > 3999 && TituloLordeDaMineracaoEstaEmUso === 0){
+
+    TituloLordeDaMineracaoEstaEmUso = 1;
+
+    document.getElementById("idTituloAlerta").innerHTML =   "";
+    document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+    document.getElementById("idtitulo").innerHTML = "Título: Lorde da Mineração";
+    document.getElementById("idCheckLordeDaMineracao").innerHTML =  "✅ Título: Lorde da Mineração";
+    document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "Título em Uso";
+   
+    percepcao = percepcao + 10;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+    document.getElementById("idPontosExtrasLordeDaMineracao").innerHTML = "+ 10";
+
+ /*início Remover os outros títulos*/
+ if (TituloEntusiastaEstaEmUso === 1){
+  TituloEntusiastaEstaEmUso = 0;
+
+    document.getElementById("idCheckEntusiasta").innerHTML =  "Título: Entusiata da Mineração";
+    document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
+    document.getElementById("idPontosExtrasEntusiasta").innerHTML = "";
+    percepcao = percepcao - 5;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+ }
+
+ if(TituloExterminadorDeGoblinsEstaEmUso === 1){
+  TituloExterminadorDeGoblinsEstaEmUso = 0;
+  document.getElementById("idCheckGoblins").innerHTML =  "Título: Exterminador de Goblins";
+  document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+     document.getElementById("idPontosExtrasGoblins1").innerHTML = "";
+  document.getElementById("idPontosExtrasGoblins2").innerHTML = "";
+  document.getElementById("idPontosExtrasGoblins3").innerHTML = "";
+  document.getElementById("idPontosExtrasGoblins4").innerHTML = "";
+}
+ /*Fim Remover os outros títulos*/
+
+  } else if(SomaDosCristais > 3999 && TituloLordeDaMineracaoEstaEmUso === 1){
+    document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "Título já está em Uso";
+  }
+
+  else{
+    document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "Você ainda não conseguiu esse Título";
+  }
+}
+ /*FIM DO TÍTULO LORDE DA MINERAÇÃO*/
+
+ /*INÍCIO DO TÍTULO EXTERMINADOR DE GOBLINS*/
+function FuncaoTrocarTituloGoblins() {
+  if (Goblin > 9 && TituloExterminadorDeGoblinsEstaEmUso === 0){
+
+    TituloExterminadorDeGoblinsEstaEmUso = 1;
+
+    document.getElementById("idTituloAlerta").innerHTML =   "";
+    document.getElementById("idtitulo").innerHTML = "Título: Exterminador de Goblins";
+    document.getElementById("idCheckGoblins").innerHTML =  "✅ Título: Exterminador de Goblins";
+    document.getElementById("idTituloRetornoGoblins",).innerHTML = "Título em Uso";
+   
+  
+    document.getElementById("idPontosExtrasGoblins1").innerHTML = "+ 50";
+    document.getElementById("idPontosExtrasGoblins2").innerHTML = "+ 50";
+    document.getElementById("idPontosExtrasGoblins3").innerHTML = "+ 50";
+    document.getElementById("idPontosExtrasGoblins4").innerHTML = "+ 50";
+
+ /*início Remover os outros títulos*/
+ if(TituloLordeDaMineracaoEstaEmUso === 1){
+  TituloLordeDaMineracaoEstaEmUso = 0;
+document.getElementById("idCheckLordeDaMineracao").innerHTML = "Título: Lorde da Mineração";
+document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+document.getElementById("idPontosExtrasLordeDaMineracao").innerHTML = "";
+percepcao = percepcao - 10;
+document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+}
+
+ if (TituloEntusiastaEstaEmUso === 1){
+  TituloEntusiastaEstaEmUso = 0;
+    document.getElementById("idCheckEntusiasta").innerHTML = "Título: Entusiata da Mineração";
+    document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
+    document.getElementById("idPontosExtrasEntusiasta").innerHTML = "";
+    percepcao = percepcao - 5;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+ }
+ /*Fim Remover os outros títulos*/
+
+  } else if(Goblin > 9 && TituloExterminadorDeGoblinsEstaEmUso === 1){
+    document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "Título já está em Uso";
+  }
+
+  else{
+    document.getElementById("idTituloRetornoGoblins",).innerHTML = "Você ainda não conseguiu esse Título";
+  }
+}
+ /*FIM DO TÍTULO EXTERMINADOR DE GOBLINS*/
+
+ /*INÍCIO DOS EFEITOS DE MOEDAS NA COMPRA $ 1*/
+ document.getElementById("botao-moeda").addEventListener("click", function() {
+  var moedas = document.getElementById("moedas");
+  var direcoes = ["direita", "esquerda", "cima", "baixo"];
+  for (var i = 0; i < 5; i++) {
+    var moeda = document.createElement("div");
+    moeda.classList.add("moeda");
+    moeda.textContent = "$";
+    moeda.style.left = this.offsetLeft + this.offsetWidth / 2 + "px";
+    moeda.style.top = this.offsetTop + this.offsetHeight / 2 + "px";
+    moedas.appendChild(moeda);
+    var direcao = direcoes[Math.floor(Math.random() * direcoes.length)];
+    moeda.classList.add("moeda-animacao");
+    moeda.style.animationName = "sair-moeda-" + direcao;
+    moeda.style.opacity = 1;
+    setTimeout(function(moeda) {
+      moeda.parentNode.removeChild(moeda);
+    }, 2000, moeda);
+  }
+});
+ /*FIM DOS EFEITOS DE MOEDAS NA COMPRA $ 1*/
+
+  /*INÍCIO DOS EFEITOS DE MOEDAS NA COMPRA $ 2*/
+  document.getElementById("botao-moeda2").addEventListener("click", function() {
+    var moedas2 = document.getElementById("moedas2");
+    var direcoes = ["direita", "esquerda", "cima", "baixo"];
+    for (var i = 0; i < 5; i++) {
+      var moeda2 = document.createElement("div");
+      moeda2.classList.add("moeda2");
+      moeda2.textContent = "$";
+      moeda2.style.left = this.offsetLeft + this.offsetWidth / 2 + "px";
+      moeda2.style.top = this.offsetTop + this.offsetHeight / 2 + "px";
+      moedas2.appendChild(moeda2);
+      var direcao = direcoes[Math.floor(Math.random() * direcoes.length)];
+      moeda2.classList.add("moeda2-animacao");
+      moeda2.style.animationName = "sair-moeda2-" + direcao;
+      moeda2.style.opacity = 1;
+      setTimeout(function(moeda2) {
+        moeda2.parentNode.removeChild(moeda2);
+      }, 2000, moeda2);
+    }
+  });
+   /*FIM DOS EFEITOS DE MOEDAS NA COMPRA $ 2*/
+
+    /*INÍCIO DOS EFEITOS DE MOEDAS NA COMPRA $ 3*/
+  document.getElementById("botao-moeda3").addEventListener("click", function() {
+    var moedas3 = document.getElementById("moedas3");
+    var direcoes = ["direita", "esquerda", "cima", "baixo"];
+    for (var i = 0; i < 5; i++) {
+      var moeda3 = document.createElement("div");
+      moeda3.classList.add("moeda3");
+      moeda3.textContent = "$";
+      moeda3.style.left = this.offsetLeft + this.offsetWidth / 2 + "px";
+      moeda3.style.top = this.offsetTop + this.offsetHeight / 2 + "px";
+      moedas3.appendChild(moeda3);
+      var direcao = direcoes[Math.floor(Math.random() * direcoes.length)];
+      moeda3.classList.add("moeda3-animacao");
+      moeda3.style.animationName = "sair-moeda3-" + direcao;
+      moeda3.style.opacity = 1;
+      setTimeout(function(moeda3) {
+        moeda3.parentNode.removeChild(moeda3);
+      }, 2000, moeda3);
+    }
+  });
+   /*FIM DOS EFEITOS DE MOEDAS NA COMPRA $ 3*/
+
+  /*INICIO DO EFEITO DA MANA*/
+   document.getElementById("botao-bolhas").addEventListener("click", function() {
+    var bolhasContainer = document.getElementById("bolhas");
+    var direcoes = ["cima", "baixo", "esquerda", "direita"];
+    for (var i = 0; i < 20; i++) {
+      var bolha = document.createElement("div");
+      bolha.classList.add("bolha");
+      bolha.style.left = this.offsetLeft + this.offsetWidth / 2 + Math.random() * 30 - 15 + "px";
+      bolha.style.top = this.offsetTop + this.offsetHeight / 2 + "px";
+      bolhasContainer.appendChild(bolha);
+      var direcao = direcoes[Math.floor(Math.random() * direcoes.length)];
+      bolha.classList.add("bolha-animacao-" + direcao);
+      bolha.style.opacity = 1;
+      setTimeout(function(bolha) {
+        bolha.parentNode.removeChild(bolha);
+      }, 3000, bolha);
+    }
+  });
+   /*FIM DO EFEITO DA MANA*/
+
+    /*INICIO DO EFEITO DA VIDA*/
+    document.getElementById("botao-vida").addEventListener("click", function() {
+      var vidaContainer = document.getElementById("vida");
+      var seta = document.createElement("div");
+      seta.classList.add("seta-verde");
+      seta.textContent = "↑";
+      seta.style.left = this.offsetLeft + this.offsetWidth / 2 - 50 + "px";
+      seta.style.top = this.offsetTop + this.offsetHeight / 2 + "px";
+      vidaContainer.appendChild(seta);
+      seta.classList.add("seta-verde-animacao");
+      seta.style.opacity = 1;
+      setTimeout(function(seta) {
+        seta.parentNode.removeChild(seta);
+      }, 1000, seta);
+    });
+    /*FIM DO EFEITO DA VIDA*/
+
+/*INÍCIO DO EFEITO DA FADIGA*/
+document.getElementById("botao-seta-vermelha").addEventListener("click", function() {
+  var setaContainer = this.parentNode;
+  var seta = document.createElement("div");
+  seta.classList.add("seta-vermelha");
+  seta.textContent = "↓";
+  seta.style.left = this.offsetLeft + this.offsetWidth / 2 - 25 + "px";
+  seta.style.top = this.offsetTop - 25 + "px";
+  setaContainer.appendChild(seta);
+  seta.classList.add("seta-vermelha-animacao");
+  seta.style.opacity = 1;
+  setTimeout(function(seta) {
+    seta.parentNode.removeChild(seta);
+  }, 1000, seta);
+});
+     /*FIM DO EFEITO DA FADIGA*/
+
+/*INÍCIO IR PARA O SOLO LEVELING ARISE*/
+     document.getElementById("trocar-conteudo").addEventListener("click", function() {
+      var conteudo = document.getElementById("conteudo");
+      var conteudoAlternativo = document.getElementById("conteudo-alternativo");
+      conteudo.innerHTML = conteudoAlternativo.innerHTML;
+
+
+      document.getElementById("idClasse").innerHTML = "Classe: Necromante [Monarca das Sombras]";
+      Magos = 2;
+
+      /*Apagar todos os cards*/
+  document.getElementById("idDIVEsconderKandiaru").innerHTML = "";
+  document.getElementById("idDIVEsconderGoblin").innerHTML = "";
+  document.getElementById("idDIVEsconderLycan").innerHTML = "";
+  document.getElementById("idDIVEsconderKasaka").innerHTML = "";
+  document.getElementById("idDIVEsconderInsectoids").innerHTML = "";
+  document.getElementById("idDIVEsconderAranha").innerHTML = "";
+  document.getElementById("idDIVEsconderCacadores").innerHTML = "";
+  document.getElementById("idDIVEsconderCerberus").innerHTML = "";
+  document.getElementById("idDIVEsconderKang").innerHTML = "";
+  document.getElementById("idDIVEsconderYoo").innerHTML = "";
+  document.getElementById("idDIVEsconderIgris").innerHTML = "";
+  document.getElementById("idDIVEsconderMagos").innerHTML = "";
+/*Apagar todos os cards*/
+    });
+/*FIM IR PARA O SOLO LEVELING ARISE*/
