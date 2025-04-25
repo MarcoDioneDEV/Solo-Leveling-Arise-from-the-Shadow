@@ -86,7 +86,7 @@
 
 
 
-<!-- teste -->
+<!-- Menu com todo os outros menus -->
 <fieldset class="temafieldset">
 <div class="abas">
   <div class="botoes">
@@ -94,7 +94,7 @@
     <button class="botao" onclick="abrirAba(2)" id="idAlertaNoMenuHabilidade" >Habilidades</button>
     <button class="botao" onclick="abrirAba(3)" id="idAlertaNoMenuLoja">Loja</button>
     <button class="botao" onclick="abrirAba(4)" id="idAlertaNoMenuInventario">Inventário</button>
-    <button class="botao" onclick="abrirAba(5)" >Arise</button>
+    <button class="botao" onclick="abrirAba(5)" > Classe e Títulos </button>
   </div>
   <div class="conteudo">
     <div class="aba ativo" id="aba1">
@@ -103,7 +103,6 @@
  <h1>Pontos de atributos</h1>
              
  <h3 id="idatributo" class="sublinhado">Disponíveis: 0</h3>
- <h4 id="idatributopercepcao"></h4>
 
  <!--Início dos Atributos-->
  <!--AGILIDADE-->
@@ -113,7 +112,20 @@
     <em id="idRetornoAssassinaNoStatus"></em>
     <em id="idRetornoColeira1"></em>
     <em id="idRetornoFurtividadeNoStatus"></em>
+    <em id="idRetornoEscudoNoStatus"></em>
+    <em id="idRetornoProvocarNoStatus"></em>
+    <em id="idRetornoFortalecimentoNoStatus"></em>
   </h2>
+
+  <h2 class="PontosPontosExtrasDosTitulos">
+    <em id="idPontosExtrasGoblins1"></em>
+  </h2>
+
+  <h2 class="PontosExtrasDosSoldadosDasSombras">
+    <em id="idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasMagosAgilidade"></em>
+  </h2>
+
   <button class="botaoNovo" onclick="funcaoatribuiragilidade()">Agilidade: Distribuir pontos</button>
 <!--AGILIDADE-->
 
@@ -125,22 +137,66 @@
     <em id="idRetornoCompraEspadaComum4"></em>
     <em id="idRetornoElmo"></em>
     <em id="idRetornoCompraAssassinaCavaleiros"></em>
+    <em id="idRetornoFortalecimentoNoStatus2"></em>
   </h2>
+
+  <h2 class="PontosPontosExtrasDosTitulos">
+    <em id="idPontosExtrasGoblins2"></em>
+  </h2>
+
+  <h2 class="PontosExtrasDosSoldadosDasSombras">
+    <em id="idPontosExtrasDosSoldadosDasSombrasIgrisForca"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasMagosForca"></em>
+  </h2>
+
   <button class="botaoNovo" onclick="funcaoatribuirforca()">Força: Distribuir pontos</button>
 <!--FORÇA-->
-
-  <!--INTELIGENCIA-->
-  <h2 id="idinteligencia">🧠 Inteligência: 10</h2>
-  <button class="botaoNovo" onclick="funcaoatribuirinteligencia()"> 🧠 Inteligência: distribuir pontos</button>
-   <!--INTELIGENCIA-->
 
     <!--PERCEPÇÃO-->
 <h2 id="idpercepcao">👀 Percepção: 10</h2>
 <h2 class="PontosExtras">
   <em id="idRetornoColeira2"></em>
+  <em id="idRetornoEscudoNoStatus2"></em>
+  <em id="idRetornoProvocarNoStatus2"></em>
+  <em id="idRetornoFortalecimentoNoStatus3"></em>
 </h2>
+
+<h2 class="PontosPontosExtrasDosTitulos">
+  <em id="idPontosExtrasEntusiasta"></em>
+  <em id="idPontosExtrasLordeDaMineracao"></em>
+  <em id="idPontosExtrasGoblins3"></em>
+</h2>
+
+<h2 class="PontosExtrasDosSoldadosDasSombras">
+  <em id="idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao"></em>
+  <em id="idPontosExtrasDosSoldadosDasSombrasMagosPercepcao"></em>
+</h2>
+
+
+
  <button class="botaoNovo" onclick="funcaoatribuirpercepcao()">Percepção: Distribuir pontos </button>
  <!--PERCEPÇÃO-->
+
+   <!--INTELIGENCIA-->
+   <h2 id="idinteligencia">🧠 Inteligência: 10</h2>
+   <h2 class="PontosExtras">
+    <em id="idRetornoFortalecimentoNoStatus4"></em>
+    <em id="idRetornoToqueDoDominadorEquipada"></em>
+  </h2>
+
+  <h2 class="PontosPontosExtrasDosTitulos">
+    <em id="idPontosExtrasGoblins4"></em>
+  </h2>
+
+  <h2 class="PontosExtrasDosSoldadosDasSombras">
+    <em id="idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasMagosInteligencia"></em>
+  </h2>
+
+   <button class="botaoNovo" onclick="funcaoatribuirinteligencia()">Inteligência: distribuir pontos</button>
+    <!--INTELIGENCIA-->
+
+ <h4 id="idatributopercepcao"></h4>
 
 <!--Fim dos Pontos de atributos-->
 
@@ -151,7 +207,7 @@
       <!--INÍCIO DAS HABILIDADES-->
       <h1>Habilidades</h1>
         
-      <h3 class="sublinhado" id="idAumentoDoNivelDaMana">🪄 Mana: 10/20</h3>
+      
 
       <h3 class="sublinhado" id="idContarExperienciaNoQuadroHabilidades">
         Pontos de experiência: 0
@@ -172,7 +228,22 @@
   
       <h4>Clique nas imagens para interagir.</h4>
 
-      
+      <!-- Início da habilidade Aprimoramento do despertar -->
+      <br><img class="imgMenor" onclick="FuncaoTrocarXPporAprimoramentoDoDespertar()" src="https://a.storyblok.com/f/178900/1504x846/ef755d13bb/hunters-solo-leveling.jpg/m/filters:quality(95)format(webp)"><br>
+ 
+<h4 id="idRetornoTrocarXPporAprimoramentoDoDespertar"></h4>
+<details>
+  <summary class="sumario" id="idCheckSegundoDespertar">Habilidade: Aprimoramento do Segundo Despertar</summary>
+
+ <h4 class="sublinhado">
+   <br>[Missão secreta: Coragem dos fracos] 
+   <br><br>
+   O despertar estabelece o nível de poder do caçador para a vida toda, mas algumas pessoas têm a sorte de experimentar um Segundo Despertar. 
+   <br><br>Aumente o limite de Mana, 1 Ponto de experiência por 1% de Mana.
+     <br> <br>
+     </h4> 
+ </details><br>
+  <!-- Fim da habilidade Aprimoramento do despertar -->
 
       <!--Início da habilidade Saúde e longevidade-->
       <img class="imgMenor" onclick="FuncaoSaudeElogenvidade()"   src="https://i0.wp.com/metagalaxia.com.br/wp-content/uploads/2024/01/Solo-Leveling-9.webp?resize=1024%2C582"/>
@@ -201,30 +272,32 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
       </details> <br />
       <!-- Fim da habilidade Saúde e longevidade -->
 
+      
       <!--Início da habilidade Elixir da Vida-->
-      <img class="imgMenor" onclick="FuncaoSaudeElogenvidade()"   
-      src="https://static.wikia.nocookie.net/solo-leveling/images/a/a4/HWOL1.jpg/revision/latest/scale-to-width-down/250?cb=20210424211046"/>
+      <img class="imgMenor" onclick="FuncaoElixirDaVida()"   
+      src="https://preview.redd.it/the-holy-water-of-life-v0-e4rxkg91phqe1.jpeg?auto=webp&s=9680ee2c7c34973b12134571da4db2a7ef033a11"/>
         <br>
-        <h4 id="idRetornoSaudeElogenvidade"></h4>
+        <h4 id="idRetornoElixirDaVida"></h4>
       <details>
-        <summary class="sumario" id="idCheckSaudelongevidade">
+        <summary class="sumario" id="idCheckElixirDaVida">
           ⛔ Habilidade: Elixir da Vida
         </summary>
         
 
         <h4 class="sublinhado">
           <br>[Missão: Castelo Demoníaco] <br><br>
-         No castelo do Rei Demônio, você pode obter os 3 ingredientes para o Elixir da Vida, que cura qualquer doença por meio de uma magia poderosa.<br><br>
+         No castelo do Rei Demônio, você pode obter os 3 ingredientes para o Elixir da Vida, que cura qualquer doença por meio de uma magia poderosa.
+         <br><br>Essa habilidade pode ser usada somente uma vez, ao utilizar você irá ganhar 100% de Vida, 
+         0% de Fadiga e sua Mana irá até o máximo permitido pelo seu nível.
+         <br><br>
         </h4>
 
 <ul>
   <br>
   <li>❌ Fragmento da árvore do mundo</li><br>
   <li>❌ Água nascente da floresta ecoante</li><br>
-  <li>❌ Lágrima do Monarca</li><br>
+  <li>❌ Sangue Purificado do Monarca Demoníaco</li><br>
 </ul>
-
-<button class="botaoNovo">Criar</button>
 
       </details> <br />
       <!-- Fim da habilidade Elixir da Vida -->
@@ -235,7 +308,8 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
       <h4>Clique nas imagens para interagir.</h4>
 
        <!-- Início da habilidade Intenção Assassina -->
-       <img class="imgMenor" onclick="FuncaoAssassina()" src="https://i.ytimg.com/vi/pZbtp3USHYY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCCnNhPgQCHBqI1NvUmj-uTOmFT4A"
+       <img class="imgMenor" onclick="FuncaoAssassina()" 
+       src="https://i.ytimg.com/vi/LebDt6lDreU/mqdefault.jpg"
        />
        <br>
        <h4 id="idRetornoAssassina"></h4>
@@ -313,10 +387,50 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
 </details><br>
       <!--Fim da habilidade Arrancada-->
 
+      <!--Início da habilidade Fortalecimento-->
+      <img  class="imgMenor" onclick="FuncaoFortalecimento()" 
+      src="https://muramasa.com.br/wp-content/uploads/2025/01/Cha-Hae-in-cr-1024x576.webp"/>
+      <br />
+      <h4 id="idRetornoFortalecimento"></h4>
+    <details>
+      <summary class="sumario" id="idCheckFortalecimento">
+        Habilidade: Fortalecimento
+      </summary>            
+
+      <h4 class="sublinhado">
+        <br />[Classe: Aprimoramento] <br /><br />
+        Buff que melhora todos os seus atributos em 10 Pontos. Este buff pode ser usado por
+        30 pontos de Mana. Os buff tem duração de 1 ataque.
+        <br />
+      </h4> 
+    </details>
+    <br> <br>
+    <!--Fim da habilidade da Fortalecimento-->
+
     </div>
     <div class="abaHabilidades" id="abaHabilidades4">
        <h4>Clique nas imagens para interagir.</h4>
-      <p>EM DESENVOLVIMENTO </p>
+      
+       <!--Início da habilidade Provocar-->
+       <img  class="imgMenor" onclick="FuncaoProvocar()" src="https://i.ytimg.com/vi/a1ZvqCzm4i4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBM96eGqe0MPrflfu0ekSPJYR-bNg"/>
+       <br />
+       <h4 id="idRetornoProvocar"></h4>
+     <details>
+       <summary class="sumario" id="idCheckProvocar">
+         ⛔ Habilidade: Provocar
+       </summary>            
+
+       <h4 class="sublinhado">
+         <br />[Classe: Suporte] <br /><br />
+         Buff que melhora sua Agilidade em 40 pontos e sua Percepção em 10 Pontos. Essa habilidade
+         pode ser usada para atrair e confundir seu inimigo enquanto você o ataca, este buff pode ser usado por
+         30 pontos de Mana. Os buff tem duração de 1 ataque.
+         <br />
+       </h4> 
+     </details>
+     <br> <br>
+     <!--Fim da habilidade da Provocar-->
+
     </div>
     
   </div>
@@ -333,57 +447,81 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
      <h3 id="idouro" class="sublinhado">Ouro: 0</h3>
 <h4>Clique nas imagens para realizar uma compra. Venda intens na aba Inventário para conseguir Ouro.</h4>
 
-<!-- Início da Poção de Fadiga-->
+<!--Início do menu Poções e Equipamentos-->
+<div class="abasLoja">
+  <div class="botoesLoja">
+    <button class="botaoLoja ativo" onclick="abrirAbaLoja(1)"> Poções </button>
+    <button class="botaoLoja" onclick="abrirAbaLoja(2)"> Equipamentos </button>
+  </div>
+  <div class="conteudoLoja">
+    <div class="abaLoja ativo" id="abaLoja1">
+      
+<!--Início das poções-->
+
+
+  <!-- Início da Poção de Fadiga-->
  <br>
-<img class="imgMenor" onclick="funcaoComprarPocaoRecuperacao()" src="https://noticias.maisesports.com.br/wp-content/uploads/2022/07/pocao-vida-lol.jpg"/>
-<h4 id="idRetornoCompraPocaoRecuperacao"></h4>
-<details>
-<summary class="sumario">Poção de Fadiga</summary>
-<h4 class="sublinhado">
-<br />[Categoria: Assistência] <br /><br />Você pode recuperar 10% da sua fadiga. 
-<br><br> Custo: 1 moeda de ouro<br /><br />
-</h4>      
- </details>
-     <br>
-<!-- Fim da Poção de Fadiga-->
+ <img class="imgMenor" onclick="funcaoComprarPocaoRecuperacao()" id="botao-seta-vermelha"
+ src="https://noticias.maisesports.com.br/wp-content/uploads/2022/07/pocao-vida-lol.jpg"/>
+ <div id="seta-vermelha-container"></div>
+ <h4 id="idRetornoCompraPocaoRecuperacao"></h4>
+ <details>
+ <summary class="sumario">Poção de Fadiga</summary>
+ <h4 class="sublinhado">
+ <br />[Categoria: Assistência] <br /><br />Você pode recuperar 10% da sua fadiga. 
+ <br><br> Custo: 1 moeda de ouro<br /><br />
+ </h4>      
+  </details>
+      <br>
+ <!-- Fim da Poção de Fadiga-->
+ 
+ <!-- Início da Poção de Vida-->
+ <img class="imgMenor" onclick="funcaoComprarPocaoVida()" id="botao-vida"
+ src="https://cdna.artstation.com/p/assets/images/images/074/984/082/large/aiken-sin-.jpg?1713444890"/>
+ <div id="vida"></div>
+ <br />
+ <h4 id="idRetornoCompraPocaoVida"></h4>
+      <details>
+        <summary class="sumario">Poção de vida</summary>
+        
+        <h4 class="sublinhado">
+          <br />[Categoria: Assistência] <br /><br />Você pode recuperar 10%
+          da sua vida.
+          <br><br> Custo: 5 moedas de ouro<br /><br />
+        </h4>    
+      </details>
+      <br />
+ <!-- Fim da Poção de Vida-->
+ 
+ <!-- Início da Poção de Mana-->
+ <img class="imgMenor" onclick="funcaoComprarPocaoMana()"  id="botao-bolhas"
+ src="https://img.freepik.com/fotos-premium/pocao-mistica-alquimica-magica-roxa-de-perto_931559-1912.jpg"/>
+ <div id="bolhas"></div>
+ <br>
+ <h4 id="idRetornoCompraPocaoMana"></h4>
+      <details>
+        <summary class="sumario">Poção de Mana</summary>
+        <h4 class="sublinhado">
+          <br />[Categoria: Assistência] <br /><br />Você pode recuperar 5 pontos de Mana.
+          <br><br>Custo: 10 moedas de ouro<br><br>
+        </h4>   
+      </details>
+      <br />
+ <!-- Fim da Poção de Mana-->
+    
+<!--Fim das poções-->
 
-<!-- Início da Poção de Vida-->
-<img class="imgMenor" onclick="funcaoComprarPocaoVida()" src="https://cdna.artstation.com/p/assets/images/images/074/984/082/large/aiken-sin-.jpg?1713444890"/>
-<br />
-<h4 id="idRetornoCompraPocaoVida"></h4>
-     <details>
-       <summary class="sumario">Poção de vida</summary>
-       
-       <h4 class="sublinhado">
-         <br />[Categoria: Assistência] <br /><br />Você pode recuperar 10%
-         da sua vida.
-         <br><br> Custo: 5 moedas de ouro<br /><br />
-       </h4>    
-     </details>
-     <br />
-<!-- Fim da Poção de Vida-->
-
-<!-- Início da Poção de Mana-->
-<img class="imgMenor" onclick="funcaoComprarPocaoMana()" src="https://img.freepik.com/fotos-premium/pocao-mistica-alquimica-magica-roxa-de-perto_931559-1912.jpg"/>
-<br>
-<h4 id="idRetornoCompraPocaoMana"></h4>
-     <details>
-       <summary class="sumario">Poção de Mana</summary>
-       <h4 class="sublinhado">
-         <br />[Categoria: Assistência] <br /><br />Você pode recuperar 5 pontos de Mana.
-         <br><br>Custo: 10 moedas de ouro<br><br>
-       </h4>   
-     </details>
-     <br />
-<!-- Fim da Poção de Mana-->
-
+    </div>
+    <div class="abaLoja" id="abaLoja2">
+      
+      <!--Início dos equipamentos-->
 <!-- Início da Adaga-->
 <img class="imgMenor" onclick="funcaoComprarEspadaComum()"
   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5xqPxyceLu3k418uWHpADOWGnfDJXuV6oQwKxq6FkSMXYwjz0DXIMcCzxgH7kx54G91k&usqp=CAU"/>
 <br>
 <h4 id="idRetornoCompraEspadaComum"></h4>
      <details>
-       <summary class="sumario" id="idCheckCompraAdaga">⚠️ Adaga</summary>
+       <summary class="sumario" id="idCheckCompraAdaga">Adaga</summary>
        
 
        <h4 class="sublinhado">
@@ -400,7 +538,7 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
 <br>     
 <h4 id="idRetornoCompraEspada"></h4>
 <details>
-  <summary class="sumario" id="idCheckCompraEspada">⚠️ Espada</summary>
+  <summary class="sumario" id="idCheckCompraEspada">Espada</summary>
        <h4 class="sublinhado">
          <br />[Categoria: Equipamento] <br /><br />Você pode equipar essa
          Espada e ganhar mais 15 Pontos de Atributo em Força.<br /><br />Compra:
@@ -411,6 +549,24 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
      </details>
      <br />
      <!-- Fim da Espada-->
+
+     <!-- Início do Escudo -->
+<img class="imgMenor" onclick="funcaoComprarEscudo()"  
+src="https://img.freepik.com/premium-photo/shield-design-graphic-tshirt_931878-202145.jpg?w=360"/>
+<br>     
+<h4 id="idRetornoCompraEscudo"></h4>
+<details>
+  <summary class="sumario" id="idCheckCompraEscudo">Defesa Divina</summary>
+       <h4 class="sublinhado">
+         <br />[Categoria: Equipamento] <br /><br />Você pode equipar esse
+         Escudo e ganhar mais 15 Pontos de Agilidade e 5 Pontos em Percepção.<br /><br />Compra:
+         115 moedas de ouro <br /><br />
+       </h4>
+       <br />
+      
+     </details>
+     <br />
+     <!-- Fim do Escudo-->
 
      <!-- Início da Assassina de Cavaleiros -->
      <img  class="imgMenor" onclick="funcaoEquiparAssassinaCavaleiros()" src="https://i.ytimg.com/vi/rTKix8bn3JM/hqdefault.jpg"/>
@@ -431,8 +587,16 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
       
     </details>
     <br />
- 
-<!-- Fim da Loja de itens-->
+    <!-- Fim da Assassina de Cavaleiros -->
+
+
+
+  <!--Fim dos equipamentos-->
+
+    </div>
+  </div>
+</div>
+<!--Fim do menu Loja-->
 
     </div>
     <div class="aba" id="aba4">
@@ -442,53 +606,74 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
         
           <h3 class="sublinhado">Itens</h3>
           <h4>Clique nas imagens para interagir.</h4>
-          <!-- Início de vender os cristais de Mana-->
-          <img class="imgMenor" onclick="funcaovendercristal()" src="https://warcraft.wiki.gg/images/thumb/d/d5/Crystallized_mana_at_Zarkhenar.jpg/1200px-Crystallized_mana_at_Zarkhenar.jpg?b7a980"/>
-          <br>
-          <h4 id="idvendercristal"></h4> 
-          <details>
-            <summary id="idcristalinventario">Cristais de Mana: 0</summary>            
 
-            <h4 class="sublinhado">
-              <br />[Categoria: Pedra] <br /><br />10 Cristais de mana por uma moeda de ouro. Os cristais de Mana podem ser minerados na Dangeon "Cristais de Mana".<br /><br />
+<!--Início do menu de Inventário-->
+<div class="abasInventario">
+  <div class="botoesInventario">
+    <button class="botaoInventario ativo" onclick="abrirAbaInventario(1)"> Vendas </button>
+    <button class="botaoInventario" onclick="abrirAbaInventario(2)"> Equipamentos </button>
+  </div>
+  <div class="conteudoInventario">
+    <div class="abaInventario ativo" id="abaInventario1">
+      
+<!--Início das vendas-->
+
+<!-- Início de vender os cristais de Mana-->
+<img class="imgMenor" onclick="funcaovendercristal()" id="botao-moeda"
+src="https://warcraft.wiki.gg/images/thumb/d/d5/Crystallized_mana_at_Zarkhenar.jpg/1200px-Crystallized_mana_at_Zarkhenar.jpg?b7a980"/>
+<div id="moedas"></div>
+<br>
+<h4 id="idvendercristal"></h4> 
+<details>
+  <summary id="idcristalinventario">Cristais de Mana: 0</summary>            
+
+  <h4 class="sublinhado">
+    <br />[Categoria: Pedra] <br /><br />10 Cristais de mana por uma moeda de ouro. Os cristais de Mana podem ser minerados na Dangeon "Cristais de Mana".<br /><br />
 Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais será vendido 100 por vez <br><br></h4> 
-          </details>
-          <br>
- <!-- Fim de vender os cristais de Mana-->
+</details>
+<br>
+<!-- Fim de vender os cristais de Mana-->
 
- <!-- Início de vender as pedras de essencia-->
- <img class="imgMenor" onclick="funcaovenderpedra()"  src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/02/essence-stone-solo-leveling-1.jpeg"
-/>
+<!-- Início de vender as pedras de essencia-->
+<img class="imgMenor" onclick="funcaovenderpedra()"   id="botao-moeda2"
+src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/02/essence-stone-solo-leveling-1.jpeg"/>
+<div id="moedas2"></div>
 <br>
 <h4 id="idvenderpedra"></h4>
-          <details>
-            <summary id="idpedrainventario">⛔ Pedras de Essência: 0</summary>          
+<details>
+  <summary id="idpedrainventario">⛔ Pedras de Essência: 0</summary>          
 
-            <h4 class="sublinhado">
-              <br />[Categoria: Recompensa - Pedra] <br /><br />Uma Pedra de Essência por 10
-              moedas de ouro.<br /><br />
-            </h4>         
-            <br>
-          </details>
-          <br />
- <!-- Fim de vender as pedras de essencia-->
-
-  <!-- Início de vender as Presa de Lycan-->
-  <img class="imgMenor" onclick="funcaovenderpresa()"  src="https://i.ytimg.com/vi/0WFRZrlhYk4/hqdefault.jpg"/>
+  <h4 class="sublinhado">
+    <br />[Categoria: Recompensa - Pedra] <br /><br />Uma Pedra de Essência por 10
+    moedas de ouro.<br /><br />
+  </h4>         
   <br>
-  <h4 id="idvenderpresa"></h4>
-          <details>
-            <summary id="idPresainventario">⛔ Presa de Lycan: 0</summary>           
+</details>
+<br />
+<!-- Fim de vender as pedras de essencia-->
 
-            <h4 class="sublinhado">
-              <br />[Categoria: Recompensa - Presas] <br /><br />Uma presa de
-              Lycan por 20 moedas de ouro.<br /><br />
-            </h4>         
-          </details>
-          <br />
-  <!-- Fim de vender as Presa de Lycan-->
+<!-- Início de vender as Presa de Lycan-->
+<img class="imgMenor" onclick="funcaovenderpresa()"  id="botao-moeda3" src="https://i.ytimg.com/vi/0WFRZrlhYk4/hqdefault.jpg"/>
+<div id="moedas3"></div>
+<br>
+<h4 id="idvenderpresa"></h4>
+<details>
+  <summary id="idPresainventario">⛔ Presa de Lycan: 0</summary>           
 
-   <!-- Início da Presa Venenosa de Kasaka-->
+  <h4 class="sublinhado">
+    <br />[Categoria: Recompensa - Presas] <br /><br />Uma presa de
+    Lycan por 20 moedas de ouro.<br /><br />
+  </h4>         
+</details>
+<br />
+<!-- Fim de vender as Presa de Lycan-->
+<!--Fim das vendas-->
+
+    </div>
+    <div class="abaInventario" id="abaInventario2">
+      
+      <!--Início dos equipamentos-->
+      <!-- Início da Presa Venenosa de Kasaka-->
    <img class="imgMenor" onclick="funcaoEquiparKasaka()"  src="https://swordslice.com/cdn/shop/articles/solothumb-17108697477981715149910-0.png?v=1740413431"/>
    <br>
    <h4 id="idRetornoEquiparKasaka"></h4>
@@ -524,6 +709,27 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
           <br />
   <!-- Fim da Coleira do Guardião -->
 
+  <!-- início do Toque do Dominador -->
+<img  class="imgMenor" onclick="funcaoEquiparToqueDoDominador()" 
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO66PKjh0Fz9ZL_jemvOSlrXRzON8WnIg6qVCGfMJULlimmQX9Z2ih2c_908WV-W9JIcU&usqp=CAU"/>
+<br />
+<h4 id="idRetornoEquiparToqueDoDominadorEquipada"></h4>
+          <details>
+            <summary class="sumario" id="idItemToqueDoDominadorAdquirida">
+              ⛔ Toque do Dominador
+            </summary>         
+
+            <h4 class="sublinhado">
+              <br />[Categoria: Recompensa - pedra rúnica] <br><br>
+O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito para lutas contra Magos.
+              <br><br>
+              Você pode equipar essa Habilidade e ganhar 10 pontos de Atributo em Inteligência.
+              Adquirida ao derrotar Igris o Vermelho-Sangue.<br><br>
+            </h4>
+            <br>
+          </details><br>
+            <!-- Fim do Toque do Diminador -->
+
 <!-- início do Elmo do Cavaleiro Carmesim -->
 <img  class="imgMenor" onclick="funcaoEquiparElmo()" src="https://images6.alphacoders.com/135/thumb-350-1357475.webp"/>
 <br />
@@ -539,106 +745,181 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
               Adquirido ao derrotar Igris.<br /><br />
             </h4>
             <br />
+          </details>
              <!-- Fim do Elmo do Cavaleiro Carmesim -->
 
 
+
+  <!--Fim dos equipamentos-->
+
+    </div>
+  </div>
+</div>
+<!--Fim do menu de inventário-->
           </details>
           <br />
-         
-
           <h4></h4>
-       
-
         <!--Fim do Inventário-->
     </div>
     <div class="aba" id="aba5">
      
       <!--Início da aba Arise-->
 
-  <!--Início da habilidade Extração de Sombras-->
-<details>
-  <summary class="sumario" id="idCheckExtracao">
-    ⛔ Habilidade: Extração de Sombra
-  </summary>
-  <br />
-  <img
-    class="imgMenor"
-    src="https://animeflix.com.br/wp-content/uploads/2025/02/solo-leveling-monarca-das-sombras-696x392.jpg"
-  />
-  <br />
+
+
+ <!-- INÍCIO CLASSE E TÍTULOS -->
+      <div class="abasArise">
+        <div class="botoesArise">
+          <button class="botaoArise ativo" onclick="abrirAbaArise(1)"> Classe </button>
+          <button class="botaoArise" onclick="abrirAbaArise(2)"> Títulos </button>
+        </div>
+        <div class="conteudoArise">
+          <div class="abaArise ativo" id="abaArise1">
+            
+ <!--Início da habilidade Extração de Sombras-->
+  <h1>Arise from the Shadow</h1>
+  <br>
+  <img class="img1" src="https://animeflix.com.br/wp-content/uploads/2025/02/solo-leveling-monarca-das-sombras-696x392.jpg"/>
+  <br>
+  <h3 class="sublinhado">Necromante [Monarca das Sombras]</h3>
+  
+ 
+
+
 
   <h4 class="sublinhado">
     <br />[Habilidade exclusiva da classe Monarca das Sombras] <br /><br />
-   Extrai mana de um corpo cuja a vida chegou ao fim e a transforma em  um soldado das Sombras.
-    <br />
-    <br />
+   Extrai mana de um corpo cuja a vida chegou ao fim e a transforma em um soldado das Sombras.
+    <br><br>Todos os pontos de Atributo são somados aos seus quando o soldado for chamado. Você poderá usar essa Habilidade ao derrotar os 6 Magos.<br><br>
   </h4>
 
-<fieldset class="sublinhado">
-<h3 >[Igris Nível 7]<br>Rank Cavaleiro</h3> 
-<br>
+   <!--[Igris Nível 7] Rank Cavaleiro-->
+  <br>
 <img class="img1" src="https://i.ytimg.com/vi/WouuRxJi_tg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCkpfPUlmpzp4lsoZiYBOvidaAT3w"/>
 <br><br>
+
+<details>
+  <summary class="sumario" id="idChecDoIgris">⛔ Igris - O Vermelho-Sangue</summary>
+  <br>
+<fieldset class="sublinhado">
+<h3 >[Igris Nível 7]<br>Rank Cavaleiro</h3> 
 <h3 class="luta">🦵 Agilidade: 100 <br> 💪 Força: 120 <br> 👀 Percepção: 80 <br> 🧠 Inteligência: 60</h3>
-<h3 >Necessário 20 Pontos de Mana</h3>
-<button class="botaoNovo" onclick="FuncaoExtracao1()"> Erga-se </button>
+<h3 >Necessário 50 Pontos de Mana para usa o Igris em uma batalha.</h3>
+
+<button class="botaoNovo" onclick="FuncaoExtracaoIgris()"> Erga-se </button>
 
   <h4 id="idRetornoExtracao1"></h4>
 </fieldset>
+</details><br>
+ <!--[Igris Nível 7] Rank Cavaleiro-->
 
-<fieldset class="sublinhado">
-<h3 >[Magos das Sombras Nível 1]<br> Rank Normal</h3>
-<br>
+ <!--[Magos das Sombras Nível 1] Rank Normal-->
+ <br>
 <img class="img1" src="https://preview.redd.it/4hwzwdio9tce1.png?auto=webp&s=a2bc4f454e79e7d5c532a4f2fb8c0a3eb7c4cfa6"/>
 <br><br>
-<h3 class="luta">🦵 Agilidade: 145 <br> 💪 Força: 140 <br> 👀 Percepção: 85 <br> 🧠 Inteligência: 65</h3>
+ <details>
+  <summary class="sumario" id="idChecDosMagos">⛔ 6 Magos das Sombras</summary>
+  <br>
+<fieldset class="sublinhado">
+<h3 >[Magos das Sombras Nível 1]<br> Rank Normal</h3>
 
-<h3 >Necessário 10 Pontos de Mana</h3>
-<button class="botaoNovo" onclick="FuncaoExtracao2()"> Erga-se </button>
+<h3 class="luta">🦵 Agilidade: 144 <br> 💪 Força: 138 <br> 👀 Percepção: 84 <br> 🧠 Inteligência: 66</h3>
 
-  <h4 id="idRetornoExtracao2"></h4>
+<h3 >Necessário 10 Pontos de Mana para usa um Mago em uma batalha. Os atributos acima serão divididos por 6 Magos</h3>
+<button class="botaoNovo" onclick="FuncaoExtracaoMagos()"> Ergam-se </button>
+
+  <h4 id="idRetornoExtracaoMagos"></h4>
 
   
 <br />
 </fieldset>
+ </details>
+ <!--[Magos das Sombras Nível 1] Rank Normal-->
 <br />
-
 <br>
-
-</details>
 <br />
 <!-- Fim da habilidade da Extração de Sombras -->
- <!--Fim da aba Arise-->
-
-    </div>
-  </div>
-</div>
-</fieldset>
-<!-- teste -->
-
-       
-
-
-
-
-     
+      
+          </div>
+          <div class="abaArise" id="abaArise2">
+            
+            <!--Início dos títulos-->      
+            <h1>Títulos</h1>
+        
+            <h3 class="sublinhado">Seus Títulos irão sendo desbloqueados conforme você for realizando as tarefas.</h3>
 
           
-
+            <fieldset class="temafieldset">
+              <br>
+              <img class="imgMenor" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/03/solo-levelling-s-essence-stone.jpg"/>
+            <h4  id="idCheckEntusiasta">🚫 Título: Entusiata da Mineração</h4>
+            <h5>Obtida ao minerar 1000 Cristais de mana [Ganhe 5 Pontos em Percepção]</h5>
+            <button class="botaoNovo" onclick="FuncaoTrocarTituloEntusiasta()">Usar Título</button>
+            <h4 id="idTituloRetornoEntusiasta"></h4>
+            </fieldset><br>
+  
+            <fieldset class="temafieldset">
+              <br>
+              <img class="imgMenor" src="https://i.ytimg.com/vi/CtoK8OC8dUA/sddefault.jpg"/>
+            <h4  id="idCheckLordeDaMineracao">🚫 Título: Lorde da Mineração</h4>
+            <h5>Obtida ao minerar 4000 Cristais de mana [Ganhe 10 Pontos em Percepção]</h5>
+            <button class="botaoNovo" onclick="FuncaoTrocarTituloLordeDaMineracao()">Usar Título</button>
+            <h4 id="idTituloRetornoLordeDaMineracao"></h4>
+          </fieldset><br>
+          
+            <fieldset class="temafieldset">
+              <br>
+              <img class="imgMenor" src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/03/sung-jinwoo-from-solo-leveling-in-the-air-after-slashing-a-goblin-boss.jpg"/>
+              <h4  id="idCheckGoblins">🚫 Título: Exterminador de Goblins</h4>
+              <h5>Obtida ao matar 10 Goblins [Ganhe 50 Pontos em todos os Atributos ao lutar contra Goblins]</h5>
+              <button class="botaoNovo" onclick="FuncaoTrocarTituloGoblins()">Usar Título</button>
+              <h4 id="idTituloRetornoGoblins"></h4>
+          </fieldset><br>
+  
+            <fieldset class="temafieldset">
+              <br>
+              <img class="imgMenor" src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1tOQvk.img?w=768&h=384&m=6"/>
+            <h4  id="idCheckLobos">Título Assassino de Lobos</h4>
+            <button class="botaoNovo" onclick="FuncaoTrocarTituloLobos()">Usar Título</button>
+          </fieldset><br>
+  
+            <fieldset class="temafieldset">
+              <br>
+              <img class="imgMenor" src="https://static.beebom.com/wp-content/uploads/2025/03/Min-Byung.jpg?w=1024"/>
+              <h4 id="idCheckHealer">Título Aprendiz de Curandeiro</h4>
+              <button class="botaoNovo" onclick="FuncaoTrocarTituloHealer()">Usar Título</button>
+            </fieldset><br>
+  
+              <fieldset class="temafieldset">
+                <br>
+              <img class="imgMenor" src="https://4kwallpapers.com/images/wallpapers/sung-jinwoo-solo-leveling-3440x1440-14579.jpg"/>
+               <h4  id="idCheckAdversidade">Título Aquele que Superou a Adversidade</h4>
+               <button class="botaoNovo" onclick="FuncaoTrocarTituloAdversidade()">Usar Título</button>
+              </fieldset>
+          </details>
+        <!--Fim dos títulos -->
       
+          </div>
+        </div>
+      </div>
+  <!-- FIM CLASSE E TÍTULOS -->
 
 
-        <h3 style="text-align: center" >
-          Powered by Marco Dione<br />Front-End<br />2025
-        </h3>
+</div>
+</div>
+</div>
+</fieldset>
+
+       
       </div>
       <!-- Fim do menu da direita -->
 
       <!--Início da apresenção Solo Leveling-->
-     
-      <div class="grid-item2">
+      <div id="conteudo" class="grid-item2">
+      
  <!--Início dos videos -->
- <br><iframe width="320" height="200"  src="https://www.youtube.com/embed/0HwnlgjICx4?si=8G4ph7Puz6meOWx6&autoplay=1&mute=1&loop=1&playlist=0HwnlgjICx4" title="YouTube video player"  frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>
+ <br><iframe width="320" height="200"  
+ src="https://www.youtube.com/embed/0HwnlgjICx4?si=8G4ph7Puz6meOWx6&autoplay1=1&mute=1&loop=1&playlist=0HwnlgjICx4" title="YouTube video player"  frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>
  <!--Fim dos videos -->
         <h1>Solo Leveling</h1>
         <h3>
@@ -646,7 +927,24 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
           dupla e é escolhido por um programa misterioso como seu único jogador.
           O programa lhe dá a habilidade de aumentar sua força, possivelmente
           além de qualquer limite conhecido.
-        </h3> <br><br></div>
+        </h3> 
+        <button id="trocar-conteudo" class="BotaoTrocarConteudo"></button>
+        <br><br>
+
+        
+
+        <div id="conteudo-alternativo" style="display: none;">
+          
+            <br />
+            <iframe width="320" height="200" src="https://www.youtube.com/embed/C0zMWogztQs?si=csHDN8bzlSMBr7Hg&autoplay1=1&mute=1&loop=1&playlist=C0zMWogztQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h1>Solo Leveling: Arise from the Shadow</h1>
+            <h3>Através de batalhas implacáveis, Jinwoo aprimorou suas habilidades e eventualmente completou uma " Missão de Troca de Classe ", adquirindo o título de "Monarca das Sombras", que lhe permite comandar um exército de soldados das sombras. Agora, movido pela esperança de curar sua mãe doente, Jinwoo parte em uma nova jornada para obter materiais para o "Elixir da Vida".</h3>
+            <br /><br />
+           
+          
+        </div>
+      </div>
+
       <!-- Fim da apresenção Solo Leveling -->
 
 
@@ -663,87 +961,70 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
 
       <!-- Início do Nível -->
       <div class="grid-item3">
-        <h1 id="idnivel" style="text-align: center; font-size: 50px">Nível: 1</h1>
-        <details><summary><em class="sumario">Nota</em></summary><h3>
-            Para subir de Nível ganhe e adicione Pontos nos seus atributos, a
-            cada 6 pontos você irá subir um Nível.
-            <br>
-          </h3>
+        <h1 id="idnivel" style="text-align: center; font-size: 50px">Nível: 0</h1>
         </details>
-        <br>
-      </div>
       <!--Fim do Nível-->
 
       <!--Início da Classe e Título-->
-      <div class="grid-item3">
+      
         <h3 id="idClasse">Classe: Humano</h3>
-        <h1 id="idTituloAlerta"></h1>
+        <h1 id="idTituloAlerta" style="text-align: center; font-size: 50px"></h1>
         <h3 id="idtitulo">Título: O caçador mais fraco da humanidade!</h3><details>
 
-          <summary>Trocar Título</summary>
-
-          <h3>Seus Títulos irão sendo desbloqueados conforme você for realizando as tarefas.</h3>
+          <summary>Nota</summary>
+          <h4>Para subir de Nível ganhe e adicione Pontos nos seus atributos, a
+            cada 6 pontos você irá subir um Nível. Para trocar de Título vá na aba "Classe e Títulos" no menu esquerdo.</h4>
           
-          <h4  id="idCheckEntusiasta">🚫 Título Entusiata da Mineração</h4>
-          <button class="botaoNovo" onclick="FuncaoTrocarTituloEntusiasta()">Usar Título</button>
-          
-          <h4  id="idCheckLorde">🚫 Título Lorde da Mineração</h4>
-          <button class="botaoNovo" onclick="FuncaoTrocarTituloLorde()">Usar Título</button>
-
-          <h4  id="idCheckGoblin">🚫 Título Exterminador de Goblins</h4>
-          <button class="botaoNovo" onclick="FuncaoTrocarTituloGoblin()">Usar Título</button>
-
-          <h4  id="idCheckLobos">🚫 Título Assassino de Lobos</h4>
-          <button class="botaoNovo" onclick="FuncaoTrocarTituloLobos()">Usar Título</button>
-
-            <h4 id="idCheckHealer">🚫 Título Healer</h4>
-            <button class="botaoNovo" onclick="FuncaoTrocarTituloHealer()">Usar Título</button>
-            
-             <h4  id="idCheckAdversidade">🚫 Título Aquele que Superou a Adversidade</h4>
-             <button class="botaoNovo" onclick="FuncaoTrocarTituloAdversidade()">Usar Título</button>
-          
-        </details>
       </div>
       <!-- Fim da Classe e Título 1-->
 
-      <!-- Início da vida -->
-      <div class="grid-itemFlutuante">
+      <!-- Início da vida/fadiga/mana -->
+       <!-- Início da vida -->
+      <div class="grid-item3">
         <h2 id="idvida">❤️ Vida: 100%</h2>
         <div class="barraVida">
           <div></div>
         </div>
         <br />
-        <details>
-          <summary><em class="sumario">Nota</em></summary>
-          <h4>
-            ❤️ Vida: Ao lutar contra inimigos você irá perder vida. Quando sua vida chegar em 0% não será mais possível lutar até a mesma ser recarregada,
-            compre "Poção de Vida" na Loja de Intens.
-          </h4>
-          <br />
-        </details>
-      </div>
-      <!-- Fim da vida -->
-
-      <!-- Início da fadiga -->
-      <div class="grid-itemFlutuante">
+        <!-- Início da fadiga -->
         <h2 id="idfadiga">🔋Fadiga: 0%</h2>
 
         <div class="barra">
           <div></div>
         </div>
         <br />
-        <details>
-          <summary><em class="sumario">Nota</em></summary>
-          <h4>
-            🪫Fadiga: Ao realizar tarefas no jogo é gerado um cansaço, ao chegar
-            em 100% não é possível realizar nenhuma tarefa extra. Para
-            recarregar a Fadiga você pode realizar a Missão diária [Recuperação Total da Fadiga] ou comprar
-            uma Poção de Fadiga na "Loja de ítens".
-          </h4>
-          <br />
-        </details>
-      </div>
       <!-- Fim da fadiga -->
+<!-- Início da Mana -->
+<h2 id="idAumentoDoNivelDaMana">🪄 Mana: 10%/20%</h2>
+<div class="barraMana">
+  <div></div>
+</div>
+<br />
+<details>
+  <summary><em class="sumario">Nota</em></summary>
+  <h4>
+    ❤️ Vida: Ao lutar contra inimigos você irá perder vida. Quando sua vida chegar em 0% não será mais possível lutar até a mesma ser recarregada,
+    compre "Poção de Vida" na Loja de Intens.
+  </h4>
+  <h4>
+    🪫Fadiga: Ao realizar tarefas no jogo é gerado um cansaço, ao chegar
+    em 100% não é possível realizar nenhuma tarefa extra. Para
+    recarregar a Fadiga você pode realizar a Missão diária [Recuperação Total da Fadiga] ou comprar
+    uma Poção de Fadiga na "Loja de ítens".
+  </h4>
+  <h4>
+    🪄 Mana: A mana é a energia mágica necessária para utilizar as Habilidades. Ela pode ser comprada na "Loja de Ítens", 
+    no momento o máximo de Mana é 20% mas durante o Jogo você poderá aumentá-la.
+  </h4>
+  <br />
+</details>
+<!-- Fim da Mana -->
+      </div>
+      <!-- Fim da vida/fadiga/mana -->
+
+      
+
+      
 
       
 
@@ -788,7 +1069,7 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
           <button class="blob" onclick="funcaominerarcristal()"> MINERAR CRISTAIS DE MANA </button>
           <button class="blob" onclick="funcaominerarcristalAteAfadigaSer100()"> MINERAR ATÉ 100% DA FADIGA </button>
           <h4 id="idminerarcristal"></h4>
-          <br /><br />
+          
 
           <details>
             <summary><em class="sumario">Nota</em></summary>
@@ -802,6 +1083,7 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
             <ul>
               <li>Percepção 10/Cristal 1/Fadiga 10%</li>
               <li>Percepção 11/Cristais 2/Fadiga 9%</li>
+              <li>Percepção 12/Cristais 3/Fadiga 8%</li>
               <li>...</li>
               <li>Percepção 18/Cristais 9/Fadiga 2%</li>
               <li>Percepção 19/Cristais 10/Fadiga 1%</li>
@@ -843,93 +1125,99 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
           <summary class="sumario">REALIZAR O TREINO</summary>
           <br />
 
-          <h4>
-           Ao realizar a "Missão Diária" você pode optar por duas atividades.
-           <ul>
-            <li>Treino Diário: Realizar o treino diário e ganhar 1 Ponto de Atributo em Força.</li><br>
-            <li>Missão de Penalidade: Sobreviver a Centopeias Gigantes do Deserto com Dentes Envenenados, caso você vença receberar 20 Pontos de experiência,
-               caso não derrote a Centopeia você ainda receberar 2 pontos de experiência.</li>
-          </ul>
-          </h4>
+          <h4> Ao realizar a "Missão Diária" você pode optar por duas atividades.</h4>
 
-          <!--Início do Treino diário-->
-          <details>
-            <summary class="sumario"><h3>Treino Diário: Ganho de Força</h3></summary>
+<!--Início do menu de Treino Diário-->
+<div class="abasTreino">
+  <div class="botoesTreino">
+    <button class="botaoTreino ativo" onclick="abrirAbaTreino(1)"> Ganho de Força </button>
+    <button class="botaoTreino" onclick="abrirAbaTreino(2)"> Sobrevivência </button>
+  </div>
+  <div class="conteudoTreino">
+    <div class="abaTreino ativo" id="abaTreino1">
       
+      <!--Início do Treino diário-->
 
-      <h3 class="sublinhado">Objetivo do dia</h3>
+  <h3 class="sublinhado">Treino Diário: Ganho de Força</h3>
 
-          <h4>
-            Treino diário chegou: 100 flexões, 100 abdominais, 100
-            agachamentos e 10km de corrida.
-          </h4>
+      <h4>
+        Treino diário chegou: 100 flexões, 100 abdominais, 100
+        agachamentos e 10km de corrida.
+        <br><br>
+        Realize o treino diário e ganhe 1 Ponto de Atributo em Força.
+      </h4>
 
-          <button class="blob" onclick="misaoDiaria()">
-            🤸 Realizar treinamento 🏃</button
-          ><br />
-          <h4 id="idtreino"></h4>
+      <button class="blob" onclick="misaoDiaria()">
+        🤸 Realizar treinamento 🏃</button
+      ><br />
+      <h4 id="idtreino"></h4>
 
-          <details>
-            <summary class="sumario">Nota</summary>
+      <details>
+        <summary class="sumario">Nota</summary>
 
-            <h3>
-              Melhore seu atributo "Força" para realizar um treino mais
-              eficiente. Lembrando que os treinos irão gerar 1% de "Fadiga".
-            </h3>
+        <h3>
+          Melhore seu atributo "Força" para realizar um treino mais
+          eficiente. Lembrando que os treinos irão gerar 1% de "Fadiga".
+        </h3>
 
-            <h4 class="sumario">Exemplos:</h4>
-            <ul>
-              <li>Força 10 gera 2% do Treino</li>
-              <li>Força 11 gera 3% do Treino</li>
-              <li>...</li>
-              <li>Força 107 gera 99% do Treino</li>
-              <li>Força 108 gera 100% do Treino</li>
-            </ul>
-            <br>
-          </details>
-          <br><br>
-          </details>
- <!--Fim do Treino diário-->
+        <h4 class="sumario">Exemplos:</h4>
+        <ul>
+          <li>Força 10 gera 2% do Treino</li>
+          <li>Força 11 gera 3% do Treino</li>
+          <li>...</li>
+          <li>Força 107 gera 99% do Treino</li>
+          <li>Força 108 gera 100% do Treino</li>
+        </ul>
+        <br>
+      </details>
+      <br><br>
+      
+<!--Fim do Treino diário-->
 
-  <!--Início da luta do Centopeia-->
-  <details>
-    <summary class="sumario"><h3>Missão de Penalidade: Sobrevivência</h3></summary>
-          <fieldset class="temafieldset">
-            <h3 class="sublinhado">Status da Centopeia</h3>
+    </div>
+    <div class="abaTreino" id="abaTreino2">
+      
+      <!--Início da luta do Centopeia-->
+ 
+  <h3 class="sublinhado">Missão de Penalidade: Sobrevivência</h3>
 
-            <fieldset class="luta">
-         
-              <h3 class="luta" id="idVidaCentopeias">❤️ Vida: 50%</h3>
-              <h3 class="luta" id="idFadigaCentopeias">🪫Fadiga : 50%</h3>
-              <h3 class="luta" id="idAgilidadeCentopeias">🦵 Agilidade: 50</h3>
-              <h3 class="luta" id="idForcaCentopeias">💪 Força: 50</h3>
-              <button class="botaoNovo" id="idPopulacaoCentopeias">🚶‍♂️População: 0/?</button>
-              <button class="botaoNovo" id="idexperienciaCentopeias">🏆 Experiência: 0</button>
-              
-              <br /><br />
-            </fieldset>
+  <h4>
+    Missão de Penalidade: Sobreviver a Centopeias Gigantes do Deserto com Dentes Envenenados, 
+    caso você vença receberá 20 Pontos de experiência, caso não derrote a Centopeia você ainda receberar 2 pontos de experiência.
+  </h4>
 
-            <h3 class="sublinhado">Quadro de notificações</h3>
-            <h3 class="luta" id="idQuadroDeRetornoCentopeias">
-              Você quer desafiar as Centopeias?
-            </h3>
+  <fieldset class="temafieldset">
+    <h3 class="sublinhado">Status da Centopeia</h3>
 
-            <button
-              class="blob"
-              onclick="LutaContraCentopeiasBotao()"
-              id="idLutaContraCentopeiasBotao"
-            >
-              Sim
-            </button>
+    <fieldset class="luta">
+ 
+      <h3 class="luta" id="idVidaCentopeias">❤️ Vida: 50%</h3>
+      <h3 class="luta" id="idFadigaCentopeias">🪫Fadiga : 50%</h3>
+      <h3 class="luta" id="idAgilidadeCentopeias">🦵 Agilidade: 50</h3>
+      <h3 class="luta" id="idForcaCentopeias">💪 Força: 50</h3>
+      <button class="botaoNovo" id="idPopulacaoCentopeias">🚶‍♂️População: 0/3</button>
+      <button class="botaoNovo" id="idexperienciaCentopeias">🏆 Experiência: 0</button>
+      
+      <br /><br />
+    </fieldset>
 
-            <button class="blob" onclick="AnalisarLutaContraCentopeiasBotao()">
-              Analisar Luta
-            </button>
-          </fieldset>
-        </details>
-        <br />
-      </details> <br><br>
-          <!--Fim da luta do Centopeia-->
+    <h3 class="sublinhado">Quadro de notificações</h3>
+    <h3 class="luta" id="idQuadroDeRetornoCentopeias">
+      Você quer desafiar as Centopeias?
+    </h3>
+
+    <button class="blob" onclick="LutaContraCentopeiasBotao()"  id="idLutaContraCentopeiasBotao">Sim</button>
+
+    <button class="blob" onclick="AnalisarLutaContraCentopeiasBotao()"> Analisar Luta </button>
+  </fieldset>
+
+ <br><br>
+  <!--Fim da luta do Centopeia-->
+
+    </div>
+  </div>
+</div>
+<!--Fim do menu de Treino Diário-->
       </div> 
       <!-- FIM do Treino diário -->
 
@@ -955,7 +1243,7 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
         </div>
 
         <h3>Dangeon Dupla: Templo de Cartenon</h3>
-        <h3>Rank: S ⭐⭐⭐⭐⭐</h3>
+        <h3>Rank: Indeterminado </h3>
         <button class="demonio">Demônio</button>
         <button class="AtaqueMagico">Ataque mágico</button>
         <button class="AtaqueFisico">Ataque físico</button>
@@ -1110,7 +1398,7 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
         </div>
 
         <h3>Dangeon Eminente: Estação de Metrô de Hapjeong</h3>
-        <h3>Rank: E ⭐⭐⭐</h3>
+        <h3>Rank: E ⭐</h3>
         <button style="color: #373960; background-color: DeepSkyBlue">
           Besta Mágica
         </button>
@@ -1184,7 +1472,7 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
                 />
               </div>
               <div class="flip-card-back">
-                <img class="img1"  src="https://static.wikia.nocookie.net/solo-leveling/images/f/f0/Anime_Episode_4_JInwoo_vs_snake.webp/revision/latest?cb=20240331123812"  />
+                <img class="img1"  src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2024/04/05/solo-leveling-3-1iev1lmtuh1yx.jpg"  />
               </div>
             </div>
           </div>
@@ -1269,7 +1557,7 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
         </div>
 
         <h3>Dangeon: Dungeon dos Insetos</h3>
-        <h3>Rank: E ⭐⭐</h3>
+        <h3>Rank: E ⭐</h3>
         <button class="inseto">Inseto</button>
         <button class="AtaqueFisico">Ataque físico</button>
 
@@ -1347,7 +1635,7 @@ Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais
         </div>
 
         <h3>Dangeon: Dungeon dos Insetos</h3>
-        <h3>Rank: C ⭐⭐⭐⭐⭐</h3>
+        <h3>Rank: C ⭐⭐⭐</h3>
         <button class="inseto">Inseto</button>
         <button class="AtaqueFisico">Ataque físico</button>
 
@@ -1580,7 +1868,7 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
         </div>
 
         <h3>Dangeon: Dangeon dos Goblins</h3>
-        <h3>Rank: B ⭐⭐</h3>
+        <h3>Rank: B ⭐⭐⭐⭐</h3>
         <button>Humano</button>
         <button class="AtaqueFisico">Ataque físico</button>
 
@@ -1716,7 +2004,7 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
       <!-- INÍCIO do Igris-->
       <time id="idDIVEsconderIgris">
       <div class="grid-item3">
-        <h1>Cavaleiro Comandante Igris - O Vermelho-Sangue</h1>
+        <h1>Igris - O Vermelho-Sangue</h1>
 
         <div class="cards-container">
           <div class="card-1 flip-card">
@@ -1736,7 +2024,7 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
         </div>
 
         <h3>Dangeon: Troca de Classes</h3>
-        <h3>Rank: S ⭐⭐⭐⭐⭐</h3>
+        <h3>Rank: S 💎 </h3>
         <button class="humanoide">Humanoide</button>
         <button class="AtaqueFisico">Ataque físico</button>
         <button class="AtaqueMagico">Ataque mágico</button>
@@ -1814,7 +2102,7 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
         </div>
 
         <h3>Dangeon: Troca de Classes</h3>
-        <h3>Rank: S ⭐⭐⭐⭐⭐</h3>
+        <h3>Rank: S 💎</h3>
         <button class="humanoide">Humanoide</button>
         <button class="AtaqueFisico">Ataque físico</button>
         <button class="AtaqueMagico">Ataque mágico</button>
@@ -1863,19 +2151,7 @@ Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha 
       </div></time>
       <!--FIM dos Magos-->
 
- <!--Início da apresenção Solo Leveling-->
- <div class="grid-item2">
-  <br />
-    
-  <iframe width="320" height="200" src="https://www.youtube.com/embed/C0zMWogztQs?si=csHDN8bzlSMBr7Hg&autoplay=1&mute=1&loop=1&playlist=C0zMWogztQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <h1>Solo Leveling: Arise from the Shadow</h1>
-    
- <h3>Através de batalhas implacáveis, Jinwoo aprimorou suas habilidades e eventualmente completou uma " Missão de Troca de Classe ", 
-  adquirindo o título de "Monarca das Sombras", que lhe permite comandar um exército de soldados das sombras. Agora, 
-  movido pela esperança de curar sua mãe doente, Jinwoo parte em uma nova jornada para obter materiais para o "Elixir da Vida".</h3>
-  <br /><br />
-</div>
-<!-- Fim da apresenção Solo Leveling -->
+
 
 
 
