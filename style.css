@@ -1,10 +1,10 @@
 .BotaoTrocarConteudo {
   background-color: #092857;
   border: solid 3px #092857;
-  color: #d308f5;
+  color: deeppink;
   font-weight: bold;
  font-size: 25px;
- text-shadow:4px 4px 4px #4d00c4;
+ text-shadow:4px 4px 4px black;
 }
 
 .AtaqueFisico{
@@ -38,7 +38,10 @@
 .temafieldset{
   background-color: #19327f;
 }
-
+.temafieldset2{
+  background-color: #092857;
+  border: solid 3px #092857;
+}
 .imgMenor{
   width: 150px;
   height: 100px;
@@ -52,6 +55,7 @@ height: 150px;
 border: solid 2px #17e5f2;
 border-radius: 20px;
 }
+  
 .pipoca{
 height: 100px;
 border-radius: 10px;
@@ -176,7 +180,7 @@ background-size: 100%;
 
 .grid-item1{
 margin: 2px;
-grid-row: span 13;
+grid-row: span 15;
 background-color: #092857;
   text-align: center;
   padding: 5px 10px 5px 10px;
@@ -197,6 +201,19 @@ background-color: #092857;
   padding: 5px 10px 5px 10px;
   box-shadow: 2px 2px 2px  #17e5f2;
 }
+
+.grid-item30{
+  margin: 2px;
+  grid-column: span 2;
+  background-color: #092857;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 2px 2px 2px  #17e5f2;
+    
+    z-index: 2;  /*  Indica a posição do elemento nas camadas de sobreposição */
+    position: sticky;
+    top: 0;
+  }
 
 .grid-itemFlutuante{
   z-index: 2;  /*  Indica a posição do elemento nas camadas de sobreposição */
@@ -1071,3 +1088,54 @@ border-radius: 10px;
 }
 
 /* FIM DO EFEITO DA FADIGA*/
+
+
+/* INÍCIO DO MENU PARA AS DUNGEOS*/
+.abasNova {
+  width: 100%;
+}
+
+.botoesNova {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.botaoNova {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.botaoNova.ativo {
+  background-color: #031833;
+  color: #fff;
+}
+
+.conteudoNova {
+  padding: 20px;
+ 
+}
+
+.abaNova {
+  display: none;
+}
+
+.abaNova.ativo {
+  display: block;
+}
+/* FIM DO MENU PARA AS DUNGEOS*/
+
+
+.status-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.status-item {
+  margin: 10px;
+}
+
+
