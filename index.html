@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <title>Solo Leveling: Arise from the Shadow</title>
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="https://static6.depositphotos.com/1005348/605/i/450/depositphotos_6050169-stock-photo-electric-3d-letter-on-white.jpg"/>
@@ -36,7 +37,7 @@
         />
       </div>
     </section>
-
+<button class="Deus" onclick="deus()">.................</button>
     <!-- INÍCIO DO GRID -->
     <div class="grid-container" id="StatusMudarDeCor">
       <!-- Início do menu da direita -->
@@ -48,16 +49,34 @@
   <!-- Início do Nível, Classe e Título -->
 
   <fieldset class="temafieldset2">
+     
   <h1 id="idnivel" style="text-align: center; font-size: 70px">Nível: 0</h1>
 </details>
-
+<h3 id="idNivelDoRank">Rank: E ⭐</h3>
 <h3 id="idClasse">Classe: Humano</h3>
 <h1 id="idTituloAlerta" style="text-align: center; font-size: 50px"></h1>
-<h3 id="idtitulo">Título: O caçador mais fraco da humanidade!</h3><details>
+<h3 id="idtitulo">Título: O caçador mais fraco da humanidade!</h3>
+<h3 id="idtituloMestreDasArmas"></h3>
+<details>
 
-  <summary>Nota</summary>
-  <h4>Para subir de Nível ganhe e adicione Pontos nos seus atributos, a
-    cada 6 pontos você irá subir um Nível. Para trocar de Título vá na aba "Classe e Títulos" no menu esquerdo.</h4>
+  <summary>Ajuda</summary>
+  <ul>
+    <h4>
+    <br>
+    Para subir de Nível ganhe e adicione Pontos nos seus atributos, a cada 6 pontos você irá subir um Nível. 
+    <br><br>
+    Para trocar de Título vá na aba "Classe e Títulos".
+   <br><br>
+     Os Caçadores são avaliados através de um sistema de ranking, que vai de Rank E (o mais fraco) a Rank S (o mais forte).  
+  Rank:<br>
+  E ⭐<br>
+  D ⭐⭐<br>
+  C ⭐⭐⭐<br>
+  B ⭐⭐⭐⭐<br>
+  A ⭐⭐⭐⭐⭐<br>
+  S 💎<br><br>
+</h4>
+  </ul>
   </fieldset>
 <!-- Fim do Nível da Classe e Título 1-->
 
@@ -68,13 +87,17 @@
     <h1>Tarefas diárias</h1>
     <h3 id="idDiaMissaoDiaria" class="sublinhado">Objetivo do dia 1</h3>
 
-    <h4 id="idMissaoDiariaCristais">
-      Tenha 10 Cristais de Mana minerados 0/10</h4>
-    <h4 id="idRetornoMissaoDiariaTreino"></h4>
+     <h4 id="idMissaoDiariaPresaDeLycan"></h4>
+      <h4 id="idMissaoDiariaPedrasDeEssencia"></h4>
+      <h4 id="idRetornoMissaoDiariaPocaoDeVida"></h4>
     <h4 id="idRetornoMissaoDiariaPocaoDeRecuperacao"></h4>
-    <h4 id="idRetornoMissaoDiariaPocaoDeVida"></h4>
-    <h4 id="idMissaoDiariaPedrasDeEssencia"></h4>
-    <h4 id="idMissaoDiariaPresaDeLycan"></h4>
+     <h4 id="idRetornoMissaoDiariaTreino"></h4>
+    <h4 id="idMissaoDiariaCristais">Tenha 10 Cristais de Mana minerados 0/10 [Minere cristais na Dangeon "Cristais de Mana"]</h4>
+    
+  
+  
+   
+   
 
     <br />
 
@@ -87,11 +110,10 @@
     </span>
     <br />
 
-    <h4 id="idRetornoMissaoDiaria"></h4>
+    <h4 id="idRetornoMissaoDiaria">Ao realizar a Tarefa, clique na imagem para receber as recompensas</h4>
 
-    <h5>🎁 Clique na imagem para receber as recompensas 🎁</h5>
     <details>
-      <summary class="sumario">Nota</summary>
+      <summary class="sumario">Ajuda</summary>
       <h4>Ao realizar a Misão diária você irá receber recompensas:</h4>
       <h4>
         <ul>
@@ -114,21 +136,27 @@
     <button class="botao" onclick="abrirAba(2)" id="idAlertaNoMenuHabilidade" >Habilidades</button>
     <button class="botao" onclick="abrirAba(3)" id="idAlertaNoMenuLoja">Loja</button>
     <button class="botao" onclick="abrirAba(4)" id="idAlertaNoMenuInventario">Inventário</button>
-    <button class="botao" onclick="abrirAba(5)" id="idAlertaNoMenuClasseTitulo"> Classe e Títulos </button>
+    <button class="botao" onclick="abrirAba(5)" id="idAlertaNoMenuClasseTitulo">Classe e Títulos </button>
   </div>
   <div class="conteudo">
     <div class="aba ativo" id="aba1">
  
  <!--Início dos Pontos de atributos-->
- <h1>Pontos de atributos</h1>
+ <h1>Distribuição dos pontos</h1>
              
+ <!--Início gráfico-->
+ <canvas id="radar-chart" width="400" height="400" class="grafico"></canvas>
+ <!--Fim gráfico-->
+
  <h3 id="idatributo" class="sublinhado">Disponíveis: 0</h3>
 
  <!--Início dos Atributos-->
  <!--AGILIDADE-->
   <h2 id="idagilidade">🦵 Agilidade: 10</h2>
+   <button class="botaoNovo" onclick="funcaoatribuiragilidade()">Agilidade: Distribuir pontos</button>
   <h2 class="PontosExtras">
-    <em id="idRetornoArrancadaNoStatus"></em>
+    <em id="idRetornoMutilacaoNoStatus"></em>
+     <em id="idRetornoArrancadaNoStatus"></em>
     <em id="idRetornoAssassinaNoStatus"></em>
     <em id="idRetornoColeira1"></em>
     <em id="idRetornoFurtividadeNoStatus"></em>
@@ -136,6 +164,12 @@
     <em id="idRetornoProvocarNoStatus"></em>
     <em id="idRetornoFortalecimentoNoStatus"></em>
     <em id="idRetornoAdagaDeBaruka2"></em>
+    <em id="idRetornoDominioDoMonarcaNoStatus"></em>
+    <em id="idRetornoFlameSpearNoStatus1"></em>
+    <em id="idRetornoColar"></em>
+      <em id="idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus"></em>
+       <em id="idRetornoAdagasSombraLuaNoStatus"></em>
+ <em id="idRetornoMarteloGolemAtributo"></em>    
   </h2>
 
   <h2 class="PontosExtrasDosSoldadosDasSombras">
@@ -143,6 +177,9 @@
     <em id="idPontosExtrasDosSoldadosDasSombrasMagosAgilidade"></em>
     <em id="idPontosExtrasDosSoldadosDasSombrasTankAgilidade"></em>
     <em id="idPontosExtrasDosSoldadosDasSombrasIronAgilidade"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasTuskAgilidade"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasKaiselAgilidade"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasBeruAgilidade"></em>
   </h2>
 
   <h3 class="PontosPontosExtrasDosTitulos">
@@ -150,19 +187,25 @@
     <em id="idPontosExtrasLobos1"></em>
   </h3>
 
-  <button class="botaoNovo" onclick="funcaoatribuiragilidade()">Agilidade: Distribuir pontos</button>
+ 
 <!--AGILIDADE-->
 
   <!--FORÇA-->
   <h2 id="idforca">💪 Força: 10</h2>
+   <button class="botaoNovo" onclick="funcaoatribuirforca()">Força: Distribuir pontos</button>
   <h2 class="PontosExtras">
-    <em id="idRetornoCompraEspadaComum2"></em>
+    <em id="idRetornoMutilacaoNoStatus2"></em>
+      <em id="idRetornoCompraEspadaComum2"></em>
     <em id="idRetornoCompraEspadaComum3"></em>
     <em id="idRetornoCompraEspadaComum4"></em>
     <em id="idRetornoElmo"></em>
     <em id="idRetornoCompraAssassinaCavaleiros"></em>
     <em id="idRetornoFortalecimentoNoStatus2"></em>
     <em id="idRetornoAdagaDeBaruka"></em>
+    <em id="idRetornoDominioDoMonarcaNoStatus2"></em>
+    <em id="idRetornoEspadaMonarcaDemonio"></em>
+      <em id="idRetornoManoplaNoStatus"></em>
+       <em id="idRetornoAdagasSombraLuaNoStatus2"></em>
   </h2>
 
   <h2 class="PontosExtrasDosSoldadosDasSombras">
@@ -170,6 +213,9 @@
     <em id="idPontosExtrasDosSoldadosDasSombrasMagosForca"></em>
     <em id="idPontosExtrasDosSoldadosDasSombrasTankForca"></em>
     <em id="idPontosExtrasDosSoldadosDasSombrasIronForca"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasTuskForca"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasKaiselForca"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasBeruForca"></em>
   </h2>
 
   <h3 class="PontosPontosExtrasDosTitulos">
@@ -177,16 +223,22 @@
     <em id="idPontosExtrasLobos2"></em>
   </h3>
 
-  <button class="botaoNovo" onclick="funcaoatribuirforca()">Força: Distribuir pontos</button>
+ 
 <!--FORÇA-->
 
     <!--PERCEPÇÃO-->
 <h2 id="idpercepcao">👀 Percepção: 10</h2>
+ <button class="botaoNovo" onclick="funcaoatribuirpercepcao()">Percepção: Distribuir pontos </button>
 <h2 class="PontosExtras">
-  <em id="idRetornoColeira2"></em>
+  <em id="idRetornoMutilacaoNoStatus3"></em>
+   <em id="idRetornoColeira2"></em>
   <em id="idRetornoEscudoNoStatus2"></em>
   <em id="idRetornoProvocarNoStatus2"></em>
   <em id="idRetornoFortalecimentoNoStatus3"></em>
+  <em id="idRetornoDominioDoMonarcaNoStatus3"></em>
+  <em id="idRetornoBrinco"></em>
+   <em id="idRetornoFoiceDoCoveiroNoStatus"></em>
+     <em id="idRetornoArcoElfoGeloNoStatus"></em>
 </h2>
 
 <h2 class="PontosExtrasDosSoldadosDasSombras">
@@ -194,6 +246,9 @@
   <em id="idPontosExtrasDosSoldadosDasSombrasMagosPercepcao"></em>
   <em id="idPontosExtrasDosSoldadosDasSombrasTankPercepcao"></em>
   <em id="idPontosExtrasDosSoldadosDasSombrasIronPercepcao"></em>
+  <em id="idPontosExtrasDosSoldadosDasSombrasTuskPercepcao"></em>
+  <em id="idPontosExtrasDosSoldadosDasSombrasKaiselPercepcao"></em>
+  <em id="idPontosExtrasDosSoldadosDasSombrasBeruPercepcao"></em>
 </h2>
 
 <h3 class="PontosPontosExtrasDosTitulos">
@@ -203,14 +258,23 @@
   <em id="idPontosExtrasLobos3"></em>
 </h3>
 
- <button class="botaoNovo" onclick="funcaoatribuirpercepcao()">Percepção: Distribuir pontos </button>
+
  <!--PERCEPÇÃO-->
 
    <!--INTELIGENCIA-->
    <h2 id="idinteligencia">🧠 Inteligência: 10</h2>
+    <button class="botaoNovo" onclick="funcaoatribuirinteligencia()">Inteligência: distribuir pontos</button>
    <h2 class="PontosExtras">
-    <em id="idRetornoFortalecimentoNoStatus4"></em>
+    <em id="idRetornoMutilacaoNoStatus4"></em>
+      <em id="idRetornoFortalecimentoNoStatus4"></em>
     <em id="idRetornoToqueDoDominadorEquipada"></em>
+    <em id="idRetornoDominioDoMonarcaNoStatus4"></em>
+    <em id="idRetornoOrbeVulcano"></em>
+    <em id="idRetornoAnel"></em>
+    <em id="idRetornoFoiceDoCoveiroNoStatus2"></em>
+     <em id="idRetornoArcoElfoGeloNoStatus2"></em>
+      <em id="idRetornoGrimorioDemonioArdenteNoStatus"></em>
+      <em id="idRetornoFlameSpearNoStatus2"></em>
   </h2>
 
   <h2 class="PontosExtrasDosSoldadosDasSombras">
@@ -218,6 +282,9 @@
     <em id="idPontosExtrasDosSoldadosDasSombrasMagosInteligencia"></em>
     <em id="idPontosExtrasDosSoldadosDasSombrasTankInteligencia"></em>
     <em id="idPontosExtrasDosSoldadosDasSombrasIronInteligencia"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasKaiselInteligencia"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasTuskInteligencia"></em>
+    <em id="idPontosExtrasDosSoldadosDasSombrasBeruInteligencia"></em>
   </h2>
 
   <h3 class="PontosPontosExtrasDosTitulos">
@@ -225,12 +292,14 @@
     <em id="idPontosExtrasLobos4"></em>
   </h3>
 
-   <button class="botaoNovo" onclick="funcaoatribuirinteligencia()">Inteligência: distribuir pontos</button>
+  
     <!--INTELIGENCIA-->
-
- <h4 id="idatributopercepcao"></h4>
-
+<ul>
+ <h4 id="idatributopercepcao">Ajuda: Cada Atributo possui uma finalidade, ao reliazar uma Dangeon de mineração, Missão diária ou de Monstros valide qual atributo irá ser mais vantajoso para você.
+ </h4>
+</ul>
 <!--Fim dos Pontos de atributos-->
+
 
 
     </div>
@@ -277,13 +346,13 @@
  </details><br>
   <!-- Fim da habilidade Aprimoramento do despertar -->
 
-      <!--Início da habilidade Saúde e longevidade-->
+ <!--Início da habilidade Saúde e longevidade-->
       <img class="imgMenor" onclick="FuncaoSaudeElogenvidade()"   src="https://i0.wp.com/metagalaxia.com.br/wp-content/uploads/2024/01/Solo-Leveling-9.webp?resize=1024%2C582"/>
         <br>
         <h4 id="idRetornoSaudeElogenvidade"></h4>
       <details>
         <summary class="sumario" id="idCheckSaudelongevidade">
-          ⛔ Habilidade: Saúde e longevidade
+          🚫 Habilidade: Saúde e longevidade
         </summary>
         
 
@@ -295,44 +364,59 @@
           <br><br>
           Use 25 pontos de experiência para subir o nível da Habilidade.
           <br><br>
-        </h4>
-<h4 class="sublinhado" id="SaudeElogenvidadeUpleve"><br>
 Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida.<br><br> </h4>
 
 <button class="botaoNovo" onclick="FuncaoSaudeElogenvidadeUplevel()"> Subir de nível </button>
 
       </details> <br />
-      <!-- Fim da habilidade Saúde e longevidade -->
+<!-- Fim da habilidade Saúde e longevidade -->
 
       
-      <!--Início da habilidade Elixir da Vida-->
-      <img class="imgMenor" onclick="FuncaoElixirDaVida()"   
-      src="https://preview.redd.it/the-holy-water-of-life-v0-e4rxkg91phqe1.jpeg?auto=webp&s=9680ee2c7c34973b12134571da4db2a7ef033a11"/>
-        <br>
-        <h4 id="idRetornoElixirDaVida"></h4>
-      <details>
-        <summary class="sumario" id="idCheckElixirDaVida">
-          ⛔ Habilidade: Elixir da Vida
-        </summary>
-        
+      
 
-        <h4 class="sublinhado">
-          <br>[Missão: Castelo Demoníaco] <br><br>
-         No castelo do Rei Demônio, você pode obter os 3 ingredientes para o Elixir da Vida, que cura qualquer doença por meio de uma magia poderosa.
-         <br><br>Essa habilidade pode ser usada somente uma vez, ao utilizar você irá ganhar 100% de Vida, 
-         0% de Fadiga e sua Mana irá até o máximo permitido pelo seu nível.
+       <!--Início da habilidade domínio do Monarca-->
+       <img class="imgMenor" onclick="FuncaoDominioDoMonarca()"   src="https://animeflix.com.br/wp-content/uploads/2025/02/solo-leveling-monarca-das-sombras-696x392.jpg"/>
+       <br>
+       <h4 id="idRetornoDominioDoMonarca"></h4>
+     <details>
+       <summary class="sumario" id="idCheckDominioDoMonarca">
+        🚫 Habilidade: Domínio do Monarca
+       </summary>
+       
+
+       <h4 class="sublinhado">
+         <br>Necromante [Habilidade exclusiva da classe Monarca das Sombras]<br><br>
+         Ao ativar o Domínio do Monarca você irá ganhar 20 pontos para cada atributo. Será liberada ao derrotar o Baruka Elfo do gelo.
          <br><br>
-        </h4>
+         Use 50% de Mana para habilitar essa babilidade.
+         <br><br>
+       </h4>
 
-<ul>
-  <br>
-  <li>❌ Fragmento da árvore do mundo</li><br>
-  <li>❌ Água nascente da floresta ecoante</li><br>
-  <li>❌ Sangue Purificado do Monarca Demoníaco</li><br>
-</ul>
+     </details> <br />
+     <!-- Fim da habilidade domínio do Monarca -->
 
-      </details> <br />
-      <!-- Fim da habilidade Elixir da Vida -->
+      <!--Início da habilidade Flame Spear -->
+       <img class="imgMenor" onclick="FuncaoFlameSpear()"   src="https://images.alphacoders.com/138/1387421.png"/>
+       <br>
+       <h4 id="idRetornoFlameSpear"></h4>
+     <details>
+       <summary class="sumario" id="idCheckFlameSpear">
+        🚫 Habilidade: Flame Spear
+       </summary>
+       
+
+       <h4 class="sublinhado">
+         <br>Mago [Habilidade ofensiva de Fogo]<br><br>
+         Esta habilidade cria várias lanças de fogo e as lança contra seus inimigos. 
+         Ao ativar por 5 pontos de Mana, você irá ganhar 25 pontos de Agilidade, e 5 de Inteligência.
+         Habilidade de efeito permanente.
+         <br><br>
+         Essa habilidade pode ser desbloqueada na "Missão subir de nível".
+         <br><br>
+       </h4>
+
+     </details> <br />
+     <!-- Fim da habilidade Flame Spear -->
 
     </div>
     <div class="abaHabilidades" id="abaHabilidades2">
@@ -347,16 +431,18 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
        <h4 id="idRetornoAssassina"></h4>
          <details>
            <summary class="sumario" id="idCheckAssassina">
-             ⛔ Habilidade: Intenção Assassina
+            🚫 Habilidade: Intenção Assassina
            </summary>
           
    
            <h4 class="sublinhado">
-             <br />[Classe: Assassino] <br /><br />
+             <br />[Classe: Assassino] 
+             <br><br>Usando uma forte energia, o alvo selecionado é posto em um estado de medo.
+             <br><br>
              Buff que melhora sua "Agilidade" em 5 pontos. Essa habilidade pode
              ser usada ao derrotar o Grupo de Caçadores, este buff pode ser
              usado por 4 pontos de Mana. Os buff tem duração de 1 ataque.
-             <br />
+             <br> <br>
              
            </h4>
          </details>
@@ -369,15 +455,17 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
            <h4 id="idRetornoFurtividade"></h4>
          <details>
            <summary class="sumario" id="idCheckFurtividade">
-             ⛔ Habilidade: Furtividade
+            🚫 Habilidade: Furtividade
            </summary>            
    
            <h4 class="sublinhado">
-             <br />[Classe: Assassino] <br /><br />
+             <br />[Classe: Assassino] 
+             <br><br>Sua aparecia e todos os seus traços serão escondidos instântaneamente.
+             <br><br>
              Buff que melhora sua "Agilidade" em 30 pontos. Essa habilidade
              pode ser usada ao derrotar o Mr Kang, este buff pode ser usado por
              15 pontos de Mana. Os buff tem duração de 1 ataque.
-             <br />
+             <br> <br>
            </h4>
    
            
@@ -390,6 +478,26 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
       
       <h4>Clique nas imagens para interagir.</h4>
 
+      <!--Início da habilidade Fortalecimento-->
+      <img  class="imgMenor" onclick="FuncaoFortalecimento()" 
+      src="https://muramasa.com.br/wp-content/uploads/2025/01/Cha-Hae-in-cr-1024x576.webp"/>
+      <br />
+      <h4 id="idRetornoFortalecimento"></h4>
+    <details>
+      <summary class="sumario" id="idCheckFortalecimento">
+        Habilidade: Fortalecimento
+      </summary>            
+
+      <h4 class="sublinhado">
+        <br />[Classe: Aprimoramento] <br /><br />
+        Buff que melhora todos os seus atributos em 10 Pontos. Este buff pode ser usado por
+        30 pontos de Mana. Os buff tem duração de 1 ataque.
+        <br> <br>
+      </h4> 
+    </details>
+    <br> <br>
+    <!--Fim da habilidade da Fortalecimento-->
+
       <!-- Início da habilidade Arrancada -->
       <br>
       <img class="imgMenor" onclick="FuncaoArrancada()"  src="https://uploads.jovemnerd.com.br/wp-content/uploads/2024/02/solo_leveling_previa_6__cw249jft.jpg"
@@ -398,7 +506,7 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
     <h4 id="idRetornoArrancada"></h4>
       <details>
         <summary class="sumario" id="idCheckArrancada">
-          ⛔ Habilidade: Arrancada
+          🚫 Habilidade: Arrancada
         </summary>            
 
         <h4 class="sublinhado">
@@ -420,25 +528,27 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
 </details><br>
       <!--Fim da habilidade Arrancada-->
 
-      <!--Início da habilidade Fortalecimento-->
-      <img  class="imgMenor" onclick="FuncaoFortalecimento()" 
-      src="https://muramasa.com.br/wp-content/uploads/2025/01/Cha-Hae-in-cr-1024x576.webp"/>
+      
+
+    <!--Início da habilidade Mutilação -->
+      <img  class="imgMenor" onclick="FuncaoMutilacao()" 
+      src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/02/img_1278.jpeg"/>
       <br />
-      <h4 id="idRetornoFortalecimento"></h4>
+      <h4 id="idRetornoMutilacao"></h4>
     <details>
-      <summary class="sumario" id="idCheckFortalecimento">
-        Habilidade: Fortalecimento
+      <summary class="sumario" id="idCheckMutilacao">
+        🚫 Habilidade: Mutilação
       </summary>            
 
       <h4 class="sublinhado">
-        <br />[Classe: Aprimoramento] <br /><br />
-        Buff que melhora todos os seus atributos em 10 Pontos. Este buff pode ser usado por
-        30 pontos de Mana. Os buff tem duração de 1 ataque.
-        <br />
+        <br />[Classe: Aprimoramento de Equipamentos] <br /><br />
+        Buff que melhora todos os seus atributos em 15 Pontos. Este buff pode ser usado por
+        50 pontos de Mana. Habilidade de efeito permanente.
+        <br> <br>
       </h4> 
     </details>
     <br> <br>
-    <!--Fim da habilidade da Fortalecimento-->
+    <!--Fim da habilidade da Mutilação -->
 
     </div>
     <div class="abaHabilidades" id="abaHabilidades4">
@@ -475,7 +585,7 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
     <div class="aba" id="aba3">
       
    <!-- INÍCIO DA LOJA DE ITENS-->
-   <h1>Loja de ítens</h1>
+   <h1>Loja de itens</h1>
      <h3 id="idouro" class="sublinhado">Ouro: 0</h3>
 <h4>Clique nas imagens para realizar uma compra. Venda intens na aba Inventário para conseguir Ouro.</h4>
 
@@ -504,10 +614,11 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
  <br><br> Custo: 1 moeda de ouro<br /><br />
  </h4>      
   </details>
-      <br>
+      <br >
+      
  <!-- Fim da Poção de Fadiga-->
  
- <!-- Início da Poção de Vida-->
+<!-- Início da Poção de Vida-->
  <img class="imgMenor" onclick="funcaoComprarPocaoVida()" id="botao-vida"
  src="https://cdna.artstation.com/p/assets/images/images/074/984/082/large/aiken-sin-.jpg?1713444890"/>
  <div id="vida"></div>
@@ -522,8 +633,10 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
           <br><br> Custo: 5 moedas de ouro<br /><br />
         </h4>    
       </details>
-      <br />
+      <br>
  <!-- Fim da Poção de Vida-->
+
+
  
  <!-- Início da Poção de Mana-->
  <img class="imgMenor" onclick="funcaoComprarPocaoMana()"  id="botao-bolhas"
@@ -534,7 +647,7 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
       <details>
         <summary class="sumario">Poção de Mana</summary>
         <h4 class="sublinhado">
-          <br />[Categoria: Assistência] <br /><br />Você pode recuperar 5 pontos de Mana.
+          <br />[Categoria: Assistência] <br /><br />Você pode recuperar 10 pontos de Mana.
           <br><br>Custo: 10 moedas de ouro<br><br>
         </h4>   
       </details>
@@ -544,85 +657,268 @@ Se a sua vida for maior ou igual a 90% gaste 1 ponto de Mana e ganhe 10% de vida
 <!--Fim das poções-->
 
     </div>
-    <div class="abaLoja" id="abaLoja2">
+    <div class="abaLoja" id="abaLoja2" >
       
       <!--Início dos equipamentos-->
+
+     
+<h3>Arsenal de armas, você pode equipar quantas armas achar necessário</h3>
 <!-- Início da Adaga-->
- <br>
+  <div class="grid-item3">
+        <br>
 <img class="imgMenor" onclick="funcaoComprarEspadaComum()"
-  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5xqPxyceLu3k418uWHpADOWGnfDJXuV6oQwKxq6FkSMXYwjz0DXIMcCzxgH7kx54G91k&usqp=CAU"/>
+  src="https://www.dexerto.com/cdn-image/wp-content/uploads/2024/06/10/Dagger-weapon.jpg?width=385&quality=75&format=auto"/>
 <br>
 <h4 id="idRetornoCompraEspadaComum"></h4>
+<h4>Equipamento Rank: E ⭐</h4>
      <details>
        <summary class="sumario" id="idCheckCompraAdaga">Adaga</summary>
        
 
        <h4 class="sublinhado">
          <br />[Categoria: Equipamento] <br /><br />Você pode equipar essa
-         Adaga e ganhar mais 5 Pontos de Atributo em Força.
+         Adaga e ganhar mais 5 pontos de Atributo em Força.
          <br /><br />Compra: 50 moedas de ouro<br /><br />
        </h4>       
      </details>
-     <br />
+   <br>
+    </div><br>
 <!-- Fim da Adaga-->
 
 <!-- Início da Espada-->
-<img class="imgMenor" onclick="funcaoComprarEspada()"  src="https://i0.wp.com/ovicio.com.br/wp-content/uploads/2024/01/20240126-solo-leveling-e4-1024x576.jpg?resize=730%2C411&ssl=1"/>
+ <div class="grid-item3">
+        <br>
+<img class="imgMenor" onclick="funcaoComprarEspada()"  
+src="https://www.dexerto.com/cdn-image/wp-content/uploads/2024/06/10/Sword-of-Light-weapon.jpg?width=385&quality=75&format=auto"/>
 <br>     
 <h4 id="idRetornoCompraEspada"></h4>
+<h4>Equipamento Rank: E ⭐</h4>
 <details>
-  <summary class="sumario" id="idCheckCompraEspada">Espada</summary>
+  <summary class="sumario" id="idCheckCompraEspada">Espada da Luz</summary>
        <h4 class="sublinhado">
-         <br />[Categoria: Equipamento] <br /><br />Você pode equipar essa
-         Espada e ganhar mais 15 Pontos de Atributo em Força.<br /><br />Compra:
+         <br />[Categoria: Equipamento] <br><br>
+         Quando o alarme soar no silênsio da noite, use seu poder do mana e branda sua espada como se estivesse dançando. Seja tão rápido que reste apenas a trilha de luz.
+         <br><br>
+         Você pode equipar essa
+         Espada e ganhar mais 15 pontos de Atributo em Força.<br /><br />Compra:
          100 moedas de ouro <br /><br />
        </h4>
        <br />
       
      </details>
-     <br />
+    <br>
+    </div><br>
      <!-- Fim da Espada-->
 
      <!-- Início do Escudo -->
+       <div class="grid-item3">
+        <br>
 <img class="imgMenor" onclick="funcaoComprarEscudo()"  
-src="https://img.freepik.com/premium-photo/shield-design-graphic-tshirt_931878-202145.jpg?w=360"/>
+src="https://www.dexerto.com/cdn-image/wp-content/uploads/2024/06/10/Steel-Shield-weapon.jpg?width=385&quality=75&format=auto"/>
 <br>     
 <h4 id="idRetornoCompraEscudo"></h4>
+ <h4>Equipamento Rank: D ⭐⭐</h4>
 <details>
   <summary class="sumario" id="idCheckCompraEscudo">Defesa Divina</summary>
        <h4 class="sublinhado">
          <br />[Categoria: Equipamento] <br /><br />Você pode equipar esse
-         Escudo e ganhar mais 15 Pontos de Agilidade e 5 Pontos em Percepção.<br /><br />Compra:
+         Escudo e ganhar mais 15 pontos de Agilidade e 5 Pontos em Percepção.<br /><br />Compra:
          115 moedas de ouro <br /><br />
        </h4>
        <br />
       
      </details>
-     <br />
+    <br>
+    </div><br>
      <!-- Fim do Escudo-->
 
-     <!-- Início da Assassina de Cavaleiros -->
-     <img  class="imgMenor" onclick="funcaoEquiparAssassinaCavaleiros()" src="https://i.ytimg.com/vi/rTKix8bn3JM/hqdefault.jpg"/>
+     
+ <!-- Início da Assassina de Cavaleiros -->
+       <div class="grid-item3">
+        <br>
+     <img  class="imgMenor" onclick="funcaoEquiparAssassinaCavaleiros()" 
+     src="https://www.dexerto.com/cdn-image/wp-content/uploads/2024/06/10/Knight-Killer-weapon.jpg?width=385&quality=75&format=auto"/>
    <br>
    <h4 id="idRetornoEquiparAssassinaCavaleiros"></h4>
+   <h4>Equipamento Rank: D ⭐⭐</h4>
      <details>
-      <summary class="sumario" id="idItemAssassinaCavaleirosAdquirida">
-        ⛔ Assassina de Cavaleiros
-      </summary>
+      <summary class="sumario" id="idItemAssassinaCavaleirosAdquirida">   🚫 Assassina de Cavaleiros  </summary>
       <h4 class="sublinhado">
-        <br />[Categoria: Equipamento] <br><br>Você pode equipar essa
-        Adaga e ganhar 20 Pontos de Atributo em Força. 
+        <br />[Categoria: Equipamento] <br><br>
+        Uma adaga feita para ter um lâmina dura e afiada, consegue penetrar armaduras. Quanto mais a lâmina for serrilhada, mais fica difícil de tirar das armaduras.
+        <br><br>
+        Você pode equipar essa
+        Adaga e ganhar 20 pontos de Atributo em Força. 
         <br><br>
         Pode ser comprada por 200 moedas de ouro depois que o Igris for derrotado<br /><br />
+      </h4>
+    </details>
+    <br>
+    </div><br>
+    <!-- Fim da Assassina de Cavaleiros -->
+     
+
+    <!-- Início da Foice do Coveiro -->
+      <div class="grid-item3">
+        <br>
+     <img  class="imgMenor" onclick="funcaoEquiparFoiceDoCoveiro()" 
+     src="https://i0.wp.com/ashgamewitted.wpcomstaging.com/wp-content/uploads/2024/03/Screenshot-2024-03-26-at-11.44.03-PM.png?resize=150%2C151&ssl=1"/>
+   <br>
+   <h4 id="idRetornoEquiparFoiceDoCoveiro"></h4>
+    <h4>Equipamento Rank: C ⭐⭐⭐</h4>
+     <details>
+      <summary class="sumario" id="idItemFoiceDoCoveiroAdquirida">Foice do Coveiro das Sombras</summary>
+      <h4 class="sublinhado">
+        <br />[Categoria: Equipamento] <br><br>Você pode equipar essa Foice e ganhar 20 pontos de Atributo em Percepção e 10 Pontos em Inteligência. 
+        <br><br>
+        Pode ser comprada por 300 moedas de ouro.<br /><br />
       </h4>
 
       <br />
       
     </details>
-    <br />
-    <!-- Fim da Assassina de Cavaleiros -->
+    <br>
+    </div><br>
+    <!-- Fim da Foice do Coveiro -->
+
+    <!-- Início do Arco do Elfo do Gelo -->
+      <div class="grid-item3">
+        <br>
+     <img  class="imgMenor" onclick="funcaoEquiparArcoElfoGelo()" 
+     src="https://i0.wp.com/ashgamewitted.wpcomstaging.com/wp-content/uploads/2024/03/Screenshot-2024-03-26-at-11.08.17-PM.png?resize=150%2C150&ssl=1"/>
+   <br>
+   <h4 id="idRetornoEquiparArcoElfoGelo"></h4>
+    <h4>Equipamento Rank: C ⭐⭐⭐</h4>
+     <details>
+      <summary class="sumario" id="idItemArcoElfoGeloAdquirida"> Arco do Elfo do Gelo </summary>
+      <h4 class="sublinhado">
+        <br />[Categoria: Equipamento] <br><br>Você pode equipar esse Arco e ganhar 20 pontos de Atributo em Inteligência e 10 pontos em Percepção. 
+        <br><br>
+        Pode ser comprada por 300 moedas de ouro.<br /><br />
+      </h4>
+
+      <br>
+      
+    </details>
+   <br>
+    </div><br>
+    <!-- Fim do Arco do Elfo do Geloa -->
+
+<!-- Início da Manopla -->
+  <div class="grid-item3">
+        <br>
+     <img  class="imgMenor" onclick="funcaoEquipaManopla()" 
+     src="https://www.dexerto.com/cdn-image/wp-content/uploads/2024/06/10/Howling-White-Tigers-Soul-weapon.jpg?width=385&quality=75&format=auto"/>
+   <br>
+   <h4 id="idRetornoEquiparManopla"></h4>
+    <h4>Equipamento Rank: B ⭐⭐⭐⭐</h4>
+     <details>
+      <summary class="sumario" id="idItemManoplaAdquirida"> Manopla alma uivante do tigre branco </summary>
+      <h4 class="sublinhado">
+        <br />[Categoria: Equipamento] <br><br>
+        Uma manopla modelada na garras daquele chamado de "Tigre Branco".
+        <br><br>
+        Você pode equipar essa Manopla e ganhar 50 pontos de Atributo em Força. 
+        <br><br>
+        Pode ser comprada por 500 moedas de ouro.<br /><br />
+      </h4>
+      <br>      
+    </details>
+    <br>
+    </div><br>
+    <!-- Fim da Manopla -->
+
+    <!-- Início do Grimório do Demônio Ardente -->
+      <div class="grid-item3">
+        <br>
+     <img  class="imgMenor" onclick="funcaoEquiparGrimorioDemonioArdente()" 
+     src="https://i0.wp.com/ashgamewitted.wpcomstaging.com/wp-content/uploads/2024/03/Screenshot-2024-03-26-at-11.30.23-PM.png?resize=300%2C295&ssl=1"/>
+   <br>
+   <h4 id="idRetornoEquiparGrimorioDemonioArdente"></h4>
+    <h4>Equipamento Rank: B ⭐⭐⭐⭐</h4>
+     <details>
+      <summary class="sumario" id="idItemGrimorioDemonioArdenteAdquirida"> Grimório do Demônio Ardente </summary>
+      <h4 class="sublinhado">
+        <br />[Categoria: Equipamento] <br><br>
+        Este Grimório contém as escrituras e conhecimentos sobre a Chama, considerada a raiz de todos os demônios e capaz de aumentar a magia e a destruição do usuário.
+        <br><br>
+        Você pode equipar esse Grimório e ganhar 50 pontos de Atributo em Inteligência. 
+        <br><br>
+        Pode ser comprado por 500 moedas de ouro.<br><br>
+        Ao usar o Buff Escrituras Antigas, você poderá ler um enigma do Livro. Ao escrever a resposta corretamente você irá ganhar 10.000 moedas de ouro.<br><br>
+      </h4>
+ <button class="botaoInventario" onclick="EscriturasAntigas()"> Escrituras Antigas </button>
+      <br>
+      <h4 id="idRetornoDaEscriturasAntigas"></h4><br>
+
+  <input class="botaoNovo" id="resposta" type="text" placeholder="Digite sua resposta">
+  <button class="botaoNovo" id="enviar">Enviar</button>
+  <div id="resultado"></div>
 
 
+     </details>
+   <br>
+    </div><br>
+    <!-- Fim do Grimório do Demônio Ardente -->
+
+<!-- Início da Espada Demoníaca Flor de Ameixeira -->
+  <div class="grid-item3">
+        <br>
+ <div id="petalas-container"></div>
+     <img  class="imgMenor" onclick="funcaoEquiparEspadaDemoniacaFlorAmeixeira()" 
+     src="https://www.dexerto.com/cdn-image/wp-content/uploads/2024/06/10/Demonic-Plum-Flower-Sword-weapon.jpg?width=385&quality=75&format=auto"/>
+   <br>
+   
+   <h4 id="idRetornoEquiparEspadaDemoniacaFlorAmeixeira"></h4>
+   <h4>Equipamento Rank: A ⭐⭐⭐⭐⭐</h4>
+     <details>
+      <summary class="sumario" id="idItemEspadaDemoniacaFlorAmeixeiraAdquirida">Espada Demoníaca Flor de Ameixeira </summary>
+      <h4 class="sublinhado">
+        <br />[Categoria: Equipamento] <br><br>
+        Incapaz de abandonar seu amado guerreiro, o espírito da flor de ameixa decidiu habitar a espada do guerreiro. Embora o guerreiro tenha falecido há muito tempo, o espírito da flor de ameixa permanece, sempre saudoso.
+        <br><br>
+        Você pode equipar essa Espada e ganhar 50 pontos de Atributo em Agilidade. 
+        <br><br>
+        Pode ser comprada por 500 moedas de ouro.<br><br>
+        Ao usar o Buff Floração completa da flor de ameixeira por 5 pontos de Mana, você ganha mais 50 pontos de Atributo em Agilidade.<br><br>
+      </h4>
+ <button class="botaoInventario" onclick="FloracaoCompleta()"> Floração completa da flor de ameixeira </button>
+      <br>
+      <h4 id="idRetornoDaFloracaoCompleta"></h4>
+    </details>
+   <br>
+    </div><br>
+    <!-- Fim da Espada Demoníaca Flor de Ameixeira -->
+
+    <!-- Início da Adagas Sombra da Lua -->
+      <div class="grid-item3">
+        <br>
+     <div id="lua-container"></div>
+     <img  class="imgMenor" onclick="funcaoEquiparAdagasSombraLua()" 
+     src="https://www.dexerto.com/cdn-image/wp-content/uploads/2024/06/10/Moonshadow-weapon.jpg?width=385&quality=75&format=auto"/>
+   <br>
+   <h4 id="idRetornoEquiparAdagasSombraLua"></h4>
+   <h4>Equipamento Rank: S 💎</h4>
+     <details>
+      <summary class="sumario" id="idItemAdagasSombraLuaAdquirida">Adagas Sombra da Lua </summary>
+      <h4 class="sublinhado">
+        <br />[Categoria: Equipamento] <br><br>
+        Essas adagas contêm toda a força da lua e da própria noite. Em noites em que só a escuridão cai, cuidado com a ira da lua.
+        <br><br>
+        Você pode equipar essas Adagas e ganhar 50 Pontos de Atributo em Força e 50 em Agilidade. 
+        <br><br>
+        Pode ser comprada por 1000 moedas de ouro.<br><br>
+        Ao usar o Buff Eclipse Lunar por 5 pontos de Mana, você ganha mais 50 Pontos de Atributo em Força e 50 em Agilidade.<br><br>
+      </h4>
+<button class="botaoInventario" onclick="EclipseLunar()"> Eclipse Lunar </button>
+      <br>
+      <h4 id="idRetornoDoEclipseLunar"></h4>
+      <br>
+      
+    </details>
+   <br>
+    </div><br>
+    <!-- Fim da Adagas Sombra da Lua -->
 
   <!--Fim dos equipamentos-->
 
@@ -652,6 +948,7 @@ src="https://img.freepik.com/premium-photo/shield-design-graphic-tshirt_931878-2
 <!--Início das vendas-->
 
 <!-- Início de vender os cristais de Mana-->
+ <h2>Venda os itens para conseguir Ouro</h2>
 <br>
 <img class="imgMenor" onclick="funcaovendercristal()" id="botao-moeda"
 src="https://warcraft.wiki.gg/images/thumb/d/d5/Crystallized_mana_at_Zarkhenar.jpg/1200px-Crystallized_mana_at_Zarkhenar.jpg?b7a980"/>
@@ -663,7 +960,7 @@ src="https://warcraft.wiki.gg/images/thumb/d/d5/Crystallized_mana_at_Zarkhenar.j
 
   <h4 class="sublinhado">
     <br>[Categoria: Pedra] <br /><br />10 Cristais de mana por uma moeda de ouro. Os cristais de Mana podem ser minerados na Dangeon "Cristais de Mana".<br /><br />
-Será vendido 10 Cristais por vez, se o inventátio possuir mais de 100 Cristais será vendido 100 por vez <br><br></h4> 
+Será vendido pacotes de 10 em 10, 100 em 100 e 1000 em 1000 irá depender de quanto Cristais você possui no Inventátio.<br><br></h4> 
 </details>
 <br>
 <!-- Fim de vender os cristais de Mana-->
@@ -675,7 +972,7 @@ src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/02/essence-
 <br>
 <h4 id="idvenderpedra"></h4>
 <details>
-  <summary id="idpedrainventario">⛔ Pedras de Essência: 0</summary>          
+  <summary id="idpedrainventario">🚫 Pedras de Essência: 0</summary>          
 
   <h4 class="sublinhado">
     <br />[Categoria: Recompensa - Pedra] <br /><br />Uma Pedra de Essência por 10
@@ -692,7 +989,7 @@ src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/02/essence-
 <br>
 <h4 id="idvenderpresa"></h4>
 <details>
-  <summary id="idPresainventario">⛔ Presa de Lycan: 0</summary>           
+  <summary id="idPresainventario">🚫 Presa de Lycan: 0</summary>           
 
   <h4 class="sublinhado">
     <br />[Categoria: Recompensa - Presas] <br /><br />Uma presa de
@@ -707,51 +1004,16 @@ src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/02/essence-
     <div class="abaInventario" id="abaInventario2">
       
       <!--Início dos equipamentos-->
-      <!-- Início da Presa Venenosa de Kasaka-->
-      <br>
-   <img class="imgMenor" onclick="funcaoEquiparKasaka()"  src="https://swordslice.com/cdn/shop/articles/solothumb-17108697477981715149910-0.png?v=1740413431"/>
-   <br>
-   <h4 id="idRetornoEquiparKasaka"></h4>
-          <details>
-            <summary class="sumario" id="idItemPresaKasakaAdquirida">
-              ⛔ Presa Venenosa de Kasaka
-            </summary>
+      <h3>Os equipamentos dropados pelos inimígos estão aqui</h3>
 
-
-            <h4 class="sublinhado">
-              <br />[Categoria: Recompensa - Equipamento] <br /><br />Você pode
-              equipar essa Adaga e ganhar 25 Pontos de Atributo em Força. Adquirida ao derrotar o Chefe da Dangeon Kasaka.<br /><br />
-            </h4>
-           
-          </details>
-          <br />
-
-          <!-- início da Coleira do Guardião -->
-          <img class="imgMenor" onclick="funcaoEquiparColeira()"  src="https://ovicio.com.br/wp-content/uploads/2025/02/20250204-solo-leveling-1024x576.jpg"
-          />
-           <br>
-           <h4 id="idRetornoEquiparColeira"></h4>
-          <details>
-            <summary class="sumario" id="idItemColeiraAdquirida">⛔ Coleira do Guardião</summary>
-           <br>
-            <h4 class="sublinhado">
-              <br />[Categoria: Recompensa - Equipamento] <br /><br />Você pode
-              equipar esse colar e ganhar 20 Pontos de Atributo em Agilidade e
-              Percepção. Adquirida ao derrotar Cerberus
-              Guardião do Inferno.<br /><br />
-            </h4>
-          </details>
-          <br />
-  <!-- Fim da Coleira do Guardião -->
-
-  <!-- início do Toque do Dominador -->
+      <!-- início do Toque do Dominador -->
 <img  class="imgMenor" onclick="funcaoEquiparToqueDoDominador()" 
 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO66PKjh0Fz9ZL_jemvOSlrXRzON8WnIg6qVCGfMJULlimmQX9Z2ih2c_908WV-W9JIcU&usqp=CAU"/>
 <br />
 <h4 id="idRetornoEquiparToqueDoDominadorEquipada"></h4>
+<h4>Equipamento Rank: E ⭐</h4>
           <details>
-            <summary class="sumario" id="idItemToqueDoDominadorAdquirida">
-              ⛔ Toque do Dominador
+            <summary class="sumario" id="idItemToqueDoDominadorAdquirida">🚫 Toque do Dominador
             </summary>         
 
             <h4 class="sublinhado">
@@ -769,9 +1031,9 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
 <img  class="imgMenor" onclick="funcaoEquiparElmo()" src="https://images6.alphacoders.com/135/thumb-350-1357475.webp"/>
 <br />
 <h4 id="idRetornoEquiparElmo"></h4>
+<h4>Equipamento Rank: D ⭐⭐</h4>
           <details>
-            <summary class="sumario" id="idItemElmoAdquirida">
-              ⛔ Elmo do Cavaleiro Carmesim
+            <summary class="sumario" id="idItemElmoAdquirida">🚫 Elmo do Cavaleiro Carmesim
             </summary>         
 
             <h4 class="sublinhado">
@@ -783,24 +1045,194 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
           </details>
              <!-- Fim do Elmo do Cavaleiro Carmesim -->
 
-<!-- início da espada de gelo  Baruka-->
-<br>
-<img  class="imgMenor" onclick="funcaoEquiparAdagaDeBaruka()" src="https://i.ytimg.com/vi/Q4U8RZJBlKY/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEAgUyhlMA8=&rs=AOn4CLBzGj19xr9hcx7jC-m5cZ286xmDDA"/>
-<br />
-<h4 id="idRetornoEquiparAdagaDeBaruka"></h4>
+      <!-- Início da Presa Venenosa de Kasaka-->
+      <br>
+   <img class="imgMenor" onclick="funcaoEquiparKasaka()"  
+   src="https://swordslice.com/cdn/shop/articles/solothumb-17108697477981715149910-0.png?v=1740413431"/>
+   <br>
+   <h4 id="idRetornoEquiparKasaka"></h4>
+    <h4>Equipamento Rank: D ⭐⭐</h4>
           <details>
-            <summary class="sumario" id="idItemAdagaDeBarukaAdquirida">
-              ⛔ Adaga de Baruka
+            <summary class="sumario" id="idItemPresaKasakaAdquirida">🚫 Presa Venenosa de Kasaka
+            </summary>
+
+
+            <h4 class="sublinhado">
+              <br />[Categoria: Recompensa - Equipamento] 
+              <br><br> Uma adaga feita da presa de Kasaka, capaz de paralizar devido ao resquício de veneno.
+              <br><br>Você pode equipar essa Adaga e ganhar 25 Pontos de Atributo em Força. Adquirida ao derrotar o Chefe da Dangeon Kasaka.<br /><br />
+            </h4>
+           
+          </details>
+          <br>
+<!-- Fim da Presa Venenosa de Kasaka-->
+
+ <!-- Início do Martelo do Golem de Pedra-->
+      <br>
+   <img class="imgMenor" onclick="funcaoEquiparMarteloGolem()"  
+   src="https://i.ytimg.com/vi/lk01raTCG30/maxresdefault.jpg"/>
+   <br>
+   <h4 id="idRetornoEquiparMarteloGolem"></h4>
+    <h4>Equipamento Rank: D ⭐⭐</h4>
+          <details>
+            <summary class="sumario" id="idItemMarteloGolemAdquirida">🚫 Martelo do Golem de Pedra</summary>
+
+
+            <h4 class="sublinhado">
+              <br />[Categoria: Recompensa - Equipamento] <br /><br />Você pode equipar esse martelo e ganhar 20 Pontos de Atributo em Agilidade. Adquirida ao derrotar o Chefe da Dangeon Golem de pedra.<br><br>
+            </h4>
+           
+          </details>
+          <br>
+<!-- Fim do Martelo do Golem de Pedra -->
+
+          <!-- início da Coleira do Guardião -->
+          <img class="imgMenor" onclick="funcaoEquiparColeira()"  src="https://ovicio.com.br/wp-content/uploads/2025/02/20250204-solo-leveling-1024x576.jpg"
+          />
+           <br>
+           <h4 id="idRetornoEquiparColeira"></h4>
+           <h4>Equipamento Rank: D ⭐⭐</h4>
+          <details>
+            <summary class="sumario" id="idItemColeiraAdquirida">🚫 Coleira do Guardião</summary>
+           <br>
+            <h4 class="sublinhado">
+              <br />[Categoria: Recompensa - Equipamento] <br /><br />Você pode
+              equipar esse colar e ganhar 20 Pontos de Atributo em Agilidade e
+              Percepção. Adquirida ao derrotar Cerberus
+              Guardião do Inferno.<br /><br />
+            </h4>
+          </details>
+          <br />
+  <!-- Fim da Coleira do Guardião -->
+
+       
+  <!-- início Orbe da Avareza-->
+<br>
+<img  class="imgMenor" onclick="funcaoEquiparOrbeVulcano()" 
+src="https://preview.redd.it/c4y7lsj7q0be1.png?auto=webp&s=c747927179b5d3cdcd1577bbf26813dc658cc3ef"/>
+<br />
+<h4 id="idRetornoEquiparOrbeVulcano"></h4>
+<h4>Equipamento Rank: B ⭐⭐⭐⭐</h4>
+          <details>
+            <summary class="sumario" id="idItemOrbeVulcanoAdquirida">🚫 Orbe da Avareza
+            </summary>         
+
+            <h4 class="sublinhado">
+              <br />[Categoria: Recompensa - Equipamento] <br><br>
+              Um Orbe criado pelo endurecimento do sangue do demônio de alto nível, Vulcano.
+              <br><br>
+              Você pode equipar esse Orbe e ganhar 50 pontos de Atributo em Inteligencia.
+              Adquirido ao derrotar Vulcano Avarento.<br /><br />
+            </h4>
+            <br />
+          </details>
+             <!-- Fim do Orbe da Avareza -->
+           
+           
+<!-- início do Brinco do Monarca Demoníaco -->
+<br>
+<img  class="imgMenor" onclick="funcaoEquiparBrinco()" 
+src="https://pm1.aminoapps.com/7303/67684c5f4a9b0777122dee2c19a9cf444a190745r1-720-565v2_hq.jpg"/>
+<br />
+<h4 id="idRetornoEquiparBrinco"></h4>
+<h4>Equipamento Rank: B ⭐⭐⭐⭐</h4>
+          <details>
+            <summary class="sumario" id="idItemBrincoAdquirida">🚫 Brinco do Monarca Demoníaco
             </summary>         
 
             <h4 class="sublinhado">
               <br />[Categoria: Recompensa - Equipamento] <br /><br />Você pode
-              equipar essa adaga e ganhar 110 pontos de Atributo em Força e 10 pontos em Agilidade.
+              equipar esse Brinco e ganhar 50 pontos de Atributo em Percepção.
+              Adquirido ao derrotar Vulcano Avarento.<br /><br />
+            </h4>
+            <br />
+          </details>
+ <!-- Fim do do Brinco do Monarca Demoníaco -->
+
+ <!-- início do Colar do Monarca Demoníaco -->
+<br>
+<img  class="imgMenor" onclick="funcaoEquiparColar()" 
+src="https://i.redd.it/7avhm2i8abue1.jpeg"/>
+<br />
+<h4 id="idRetornoEquiparColar"></h4>
+<h4>Equipamento Rank: B ⭐⭐⭐⭐</h4>
+          <details>
+            <summary class="sumario" id="idItemColarAdquirida">🚫 Colar do Monarca Demoníaco
+            </summary>         
+
+            <h4 class="sublinhado">
+              <br />[Categoria: Recompensa - Equipamento] <br /><br />Você pode
+              equipar esse Colar e ganhar 50 pontos de Atributo em Agilidade.
+              Adquirido ao derrotar Metus guía das almas.<br /><br />
+            </h4>
+            <br />
+          </details>
+ <!-- Fim do do Colar do Monarca Demoníaco -->
+
+ <!-- início do Anel do Monarca Demoníaco -->
+<br>
+<img  class="imgMenor" onclick="funcaoEquiparAnel()" 
+src="https://i.redd.it/i-make-solo-leveling-ring-props-do-you-like-it-v0-d3u3mjats1ve1.jpg?width=4624&format=pjpg&auto=webp&s=64275b5581c0f87558488f2019c954e560f1f9a8"/>
+<br />
+<h4 id="idRetornoEquiparAnel"></h4>
+<h4>Equipamento Rank: B ⭐⭐⭐⭐</h4>
+          <details>
+            <summary class="sumario" id="idItemAnelAdquirida">🚫 Anel do Monarca Demoníaco
+            </summary>         
+
+            <h4 class="sublinhado">
+              <br />[Categoria: Recompensa - Equipamento] <br /><br />Você pode
+              equipar esse Anel e ganhar 50 pontos de Atributo em Inteligência.
+              Adquirido ao derrotar Baran Monarca das Chamas Brancaso.<br /><br />
+            </h4>
+            <br>
+          </details>
+ <!-- Fim do do Anel do Monarca Demoníaco -->
+
+ <!-- início da espada de gelo  Baruka-->
+<br>
+<img  class="imgMenor" onclick="funcaoEquiparAdagaDeBaruka()" 
+src="https://i.ytimg.com/vi/Q4U8RZJBlKY/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEAgUyhlMA8=&rs=AOn4CLBzGj19xr9hcx7jC-m5cZ286xmDDA"/>
+<br />
+<h4 id="idRetornoEquiparAdagaDeBaruka"></h4>
+<h4>Equipamento Rank: S 💎</h4>
+          <details>
+            <summary class="sumario" id="idItemAdagaDeBarukaAdquirida">🚫 Adaga de Baruka
+            </summary>         
+
+            <h4 class="sublinhado">
+              <br />[Categoria: Recompensa - Equipamento] <br><br>
+Uma adaga portada pelo grande guerreiro Baruka. o encantamento de Lightweight (Peso leve) irá fazer o portador mais forte e ágil.
+              <br><br>
+              Você pode equipar essa adaga e ganhar 110 pontos de Atributo em Força e 10 pontos em Agilidade.
               Adquirido ao derrotar Baruka Elfo do gelo.<br /><br />
             </h4>
             <br />
           </details>
              <!-- Fim da espada de gelo  Baruka -->
+              
+  <!-- início do Espada do Monarca Demoníaco -->
+<br>
+<img  class="imgMenor" onclick="funcaoEquiparEspadaMonarcaDemonio()" 
+src="https://meusitedeanime.com.br/wp-content/uploads/2025/02/Demon-Kings-Longsword-solo-leveling-Espada-Longa-do-Rei-Demonio-1024x576.jpg"/>
+<br />
+<h4 id="idRetornoEquiparEspadaMonarcaDemonio"></h4>
+<h4>Equipamento Rank: S 💎</h4>
+          <details>
+            <summary class="sumario" id="idItemEspadaMonarcaDemonioAdquirida">🚫 Espada Longa do Monarca Demoníaco
+            </summary>         
+
+            <h4 class="sublinhado">
+              <br />[Categoria: Recompensa - Equipamento] <br><br>
+              Espada longa transbordando do poder do Rei demônio. Cada vez que essa espada é balançada será invocado uma tempestade de relâmpagos sem fim.
+              <br><br>
+              Você pode
+              equipar essa Espada e ganhar 350 pontos de Atributo em Força.
+              Adquirido ao derrotar Baran - Monarca das Chamas Branca.<br /><br />
+            </h4>
+            <br>
+          </details>
+ <!-- Fim do do Espada do Monarca Demoníaco -->
 
   <!--Fim dos equipamentos-->
 
@@ -848,6 +1280,22 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
     <br><br>Todos os pontos de Atributo são somados aos seus quando o soldado for chamado. Você poderá usar essa Habilidade ao derrotar os 6 Magos.<br><br>
   </h4>
 
+  
+<br><br>
+  <h2 class="sublinhado" id="idTotalDosRastrosDeSombra">Rastro de Sombras: 0</h2>
+  <details>
+          <summary>Ajuda</summary>
+          <ul>
+          <h4>
+            <br>
+           Ao invocar uma Sombra para a batalha, é deixado um "Rastro de Sombra", o rastro pode ser usado para desbloquear os efeitos das Sombras.
+           1 ponto de Rastro de Sombra para cada invocação.
+          </h4>
+          <br>
+        </ul>
+        </details>
+<br><br>
+
    <!--[Igris Nível 7] Rank Cavaleiro-->
   <br>
   <div class="cards-container">
@@ -859,7 +1307,7 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
         </div>
         <div class="flip-card-back">
           <img id="Imagem2FlipMudarDeCor" class="img1" 
-          src="https://www.avisanime.fr/wp-content/uploads/2024/01/Igris-Solo-Leveling.jpg"/>
+          src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2373990/extras/SHADOWARMY.gif?t=1733119805"/>
          
         </div>
       </div>
@@ -867,22 +1315,47 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
   </div>
 
   <br>
+  
 <button class="botaoNovo" onclick="FuncaoExtracaoIgris()"> Erga-se </button>
   <h4 id="idRetornoExtracao1"></h4>
 <details>
-  <summary class="sumario" id="idChecDoIgris">⛔ Igris - O Vermelho-Sangue</summary>
+  <summary class="sumario" id="idChecDoIgris">🚫 Igris - O Vermelho-Sangue</summary>
   <br>
 <fieldset class="sublinhado">
-<h3 >[Igris Nível 7]<br>Rank Cavaleiro</h3> 
-<h3 class="luta">🦵 Agilidade: 100 <br> 💪 Força: 120 <br> 👀 Percepção: 80 <br> 🧠 Inteligência: 60</h3>
-<h3 >Necessário 50 Pontos de Mana para usa o Igris em uma batalha.</h3>
+  
+<h3 >Igris [Rank Cavaleiro]</h3> 
+
+<ul>
+
+  <h3 class="luta">🦵 Agilidade: 100 <span class="PontosExtras" id="AgilidadeIgrisEfeito"></span></h3> 
+  <h3 class="luta">💪 Força: 120 <span class="PontosExtras" id="ForcaIgrisEfeito"></span></h3> 
+  <h3 class="luta">👀 Percepção: 80</h3> 
+  <h3 class="luta">🧠 Inteligência: 60</h3>
+</ul>
+<h3 >Necessário 50 Pontos de Mana para usar o Igris em uma batalha.</h3>
+
+<br>
+</fieldset>
+<br>
+<fieldset class="sublinhado">
+<br>
+<img class="img1" src="https://images6.alphacoders.com/136/1369353.jpeg"/>
+<br>
+<h3>Efeito [Tempestade de Chamas Brancas]</h3>
+<h3>Você pode usar esse efeito por 100 Rastros de Sombras e ao derrotar Baran Monarca das Chamas Branca e ganhar a sua espada (Espada Longa do Monarca Demoníaco). Igris irá ganhar + 200 pontos de Agilidade e + 200 pontos de Força por um Round de batalha. Este Efeito é válido somente quando as sombras estão lutando sozinhas</h3>
+<br>
+<button class="botaoNovo" onclick="FuncaoEfeitoTempestadeDeChamasBrancas()"> Usar efeito </button>
+<br>
+<h3 id="RetornoDoEfeitoTempestanteDeChamasBrancas"></h3>
+<br>
 
 
 </fieldset>
 </details><br>
  <!--[Igris Nível 7] Rank Cavaleiro-->
 
- <!--[Magos das Sombras Nível 1] Rank Normal-->
+
+ <!--[Magos das Sombras Nível 1] Rank Normal imagem reserva-->
  <br>
  <div class="cards-container">
   <div class="card-1 flip-card">
@@ -893,6 +1366,7 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
       </div>
       <div class="flip-card-back">
         <img id="Imagem2FlipMudarDeCor" class="img1" 
+
         src="https://criticalhits.com.br/wp-content/uploads/2024/04/birth-of-the-shadow-monarch-solo-1280x640.webp"/>
        
       </div>
@@ -904,7 +1378,7 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
 <button class="botaoNovo" onclick="FuncaoExtracaoMagos()"> Ergam-se </button>
   <h4 id="idRetornoExtracaoMagos"></h4>
  <details>
-  <summary class="sumario" id="idChecDosMagos">⛔ 6 Magos das Sombras</summary>
+  <summary class="sumario" id="idChecDosMagos">🚫 6 Magos das Sombras</summary>
   <br>
 <fieldset class="sublinhado">
 <h3 >[Magos das Sombras Nível 1]<br> Rank Normal</h3>
@@ -928,7 +1402,7 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
       </div>
       <div class="flip-card-back">
         <img id="Imagem2FlipMudarDeCor" class="img1" 
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwytQk0p6a2gs_k3mjRBFkPXBYz3i-ttgeYeL7rAEFLpbMHSNn9VD1rhQhYslqyoxWEio&usqp=CAU"/>
+        src="https://ovicio.com.br/wp-content/uploads/2025/01/20250104-tank-1024x576.webp"/>
        
       </div>
     </div>
@@ -939,7 +1413,7 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
  <button class="botaoNovo" onclick="FuncaoExtracaoTank()"> Erga-se </button>
    <h4 id="idRetornoExtracaoTank"></h4>
  <details>
-   <summary class="sumario" id="idChecDoTank">⛔ Tank - Urso de gelo escuro</summary>
+   <summary class="sumario" id="idChecDoTank">🚫 Tank - Urso de gelo escuro</summary>
    <br>
    
  <fieldset class="sublinhado">
@@ -952,6 +1426,8 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
  </details><br>
  <!--[Tank - Urso de gelo escuro] Rank Normal -->
 
+  
+
   <!--[Iron] Caçador Rank A -->
   <br>
   <div class="cards-container">
@@ -963,7 +1439,7 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
         </div>
         <div class="flip-card-back">
           <img id="Imagem2FlipMudarDeCor" class="img1" 
-          src="https://images4.alphacoders.com/114/1143270.jpg"/>
+          src="https://cdn.ome.lt/omelete/stories/10-otimos-animes-janeiro-assistir-online/assets/308d7b6e-47b9-468d-9de9-c13aad36c882"/>
          
         </div>
       </div>
@@ -973,31 +1449,169 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
   <button class="botaoNovo" onclick="FuncaoExtracaoIron()"> Erga-se </button>
   <h4 id="idRetornoExtracaoIron"></h4>
   <details>
-    <summary class="sumario" id="idChecDoIron">⛔ Iron - Caçador Rank A</summary>
-    <br>
-  <fieldset class="sublinhado">
-  <h3 >[Iron]<br>Caçador Rank A</h3> 
-  <h3 class="luta">🦵 Agilidade: 90 <br> 💪 Força: 140 <br> 👀 Percepção: 70 <br> 🧠 Inteligência: 40</h3>
-  <h3 >Necessário 50 Pontos de Mana para usa o Iron em uma batalha.</h3>
-  </fieldset>
-  </details><br>
+    <summary class="sumario" id="idChecDoIron">🚫 Iron - Caçador Rank A</summary>
+
+     <br>
+ <fieldset class="sublinhado">
+ <h3 >Iron [Rank Caçador de Elite]</h3> 
+
+ <ul>
+
+  <h3 class="luta">🦵 Agilidade: 90 <span class="PontosExtras" id="AgilidadeIronEfeito"></span></h3> 
+  <h3 class="luta">💪 Força: 140 <span class="PontosExtras" id="ForcaIronEfeito"></span></h3> 
+  <h3 class="luta" >👀 Percepção: 70 <span class="PontosExtras" id="PercepcaoIronEfeito"></span></h3> 
+  <h3 class="luta">🧠 Inteligência: 40</h3>
+</ul>
+
+ <h3 >Necessário 50 Pontos de Mana para usa o Iron em uma batalha.</h3>
+<br>
+</fieldset>
+<br>
+<fieldset class="sublinhado">
+<br>
+<img class="img1" src="https://static.deltiasgaming.com/2025/02/d2d03-17366772478506-1920.jpg"/>
+<br>
+<h3>Efeito [Grito de Provocação]</h3>
+<h3>Você pode usar esse efeito por 30 Rastros de Sombras. Tusk irá ganhar + 50 pontos de Agilidade, + 50 pontos de Força e + 50 pontos de 
+  Percepção por um Round de batalha. Este Efeito é válido somente quando as sombras estão lutando sozinhas</h3>
+<br>
+<button class="botaoNovo" onclick="FuncaoGritoDeProvocacao()"> Usar efeito </button>
+<br>
+<h3 id="RetornoDoEfeitoGritoDeProvocacao"></h3>
+<br>
+
+</fieldset>
+</details><br>
  <!--[Iron] Caçador Rank A -->
 
+ <!--[Tusk]  -->
+ <br>
+ <div class="cards-container">
+   <div class="card-1 flip-card">
+     <div class="flip-card-inner">
+       <div class="flip-card-front">
+         <img id="ImagemFlipMudarDeCor" class="img1" 
+  src="https://www.popverso.com.br/wp-content/uploads/2025/01/popverso.com.br-jinwoo-expande-seu-exercito-conheca-as-novas-sombras-de-solo-leveling-4.webp" alt=""/>
+       </div>
+       <div class="flip-card-back">
+         <img id="Imagem2FlipMudarDeCor" class="img1" 
+         src="https://staticg.sportskeeda.com/editor/2025/02/dc6f9-17392886611817-1920.jpg"/>
+        
+       </div>
+     </div>
+   </div>
+ </div>
+ <br>
+ <button class="botaoNovo" onclick="FuncaoExtracaoTusk()"> Erga-se </button>
+ <h4 id="idRetornoExtracaoTusk"></h4>
+ <details>
+   <summary class="sumario" id="idChecDoTusk">🚫 Tusk - Xamã das Sombras </summary>
+
+   <br>
+ <fieldset class="sublinhado">
+ <h3 >Tusk [Rank Cavaleiro de Elite]</h3> 
+
+ <ul>
+
+  <h3 class="luta">🦵 Agilidade: 150 </h3> 
+  <h3 class="luta">💪 Força: 200 </h3> 
+  <h3 class="luta" >👀 Percepção: 100 <span class="PontosExtras" id="percepcaoTuskEfeito"></span></h3> 
+  <h3 class="luta">🧠 Inteligência: 150 <span class="PontosExtras" id="inteligenciaTuskEfeito"></span></h3>
+</ul>
+
+ <h3 >Necessário 50 Pontos de Mana para usa o Tusk em uma batalha.</h3>
 <br>
+</fieldset>
 <br>
-<br />
+<fieldset class="sublinhado">
+<br>
+<img class="img1" src="https://pm1.aminoapps.com/7465/0c9b341fce4ea99308a71127dda8a44a5d9c5183r1-709-611v2_uhq.jpg"/>
+<br>
+<h3>Efeito [Hino do Dragão de Fogo - Combustão]</h3>
+<h3>Você pode usar esse efeito por 100 Rastros de Sombras. Tusk irá ganhar + 200 pontos de Percepção e + 200 pontos de Inteligência por um Round de batalha. Este Efeito é válido somente quando as sombras estão lutando sozinhas</h3>
+<br>
+<button class="botaoNovo" onclick="FuncaoEfeitoHinoDoDragaoDeFogo()"> Usar efeito </button>
+<br>
+<h3 id="RetornoDoEfeitoHinoDoDragaoDeFogo"></h3>
+<br>
+
+</fieldset>
+</details><br>
+<!--[Tusk]  -->
+
+ <!--[Kaisel]  -->
+ <br>
+ <div class="cards-container">
+   <div class="card-1 flip-card">
+     <div class="flip-card-inner">
+       <div class="flip-card-front">
+         <img id="ImagemFlipMudarDeCor" class="img1" 
+  src="https://pbs.twimg.com/media/GbNjW0-WIAEsqfj?format=jpg&name=4096x4096" alt=""/>
+       </div>
+       <div class="flip-card-back">
+         <img id="Imagem2FlipMudarDeCor" class="img1" 
+         src="https://i.ytimg.com/vi/RV0oaW0GMpw/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLC-jdWIQ2dORJZO8Ry7IJCyU3Xp3w"/>
+        
+       </div>
+     </div>
+   </div>
+ </div>
+ <br>
+ <button class="botaoNovo" onclick="FuncaoExtracaoKaisel()"> Erga-se </button>
+ <h4 id="idRetornoExtracaoKaisel"></h4>
+ <details>
+   <summary class="sumario" id="idChecDoKaisel">🚫 Kaisel - Rank Dragão</summary>
+   <br>
+ <fieldset class="sublinhado">
+ <h3 >[Kaisel]<br>Rank besta com vôo</h3> 
+ <h3 class="luta">🦵 Agilidade: 50 <br> 💪 Força: 100 <br> 👀 Percepção: 30 <br> 🧠 Inteligência: 50</h3>
+ <h3 >Necessário 20 Pontos de Mana para usa o  Kaisel em uma batalha.</h3>
+ </fieldset>
+ </details><br>
+<!--[Kaisel]  -->
+
+ <!-- Beru  -->
+ <br>
+ <div class="cards-container">
+   <div class="card-1 flip-card">
+     <div class="flip-card-inner">
+       <div class="flip-card-front">
+         <img id="ImagemFlipMudarDeCor" class="img1" 
+  src="https://staticg.sportskeeda.com/editor/2024/02/e19d7-17067790349227-1920.jpg" alt=""/>
+       </div>
+       <div class="flip-card-back">
+         <img id="Imagem2FlipMudarDeCor" class="img1" 
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQoueV3ofaAfpjKT0TSJ61uim25qsJtXvKt-mFyH-E4pUtxBm_Kcsvdt9Xwr1Su01ZPfk&usqp=CAU"/>
+        
+       </div>
+     </div>
+   </div>
+ </div>
+ <br>
+ <button class="botaoNovo" onclick="FuncaoExtracaoBeru()"> Erga-se </button>
+ <h4 id="idRetornoExtracaoBeru"></h4>
+ <details>
+   <summary class="sumario" id="idChecDoBeru">🚫 Beru - Rei das Formigas</summary>
+   <br>
+ <fieldset class="sublinhado">
+ <h3 >[Beru]<br>Rank General Nível 1</h3> 
+ <h3 class="luta">🦵 Agilidade: 200 <br> 💪 Força: 240 <br> 👀 Percepção: 160 <br> 🧠 Inteligência: 200</h3>
+ <h3 >Necessário 60 Pontos de Mana para usa o  Beru em uma batalha.</h3>
+ </fieldset>
+ </details><br>
+<!--Beru  -->
+
+<br><br><br></div>
 <!-- Fim da habilidade da Extração de Sombras -->
-      
-          </div>
           <div class="abaArise" id="abaArise2">
             
             <!--Início dos títulos-->      
-              <h4>Clique nas imagens para interagir.</h4>
+              <h3> Você só pode usar um Título por vez</h3>
               <br>
               <img class="imgMenor" onclick="FuncaoTrocarTituloEntusiasta()" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/03/solo-levelling-s-essence-stone.jpg"/>
               <h4 id="idTituloRetornoEntusiasta"></h4>
               <details>
-              <summary  id="idCheckEntusiasta">🚫 Título: Entusiata da Mineração</summary>
+              <summary  id="idCheckEntusiasta">🚫 Título: Entusiasta da Mineração</summary>
                 <h4 class="sublinhado"><br> Obtida ao minerar 1000 Cristais de mana [Ganhe 5 Pontos em Percepção]<br><br> </h4> 
               </details>
               <br>
@@ -1016,7 +1630,7 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
               <h4 id="idTituloRetornoGoblins"></h4>
               <details>
               <summary  id="idCheckGoblins">🚫 Título: Exterminador de Goblins</summary>
-              <h4 class="sublinhado"><br>Obtida ao matar 10 Goblins [Ganhe 50 Pontos em todos os Atributos ao lutar contra Goblins]<br><br></h4>
+              <h4 class="sublinhado"><br>Obtida ao matar 10 Goblins, os pontos não irão aparecer somados nos seus atributos mas irão aparecer no quadro de Status do inimigo ao clicar no botão "Analisar Luta" [Ganhe 50 Pontos em todos os Atributos ao lutar contra Goblins]<br><br></h4>
             </details>
             <br>
           
@@ -1025,7 +1639,7 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
               <h4 id="idTituloRetornoLobos"></h4>
               <details>
               <summary  id="idCheckLobos">🚫 Título: Assassino de Lobos</summary>
-            <h4 class="sublinhado"><br>Obtida ao matar 20 Lycan [Ganhe 40 Pontos em todos os Atributos ao lutar contra "Besta Mágica"]<br><br></h4>
+            <h4 class="sublinhado"><br>Obtida ao matar 20 Lycan, os pontos não irão aparecer somados nos seus atributos mas irão aparecer no quadro de Status do inimigo ao clicar no botão "Analisar Luta" [Ganhe 40 Pontos em todos os Atributos ao lutar contra "Besta Mágica"]<br><br></h4>
           </details>
           <br>
           
@@ -1034,10 +1648,26 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
               <h4 id="idTituloRetornoAdversidade"></h4>
               <details>
               <summary  id="idCheckAdversidade">🚫 Título: Aquele que Superou a Adversidade</summary>
-              <h4 class="sublinhado"><br>Obtida ao derrotar o Igris.[Ganhe 30% de Mana ao finalizar uma luta]<br><br></h4>
-            </details>
+              <h4 class="sublinhado"><br>Obtida ao derrotar o Igris.<br>Use 50 Pontos de experiência para subir o Nível do Título<br><br></h4>
+
+              <h4 class="sublinhado" id="AdversidadeUplevel"><br> [Ganhe 30% de Mana ao finalizar uma luta]<br><br></h4>
+
+              <button class="botaoNovo" onclick="FuncaoAqueleQueSuperouAdversidadeUplevel()"> Evoluir o Nível do Título </button>
+              <br>
+            </details>  
             <br>
-             
+
+             <br>
+              <img class="imgMenor" onclick="FuncaoTrocarTituloMestreDasArmas()" src="https://dotesports.com/wp-content/uploads/2024/05/cha-hae-in-solo-leveling-arise.jpg"/>
+              <h4 id="idTituloRetornoMestreDasArmas"></h4>
+              <details>
+              <summary  id="idCheckMestreDasArmas">🚫 Título: Mestre das armas</summary>
+            <h4 class="sublinhado"><br>Esse Título pode ser desbloqueada por 100 Pontos de experiência.<br><br>
+              Cha Hae-in é uma Caçadora de Rank S, ela irá te ensinar como liberar o verdadeiro poder das armas. O Buff das armas no arsenal serão desbloqueados (Loja ➡ Equipamentos). <br><br>
+              [Esse é o único título que pode ser usado em conjunto com outro título]<br><br></h4>
+              <br>
+            </details>  
+            <br>
           </details>
         <!--Fim dos títulos -->
       
@@ -1045,14 +1675,33 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
         </div>
       </div>
   <!-- FIM CLASSE E TÍTULOS -->
-
-
+  
 </div>
 </div>
 </div>
 </fieldset>
 
-       
+  <!-- METAS
+<h4>METAS </h4>
+<h4>Nível 1: 10 Cristais de Mana </h4>
+<h4>Nível 2: 70 CM - Treino Diário</h4>
+<h4>Nível 3: 400 CM - TD - 20 Poções de Recuperação</h4>
+<h4>Nível 4: 700 CM - TD - 35 PR - 5 Poções de Vida</h4>
+<h4>Nível 5: 1500 CM - TD - 70 PR - 10 PV</h4>
+<h4>Nível 6: 3500 CM - TD - 80 PR - 20 PV - 10 Pedras de Essência</h4>
+<h4>Nível 7: 5000 CM - TD - 150 PR - 50 PV - 11 PE - 20 Presas de Lycan</h4>
+<h4>Nível 8: 7000 CM - TD - 180 PR - 60 PV - 12 PE </h4>
+<h4>Nível 9: 10.000 CM - TD - 250 PR - 125 PV</h4>
+<h4>Nível 10: 20.000 CM - TD - 300 PR - 130 PV</h4>
+<h4>Nível 11: 25.000 CM - TD - 350 PR - 150 PV </h4>
+<h4>Nível 12: 30.000 CM - TD - 360 PR - 160 PV</h4>
+<br>
+<h4>Rank D na kasaka</h4>
+<h4>Rank C no Caçadores</h4>
+<h4>Rank B no Igris</h4>
+<h4>Rank A no Monarca demoníaco</h4>
+<h4>Rank S no Rei Formiga</h4>
+ METAS-->
       </div>
       <!-- Fim do menu da direita -->
 
@@ -1061,31 +1710,36 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
       
  <!--Início dos videos -->
  <br><iframe width="320" height="200"  
- src="https://www.youtube.com/embed/0HwnlgjICx4?si=8G4ph7Puz6meOWx6&autoplay1=1&mute=1&loop=1&playlist=0HwnlgjICx4" title="YouTube video player"  frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>
+ src="https://www.youtube.com/embed/0HwnlgjICx4?si=8G4ph7Puz6meOWx6&autoplay=1&mute=1&loop=1&playlist=0HwnlgjICx4" title="YouTube video player"  frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>
  <!--Fim dos videos -->
         <h1>Solo Leveling</h1>
+        
         <h3>
           Considerado o mais fraco da humanidade. Ele sobrevive a uma masmorra
           dupla e é escolhido por um programa misterioso como seu único jogador.
           O programa lhe dá a habilidade de aumentar sua força, possivelmente
-          além de qualquer limite conhecido.
+          além de qualquer limite conhecido. 
+           <br> <br>
+           <span style="background-color: #4d00c4;">
+          ⚠️ Se você não sabe por onde começar, inicie realizando as TAREFAS DIÁRIAS ⚠️
+           </span>
         </h3> 
+ <br>
+
+      
+
         <button id="trocar-conteudo" class="BotaoTrocarConteudo"></button>
         <br><br>
 
-        
-
         <div id="conteudo-alternativo" style="display: none;">
-          
-            <br />
-            <iframe width="320" height="200" src="https://www.youtube.com/embed/C0zMWogztQs?si=csHDN8bzlSMBr7Hg&autoplay1=1&mute=1&loop=1&playlist=C0zMWogztQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <h1>Solo Leveling: Arise from the Shadow</h1>
-            <h3>Através de batalhas implacáveis, Jinwoo aprimorou suas habilidades e eventualmente completou uma " Missão de Troca de Classe ", adquirindo o título de "Monarca das Sombras", que lhe permite comandar um exército de soldados das sombras. Agora, movido pela esperança de curar sua mãe doente, Jinwoo parte em uma nova jornada para obter materiais para o "Elixir da Vida".</h3>
-            <br /><br />
-           
-          
-        </div>
-      </div>
+
+
+          <br/>
+          <iframe width="320" height="200" src="https://www.youtube.com/embed/C0zMWogztQs?si=csHDN8bzlSMBr7Hg&autoplay=1&mute=1&loop=1&playlist=C0zMWogztQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <h1>Solo Leveling: Arise from the Shadow</h1>
+          <h3>Através de batalhas implacáveis, Jinwoo aprimorou suas habilidades e eventualmente completou uma " Missão de Troca de Classe ", adquirindo o título de "Monarca das Sombras", que lhe permite comandar um exército de soldados das sombras. Agora, movido pela esperança de curar sua mãe doente, Jinwoo parte em uma nova jornada para obter materiais para o "Elixir da Vida".</h3>
+          <br ><br>
+      </div></div>
 
       <!-- Fim da apresenção Solo Leveling -->
 
@@ -1096,7 +1750,9 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
 
       <!-- Início do título Status -->
       <div class="grid-item5"><h1>STATUS</h1></div>
-      <!-- Fim do título Status -->
+
+
+      <!--Fim do título Status -->
 
 
      
@@ -1108,10 +1764,10 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
       <div class="grid-item30" id="quinto-div">
 
         <div class="status-container">
-          <div class="status-item">
+          <div class="status-item" >
 
           
-        <h2 id="idvida">❤️ Vida: 100%</h2>
+        <h3 id="idvida">❤️ Vida: 100%</h3>
         <div class="barraVida">
           <div></div>
         </div>
@@ -1119,15 +1775,31 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
         
         <!-- Início da fadiga -->
           <div class="status-item">
-        <h2 id="idfadiga">🔋Fadiga: 0%</h2>
+        <h3 id="idfadiga">🔋Fadiga: 0%</h3>
 
         <div class="barra">
           <div></div>
         </div>
         <br>
-        <details>
-          <summary><em class="sumario">Nota</em></summary>
+       
+      </div>
+
+      <!-- Fim da fadiga -->
+<!-- Início da Mana -->
+<div class="status-item">
+<h3 id="idAumentoDoNivelDaMana">🪄 Mana: 10%/20%</h3>
+<div class="barraMana">
+  <div></div>
+</div>
+</div>
+ </div>
+ <!-- Fim da Mana --> 
+      
+ <details>
+          <summary>Ajuda</summary>
+          <ul>
           <h4>
+            <br>
             ❤️ Vida: Ao lutar contra inimigos você irá perder vida. Quando sua vida chegar em 0% não será mais possível lutar até a mesma ser recarregada,
             compre "Poção de Vida" na Loja de Intens.
           </h4>
@@ -1135,36 +1807,26 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
             🪫Fadiga: Ao realizar tarefas no jogo é gerado um cansaço, ao chegar
             em 100% não é possível realizar nenhuma tarefa extra. Para
             recarregar a Fadiga você pode realizar a Missão diária [Recuperação Total da Fadiga] ou comprar
-            uma Poção de Fadiga na "Loja de ítens".
+            uma Poção de Fadiga na "Loja de itens".
           </h4>
           <h4>
-            🪄 Mana: A mana é a energia mágica necessária para utilizar as Habilidades. Ela pode ser comprada na "Loja de Ítens", 
-            no momento o máximo de Mana é 20% mas durante o Jogo você poderá aumentá-la.
+            🪄 Mana: A mana é a energia mágica necessária para utilizar as Habilidades. Ela pode ser comprada na "Loja de itens", 
+            no momento o máximo de Mana é 20% mas durante o Jogo você poderá aumentá-la com a habilidade "Aprimoramento do Segundo Despertar" na aba Habilidades.
           </h4>
           <br>
+        </ul>
         </details>
+
       </div>
-
-      <!-- Fim da fadiga -->
-<!-- Início da Mana -->
-<div class="status-item">
-<h2 id="idAumentoDoNivelDaMana">🪄 Mana: 10%/20%</h2>
-<div class="barraMana">
-  <div></div>
-</div>
-</div>
-
-
-
-<!-- Fim da Mana -->
-      </div></div>
       <!-- Fim da vida/fadiga/mana -->
 
-      
-
-      
-
-      
+      <div id="vagalume-container"></div>
+      <div id="chama-container"></div>
+       <div id="conteinerEstrela5" class="EfeitoEstrela"></div>
+       <div id="conteinerEstrela4" class="EfeitoEstrela"></div>
+       <div id="conteinerEstrela3" class="EfeitoEstrela"></div>
+       <div id="conteinerEstrela2" class="EfeitoEstrela"></div>
+       <div id="conteinerEstrela" class="EfeitoEstrela"></div>
 
       <!--Início da Dugeon de Mineração-->
       <div class="grid-item3" id="segundo-div">
@@ -1184,33 +1846,35 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
           </div>
         </div>
 
-        <h3>Dungeon de mineração: Cristais de Mana</h3>
+        <h2>Dungeon de mineração: Cristais de Mana</h2>
 
-        
-        <button class="pedra" onclick="deus()">Pedra</button>
-        <br />
-        <br />
+       
+       
+        <br>
+        <br>
 
         <details>
           <summary class="sumario">EXPLORAR DANGEON</summary>
-          <br />
+          <br>
 
-          <h4>
+          <h3>
             Os Cristais de Mana, apesar de seu nome, contêm menos mana e podem.
             Eles podem ser encontrados e colhidos sem a necessidade de derrotar
-            monstros.
-          </h4>
+            monstros. Os cristais podem ser vendidos na aba Inventário para conseguir ouro.
+          </h3>
 
           <h2>⛏️ Mina de Escavação ⛏️</h2>
 
-          <h3 id="idcristal">Cristais de Mana: 0</h3>
-          <button id="BotaoTrocaDeCor" class="blob" onclick="funcaominerarcristal()"> MINERAR CRISTAIS DE MANA </button>
-          <button class="blob" onclick="funcaominerarcristalAteAfadigaSer100()"> MINERAR ATÉ 100% DA FADIGA </button>
-          <h4 id="idminerarcristal"></h4>
+          <h3 id="idcristal">Dica: Na aba "Atributos" adicione pontos no atributo Percepção para minerar mais Cristais</h3>
           
+          <button id="BotaoTrocaDeCor" class="blob" onclick="funcaominerarcristal()"> MINERAR CRISTAIS DE MANA (10% DE FADIGA) </button>
+          <br> <br>
+          <button class="blob" onclick="funcaominerarcristalAteAfadigaSer100()"> MINERAR CRISTAIS DE MANA (100% DE FADIGA) </button>
+         
+           <h4 id="idminerarcristal"></h4>
 
           <details>
-            <summary><em class="sumario">Nota</em></summary>
+            <summary>Ajuda</summary>
             <h4>
               Melhore a sua "Percepção" para conseguir encontrar e minerar
               Cristais de Mana de forma mais eficiente. A mineração é um
@@ -1219,21 +1883,34 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
 
             <h4 class="sumario">Exemplos:</h4>
             <ul>
-              <li>Percepção 10/Cristal 1/Fadiga 10%</li>
-              <li>Percepção 11/Cristais 2/Fadiga 9%</li>
-              <li>Percepção 12/Cristais 3/Fadiga 8%</li>
+              <li>10 pontos de Percepção irá gerar 1 Cristal e 10% de Fadiga</li>
+              <li>11 pontos de Percepção irá gerar 2 Cristais e 9% de Fadiga</li>
+              <li>12 pontos de Percepção irá gerar 3 Cristais e 8% de Fadiga</li>
               <li>...</li>
-              <li>Percepção 18/Cristais 9/Fadiga 2%</li>
-              <li>Percepção 19/Cristais 10/Fadiga 1%</li>
-              <li>Percepção 20/Cristais 10/Fadiga 1%</li>
+              <li>...</li>
+              <li>18 pontos de Percepção irá gerar 9 Cristais e 2% de Fadiga</li>
+              <li>19 pontos de Percepção irá gerar 10 Cristais e 1% de Fadiga</li>
             </ul>
+
+             <h4>
+              Apartir de 19 pontos de atributos em Percepção, não irá mais ter alteração na geração de Cristais.
+            </h4>
+
+            <h4 class="sumario">Exemplos:</h4>
+            <ul>
+                <li>20 pontos de Percepção irá gerar 10 Cristais e 1% de Fadiga</li>
+                <li>21 pontos de Percepção irá gerar 10 Cristais e 1% de Fadiga</li>
+                <li>22 pontos de Percepção irá gerar 10 Cristais e 1% de Fadiga</li>
+            </ul>
+
           </details>
         </details>
         <br />
       </div>
       <!-- Fim da Dugeon de Mineração -->
 
-       <!-- INÍCIO do Treino diário -->
+
+       <!-- INÍCIO DO TREINO DIÁRIO E MISSÃO DE PENALIDADE -->
        <div class="grid-item3" id="terceiro-div">
         <h1>Missão Diária</h1>
 
@@ -1251,26 +1928,15 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
           </div>
         </div>
 
-        <h3>Missão de Penalidade: Sobrevivência<br>
-        Treino Diário: Ganho de Força</h3>
-        
-        <h3>Rank: B ⭐⭐⭐⭐</h3>
-        <button class="inseto">Inseto</button>
-        <button class="AtaqueFisico">Ataque físico</button>
-        
+        <h2>Missão de Penalidade ou Treino Diário</h2>
 
-        <br /><br />
-
-      
-        
-
-       
+        <br><br>
 
         <details>
-          <summary class="sumario">REALIZAR TREINO</summary>
+          <summary class="sumario">REALIZAR MISSÃO</summary>
           <br>
 
-          <h4> Ao realizar a "Missão Diária" você pode optar por duas atividades.</h4>
+          <h3> Ao realizar a "Missão Diária" você pode optar por duas atividades.</h3>
 
 <!--Início do menu de Treino Diário-->
 <div class="abasTreino">
@@ -1285,20 +1951,20 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
 
   <h3 class="sublinhado">Treino Diário: Ganho de Força</h3>
 
+   <img class="img1" src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/man-from-solo-leveling-looking-into-the-sun-rise.jpg" />
+
       <h4>
-        Treino diário chegou: 100 flexões, 100 abdominais, 100
-        agachamentos e 10km de corrida.
+        Realize 100% do seu treino ao clicar no botão "Realizar treinamento" e ganhe 1 Ponto de Atributo em Força como recompensa.
         <br><br>
-        Realize o treino diário e ganhe 1 Ponto de Atributo em Força.
+        “Quanto mais fraco você é, mais rápido você é descartado, mas se você é forte, as pessoas procurarão essa força”
       </h4>
 
-      <button class="blob" onclick="misaoDiaria()">
-        🤸 Realizar treinamento 🏃</button
-      ><br />
+      <button class="blob" onclick="misaoDiaria()"> 🤸 Realizar treinamento 🏃</button>
+      <br>
       <h4 id="idtreino"></h4>
 
       <details>
-        <summary class="sumario">Nota</summary>
+        <summary class="sumario">Ajuda</summary>
 
         <h3>
           Melhore seu atributo "Força" para realizar um treino mais
@@ -1307,11 +1973,11 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
 
         <h4 class="sumario">Exemplos:</h4>
         <ul>
-          <li>Força 10 gera 2% do Treino</li>
-          <li>Força 11 gera 3% do Treino</li>
+          <li>10 pontos de "Força" irá gerar 2% do Treino</li>
+           <li>11 pontos de "Força" irá gerar 3% do Treino</li>
           <li>...</li>
-          <li>Força 107 gera 99% do Treino</li>
-          <li>Força 108 gera 100% do Treino</li>
+          <li>107 pontos de "Força" irá gerar 99% do Treino</li>
+           <li>108 pontos de "Força" irá gerar 100% do Treino</li>
         </ul>
         <br>
       </details>
@@ -1325,10 +1991,19 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
  
   <h3 class="sublinhado">Missão de Penalidade: Sobrevivência</h3>
 
-  <h4>
-    Missão de Penalidade: Sobreviver a Centopeias Gigantes do Deserto com Dentes Envenenados, 
+ <img class="img1" src="https://preview.redd.it/querehsha-solo-leveling-vs-sage-centipede-one-punch-man-v0-9d6tu4e1juee1.png?width=640&crop=smart&auto=webp&s=6216071af51100d166860279015d7371c569ade4" />
+<br><br>
+ <h2>Centopeias gigantes</h2>
+          <h3>Rank: B ⭐⭐⭐⭐</h3>
+ <button class="inseto">Inseto</button>
+ <button class="AtaqueFisico">Ataque físico</button>
+
+  <h3>
+    Missão de Penalidade: Sobreviver a Centopeias gigantes do deserto com dentes envenenados, 
     caso você vença receberá 20 Pontos de experiência, caso não derrote a Centopeia você ainda receberar 2 pontos de experiência.
-  </h4>
+    </h3>
+    <h4>
+    <br>“Se a dor não me matar, ela apenas me tornará mais forte”</h4>
 
   <fieldset class="temafieldset" id="sexto-div">
     <h3 class="sublinhado">Status da Centopeia</h3>
@@ -1360,29 +2035,47 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
 
     </div>
   </div>
-</div>
+</div> <br>
 <!--Fim do menu de Treino Diário-->
-      </div> 
+      </div>
       <!-- FIM do Treino diário -->
 
-
-
-
+ 
  <!-- INÍCIO MENU PARA AS DUNGEOS -->
- <div class="grid-item2" >
+ <div class="grid-item2" >   
 
   <h1>Derrote todos os inimigos!</h1>
+  <h4>Comece com as Dangeons da esquerda para a direita.</h4>
+    <details>
+      <summary class="sumario">Ajuda</summary>
+      
+        <ul><br>
+            <h4>Os inimigos são avaliados através de um sistema de ranking, que vai de Rank E (o mais fraco) a Rank S (o mais forte). O ranking reflete a força e o poder do Inimigo.<br>
+  Rank:<br>
+  E ⭐<br>
+  D ⭐⭐<br>
+  C ⭐⭐⭐<br>
+  B ⭐⭐⭐⭐<br>
+  A ⭐⭐⭐⭐⭐<br>
+  S 💎<br><br>
+</h4>
+        </ul>
+      </h4>
+    </details><br>
+
+
+
 
   <div class="botoesNova">
-    <button class="botaoNova" onclick="abrirAbaNova(1)">Dangeon Dupla</button>
-    <button class="botaoNova" onclick="abrirAbaNova(2)">Dangeon Eminente</button>
-    <button class="botaoNova" onclick="abrirAbaNova(3)">Dungeon dos Insetos</button>
-    <button class="botaoNova" onclick="abrirAbaNova(4)">Castelo Demoníaco</button>
-    <button class="botaoNova" onclick="abrirAbaNova(5)">Dangeon dos Goblins</button>
-    <button class="botaoNova" onclick="abrirAbaNova(6)">Missão Troca de Classe</button>
-    <button class="botaoNova" onclick="abrirAbaNova(7)">Dangeon Portal Vermelho</button>
-    <button class="botaoNova" onclick="abrirAbaNova(8)">Dangeon Guilda dos Caçadores</button>
-    <button class="botaoNova" onclick="abrirAbaNova(9)">Ilha de Jeju</button>
+    <button class="botaoNova" onclick="abrirAbaNova(1)"><br>Dangeon<br>Dupla</button>
+    <button class="botaoNova" onclick="abrirAbaNova(2)"><br>Dangeon<br>Eminente</button>
+    <button class="botaoNova" onclick="abrirAbaNova(3)"><br>Dungeon<br>dos<br>Insetos</button>
+    <button class="botaoNova" onclick="abrirAbaNova(4)"><br>Castelo<br>Demoníaco</button>
+    <button class="botaoNova" onclick="abrirAbaNova(5)"><br>Dangeon<br>dos<br>Goblins</button>
+    <button class="botaoNova" onclick="abrirAbaNova(6)"><br>Troca<br>de<br>Classe</button>
+    <button class="botaoNova" onclick="abrirAbaNova(7)"><br>Portal<br>Vermelho</button>
+    <button class="botaoNova" onclick="abrirAbaNova(8)"><br>Guilda<br>dos<br>Caçadores</button>
+    <button class="botaoNova" onclick="abrirAbaNova(9)"><br>Ilha<br>de<br>Jeju</button>
   </div>
   <div class="conteudoNova">
 
@@ -1390,8 +2083,10 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
 
     <div class="abaNova" id="abaNova1">
       
-      <!-- INÍCIO da Dangeon Dupla -->
-      <time id="idDIVEsconderKandiaru">
+     
+
+        <!-- INÍCIO DA ESTÁTUA 01 -->
+      
         <div class="grid-item3" >
           <h1 class="sublinhado" >Dangeon Dupla: Templo de Cartenon</h1>
           <br><br>
@@ -1399,35 +2094,181 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
             <div class="card-1 flip-card">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-  <img class="img1" src="https://i.ytimg.com/vi/rsBNBXAQ9Bw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDnk34V2OEmAJ__AN8XFtNM9pc3iA" alt=""
+  <img class="img1" src="https://preview.redd.it/solo-leveling-inspired-statue-monarch-of-frost-v0-ui6d3l9bu78e1.jpeg?width=720&format=pjpg&auto=webp&s=483e983404a9a69681b67dc46b47f5aeacd41ea9" alt=""
                   />
                 </div>
                 <div class="flip-card-back">
    <img class="img1" 
-   src="https://giffiles.alphacoders.com/222/222255.gif"/>
+   src="https://preview.redd.it/what-was-the-best-moment-for-you-guys-in-solo-leveling-cour-v0-6eivlb5kx7sc1.jpeg?width=1179&format=pjpg&auto=webp&s=0a226a6c9ecc4625d1f6f8f2b9ed7089b3343c90"/>
                 </div>
               </div>
             </div>
           </div>
   
-          <h2>Estátua de Deus</h2>
-          <h3>Rank: S 💎</h3>
+          <h2>Primeiro Mandamento: Venere a Deus</h2>
+          <h3>Rank: Desconhecido</h3>
           <button class="demonio">Demônio</button>
           <button class="AtaqueMagico">Ataque mágico</button>
           <button class="AtaqueFisico">Ataque físico</button>
   
           <br><br>
-          <h3>
-            Missão secreta "Coragem dos fracos". A Dungeon Dupla, também
-            conhecida como Templo de Cartenon, é um local misterioso em outra
-            outra dimensão, cheio de monstros, que aparece dentro de dois
-            calabouços Rank D. No seu nível atual é impossível derrotar o Chefão, apenas sobreviva!
-          </h3>
 
           <details>
             <summary class="sumario">DESAFIAR</summary>
             <br>
+  <h3> Missão secreta "Coragem dos fracos". A Dungeon Dupla, também
+            conhecida como Templo de Cartenon, é um local misterioso em
+            outra dimensão, cheio de monstros, que aparece dentro de dois
+            calabouços Rank D. No seu nível atual é impossível derrotar o Chefão, apenas sobreviva!
+          </h3>
+          <br>
+            <fieldset class="temafieldset">
+              <h3 class="sublinhado">Status da Estátua</h3>
   
+              <fieldset class="luta">
+           
+                <h3 class="luta" id="idVidaKandiaru1">❤️ Vida: 10% - Aqui será mostrado quanto de vida você irá perder nesta luta</h3>
+                <h3 class="luta" id="idAgilidadeKandiaru1">🦵 Agilidade: 9 - Seus atributos devem ser superior ao do inimigos</h3>
+                <button class="botaoNovo" id="idKandiaru1">⚔️ Rounds da batalha: 0/1 - Aqui será mostrado quantas vezes você precisa lutar contra o inimígo</button>
+                <button class="botaoNovo">AQUI SERÁ EXIBIDO OS PRÉMIOS DA LUTA </button>
+                
+                <br><br>
+              </fieldset>
+  
+              <h3 class="sublinhado">Quadro de notificações</h3>
+              <h3 class="luta" id="idQuadroDeRetornoKandiaru1">
+                Clique no botão "Analisar Luta" para fazer uma comparação entre os seus atributos e os atributos do inimigo.
+              </h3>
+  
+              <button
+                class="blob"
+                onclick="LutaContraKandiaru1Botao()"
+                id="idLutaContraKandiaru1Botao"
+              >
+                Sim
+              </button>
+  
+              <button class="blob" onclick="AnalisarLutaContraKandiaru1Botao()">
+                Analisar Luta
+              </button>
+            </fieldset>
+          </details>
+          <br>
+        </div><br><br>
+        <!-- FIM DA ESTÁTUA 01 -->
+
+         <!-- INÍCIO DA ESTÁTUA 02 -->
+      
+        <div class="grid-item3" >
+          <br><br>
+          <div class="cards-container">
+            <div class="card-1 flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+  <img class="img1" src="https://giffiles.alphacoders.com/221/221577.gif" alt=""
+                  />
+                </div>
+                <div class="flip-card-back">
+   <img class="img1" 
+   src="https://i.ytimg.com/vi/rsBNBXAQ9Bw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDnk34V2OEmAJ__AN8XFtNM9pc3iA"/>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <h2>Segundo Mandamento: Louve a Deus</h2>
+          <h3>Rank: Desconhecido</h3>
+          <button class="demonio">Demônio</button>
+          <button class="AtaqueMagico">Ataque mágico</button>
+          <button class="AtaqueFisico">Ataque físico</button>
+  
+          <br><br>
+          
+
+          <details>
+            <summary class="sumario">DESAFIAR</summary>
+            <br>
+  <h3>
+            Missão secreta "Coragem dos fracos". A Dungeon Dupla, também
+            conhecida como Templo de Cartenon, é um local misterioso em
+            outra dimensão, cheio de monstros, que aparece dentro de dois
+            calabouços Rank D. No seu nível atual é impossível derrotar o Chefão, apenas sobreviva!
+          </h3>
+           <br>
+
+            <fieldset class="temafieldset">
+              <h3 class="sublinhado">Status da Estátua</h3>
+  
+              <fieldset class="luta">
+           
+                <h3 class="luta" id="idVidaKandiaru2">❤️ Vida: 40%</h3>
+                <h3 class="luta" id="idFadigaKandiaru2">🪫Fadiga : 10%</h3>
+                <h3 class="luta" id="idAgilidadeKandiaru2">🦵 Agilidade: 9</h3>
+                <h3 class="luta" id="idInteligenciaKandiaru2">🧠 Inteligência: 10</h3>
+                <button class="botaoNovo" id="idKandiaru2">⚔️ Rounds da batalha: 0/1</button>
+                <br><br>
+              </fieldset>
+  
+              <h3 class="sublinhado">Quadro de notificações</h3>
+              <h3 class="luta" id="idQuadroDeRetornoKandiaru2">
+                Você quer desafiar a Estátua de Deus?
+              </h3>
+  
+              <button
+                class="blob"
+                onclick=" LutaContraKandiaru2Botao()"
+                id="idLutaContraKandiaru2Botao"
+              >
+                Sim
+              </button>
+  
+              <button class="blob" onclick="AnalisarLutaContraKandiaru2Botao()">Analisar Luta (É necessário clicar em "analizar" sempre que houve uma atualização dos "Atributos")</button>
+            </fieldset>
+          </details>
+          <br>
+        </div><br><br>
+        <!-- FIM DA ESTÁTUA 02 -->
+
+      <!-- INÍCIO da Dangeon Dupla -->
+      <time id="idDIVEsconderKandiaru">
+        <div class="grid-item3" >
+        
+          <br><br>
+          <div class="cards-container">
+            <div class="card-1 flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+  <img class="img1" src="https://giffiles.alphacoders.com/222/222255.gif" alt=""
+                  />
+                </div>
+                <div class="flip-card-back">
+   <img class="img1" 
+   src="https://staticg.sportskeeda.com/editor/2024/01/28426-17051847591141-1920.jpg?w=640"/>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <h2>Terceiro Mandamento: Prove sua fé em Deus</h2>
+          <h3>Rank: Desconhecido</h3>
+          <button class="demonio">Demônio</button>
+          <button class="AtaqueMagico">Ataque mágico</button>
+          <button class="AtaqueFisico">Ataque físico</button>
+  
+          <br><br>
+         
+
+          <details>
+            <summary class="sumario">DESAFIAR</summary>
+            <br>
+   <h3>
+            Missão secreta "Coragem dos fracos". A Dungeon Dupla, também
+            conhecida como Templo de Cartenon, é um local misterioso em
+            outra dimensão, cheio de monstros, que aparece dentro de dois
+            calabouços Rank D. No seu nível atual é impossível derrotar o Chefão, apenas sobreviva!
+          </h3>
+          <br>
+
             <fieldset class="temafieldset">
               <h3 class="sublinhado">Status da Estátua</h3>
   
@@ -1436,11 +2277,10 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
                 <h3 class="luta" id="idVidaKandiaru">❤️ Vida: 100%</h3>
                 <h3 class="luta" id="idFadigaKandiaru">🪫Fadiga : 0%</h3>
                 <h3 class="luta" id="idAgilidadeKandiaru">🦵 Agilidade: 9</h3>
-                <h3 class="luta" id="idInteligenciaKandiaru">🧠 Inteligência: 11
-                </h3>
-                <button class="botaoNovo" id="idKandiaru">⚔️ Rounds da batalha: 0/1
-                </button>
-                
+                <h3 class="luta" id="idInteligenciaKandiaru">🧠 Inteligência: 11</h3>
+                <button class="botaoNovo" id="idKandiaru">⚔️ Rounds da batalha: 0/1</button>
+                <button class="botaoNovo">🏅 Habilidade Saúde e longevidade</button>
+                <button class="botaoNovo">🏅 4 pontos de atributos</button>
                 <br /><br />
               </fieldset>
   
@@ -1479,31 +2319,33 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
             <div class="card-1 flip-card">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-   <img class="img1"  src="https://a.storyblok.com/f/178900/1504x846/cd0829c7d4/hobgoblin-solo-leveling.jpg/m/filters:quality(95)format(webp)"  alt=""/>
+   <img class="img1"  src="https://media.myshows.me/comments/2/b9/2b9c0070890a584c0a8603547213c90f.gif"  alt=""/>
                 </div>
                 <div class="flip-card-back">
-                  <img class="img1"  src="https://media.myshows.me/comments/2/b9/2b9c0070890a584c0a8603547213c90f.gif"  alt=""/>
+                  <img class="img1"  src="https://a.storyblok.com/f/178900/1504x846/cd0829c7d4/hobgoblin-solo-leveling.jpg/m/filters:quality(95)format(webp)"  alt=""/>
                 </div>
               </div>
             </div>
           </div>
   
           <h2>Goblins</h2>
-          <h3>Rank: D ⭐⭐</h3>
+          <h3>Rank: E ⭐</h3>
           <button class="humanoide">Humanoide</button>
           <button class="AtaqueFisico">Ataque físico</button>
   
           <br><br>
-          <h3>
+          
+          <details>
+            <summary class="sumario">DESAFIAR</summary>
+            <br>
+  <h3>
             Os goblins são um tipo de monstro muito comum encontrado em todos os
             tipos de dungeons. Eles são um tipo humanóide de besta mágica e seu
             poder tende a ser baixo.
+            <br><br>
+            “Eu sou o caçador mais fraco… mas não por muito tempo.”
           </h3>
-          <details>
-            <summary class="sumario">DESAFIAR</summary>
-            <br />
-  
-            
+             <br>
   
             <fieldset class="temafieldset">
               <h3 class="sublinhado">Status do Goblin</h3>
@@ -1513,10 +2355,13 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
                 <h3 class="luta" id="idFadigaGoblin">🪫Fadiga: 30%</h3>
                 <h3 class="luta" id="idAgilidadeGoblin">🦵 Agilidade: 11</h3>
                 <h3 class="luta" id="idForcaGoblin">💪 Força: 15</h3>
+                <button class="botaoNovo">🏆 40 pontos de Atributos</button>
                 <button class="botaoNovo" id="idexperiencia">🏆 Experiência: 0</button>
                 <button class="botaoNovo" id="idPedrasDeEssenciaGoblin">💎 Pedras de Essência: 0</button>
                 <button class="botaoNovo" id="idGoblin">🚶‍♂️População: 0/10</button>
-                <br /><br />
+                <button class="botaoNovo">🏅 Título Exterminador de Goblins</button>
+                
+                <br><br>
               </fieldset>
   
               <h3 class="sublinhado">Quadro de notificações</h3>
@@ -1569,16 +2414,19 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
           <button class="AtaqueFisico">Ataque físico</button>
   
           <br><br>
-          <h3>
+          
+          <details>
+            <summary class="sumario">DESAFIAR</summary>
+            <br>
+            <h3>
             Um lobo peculiar com presas literalmente de aço. Eles mal são mais
             fortes do que um caçador Rank E, mas podem ser uma ameaça se
             atacarem em grupos, algo que farão se perceberem que um rival é mais
             forte do que eles.
+            <br><br>
+            "Se eu não matar, serei morto. Não posso mais fugir."
           </h3>
-          <details>
-            <summary class="sumario">DESAFIAR</summary>
-            <br>
-            
+           <br>
             <fieldset class="temafieldset">
               <h3 class="sublinhado">Status do Lycan com Presas de Aço</h3>
   
@@ -1587,15 +2435,13 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
                 <h3 class="luta" id="idFadigaLycan">🪫 Fadiga: 30%</h3>
                 <h3 class="luta" id="idAgilidadeLycan">🦵 Agilidade: 40</h3>
                 <h3 class="luta" id="idForcaLycan">💪 Força: 44</h3>
-                <button class="botaoNovo" id="idexperienciaLycan">
-                  🏆 Experiência: 0
-                </button>
-                <button class="botaoNovo" id="idPresaDeLycan">
-                  💰 Presas de Lycan: 0
-                </button>
+                <button class="botaoNovo">🏆 80 pontos de Atributos</button>
+                <button class="botaoNovo" id="idexperienciaLycan">🏆 Experiência: 0</button>
+                <button class="botaoNovo" id="idPresaDeLycan">💰 Presas de Lycan: 0</button>
                 <button class="botaoNovo" id="idLycan">🚶‍♂️População: 20</button>
+                <button class="botaoNovo">🏅 Título: Assassino de Lobos</button>
                 
-                <br /><br />
+                <br><br>
               </fieldset>
   
               <h3 class="sublinhado">Quadro de notificações</h3>
@@ -1621,42 +2467,63 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
         <!-- FIM DO Lycan -->
   
         <!-- INÍCIO DO Kasaka  -->
-        <time id="idDIVEsconderKasaka">
+       
         <div class="grid-item3">
           
-  
-          <div class="cards-container">
+    <br>
+ <img class="img1" src="https://images.cults3d.com/GQXNsj3fIVy8oNeAQYAvptw8C8c=/516x516/filters:no_upscale()/https://fbi.cults3d.com/uploaders/15537594/illustration-file/5a04d174-34d0-469c-8251-6078ffc4b4cc/shadow-rune.png" />
+ <br>
+          
+           <h2>Pedra Rúnica [FUGA]</h2>
+          <br>
+          <details>
+            <summary class="sumario">EXPLORAR</summary>
+           
+          <br>
+          <h3> Você ganhou uma Pedra Rúnica, ao utilizar a pedra você não irá lutar contra o Boss da Dangeon [Kasaka]. Deseja usar a pedra rúnica de fuga?</h3>
+
+<!--Início do menu Kasaka ou Golen de pedra -->
+<div class="abasKasaka">
+  <div class="botoesKasaka">
+    <button class="botaoKasaka ativo" onclick="abrirAbaKasaka(1)"> Não</button>
+    <button class="botaoKasaka" onclick="abrirAbaKasaka(2)"> Sim</button>
+  </div>
+  <div class="conteudoKasaka">
+    <div class="abaKasaka ativo" id="abaKasaka1">
+      
+    <!--Início do seguir com a luta da Kasaka-->
+
+<div class="cards-container">
             <div class="card-1 flip-card">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <img
                     class="img1"
-                    src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/02/untitled-design-500-147.jpg"
+                    src="https://i.redd.it/yupdpvl50brc1.gif"
                     alt=""
                   />
                 </div>
                 <div class="flip-card-back">
-                  <img class="img1"  src="https://i.redd.it/yupdpvl50brc1.gif"  />
+                  <img class="img1"  src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/02/untitled-design-500-147.jpg"  />
                 </div>
               </div>
             </div>
           </div>
-  
-          <h2>Kasaka Azul de Presas Venenosasg</h2>
+  <br>
+
+ <h2>Kasaka Azul de Presas Venenosas</h2>
           <h3>Rank: D ⭐⭐</h3>
           <button class="cobra"> Réptil </button>
           <button class="AtaqueFisico">Ataque físico</button>
   
           <br><br>
-          <h3>
-            Esta cobra gigantesca tem escamas semelhantes a
+           <h3>
+            A Governante do Pântado: Esta cobra gigantesca tem escamas semelhantes a
             armaduras, enormes presas venenosas, velocidade e força suficientes
             para superar um chefe de dungeon regular do Rank-D.
           </h3>
-          <details>
-            <summary class="sumario">DESAFIAR</summary>
-            <br>
-           
+           <br>
+
             <fieldset class="temafieldset">
               <h3 class="sublinhado">
                 Status da Kasaka</h3>
@@ -1666,14 +2533,14 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
                 <h3 class="luta" id="idFadigaKasaka">🪫Fadiga: 70%</h3>
                 <h3 class="luta" id="idAgilidadeKasaka">🦵 Agilidade: 50</h3>
                 <h3 class="luta" id="idForcaKasaka">💪 Força: 50</h3>
-                <button class="botaoNovo" id="idexperienciaKasaka">
-                  🏆 Experiência: 0
-                </button>
-                <button class="botaoNovo" id="idPedrasDeEssenciaKasaka">
-                  💎 Pedras de Essência: 0
-                </button>
+                <button class="botaoNovo">🏆 4 pontos de atributos </button>
+                <button class="botaoNovo" id="idexperienciaKasaka">🏆 Experiência: 0 </button>
+                <button class="botaoNovo" id="idPedrasDeEssenciaKasaka">💎 Pedras de Essência: 0 </button>
                 <button class="botaoNovo" id="idKasaka">🚶‍♂️População: 1</button>
-                <br /><br />
+                <button class="botaoNovo">🏅 Habilidade Arrancada</button>
+                <button class="botaoNovo">🏅 Troca do Rank E para D</button>
+                
+                <br><br>
               </fieldset>
   
               <h3 class="sublinhado">Quadro de notificações</h3>
@@ -1689,20 +2556,89 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
                 Sim
               </button>
   
-              <button class="blob" onclick="AnalisarLutaContraKasakaBotao()">
-                Analisar Luta
-              </button>
+              <button class="blob" onclick="AnalisarLutaContraKasakaBotao()"> Analisar Luta</button>
             </fieldset>
-          </details>
-          <br />
-        </div></time>
-        <!-- FIM DO Kasaka  -->
-        
-    </div>
 
+
+    </div>
+<!--Fim do seguir com a luta da Kasaka-->
+
+<!--Início do seguir com a luta do Golen-->
+    <div class="abaKasaka" id="abaKasaka2">
+      
+
+ <div class="cards-container">
+            <div class="card-1 flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    class="img1"
+                    src="https://staticg.sportskeeda.com/editor/2024/08/3258f-17241756358870-1920.jpg?w=640"
+                    alt=""
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <img class="img1"  src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/04/solo-leveling-golem-scene-2.jpg"  />
+                </div>
+              </div>
+            </div>
+          </div>
+  <br>
+
+ <h2>Golem de pedra</h2>
+          <h3>Rank: D ⭐⭐</h3>
+          <button class="pedra"> Pedra </button>
+          <button class="AtaqueFisico">Ataque físico</button>
+  
+          <br><br>
+           <h3>
+            Ao sair da Dangeon Eminente, Sung encontra um Golem que escabou da Dangeon (Dangeon Break) para o seu mundo. 
+            O Golem de Pedra é o chefe de uma Masmorra Rank-D que surgiu perto da Estação de Metrô Hapjeong.
+             É uma fera enorme, do tamanho de um prédio pequeno, com um corpo feito inteiramente de rocha e veias azuis brilhantes por todo o corpo.
+          </h3>
+           <br>
+
+            <fieldset class="temafieldset">
+              <h3 class="sublinhado">
+                Status do Golen</h3>
+  
+              <fieldset class="luta">
+                <h3 class="luta" id="idVidaGolen">❤️ Vida: 60%</h3>
+                <h3 class="luta" id="idFadigaGolen">🪫Fadiga: 60%</h3>
+                <h3 class="luta" id="idAgilidadeGolen">🦵 Agilidade: 50</h3>
+                <h3 class="luta" id="idForcaGolen">💪 Força: 50</h3>
+               <button class="botaoNovo">🏆 25 pontos de atributos para distribuir como quiser</button>
+                <button class="botaoNovo" id="idexperienciaGolen">🏆 Experiência: 0 </button>
+                <button class="botaoNovo" id="idPedrasDeEssenciaGolen">💎 Pedras de Essência: 0 </button>
+                <button class="botaoNovo" id="idGolen">🚶‍♂️População: 1</button>
+                <button class="botaoNovo">🏅 Martelo do Golem de Pedra</button>
+                 <button class="botaoNovo">🏅 Troca do Rank E para D</button>
+                
+                <br><br>
+              </fieldset>
+  
+              <h3 class="sublinhado">Quadro de notificações</h3>
+              <h3 class="luta" id="idQuadroDeRetornoGolen"> Você quer desafiar o Golen? </h3>
+  
+              <button   class="blob"   onclick="LutaContraGolenBotao()"  id="idLutaContraGolenBotao" > Sim </button>
+  
+              <button class="blob" onclick="AnalisarLutaContraGolenBotao()"> Analisar Luta</button>
+            </fieldset>
+    </div>
+<!--Fim do seguir com a luta do Golen-->
+  </div>
+</div>
+<!--Fim do menu Kasaka ou Golen de pedra -->   
+
+
+</details><br>
+</div>
+</div>
+<!-- FIM DO Kasaka  -->
+
+<!-- INÍCIO dos Insectoids  -->
     <div class="abaNova" id="abaNova3">
       
-      <!-- INÍCIO dos Insectoids  -->
       <time id="idDIVEsconderInsectoids">
         <div class="grid-item3">
           <h1 class="sublinhado">Dangeon: Dungeon dos Insetos</h1>
@@ -1730,26 +2666,28 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
           <button class="AtaqueFisico">Ataque físico</button>
   
           <br><br>
-          <h3>
-            Mostros que parecem uma mistura de gafanhotos e aranhas, eles são
-            relativamente fracos.
-          </h3>
+          
           <details>
             <summary class="sumario">DESAFIAR</summary>
-            <br />
-            
+            <br>
+            <h3>
+            Mostros que parecem uma mistura de gafanhotos e aranhas, eles são
+            relativamente fracos.
+            <br><br>
+            “Ele que luta contra Monstros, deve tomar cuidado para que ele mesmo não se torne um deles.”
+          </h3><br>
+
             <fieldset class="temafieldset">
               <h3 class="sublinhado">Status do Insectoids</h3>
   
               <fieldset class="luta">
-                <h3 class="luta" id="idRequisitoInsectoids">
-                  🐍 Kasaka derrotada:
-                </h3>
+               
                 <h3 class="luta" id="idVidaInsectoids">❤️ Vida: 10%</h3>
                 <h3 class="luta" id="idFadigaInsectoids">🪫Fadiga: 20%</h3>
                 <h3 class="luta" id="idAgilidadeInsectoids">🦵 Agilidade: 50</h3>
                 <h3 class="luta" id="idForcaInsectoids">💪 Força: 70</h3>
                 <h3 class="luta" id="idPercepcaoInsectoids">👀 Percepção: 45</h3>
+                <button class="botaoNovo">🏆 5 pontos de atributos </button>
                 <button class="botaoNovo" id="idexperienciaInsectoids">🏆 Experiência: 0 </button>
                 <button class="botaoNovo" id="idInsectoids">🚶‍♂️População:5</button>
                 <br /><br />
@@ -1787,13 +2725,13 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
                 <div class="flip-card-front">
                   <img
                     class="img1"
-                    src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2024/04/05/solo-leveling-4-r1fls6egz335.jpg"
+                    src="https://i.redd.it/wqbfgxj67brc1.gif"
                     alt=""
                   />
                 </div>
                 <div class="flip-card-back">
                   <img class="img1"  
-                  src="https://i.redd.it/wqbfgxj67brc1.gif"  />
+                  src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2024/04/05/solo-leveling-4-r1fls6egz335.jpg"  />
                 </div>
               </div>
             </div>
@@ -1805,11 +2743,12 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
           <button class="AtaqueFisico">Ataque físico</button>
   
           <br><br>
-<h4>Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha é incrivelmente rápida e forte o suficiente para quebrar pedras com um único pisão. Ela também usa suas teias para sua vantagem e cuspe ácido. </h4>
+
           <details>
             <summary class="sumario">DESAFIAR</summary>
             <br>
-            
+            <h3>Esta aranha gigantesca é o chefe da dungeon dos insetos de Rank-C. Esta aranha é incrivelmente rápida e forte o suficiente para quebrar pedras com um único pisão. Ela também usa suas teias para sua vantagem e cuspe ácido. 
+   <br><br>“O sistema me usa, e eu uso o sistema”</h3> <br>
             <fieldset class="temafieldset">
               <h3 class="sublinhado">Status da Aranha Gigante</h3>
   
@@ -1818,13 +2757,11 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
                 <h3 class="luta" id="idFadigaAranha">🪫Fadiga: 60%</h3>
                 <h3 class="luta" id="idAgilidadeAranha">🦵 Agilidade: 70</h3>
                 <h3 class="luta" id="idForcaAranha">💪 Força: 85</h3>
-                <button class="botaoNovo" id="idexperienciaAranha">
-                  🏆 Experiência: 0
-                </button>
-                <button class="botaoNovo" id="idPedrasDeEssenciaAranha">
-                  💎 Pedras de Essência: 0
-                </button>
+                <button class="botaoNovo">🏆 4 pontos de atributos </button>
+                <button class="botaoNovo" id="idexperienciaAranha">🏆 Experiência: 0</button>
+                <button class="botaoNovo" id="idPedrasDeEssenciaAranha">💎 Pedras de Essência: 0</button>
                 <button class="botaoNovo" id="idAranha">🚶‍♂️População: 0/1</button>
+                
                 <br /><br />
               </fieldset>
   
@@ -1850,6 +2787,8 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
         </div></time><br>
         <!-- FIM da Aranha Gigante -->
   
+        
+
         <!--  INÍCIO dos Caçadores -->
         <time id="idDIVEsconderCacadores">
         <div class="grid-item3">
@@ -1860,12 +2799,12 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
                 <div class="flip-card-front">
                   <img
                     class="img1"
-                    src="https://staticg.sportskeeda.com/editor/2024/02/1c7f3-17083503388130-1920.jpg"
+                    src="https://gifdb.com/images/high/sung-jin-woo-slamming-hwang-dongsuk-down-kq0c1xyuzino4pep.gif"
                     alt=""
                   />
                 </div>
                 <div class="flip-card-back">
-                  <img class="img1"  src="https://gifdb.com/images/high/sung-jin-woo-slamming-hwang-dongsuk-down-kq0c1xyuzino4pep.gif"  />
+                  <img class="img1"  src="https://staticg.sportskeeda.com/editor/2024/02/1c7f3-17083503388130-1920.jpg"  />
                 </div>
               </div>
             </div>
@@ -1878,35 +2817,35 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
           <button class="AtaqueMagico">Ataque mágico</button>
   
           <br><br>
-          <h3>
+         
+          <details>
+            <summary class="sumario">DESAFIAR</summary>
+            
+            <h3>
             Grupo de Hwang Dong Suk: Como um Tanker de Rank C, Hwang é forte e
             consegue lidar com monstros de Rank C sem problemas. Ele também é
             considerado um espadachim capaz, e empunha tanto uma espada quanto
             um escudo em combate. Ele mata pessoas para benefício próprio. Afinal,
-            "o que acontece nas masmorras fica nas masmorras".
-          </h3>
-          <details>
-            <summary class="sumario">DESAFIAR</summary>
-            <br />
-           
+            "o que acontece nas masmorras fica nas masmorras".<br><br>
+            “Se vocês são caçadores, estou dizendo que devem estar prontos para se tornar Caças”
+          </h3><br>
+
             <fieldset class="temafieldset">
-              <h3 class="sublinhado">Status do Grupo de caçadores</h3>
+              <h3 class="sublinhado"><br>Há indivídos próximos que pretendem assassinar o JOGADOR. Mate-os e garanta a sua segurança. <br><br>Inimigos que devem ser mortos: 6<br><br></h3>
   
               <fieldset class="luta">
                 <h3 class="luta" id="idVidaCacadores">❤️ Vida: 5%</h3>
                 <h3 class="luta" id="idFadigaCacadores">🪫Fadiga: 5%</h3>
-                <h3 class="luta" id="idAgilidadeCacadores">🦵 Agilidade: 90</h3>
+                <h3 class="luta" id="idAgilidadeCacadores">🦵 Agilidade: 84</h3>
                 <h3 class="luta" id="idForcaCacadores">💪 Força: 90</h3>
                 <h3 class="luta" id="idInteligenciaCacadores">🧠 Inteligência: 35</h3>
                 <h3 class="luta" id="idPercepcaoCacadores">👀 Percepção: 50</h3>
-  
-                <button class="botaoNovo" id="idexperienciaCacadores">
-                  🏆 Experiência: 0
-                </button>
-                <button class="botaoNovo" id="idCacadores">
-                  🚶‍♂️População: 0/6
-                </button>
-                <br /><br />
+                <button class="botaoNovo">🏆 12 pontos de atributos </button>
+                <button class="botaoNovo" id="idexperienciaCacadores">🏆 Experiência: 0</button>
+                <button class="botaoNovo" id="idCacadores"> 🚶‍♂️População: 0/6 </button>
+                <button class="botaoNovo">🏅 Habilidade Intenção Assassina</button>
+                <button class="botaoNovo">🏅 Troca do Rank D para C</button>
+                <br><br>
               </fieldset>
   
               <h3 class="sublinhado">Quadro de notificações</h3>
@@ -1936,9 +2875,51 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
     <div class="abaNova" id="abaNova4">
      
        <!--  INÍCIO  do Cerberus, Guardião do Inferno-->
-       <time id="idDIVEsconderCerberus">
-        <div class="grid-item3">
-          <h1 class="sublinhado">Dangeon: Castelo Demoníaco</h1>
+      
+          <!--Início da habilidade Elixir da Vida-->
+<div class="grid-item3">
+            <h1 class="sublinhado">Missão: Elixir da Vida</h1>
+<br> <br> 
+            <img class="img1" src="https://preview.redd.it/the-holy-water-of-life-v0-e4rxkg91phqe1.jpeg?auto=webp&s=9680ee2c7c34973b12134571da4db2a7ef033a11" /><br> <br> 
+
+            <h2>Obtenha os 3 ingredientes para o Elixir da Vida</h2>
+          <button class="inseto"> Poção </button>
+          <br><br>
+          
+          <details>
+            <summary class="sumario">VISUALIZAR <h2></h2></summary>
+            <br>
+  <ul>
+     <br> 
+    <h2> O Elixir da Vida é um artefato mágico capaz de curar qualquer doença, inclusive a doença que a mãe de Sung Jinwoo possui, chamada 
+      "Sonho Eterno" (doença causada pela falta de imunidade a Mana). Para obter o Elixir, Jinwoo precisa progredir no Castelo Demoníaco.
+    No castelo do Rei Demônio você pode obter os 3 ingredientes para o Elixir da Vida, que cura qualquer doença por meio de uma magia poderosa.
+  <br><br>Essa habilidade pode ser usada somente uma vez, ao utilizar você irá ganhar 100% de Vida, 
+         0% de Fadiga e sua Mana irá até o máximo permitido pelo seu nível.
+  </h2> 
+  <br>
+   <h3 id="idCheckElixirDaVida">❌ Habilidade Indisponível: Elixir da Vida [Derrote Cerberus Guardião do Inferno]</h3>
+  <h3 id="idCheckFragmentoDaAvoreDaVida">❌ Fragmento da árvore do mundo</h3>
+<h4>Um pedaço de madeira que deve ser obtido pela remoção das partes corrompidas do 'Bastão do Vulcano' que foi criado dos ramos da árvore do mundo [Derrote Vulcano Avarento]</h4>
+  <h3 id="idCheckAguaNascenteDaFlorestaEcoante" >❌ Água nascente da floresta ecoante [Derrote Metus guía das almas]</h3>
+  <h3 id="idCheckSamguePurificadoMonarcaDemoniaco">❌ Sangue Purificado do Monarca Demoníaco </h3>
+  <h4>Fluidos criado pela purificação do sangue do monarca dos demônios. É uma forte energia mágica e radioativa, e apesar da purificação, ainda há um pouco de toxidade restante [Derrote Baran - Monarca das Chamas Branca]
+  </h4>
+  <br>
+
+
+<button id="UsaElixir" class="blob" onclick="FuncaoElixirDaVida()"> Criar Elixir da Vida </button>
+      <br>
+        <h3 id="idRetornoElixirDaVida"></h3><br> <br> 
+        </ul> 
+       
+      </div>
+<br> <br>
+      </details>
+      <!-- Fim da habilidade Elixir da Vida -->
+ <br>
+<div class="grid-item3">
+          <h1 class="sublinhado">Castelo Demoníaco </h1>
           <br><br>
           <div class="cards-container">
             <div class="card-1 flip-card">
@@ -1946,29 +2927,35 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
                 <div class="flip-card-front">
                   <img
                     class="img1"
-                    src="https://a.storyblok.com/f/178900/1504x846/1c44864610/cerberus-solo-leveling.jpg/m/filters:quality(95)format(webp)"
+                    src="https://i.redd.it/5gzz73k4fdrc1.gif"
                     alt=""
                   />
                 </div>
                 <div class="flip-card-back">
-                  <img class="img1"  src="https://i.redd.it/5gzz73k4fdrc1.gif"  />
+                  <img class="img1"  src="https://a.storyblok.com/f/178900/1504x846/1c44864610/cerberus-solo-leveling.jpg/m/filters:quality(95)format(webp)"  />
                 </div>
               </div>
             </div>
           </div>
   
-          <h2>Cerberus Guardião do Inferno</h2>
+          <h2>Cerberus Guardião do Inferno [Portões do Castelo Demoníaco]</h2>
           <h3>Rank: A ⭐⭐⭐⭐⭐</h3>
           <button class="demonio">Demônio</button>
           <button style="color: #373960; background-color: DeepSkyBlue">Besta Mágica</button>
           <button class="AtaqueFisico">Ataque físico</button>
   
           <br><br>
-          <h3>O Cerberus de três cabeças é o Guardião do Castelo Demoníaco.</h3>
+          
           <details>
             <summary class="sumario">DESAFIAR</summary>
             <br>
-            
+            <h3>O Cerberus de três cabeças é o Guardião do Castelo Demoníaco. O Cerberus assim como os Lobos são Bestas Mágicas, o Título Assassino de Lobos pode ser usado contra ele.
+               <br><br>
+            “Devore o Sistema!”
+
+            </h3>
+            <br>
+
             <fieldset class="temafieldset">
               <h3 class="sublinhado">Status do Cerberus</h3>
   
@@ -1978,15 +2965,12 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
                 <h3 class="luta" id="idAgilidadeCerberus">🦵 Agilidade: 110</h3>
                 <h3 class="luta" id="idForcaCerberus">💪 Força: 140</h3>
                 <h3 class="luta" id="idPercepcaoCerberus">👀 Percepção: 90</h3>
-  
-                <button class="botaoNovo" id="idexperienciaCerberus">
-                  🏆 Experiência: 0
-                </button>
-                <button class="botaoNovo" id="idCerberus">
-                  🚶‍♂️População: 0/1
-                </button>
-                
-                <br /><br />
+                <button class="botaoNovo"> 🏆 4 pontos de atributos</button>
+                <button class="botaoNovo" id="idexperienciaCerberus"> 🏆 Experiência: 0 </button>
+                <button class="botaoNovo" id="idCerberus"> 🚶‍♂️População: 0/1 </button>
+                <button class="botaoNovo">🏅 Equipamento Coleira do Guardião </button>
+                <button class="botaoNovo">🏅 Habilidade Elixir da Vida </button>
+                <br><br>
               </fieldset>
   
               <h3 class="sublinhado">Quadro de notificações</h3>
@@ -2007,56 +2991,70 @@ O usuário pode manipular objetos fisicamente sem precisar tocá-los, perfeito p
               </button>
             </fieldset>
           </details>
-          <br />
+          <br>
         </div></time><br>
   <!--  Fim  do Cerberus, Guardião do Inferno-->
 
   <!--  INÍCIO DOS DEMÔNIOS -->
-<time id="idDIVEsconderDemonios">
+
+<br>
+ 
   <div class="grid-item3">
    
-
+       
+       <br> 
     <div class="cards-container">
       <div class="card-1 flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <img
               class="img1"
- src="https://external-preview.redd.it/official-solo-leveling-episode-15-season-2-episode-3-v0-amluYmIxY21zaWRlMeB44nMxcdia8PYVZzpImuQC-QpgnKxRHQeGeZ39kn32.png?width=1080&crop=smart&format=pjpg&auto=webp&s=0cccd29eee19694f9fd132a1fe3447df8ce7955a"
+ src="https://64.media.tumblr.com/6ab590d729378de11b30c3a2952ee6ba/96d80bb4b12294ef-c0/s540x810/3f59cb27ecee2a6dbe9be32e20c1ce84c61b0e07.gif"
               alt=""
             />
           </div>
           <div class="flip-card-back">
             <img class="img1"  
-src="https://64.media.tumblr.com/6ab590d729378de11b30c3a2952ee6ba/96d80bb4b12294ef-c0/s540x810/3f59cb27ecee2a6dbe9be32e20c1ce84c61b0e07.gif"  />
+src="https://external-preview.redd.it/official-solo-leveling-episode-15-season-2-episode-3-v0-amluYmIxY21zaWRlMeB44nMxcdia8PYVZzpImuQC-QpgnKxRHQeGeZ39kn32.png?width=1080&crop=smart&format=pjpg&auto=webp&s=0cccd29eee19694f9fd132a1fe3447df8ce7955a"  />
           </div>
         </div>
       </div>
     </div>
 
-    <h2>Demônios</h2>
+    <h2>Demônios [Andares inferiores]</h2>
     <h3>Rank: B ⭐⭐⭐⭐</h3>
     <button class="demonio">Demônio</button>
     <button class="AtaqueFisico">Ataque físico</button>
 
     <br><br>
-    <h3>
-      Dependendo de sua força, os demônios vêm em vários tamanhos e formas. Os nobres demônios são tão pequenos quanto os humanos e se parecem muito com eles, enquanto os demônios comuns podem ser tão grandes quanto pequenas construções e se parecer com animais. Embora nem sempre consistentes, especialmente com nobres, os demônios geralmente têm chifres e olhos vermelhos.
-    </h3>
+    
     <details>
       <summary class="sumario">DESAFIAR</summary>
+
+       <ul>
+     <br> 
+    <h2> Você ainda não é forte o suficiente para continuar nessa Dangeon! Tente voltar em outro momento. Retorne ao Castelo depois de lutar contra Kargalgan.</h2> 
+     <br> 
+  </ul>
       <br>
-      
+      <h3>
+      Dependendo de sua força, os demônios vêm em vários tamanhos e formas. Os nobres demônios são tão pequenos quanto os humanos e se parecem muito com eles, enquanto os demônios comuns podem ser tão grandes quanto pequenas construções e se parecer com animais. Embora nem sempre consistentes, especialmente com nobres, os demônios geralmente têm chifres e olhos vermelhos.
+      Sung Jin-Woo está ocupado lutando contra Demônios Superiores, será tarefa das Sombras derrotar os Demônios desse nível [Será somado somente os atributos das Sombras].
+    </h3><br>
+    
       <fieldset class="temafieldset">
         <h3 class="sublinhado">Status dos Demônios</h3>
 
         <fieldset class="luta">
-          <h3 class="luta" id="idVidaDemonios">❤️ Vida: 80%</h3>
-          <h3 class="luta" id="idFadigaDemonios">🪫Fadiga : 90%</h3>
-          <h3 class="luta" id="idAgilidadeDemonios">🦵 Agilidade: 500</h3>
-          <h3 class="luta" id="idForcaDemonios">💪 Força: 540</h3>
-          <h3 class="luta" id="idPercepcaoDemonios">👀 Percepção: 310</h3>
-          <h3 class="luta" id="idInteligenciaDemonios">🧠 Inteligência: 240</h3>
+          
+          <h3 class="luta" id="idVidaDemonios">❤️ Vida: 100%</h3>
+          <h3 class="luta" id="idFadigaDemonios">🪫Fadiga: 100%</h3>
+          <h3 class="luta" id="idAgilidadeDemonios">🦵 Agilidade: 580</h3>
+          <h3 class="luta" id="idForcaDemonios">💪 Força: 690</h3>
+          <h3 class="luta" id="idPercepcaoDemonios">👀 Percepção: 410</h3>
+          <h3 class="luta" id="idInteligenciaDemonios">🧠 Inteligência: 330</h3>
+           <button class="botaoNovo">💰 1000 Moedas de ouro</button>
+          <button class="botaoNovo" id="idDemonios">⚔️ Rounds da batalha: 0/1</button>
 
          
         </fieldset>
@@ -2072,13 +3070,13 @@ src="https://64.media.tumblr.com/6ab590d729378de11b30c3a2952ee6ba/96d80bb4b12294
           Sim
         </button>
 
-        <button class="blob" onclick="AnalisarLutaContraKinDemoniosBotao()">
+        <button class="blob" onclick="AnalisarLutaContraDemoniosBotao()">
           Analisar Luta
         </button>
       </fieldset>
     </details>
-    <br />
-  </div></time><br>
+    <br>
+  </div><br>
   <!--FIM DOS DEMÔNIOS-->
 
 <!--  INÍCIO DO Vulcano Avarento -->
@@ -2103,52 +3101,50 @@ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLef8TOWyLXjj6c7_r0jQ
       </div>
     </div>
 
-    <h2>Vulcano Avarento</h2>
+    <h2>Vulcano Avarento [50º Andar]</h2>
     <h3>Rank: A ⭐⭐⭐⭐⭐</h3>
     <button class="demonio">Demônio</button>
     <button class="AtaqueFisico">Ataque físico</button>
 
     <br><br>
-    <h4>
-      Vulcano é o segundo chefe do Castelo Demoníaco e o 
-      Governante dos Andares Inferiores. Ele também é conhecido como o Vulcano Avarento por sua imensa ganância e poder.
-    </h4>
+  
     <details>
       <summary class="sumario">DESAFIAR</summary>
       <br>
-      
+        <h3>
+      Vulcano é o segundo chefe do Castelo Demoníaco e o 
+      Governante dos Andares Inferiores. Ele também é conhecido como o Vulcano Avarento por sua imensa ganância e poder.
+      <br><br>
+      “Eu vou devorar a escuridão e me tornar mais forte.”
+    </h3><br>
+    
       <fieldset class="temafieldset">
         <h3 class="sublinhado">Status do Vulcano Avarento
         </h3>
 
         <fieldset class="luta">
-          <h3 class="luta" id="idVidaVulcano">❤️ Vida: -25%</h3>
-          <h3 class="luta" id="idFadigaVulcano">🪫Fadiga : +20%</h3>
-          <h3 class="luta" id="idAgilidadeVulcano">🦵 Agilidade: 300</h3>
-          <h3 class="luta" id="idForcaVulcano">💪 Força: 400</h3>
-          <h3 class="luta" id="idPercepcaoVulcano">👀 Percepção: 250</h3>
-          <h3 class="luta" id="idInteligenciaVulcano">🧠 Inteligência: 200</h3>
-
-         
+          <h3 class="luta" id="idVidaVulcano">❤️ Vida: 50%</h3>
+          <h3 class="luta" id="idFadigaVulcano">🪫Fadiga: 60%</h3>
+          <h3 class="luta" id="idAgilidadeVulcano">🦵 Agilidade: 780</h3>
+          <h3 class="luta" id="idForcaVulcano">💪 Força: 930</h3>
+          <h3 class="luta" id="idPercepcaoVulcano">👀 Percepção: 480</h3>
+          <h3 class="luta" id="idInteligenciaVulcano">🧠 Inteligência: 430</h3>
+          <button class="botaoNovo" >🏆 5 pontos de atributos</button>
+          <button class="botaoNovo" id="idPedrasDeEssenciaVulcano">💎 Pedras de Essência: 0</button>
+                <button class="botaoNovo" id="idVulcano">⚔️ Rounds da batalha: 0/1</button>
+                <button class="botaoNovo" id="idexperienciaVulcano">🏆 Experiência: 0</button>
+                <button class="botaoNovo">🏅 Equipamento Orbe da Avareza </button>
+                <button class="botaoNovo">🏅 Equipamento Brinco do Monarca Demônio</button>
+                <button class="botaoNovo">🏅 Fragmento da Árvore do Mundo </button>
         </fieldset>
 
 <h3 class="sublinhado">Quadro de notificações</h3>
-        <h3 class="luta" id="idQuadroDeRetornoVulcano">
-          Você quer desafiar o Vulcano Avarento
-          ?
-        </h3>
+        <h3 class="luta" id="idQuadroDeRetornoVulcano">  Você quer desafiar o Vulcano Avarento ?   </h3>
 
-        <button
-          class="blob"
-          onclick="LutaContraVulcanoBotao()"
-          id="idLutaContraVulcanoBotao"
-        >
-          Sim
-        </button>
+        <button    class="blob"    onclick="LutaContraVulcanoBotao()" id="idLutaContraVulcanoBotao" > Sim </button>
 
-        <button class="blob" onclick="AnalisarLutaContraKinVulcanoBotao()">
-          Analisar Luta
-        </button>
+        <button class="blob" onclick="AnalisarLutaContraVulcanoBotao()"> Analisar Luta </button>
+
       </fieldset>
     </details>
     <br />
@@ -2178,32 +3174,39 @@ src="https://api.duniagames.co.id/api/content/upload/file/12148649811713779785.j
       </div>
     </div>
 
-    <h2>Metus guía das almas</h2>
+    <h2>Metus guía das almas [75º Andar]</h2>
     <h3>Rank: A ⭐⭐⭐⭐⭐</h3>
     <button class="demonio">Demônio</button>
     <button class="AtaqueMagico">Ataque mágico</button>
     
 
     <br><br>
-    <h3>
-      Metus, também conhecido como o Guia das Almas Partidas, é um poderoso monstro que residia no 75º andar do Castelo Demoníaco.
-    </h3>
+    
     <details>
       <summary class="sumario">DESAFIAR</summary>
       <br>
-      
+      <h3>
+      Metus, também conhecido como o Guia das Almas Partidas, é um poderoso monstro que residia no 75º andar do Castelo Demoníaco.
+<br><br>
+      “Eu não tenho mais medo de morrer. Eu sou o único que pode me derrotar.”
+    </h3><br>
+
       <fieldset class="temafieldset">
         <h3 class="sublinhado">Status do Metus</h3>
 
         <fieldset class="luta">
-          <h3 class="luta" id="idVidaMetus">❤️ Vida: -25%</h3>
-          <h3 class="luta" id="idFadigaMetus">🪫Fadiga : +20%</h3>
-          <h3 class="luta" id="idAgilidadeMetus">🦵 Agilidade: 300</h3>
-          <h3 class="luta" id="idForcaMetus">💪 Força: 400</h3>
-          <h3 class="luta" id="idPercepcaoMetus">👀 Percepção: 250</h3>
-          <h3 class="luta" id="idInteligenciaMetus">🧠 Inteligência: 200</h3>
-
-         
+          <h3 class="luta" id="idVidaMetus">❤️ Vida: 50%</h3>
+          <h3 class="luta" id="idFadigaMetus">🪫Fadiga: 60%</h3>
+          <h3 class="luta" id="idAgilidadeMetus">🦵 Agilidade: 780</h3>
+          <h3 class="luta" id="idForcaMetus">💪 Força: 930</h3>
+          <h3 class="luta" id="idPercepcaoMetus">👀 Percepção: 480</h3>
+          <h3 class="luta" id="idInteligenciaMetus">🧠 Inteligência: 430</h3>
+          <button class="botaoNovo" >🏆 5 pontos de atributos</button>
+          <button class="botaoNovo" id="idPedrasDeEssenciaMetus">💎 Pedras de Essência: 0</button>
+                <button class="botaoNovo" id="idMetus">⚔️ Rounds da batalha: 0/1</button>
+                <button class="botaoNovo" id="idexperienciaMetus">🏆 Experiência: 0</button>
+                <button class="botaoNovo">🏅 Equipamento Colar do Monarca Demônio</button>
+                <button class="botaoNovo">🏅 Água nascente da floresta ecoante</button>
         </fieldset>
 
 <h3 class="sublinhado">Quadro de notificações</h3>
@@ -2219,14 +3222,14 @@ src="https://api.duniagames.co.id/api/content/upload/file/12148649811713779785.j
           Sim
         </button>
 
-        <button class="blob" onclick="AnalisarLutaContraKinMetusBotao()">
+        <button class="blob" onclick="AnalisarLutaContraMetusBotao()">
           Analisar Luta
         </button>
       </fieldset>
     </details>
     <br />
   </div></time><br>
-  <!--FIM DO Metus- Guía das almas -->
+    <!-- FIM DO Metus- Guía das almas -->
 
   <!--  INÍCIO da Esil Radiru  -->
 <time id="idDIVEsconderEsil">
@@ -2239,65 +3242,141 @@ src="https://api.duniagames.co.id/api/content/upload/file/12148649811713779785.j
           <div class="flip-card-front">
             <img
               class="img1"
- src="https://comicbook.com/wp-content/uploads/sites/4/2025/02/Solo-Leveling-Esil.jpeg?w=1024"
+ src="https://media.tenor.com/OybzyG-CKRkAAAAM/solo-leveling-esil-radiru.gif"
               alt=""
             />
           </div>
           <div class="flip-card-back">
             <img class="img1"  
-src="https://media.tenor.com/OybzyG-CKRkAAAAM/solo-leveling-esil-radiru.gif"  />
+src="https://comicbook.com/wp-content/uploads/sites/4/2025/02/Solo-Leveling-Esil.jpeg?w=1024"  />
           </div>
         </div>
       </div>
     </div>
 
-    <h2>Esil Radiru</h2>
+    <h2>Esil Radiru [80º Andar]</h2>
     <h3>Rank: A+ ⭐⭐⭐⭐⭐</h3>
     <button class="demonio">Demônio</button>
     <button class="AtaqueFisico">Ataque físico</button>
 
     <br><br>
-    <h4>
+   
+    <details>
+      <summary class="sumario">DESAFIAR</summary>
+      <br>
+ <h3>
       Uma amazona demônia que sempre lutou para promover o nome de sua família.
 Esil se apaixonou por um rapaz de outro mundo que visitou seu reino e,
 quando ele foi embora, ela decidiu segui-lo.
 Ao lado dele, ela está pronta para aceitar qualquer surpresa do destino.
-    </h4>
-    <details>
-      <summary class="sumario">DESAFIAR</summary>
-      <br />
+    </h3><br>
+
+
+<!--  início do menu da Esil  -->
+      <div class="abasArise2">
+        <h1>Você que Matar a Esil Radiru?</h1>
+        <h3>A sua escolha irá gerar um resultado diferente</h3>
+  
+        <div class="botoesArise2">
+
+          <button class="botaoArise2 ativo" onclick="abrirAbaArise2(1)">Sim</button>
+          <button class="botaoArise2" onclick="abrirAbaArise2(2)">Não</button>
+        </div>
+
       
-      <fieldset class="temafieldset">
-        <h3 class="sublinhado">Status da Esil</h3>
 
-        <fieldset class="luta">
-          <h3 class="luta" id="idVidaEsil">❤️ Vida: -25%</h3>
-          <h3 class="luta" id="idFadigaEsil">🪫Fadiga : +20%</h3>
-          <h3 class="luta" id="idAgilidadeEsil">🦵 Agilidade: 300</h3>
-          <h3 class="luta" id="idForcaEsil">💪 Força: 400</h3>
-          <h3 class="luta" id="idPercepcaoEsil">👀 Percepção: 250</h3>
-          <h3 class="luta" id="idInteligenciaEsil">🧠 Inteligência: 200</h3>
+        <div class="conteudoArise2">
+          <div class="abaArise2 ativo" id="abaArise21">
+            
+            
+            <div class="cards-container">
+              <div class="card-1 flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img id="ImagemFlipMudarDeCor" class="img1" 
+             src="https://preview.redd.it/esil-the-best-girl-v0-5g6ofojtfuke1.jpeg?width=4096&format=pjpg&auto=webp&s=1373d0d690829e24c1af7609b63bbb2bc5c28625" alt=""/>
+                  </div>
+                  <div class="flip-card-back">
+                    <img id="Imagem2FlipMudarDeCor" class="img1" 
+                    src="https://image.geekship.com.br/lhIy9NwJ48IxpAC-jiHLYKQh--s=/1280x0/smart/filters:strip_icc():format(webp)/hull.geekship.com.br/wp-content/uploads/2025/02/2-1-1280x720.png"/>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
 
-         
-        </fieldset>
+            <h3>Se você matar a Esil, não será possível seguir com uma amizade entre humano e demônio. Caso queira continuar siga com a luta normalmente.</h3>
 
-<h3 class="sublinhado">Quadro de notificações</h3>
-        <h3 class="luta" id="idQuadroDeRetornoEsil">
-          Você quer desafiar a Esil?
-        </h3>
+            <fieldset class="temafieldset">
+              <h3 class="sublinhado">Status da Esil</h3>
+      
+              <fieldset class="luta">
+                <h3 class="luta" id="idVidaEsil">❤️ Vida: 40%</h3>
+                <h3 class="luta" id="idFadigaEsil">🪫Fadiga: 30%</h3>
+                <h3 class="luta" id="idAgilidadeEsil">🦵 Agilidade: 700</h3>
+                <h3 class="luta" id="idForcaEsil">💪 Força: 900</h3>
+                <h3 class="luta" id="idPercepcaoEsil">👀 Percepção: 400</h3>
+                <h3 class="luta" id="idInteligenciaEsil">🧠 Inteligência: 400</h3>
+                <button class="botaoNovo" >🏆 5 pontos de atributos</button>
+                <button class="botaoNovo" id="idEsil">⚔️ Rounds da batalha: 0/1</button>
+                <button class="botaoNovo">🏅 Habilidade Gula</button>
+               
+              </fieldset>
+      
+      <h3 class="sublinhado">Quadro de notificações</h3>
+              <h3 class="luta" id="idQuadroDeRetornoEsil">
+                Você quer desafiar a Esil?
+              </h3>
+      
+              <button
+                class="blob"
+                onclick="LutaContraEsilBotao()"
+                id="idLutaContraEsilBotao"
+              >
+                Sim
+              </button>
+      
+              <button class="blob" onclick="AnalisarLutaContraEsilBotao()">
+                Analisar Luta
+              </button>
+            </fieldset>
 
-        <button
-          class="blob"
-          onclick="LutaContraEsilBotao()"
-          id="idLutaContraEsilBotao"
-        >
-          Sim
-        </button>
+</div>
 
-        <button class="blob" onclick="AnalisarLutaContraKinEsilBotao()">
-          Analisar Luta
-        </button>
-      </fieldset>
+          <div class="abaArise2" id="abaArise22">
+            <div class="cards-container">
+              <div class="card-1 flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img
+                      class="img1"
+         src="https://preview.redd.it/esil-the-best-girl-v0-lahp51ryduke1.jpeg?width=4096&format=pjpg&auto=webp&s=23adff05eb6f5f4772fa6efd7da5f7d5afb29a9d"
+                      alt=""
+                    />
+                  </div>
+                  <div class="flip-card-back">
+                    <img class="img1"  
+        src="https://cdn.aniblogtracker.com/live/20250228/1740759361.99012.141853.png"  />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <h3>Se você poupar a vida da Esil, não será possível seguir com a luta. Deseja fazer amizade com ela?</h3>
+            <br>
+            <button class="blob" onclick="FuncaoPouparVidaDaEsil()" id="idPouparVidaDaEsilTransferirMana"> Sim</button>
+            
+            <br>
+            <h3 id="idPouparVidaDaEsil"></h3>
+            <div id="coracoes"></div>
+            
+            
+          </div></div>
+<!--  fim do menu da Esil  -->
+
+      
     </details>
     <br />
   </div></time><br>
@@ -2314,47 +3393,54 @@ Ao lado dele, ela está pronta para aceitar qualquer surpresa do destino.
           <div class="flip-card-front">
             <img
               class="img1"
- src="https://images5.alphacoders.com/106/1063595.png"
+ src="https://i.ytimg.com/vi/a_Tm-7JTo14/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLACA1IjXlp8kP3ldg-Nmy5LZCo8nA"
               alt=""
             />
           </div>
           <div class="flip-card-back">
             <img class="img1"  
-src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBh7M0-XyH72F3Mg6dNc4eYM15TdA"  />
+src="https://images5.alphacoders.com/106/1063595.png"  />
           </div>
         </div>
       </div>
     </div>
 
-    <h2>Baran - Monarca das Chamas Brancaso</h2>
+    <h2>Baran - Monarca das Chamas Branca [100º Andar]</h2>
     <h3>Rank: S 💎 </h3>
     <button class="demonio">Demônio</button>
     <button class="AtaqueMagico">Ataque mágico</button>
     <button class="AtaqueFisico">Ataque físico</button>
 
     <br><br>
-    <h3>
-      Baran lutou ao lado dos outros Monarcas , incluindo o Monarca das Sombras Ashborn , em uma guerra devastadora com os Governantes
-       a mando de seu criador, o Ser Absoluto . Conforme a guerra progredia, Antares
-       , o Monarca mais forte, ficou com medo dos poderes de Ashborn e ordenou que Baran e Rakan o derrotassem. Ele voa em um dragão de Rank S chamado Kaisellin.
-    </h3>
+    
     <details>
       <summary class="sumario">DESAFIAR</summary>
-      <br />
-     
+      <br>
+     <h3>
+      Baran lutou ao lado dos outros Monarcas , incluindo o Monarca das Sombras Ashborn , em uma guerra devastadora com os Governantes
+       a mando de seu criador, o Ser Absoluto . Conforme a guerra progredia, Antares
+       , o Monarca mais forte, ficou com medo dos poderes de Ashborn e ordenou que Baran e Rakan o derrotassem. Ele voa em seu dragão de Rank S chamado Kaisellin.
+    </h3><br>
+
       <fieldset class="temafieldset">
         <h3 class="sublinhado">Status do Baran</h3>
 
         <fieldset class="luta">
-          <h3 class="luta" id="idVidaBaran">❤️ Vida: -25%</h3>
-          <h3 class="luta" id="idFadigaBaran">🪫Fadiga : +20%</h3>
-          <h3 class="luta" id="idAgilidadeBaran">🦵 Agilidade: 300</h3>
-          <h3 class="luta" id="idForcaBaran">💪 Força: 400</h3>
-          <h3 class="luta" id="idPercepcaoBaran">👀 Percepção: 250</h3>
-          <h3 class="luta" id="idInteligenciaBaran">🧠 Inteligência: 200</h3>
-
-         
+          <h3 class="luta" id="idVidaBaran">❤️ Vida: 100%</h3>
+          <h3 class="luta" id="idFadigaBaran">🪫Fadiga: 60%</h3>
+          <h3 class="luta" id="idAgilidadeBaran">🦵 Agilidade: 790</h3>
+          <h3 class="luta" id="idForcaBaran">💪 Força: 930</h3>
+          <h3 class="luta" id="idPercepcaoBaran">👀 Percepção: 490</h3>
+          <h3 class="luta" id="idInteligenciaBaran">🧠 Inteligência: 440</h3>
+          <button class="botaoNovo" >🏆 5 pontos de atributos</button>
+          <button class="botaoNovo" id="idPedrasDeEssenciaBaran">💎 Pedras de Essência: 0</button>
+                <button class="botaoNovo" id="idBaran">⚔️ Rounds da batalha: 0/1</button>
+                <button class="botaoNovo" id="idexperienciaBaran">🏆 Experiência: 0</button>
+                <button class="botaoNovo">🏅 Equipamento Espada do Monarca Demônio</button>
+                <button class="botaoNovo">🏅 Equipamento Anel do Monarca Demônio</button>
+                <button class="botaoNovo">🏅 Sangue Purificado do Monarca Demoníaco</button>
         </fieldset>
+
 
 <h3 class="sublinhado">Quadro de notificações</h3>
         <h3 class="luta" id="idQuadroDeRetornoBaran">
@@ -2369,7 +3455,7 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
           Sim
         </button>
 
-        <button class="blob" onclick="AnalisarLutaContraKinBaranBotao()">
+        <button class="blob" onclick="AnalisarLutaContraBaranBotao()">
           Analisar Luta
         </button>
       </fieldset>
@@ -2385,7 +3471,7 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
        <!--  INÍCIO  do Mr. Kang-->
        <time id="idDIVEsconderKang">
         <div class="grid-item3">
-          <h1 class="sublinhado">Dangeon: Dangeon dos Goblins</h1>
+          <h1 class="sublinhado">Dangeon dos Goblins</h1>
           <br><br>
           <div class="cards-container">
             <div class="card-1 flip-card">
@@ -2393,7 +3479,7 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
                 <div class="flip-card-front">
                   <img
                     class="img1"
-                    src="https://api.duniagames.co.id/api/content/upload/file/17180362631710297447.jpg"
+                    src="https://s.yimg.com/ny/api/res/1.2/AYybL_iCicDvb4hUf5aJDA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MA--/https://media.zenfs.com/en/comingsoon_net_477/bf587fbc80fa0c32dd66dba1f91e20d2"
                     alt=""
                   />
                 </div>
@@ -2411,36 +3497,32 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
           <button class="AtaqueFisico">Ataque físico</button>
   
           <br><br>
-          <h3>
-            Um caçador que trabalha como inspetor para a equipe de vigilância da
-            Associação Coreana de Caçadores e um assassino de aluguel. "Acidentes" inesperados sempre acontecem
-            quando ele é despachado, e os criminosos que ele monitora
-            muitas vezes morrem nesses "acidentes".
-            
-          </h3>
+         
           <details>
             <summary class="sumario">DESAFIAR</summary>
             <br>
-            
+             <h3>
+            Um caçador que trabalha como inspetor para a equipe de vigilância da
+            Associação Coreana de Caçadores e um assassino de aluguel. "Acidentes" inesperados sempre acontecem
+            quando ele é despachado, e os criminosos que ele monitora muitas vezes morrem nesses "acidentes".<br><br>
+            “Se você olhar por muito tempo para um abismo, o abismo também olhará para você”
+          </h3> <br>
+
             <fieldset class="temafieldset">
-              <h3 class="sublinhado">Status do Mr. Kang</h3>
+              <h3 class="sublinhado"><br>Há indivídos próximos que pretendem assassinar o JOGADOR. Mate-os e garanta a sua segurança. <br><br>Inimigos que devem ser mortos: 1<br><br></h3>
   
               <fieldset class="luta">
-                <h3 class="luta" id="idDerrotouOCerberus">
-                  🔥Cerberus derrotado:
-                </h3>
+                <h3 class="luta" id="idDerrotouOCerberus">🔥Cerberus derrotado: </h3>
                 <h3 class="luta" id="idVidaKang">❤️ Vida: 50%</h3>
                 <h3 class="luta" id="idFadigaKang">🪫Fadiga: 30%</h3>
                 <h3 class="luta" id="idAgilidadeKang">🦵 Agilidade: 85</h3>
                 <h3 class="luta" id="idForcaKang">💪 Força: 95</h3>
-                <h3 class="luta" id="idPercepcaoKang">👀 Percepção: 80</h3>
-  
-                <button class="botaoNovo" id="idexperienciaKang">
-                  🏆 Experiência: 0
-                </button>
+                <h3 class="luta" id="idPercepcaoKang">👀 Percepção: 80</h3> 
+                <button class="botaoNovo"> 🏆 4 pontos de atributos</button>
+                <button class="botaoNovo" id="idexperienciaKang"> 🏆 Experiência: 0  </button>
                 <button class="botaoNovo" id="idKang">🚶‍♂️População: 0/1</button>
-                <button class="botaoNovo">🏅 Furtividade</button>
-                <br /><br />
+                <button class="botaoNovo">🏅 Habilidade Furtividade</button>
+                <br><br>
               </fieldset>
   
               <h3 class="sublinhado">Quadro de notificações</h3>
@@ -2468,8 +3550,10 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
         <!--  INÍCIO  do Yoo Jin-Ho-->
         <time id="idDIVEsconderYoo">
         <div class="grid-item3">
-         
+         <h1 class="sublinhado">Missão subir de nível</h1>
   
+        
+
           <div class="cards-container">
             <div class="card-1 flip-card">
               <div class="flip-card-inner">
@@ -2482,8 +3566,7 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
                 </div>
                 <div class="flip-card-back">
                   <img class="img1"  
-                  src="https://64.media.tumblr.com/991d473fca1d944f2d4b6b229548b21d/a90b9e3ca6d7289c-d5/s540x810/854b01cdc9a427fd9aba1d04cc3a4f62776c6962.gifv
-                  "  />
+                  src="https://animewiki.animequack.com/wp-content/uploads/2025/04/Copy-of-Add-a-heading-2025-04-21T015023775-Picsart-AiImageEnhancer-1024x682.webp"  />
                 </div>
               </div>
             </div>
@@ -2495,7 +3578,11 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
           <button class="AtaqueFisico">Ataque físico</button>
   
           <br><br>
-          <h3>
+         
+          <details>
+            <summary class="sumario">DESAFIAR</summary>
+            <br>
+            <h3>
             O segundo filho do presidente da Yoojin Construction Company, ele entrou no
             mundo dos caçadores com equipamento top de linha, graças à grana do
             pai.  Jin-Ho fez amizade com Sung Jin-Woo graças a
@@ -2503,13 +3590,45 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
             Ele é uma das poucas pessoas
             em quem Sung Jin-Woo confia plenamente.
             . Os monstros que mais aparecem nessa Dangeon são os GOBLINS.
-          </h3>
-          <details>
-            <summary class="sumario">DESAFIAR</summary>
-            <br>
-           
+            <br><br>
+            “Eu não sou um herói, sou alguém que busca sobreviver.”
+          </h3> <br>
+
+           <br> <br> 
+            <img class="img1" src="https://64.media.tumblr.com/991d473fca1d944f2d4b6b229548b21d/a90b9e3ca6d7289c-d5/s540x810/854b01cdc9a427fd9aba1d04cc3a4f62776c6962.gifv" /><br> <br> 
+
+              <ul>
+     <br> 
+    <h2> 
+      A posição de Mestre de Guilda é uma conquista de alto nível, alcançada por aqueles que se destacam em suas habilidades e liderança. 
+      Para se tornar mestre de guilda, é necessário participar de 20 Dangeons. Ajude Yoo Jin-Ho nessa jornada!
+       <br><br>ESSA MISSÃO NÃO É OBRIGATÓRIA, E VOCÊ PODE VOLTAR AQUI SEMPRE QUE NECESSITAR. 
+  </h2> 
+  <br>
+  <h2>Prêmios:</h2>
+  <h3 id="iditem1">❌ Item: Peitoral do grande cavaleiro</h3>
+  <h3 id="iditem2">❌ Item: Manopla do grande guerreiro</h3>
+  <h3 id="iditem3">❌ Item: Botas do grande Assassino</h3>
+  <h3 id="iditem4">❌ Item: Luvas do Arqueiro</h3>
+  <h3 id="iditem5">❌ Item: Anel do grande Mago</h3>
+  <h3 id="iditem6">❌ Item: Saco de couro</h3>
+  <h3 id="iditem7">❌ Habilidade: Perseverança</h3>
+  <h3 id="iditem8">❌ Habilidade: Ataque Vital</h3>
+  <h3 id="iditem9">❌ Habilidade: Artes Avançadas com Adagas</h3>
+  <h3 id="iditem10">❌ Habilidade: Detectar</h3>
+  <h3 id="iditem11">❌ Habilidade: Arremesso de Adaga</h3>
+  <h3 id="iditem12">❌ Efeito: Orbe da Avareza - Desejo pela destruição</h3>
+  <h3 id="iditem14">❌ Habilidade: Golpe Fatal</h3>
+  <h3 id="iditem15">❌ Habilidade: Flame Spear</h3>
+  <h3 id="iditem16">❌ Item: Veneno da Kasaka Azul de Presas Venenosas</h3>
+    <h3 id="iditem19">❌ Habilidade: Força de vontade</h3>
+  <h3 id="iditem20">❌ Posição: Mestre de Guilda</h3>
+  <br>
+
+        </ul>
+
             <fieldset class="temafieldset">
-              <h3 class="sublinhado">Status dos Mostros das Masmoras</h3>
+              <h3 class="sublinhado">VOCÊ PODE VOLTAR AQUI SEMPRE QUE PRECISAR SUBIR DE NÍVEL!</h3>
   
               <fieldset class="luta">
                 <h3 class="luta" id="idVidaYoo">❤️ Vida: 50%</h3>
@@ -2517,12 +3636,10 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
                 <h3 class="luta" id="idAgilidadeYoo">🦵 Agilidade: 200</h3>
                 <h3 class="luta" id="idForcaYoo">💪 Força: 150</h3>
                 <h3 class="luta" id="idPercepcaoYoo">👀 Percepção: 125</h3>
-  
-                <button class="botaoNovo" id="idexperienciaYoo">
-                  🏆 Experiência: 0
-                </button>
-                <button class="botaoNovo" id="idYoo">🚶‍♂️População: 0/ꝏ</button>
-                <br /><br />
+                <button class="botaoNovo" >🏆 1 ponto de atributo por luta</button>
+                <button class="botaoNovo" id="idexperienciaYoo">🏆 Experiência: 0</button>
+                <button class="botaoNovo" id="idYoo">🚶‍♂️Dangeons: 0/Dangeons Infinitas</button>
+                <br><br>
               </fieldset>
   
               <h3 class="sublinhado">Quadro de notificações</h3>
@@ -2551,10 +3668,23 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
 
     <div class="abaNova" id="abaNova6">
       
+<!--Início dos videos --> 
+<iframe width="320" height="200" src="https://www.youtube.com/embed/CRZsOOOvg1I?si=T1NVd28VMNu9BR-h&autoplay=1&mute=1&loop=1&playlist=CRZsOOOvg1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<!--Fim dos videos -->
+<br> <br> 
+       <ul> 
+<h2>
+  <br>
+    Este é o único momento em todo o jogo que você irá alterar a sua Classe, a importância da missão de troca de classe
+      reside em alterar o potencial e o desenvolvimento do personagem. 
+      Ao mudar de classe, Sung Jin-woo, adquire a habilidade Necromante [Monarca das Sombras], expandindo exponencialmente seus atributos. </h2> 
+     <br>  
+  </ul>
+
        <!-- INÍCIO do Igris-->
        <time id="idDIVEsconderIgris">
         <div class="grid-item3">
-          <h1 class="sublinhado">Dangeon: Troca de Classe</h1>
+          <h1 class="sublinhado">Dangeon: Missão de Troca de Classe</h1>
           <br><br>
           <div class="cards-container">
             <div class="card-1 flip-card">
@@ -2562,13 +3692,13 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
                 <div class="flip-card-front">
                   <img
                     class="img1"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz5AisD2di8Ey32QA_LMqKolLkP32bH4oUrg&s"
+                    src="https://preview.redd.it/had-to-do-some-gifs-of-majestic-beating-v0-iahdy9o777qc1.gif?width=327&auto=webp&s=1bfea13fa0de6bd182edd3497ba54aec29bef794"
                     alt=""
                   />
                 </div>
                 <div class="flip-card-back">
                   <img class="img1"  
-                  src="https://preview.redd.it/had-to-do-some-gifs-of-majestic-beating-v0-iahdy9o777qc1.gif?width=327&auto=webp&s=1bfea13fa0de6bd182edd3497ba54aec29bef794"/>
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz5AisD2di8Ey32QA_LMqKolLkP32bH4oUrg&s"/>
                 </div>
               </div>
             </div>
@@ -2581,15 +3711,17 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
           <button class="AtaqueMagico">Ataque mágico</button>
   
           <br><br>
-          <h3>
-            Chefe da Masmorra de Missão de Troca de Classe. Um cavaleiro que
-            protege um trono vazio, Igris era um membro anterior do Exército das
-            Sombras de Ashborn.
-          </h3>
+         
           <details>
             <summary class="sumario">DESAFIAR</summary>
             <br>
-            
+             <h3>
+            Chefe da Masmorra de Missão de Troca de Classe. Um cavaleiro que
+            protege um trono vazio, Igris era um membro anterior do Exército das
+            Sombras de Ashborn.<br><br>
+            "Finalmente esse Jogo parece ter começado de verdade!"
+          </h3> <br>
+
             <fieldset class="temafieldset">
               <h3 class="sublinhado">Status do Igris</h3>
   
@@ -2600,12 +3732,14 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
                 <h3 class="luta" id="idForcaIgris">💪 Força: 100</h3>
                 <h3 class="luta" id="idPercepcaoIgris">👀 Percepção: 80</h3>
                 <h3 class="luta" id="idInteligenciaIgris">🧠 Inteligência: 60</h3>
-  
-                <button class="botaoNovo" id="idIgris">
-                  ⚔️ Rounds da batalha: 0/3
-                </button>
-               
-                <br /><br />
+                <button class="botaoNovo">🏆 12 pontos de Atributos</button>
+                <button class="botaoNovo" id="idIgris"> ⚔️ Rounds da batalha: 0/3 </button>
+                <button class="botaoNovo">🏅 Equipamento Elmo do Cavaleiro Carmesim</button>
+                <button class="botaoNovo">🏅 Assassina de Cavaleiros disponível para compra</button>
+                <button class="botaoNovo">🏅 Título Aquele que Superou a Adversidade</button>
+                <button class="botaoNovo">🏅 Habilidade Toque do Dominador</button>
+                <button class="botaoNovo">🏅 Troca do Rank C para B</button>
+                <br><br>
               </fieldset>
   
               <h3 class="sublinhado">Quadro de notificações</h3>
@@ -2641,13 +3775,13 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
                 <div class="flip-card-front">
                   <img
                     class="img1"
-                    src="https://a.storyblok.com/f/178900/1504x846/77896a3474/magicians-solo-leveling.jpg/m/filters:quality(95)format(webp)"
+                    src="https://64.media.tumblr.com/84ad5ee3c3781e09231a0681464ddfff/94e4f20a32a9dfb2-46/s540x810/8459b6e62910ab8ae044e79018e4509b73a769f0.gif"
                     alt=""
                   />
                 </div>
                 <div class="flip-card-back">
                   <img class="img1"  
-  src="https://64.media.tumblr.com/84ad5ee3c3781e09231a0681464ddfff/94e4f20a32a9dfb2-46/s540x810/8459b6e62910ab8ae044e79018e4509b73a769f0.gif"  />
+  src="https://a.storyblok.com/f/178900/1504x846/77896a3474/magicians-solo-leveling.jpg/m/filters:quality(95)format(webp)"  />
                 </div>
               </div>
             </div>
@@ -2660,24 +3794,28 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
           <button class="AtaqueMagico">Ataque mágico</button>
   
           <br><br>
-          <h3>
-            Nessa Missão, você irá enfrentar 6 Magos Rank B com magia de necromancia. Serão invocados um exército de Infantaria, Arqueiros e Assassinos todos de Rank C para a luta.
-           </h3>
+         
           <details>
             <summary class="sumario">DESAFIAR</summary>
             <br>
-            
+             <h3>
+            Nessa Missão, você irá enfrentar 6 Magos Rank B com magia de necromancia. Serão invocados um exército de Infantaria, Arqueiros e Assassinos todos de Rank C para a luta.
+            <br><br>  “Sinto que algo dentro de mim se perde toda vez que fico mais forte” 
+          </h3>  <br>
             <fieldset class="temafieldset">
               <h3 class="sublinhado">Status do Exército</h3>
   
               <fieldset class="luta">
-                <h3 class="luta" id="idVidaMagos">❤️ Vida: -100%</h3>
-                <h3 class="luta" id="idFadigaMagos">🪫Fadiga : +100%</h3>
+                <h3 class="luta" id="idVidaMagos">❤️ Vida: 100%</h3>
+                <h3 class="luta" id="idFadigaMagos">🪫Fadiga: 100%</h3>
                 <h3 class="luta" id="idAgilidadeMagos">🦵 Agilidade: 140</h3>
                 <h3 class="luta" id="idForcaMagos">💪 Força: 145</h3>
                 <h3 class="luta" id="idPercepcaoMagos">👀 Percepção: 85</h3>
                 <h3 class="luta" id="idInteligenciaMagos">🧠 Inteligência: 70</h3>
-  
+                <button class="botaoNovo" >💎 50 Pedras de Essência: 0</button>
+                <button class="botaoNovo" >⚔️ 1 Round de batalha</button>
+                <button class="botaoNovo">🏅 Clase Necromante [Monarca das Sombras]</button>
+                <button class="botaoNovo">🏅 Habilidade Extração de Alma</button>
                
               </fieldset>
   
@@ -2718,13 +3856,13 @@ src="https://i.ytimg.com/vi/79vMWDm0GiQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAx
           <div class="flip-card-front">
             <img
               class="img1"
- src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/12/solo-leveling-tank-the-ice-bear.jpg"
+ src="https://i.redd.it/zm2abco0zmve1.gif"
               alt=""
             />
           </div>
           <div class="flip-card-back">
             <img class="img1"  
-src="https://i.redd.it/zm2abco0zmve1.gif"  />
+src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/12/solo-leveling-tank-the-ice-bear.jpg"  />
           </div>
         </div>
       </div>
@@ -2736,13 +3874,14 @@ src="https://i.redd.it/zm2abco0zmve1.gif"  />
     <button class="AtaqueFisico">Ataque físico</button>
 
     <br><br>
-    <h3>
-      Os ursos de gelo viajam em matilhas e são liderados por um macho alfa, que se distingue por seu tamanho maior e pela crista roxa em forma de folha no peito.
-    </h3>
+   
     <details>
       <summary class="sumario">DESAFIAR</summary>
       <br>
-      
+       <h3>
+      Os ursos de gelo viajam em matilhas e são liderados por um macho alfa, que se distingue por seu tamanho maior e pela crista roxa em forma de folha no peito.
+    </h3> <br>
+
       <fieldset class="temafieldset">
         <h3 class="sublinhado">Status dos Ursos</h3>
 
@@ -2753,8 +3892,9 @@ src="https://i.redd.it/zm2abco0zmve1.gif"  />
           <h3 class="luta" id="idForcaUrsos">💪 Força: 410</h3>
           <h3 class="luta" id="idPercepcaoUrsos">👀 Percepção: 250</h3>
           <h3 class="luta" id="idInteligenciaUrsos">🧠 Inteligência: 200</h3>
+          <button class="botaoNovo">🏆 24 pontos de Atributos</button>
           <button class="botaoNovo" id="idexperienciaUrsos">🏆 Experiência: 0 </button>
-          <button class="botaoNovo" id="idUrsos">🚶‍♂️População: 5</button>
+          <button class="botaoNovo" id="idUrsos">🚶‍♂️População: 6</button>
           <button class="botaoNovo" id="idPedrasDeEssenciaUrsos">💎 Pedras de Essência: 0</button>
 
          
@@ -2795,13 +3935,13 @@ src="https://i.redd.it/zm2abco0zmve1.gif"  />
           <div class="flip-card-front">
             <img
               class="img1"
- src="https://cdn.aniblogtracker.com/live/20250114/1736871357.96426.138783.jpg"
+ src="https://i0.wp.com/animecultivated.com/wp-content/uploads/2025/02/SL_gif14_5.gif?fit=1024%2C576&ssl=1"
               alt=""
             />
           </div>
           <div class="flip-card-back">
             <img class="img1"  
-src="https://i0.wp.com/animecultivated.com/wp-content/uploads/2025/02/SL_gif14_5.gif?fit=1024%2C576&ssl=1"  />
+src="https://cdn.aniblogtracker.com/live/20250114/1736871357.96426.138783.jpg"  />
           </div>
         </div>
       </div>
@@ -2813,14 +3953,15 @@ src="https://i0.wp.com/animecultivated.com/wp-content/uploads/2025/02/SL_gif14_5
     <button class="AtaqueFisico">Ataque físico</button>
 
     <br><br>
-    <h3>
-      Elfos do Gelo, também conhecidos como Hyakki ou Matadores de Gelo , são uma raça de elfos
-       tipicamente encontrados em ambientes congelados. Eles eram governados por Sillad , o Rei do Povo da Neve e o Monarca do Gelo.
-    </h3>
+ 
     <details>
       <summary class="sumario">DESAFIAR</summary>
       <br>
-     
+        <h3>
+      Elfos do Gelo, também conhecidos como Hyakki ou Matadores de Gelo , são uma raça de elfos
+       tipicamente encontrados em ambientes congelados. Eles eram governados por Sillad , o Rei do Povo da Neve e o Monarca do Gelo.
+    </h3><br>
+
       <fieldset class="temafieldset">
         <h3 class="sublinhado">Status dos Elfos do gelo </h3>
 
@@ -2831,8 +3972,9 @@ src="https://i0.wp.com/animecultivated.com/wp-content/uploads/2025/02/SL_gif14_5
           <h3 class="luta" id="idForcaElfos">💪 Força: 460</h3>
           <h3 class="luta" id="idPercepcaoElfos">👀 Percepção: 290</h3>
           <h3 class="luta" id="idInteligenciaElfos">🧠 Inteligência: 230</h3>
+          <button class="botaoNovo">🏆 4 pontos de Atributos</button>
           <button class="botaoNovo" id="idexperienciaElfos">🏆 Experiência: 0 </button>
-          <button class="botaoNovo" id="idElfos">🚶‍♂️População: 5</button>
+          <button class="botaoNovo" id="idElfos">⚔️ Rounds da batalha: 0/1</button>
           <button class="botaoNovo" id="idPedrasDeEssenciaElfos">💎 Pedras de Essência: 0</button>
          
         </fieldset>
@@ -2887,15 +4029,16 @@ src="https://www.popverso.com.br/wp-content/uploads/2025/03/popverso.com.br-solo
     <button class="AtaqueFisico">Ataque físico</button>
 
     <br><br>
-    <h3>
+   
+    <details>
+      <summary class="sumario">DESAFIAR</summary>
+      <br>
+      <h3>
       Durante um dos exercícios de treinamento de sua guilda, Chul foi nomeado líder do grupo de ataque e ficou incomodado 
       pelo fato de alguns forasteiros de Rank E participassem. Assim que ele e o resto do grupo de ataque passaram pelo portão designado,
        sua entrada fechou-se repentinamente atrás deles e eles se encontraram presos em uma paisagem congelada e coberta de neve.
-    </h3>
-    <details>
-      <summary class="sumario">DESAFIAR</summary>
-      <br />
-     
+    </h3><br>
+
       <fieldset class="temafieldset">
         <h3 class="sublinhado">Status do Kim Chul</h3>
 
@@ -2906,7 +4049,8 @@ src="https://www.popverso.com.br/wp-content/uploads/2025/03/popverso.com.br-solo
           <h3 class="luta" id="idForcaKinChul">💪 Força: 470</h3>
           <h3 class="luta" id="idPercepcaoKinChul">👀 Percepção: 290</h3>
           <h3 class="luta" id="idInteligenciaKinChul">🧠 Inteligência: 200</h3>
-          <button class="botaoNovo" id="idexperienciaKinChul">🏆 Experiência: 0 </button>
+          <button class="botaoNovo">🏆 4 pontos de Atributos</button>
+          <button class="botaoNovo" id="idexperienciaKinChul">🏆 Experiência: 0 </button>        
           <button class="botaoNovo" id="idKinChul">⚔️ Rounds da batalha: 0/1</button>
          
         </fieldset>
@@ -2961,16 +4105,19 @@ src="https://i0.wp.com/nerdinterior.com.br/wp-content/uploads/2024/10/Solo-Level
     <button class="AtaqueFisico">Ataque físico</button>
 
     <br><br>
-    <h3>
+   
+    <details>
+      <summary class="sumario">DESAFIAR</summary>
+      <br>
+      <h3>
       Baruka é o líder dos Elfos de Gelo e o chefe da Masmorra do Portão Vermelho. Ele é uma Besta Mágica de Rank-S, 
       conhecido por sua força impressionante e habilidades de combate excepcionais. Algumas de suas habilidades notáveis incluem 
   habilidades físicas, velocidade impressionante, força física, resistência mágica, habilidades de combate, 
   proficiência com Adagas, camuflagem e inteligência.
-    </h3>
-    <details>
-      <summary class="sumario">DESAFIAR</summary>
-      <br>
-     
+  <br><br>
+            "Um calafrio que faz seu espírito tremer."
+    </h3> <br>
+    
       <fieldset class="temafieldset">
         <h3 class="sublinhado">Status do Baruka</h3>
 
@@ -2981,9 +4128,13 @@ src="https://i0.wp.com/nerdinterior.com.br/wp-content/uploads/2024/10/Solo-Level
           <h3 class="luta" id="idForcaBaruka">💪 Força: 540</h3>
           <h3 class="luta" id="idPercepcaoBaruka">👀 Percepção: 310</h3>
           <h3 class="luta" id="idInteligenciaBaruka">🧠 Inteligência: 240</h3>
+          <button class="botaoNovo" >🏆 8 pontos de atributos </button>
           <button class="botaoNovo" id="idexperienciaBaruka">🏆 Experiência: 0 </button>
           <button class="botaoNovo" id="idBaruka">⚔️ Rounds da batalha: 0/2</button>
           <button class="botaoNovo" id="idPedrasDeEssenciaBaruka">💎 Pedras de Essência: 0</button>
+          <button class="botaoNovo">🏅 Equipamento Adaga de Baruka </button>
+          <button class="botaoNovo">🏅 Habilidade Domínio do Monarca </button>
+          <button class="botaoNovo">🏅 Troca do Rank B para A</button>
          
         </fieldset>
 
@@ -2998,11 +4149,82 @@ src="https://i0.wp.com/nerdinterior.com.br/wp-content/uploads/2024/10/Solo-Level
     <br />
   </div></time>
   <!--FIM DO Baruka-->
-
     </div>
 
+
     <div class="abaNova" id="abaNova8">
-     
+       <!--  INÍCIO DOS Orcs Superiores -->
+<br>
+  <div class="grid-item3">
+   
+       <h1 class="sublinhado">Missão: Ganhe experiência</h1>  
+       <br> 
+    <div class="cards-container">
+      <div class="card-1 flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              class="img1"
+ src="https://cdn.oneesports.gg/cdn-data/2025/02/Anime_SoloLeveling_HighOrcs_Season2_Episode5-1024x576.jpg"
+              alt=""
+            />
+          </div>
+          <div class="flip-card-back">
+            <img class="img1"  
+src="https://i.ytimg.com/vi/69JwB_8RIEM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLACb9IpdGojl4uHFWCrFFvvZxHvzw"  />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Orcs Superiores</h2>
+    <h3>Rank: A ⭐⭐⭐⭐⭐</h3>
+    <button class="demonio"> Orc </button>
+     <button class="humanoide">Humanoide</button>
+    <button class="AtaqueFisico">Ataque físico</button>
+
+    <br><br>
+    
+    <details>
+      <summary class="sumario">DESAFIAR</summary>
+      <br>
+      <h3>
+      São o tipo mais forte de orcs e cada um é poderoso o suficiente para enfrentar um Caçador de Rank A. Como resultado, são vistos como altamente perigosos e geralmente só aparecem em Portões de Rank A de alto nível.
+      Sung Jin-Woo está ocupado lutando contra Kargalgan, será tarefa das Sombras derrotar os Orcs [Será somado somente os atributos das Sombras].
+    </h3><br>
+    
+      <fieldset class="temafieldset">
+        <h3 class="sublinhado">Status dos Orcs Superiores</h3>
+
+        <fieldset class="luta">
+          
+          <h3 class="luta" id="idVidaOrcs">❤️ Vida: 20%</h3>
+          <h3 class="luta" id="idFadigaOrcs">🪫Fadiga: 10%</h3>
+          <h3 class="luta" id="idAgilidadeOrcs">🦵 Agilidade: 430</h3>
+          <h3 class="luta" id="idForcaOrcs">💪 Força: 490</h3>
+          <h3 class="luta" id="idPercepcaoOrcs">👀 Percepção: 310</h3>
+          <h3 class="luta" id="idInteligenciaOrcs">🧠 Inteligência: 180</h3>
+           <button class="botaoNovo">💰 10 Moedas de ouro por batalha</button>
+           <button class="botaoNovo">🏆 100 Rastro de Sombras por batalha</button>
+          <button class="botaoNovo" id="idexperienciaOrcs">🏆 Experiência: 0</button>
+          <button class="botaoNovo" id="idOrcs">🚶‍♂️População: 0/Dangeon Infinita</button>
+
+         
+        </fieldset>
+
+<h3 class="sublinhado">Quadro de notificações</h3>
+
+        <h3 class="luta" id="idQuadroDeRetornoOrcs"> Você quer desafiar os Orcs? </h3>
+
+        <button class="blob"  onclick="LutaContraOrcsBotao()" id="idLutaContraOrcsBotao" > Sim  </button>
+
+        <button class="blob" onclick="AnalisarLutaContraOrcsBotao()"> Analisar Luta  </button>
+      </fieldset>
+    </details>
+    <br />
+  </div><br>
+  <!--FIM DOS Orcs Superiores-->
+
        <!--  INÍCIO DO Kargalgan  -->
 <time id="idDIVEsconderKargalgan">
   <div class="grid-item3">
@@ -3028,17 +4250,20 @@ src="https://animenew.com.br/wp-content/uploads/2025/02/Kargalgan-1280x720.webp"
 
     <h2>Kargalgan</h2>
     <h3>Rank: A+ ⭐⭐⭐⭐⭐</h3>
+     <button class="demonio"> Orc </button>
+      <button class="humanoide">Humanoide</button>
     <button class="AtaqueMagico">Ataque mágico</button>
     <button class="AtaqueFisico">Ataque físico</button>
 
     <br><br>
-    <h3>
-      Um xamã Orc superior e chefe do Portão da Guilda dos Caçadores.
-    </h3>
+   
     <details>
       <summary class="sumario">DESAFIAR</summary>
       <br>
-      
+       <h3>
+      Um xamã Orc superior e chefe do Portão da Guilda dos Caçadores.
+    </h3>
+     <br>
       <fieldset class="temafieldset">
         <h3 class="sublinhado">Status do Kargalgan</h3>
 
@@ -3049,8 +4274,11 @@ src="https://animenew.com.br/wp-content/uploads/2025/02/Kargalgan-1280x720.webp"
           <h3 class="luta" id="idForcaKargalgan">💪 Força: 650</h3>
           <h3 class="luta" id="idPercepcaoKargalgan">👀 Percepção: 350</h3>
           <h3 class="luta" id="idInteligenciaKargalgan">🧠 Inteligência: 270</h3>
+          <button class="botaoNovo" id="idexperienciaKargalgan">🏆 Experiência: 0</button>
+          <button class="botaoNovo" >🏆 4 pontos de atributos </button>
           <button class="botaoNovo" id="idPedrasDeEssenciaKargalgan">💎 Pedras de Essência: 0</button>
                 <button class="botaoNovo" id="idKargalgan">⚔️ Rounds da batalha: 0/1</button>
+               
 
          
         </fieldset>
@@ -3077,14 +4305,112 @@ src="https://animenew.com.br/wp-content/uploads/2025/02/Kargalgan-1280x720.webp"
   </div></time>
   <!--FIM DO Kargalgan  -->
 
+   
+
+ <ul>
+     <br> <br> 
+    <h2> Você está forte o suficiente para retornar ao Castelo Demoníaco!</h2> 
+     <br> <br> <br> 
+  </ul>
     </div>
 
+
+
     <div class="abaNova" id="abaNova9">
-      <!--  INÍCIO da Rainha Formiga  -->
-  <time id="idDIVEsconderRainha">
-    <div class="grid-item3">
-      <h1 class="sublinhado">Dangeon: Ilha de Jeju</h1>
+      
+     
+
+
+<!--Início dos videos --> 
+<iframe width="320" height="200" src="https://www.youtube.com/embed/KxeHOxO3A3I?si=F8RNo3tJsdqPgZtu&autoplay=1&mute=1&loop=1&playlist=KxeHOxO3A3I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<!--Fim dos videos -->
+<br> <br> 
+
+       <ul>
+     <br> <br> 
+    <h2> Um portal de nível S surge na Ilha de Jeju, permitindo a invasão de monstros, principalmente formigas, lideradas pelo Rei Formiga. 
+      A sua tarefa é derrotar o Rei Formiga e seus exércitos para fechar o portal e proteger a ilha. 
+    </h2> 
+     <br> <br> <br> 
+  </ul>
+
+ <!--  INÍCIO do Enxame de formigas  -->
+
+  <div class="grid-item3">
+     <h1 class="sublinhado">Dangeon: Ilha de Jeju</h1>
       <br><br>
+
+    <div class="cards-container">
+      <div class="card-1 flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              class="img1"
+ src="https://static.deltiasgaming.com/2025/03/The-Ant-Queen.jpg"
+              alt=""
+            />
+          </div>
+          <div class="flip-card-back">
+            <img class="img1"  
+src="https://static.deltiasgaming.com/2025/02/Jeju.jpg"  />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Enxame de Formigas</h2>
+    <h3>Rank: S 💎 </h3>
+    <button class="inseto">Inseto</button>
+    <button class="AtaqueFisico">Ataque físico</button>
+
+    <br><br>
+   
+    <details>
+      <summary class="sumario">DESAFIAR</summary>
+      <br>
+       <h3>
+      A Ilha Jeju é governada pela Rainha Formiga, a reprodutora de todas as formigas nascidas nos últimos 4 anos. As formigas começaram a passar fome e a devorar seus próprios bandos, enquanto os humanos estavam longe. Sendo assim, a Rainha Formiga estava desesperada para alimentar seus filhotes. 
+    </h3> <br>
+
+      <fieldset class="temafieldset">
+        <h3 class="sublinhado">Status do Enxame de Formigas</h3>
+
+        <fieldset class="luta">
+          <h3 class="luta" id="idVidaEnxame">❤️ Vida: 50%</h3>
+          <h3 class="luta" id="idFadigaEnxame">🪫Fadiga: 100%</h3>
+          <h3 class="luta" id="idAgilidadeEnxame">🦵 Agilidade: 900</h3>
+          <h3 class="luta" id="idForcaEnxame">💪 Força: 1000</h3>
+          <h3 class="luta" id="idPercepcaoEnxame">👀 Percepção: 540</h3>
+          <h3 class="luta" id="idInteligenciaEnxame">🧠 Inteligência: 550</h3>
+           <button class="botaoNovo" >🏆 Experiência: 10</button>
+          <button class="botaoNovo" id="idEnxame">⚔️ Rounds da batalha: 0/1</button>
+          <button class="botaoNovo">🏅 Habilidade Mutilação</button>
+                
+        </fieldset>
+
+<h3 class="sublinhado">Quadro de notificações</h3>
+        <h3 class="luta" id="idQuadroDeRetornoEnxame">
+          Você quer desafiar o Enxame de Formigas?
+        </h3>
+
+        
+
+        <button class="blob"   onclick="LutaContraEnxameBotao()"  id="idLutaContraEnxameBotao" >   Sim  </button>
+
+        <button class="blob" onclick="AnalisarLutaContraEnxameBotao()">
+          Analisar Luta
+        </button>
+      </fieldset>
+    </details>
+    <br />
+  </div><br>
+  <!--FIM DO enxame de formigas  -->
+
+ <!--  INÍCIO da Rainha Formiga  -->
+    <div class="grid-item3">
+     
+
+
       <div class="cards-container">
         <div class="card-1 flip-card">
           <div class="flip-card-inner">
@@ -3109,24 +4435,29 @@ src="https://animenew.com.br/wp-content/uploads/2025/02/Kargalgan-1280x720.webp"
       <button class="AtaqueFisico">Ataque físico</button>
   
       <br><br>
-      <h3>
-        Rainha das formigas. 
-      </h3>
+      
       <details>
         <summary class="sumario">DESAFIAR</summary>
         <br>
-        
+        <h3>
+        Rainha das formigas. Sung Jin-Woo está ocupado lutando contra o Rei Formiga, será tarefa das Sombras derrotar a Rainha Formiga [Será somado somente os atributos das Sombras].
+        <br><br>
+        “Eu vou sobreviver, porque se eu morrer, o que acontecerá com as sombras que já invoquei?”
+      </h3><br>
+
         <fieldset class="temafieldset">
           <h3 class="sublinhado">Status da Rainha das Formiga</h3>
   
           <fieldset class="luta">
-            <h3 class="luta" id="idVidaRainha">❤️ Vida: -25%</h3>
-            <h3 class="luta" id="idFadigaRainha">🪫Fadiga : +20%</h3>
-            <h3 class="luta" id="idAgilidadeRainha">🦵 Agilidade: 300</h3>
-            <h3 class="luta" id="idForcaRainha">💪 Força: 400</h3>
-            <h3 class="luta" id="idPercepcaoRainha">👀 Percepção: 250</h3>
-            <h3 class="luta" id="idInteligenciaRainha">🧠 Inteligência: 200</h3>
-  
+            <h3 class="luta" id="idVidaRainha">❤️ Vida: 100%</h3>
+            <h3 class="luta" id="idFadigaRainha">🪫Fadiga: 100%</h3>
+            <h3 class="luta" id="idAgilidadeRainha">🦵 Agilidade: 830</h3>
+            <h3 class="luta" id="idForcaRainha">💪 Força: 990</h3>
+            <h3 class="luta" id="idPercepcaoRainha">👀 Percepção: 640</h3>
+            <h3 class="luta" id="idInteligenciaRainha">🧠 Inteligência: 580</h3>
+             <button class="botaoNovo" >🏆 Experiência: 10</button>
+            <button class="botaoNovo" id="idRainha">⚔️ Rounds da batalha: 0/1</button>
+           
            
           </fieldset>
   
@@ -3143,14 +4474,16 @@ src="https://animenew.com.br/wp-content/uploads/2025/02/Kargalgan-1280x720.webp"
             Sim
           </button>
   
-          <button class="blob" onclick="AnalisarLutaContraKinRainhaBotao()">
+          <button class="blob" onclick="AnalisarLutaContraRainhaBotao()">
             Analisar Luta
           </button>
         </fieldset>
       </details>
       <br />
-    </div></time><br>
+    </div><br>
     <!--FIM da Rainha Formiga  -->
+
+           
 
 <!--  INÍCIO DO Rei Formiga  -->
 <time id="idDIVEsconderRei">
@@ -3163,41 +4496,48 @@ src="https://animenew.com.br/wp-content/uploads/2025/02/Kargalgan-1280x720.webp"
           <div class="flip-card-front">
             <img
               class="img1"
- src="https://www.popverso.com.br/wp-content/uploads/2025/03/popverso.com.br-o-que-esperar-dos-episodios-finais-de-solo-leveling-sung-jin-woo-versus-rei-formiga-6.webp"
+ src="https://i.redd.it/byjg7fduecqe1.gif"
               alt=""
             />
           </div>
           <div class="flip-card-back">
             <img class="img1"  
-src="https://i.redd.it/byjg7fduecqe1.gif"  />
+src="https://www.popverso.com.br/wp-content/uploads/2025/03/popverso.com.br-o-que-esperar-dos-episodios-finais-de-solo-leveling-sung-jin-woo-versus-rei-formiga-6.webp"  />
           </div>
         </div>
       </div>
     </div>
 
     <h2>Rei Formiga</h2>
-    <h3>Rank: S 💎💎 </h3>
+    <h3>Rank: S+ 💎</h3>
     <button class="inseto">Inseto</button>
     <button class="AtaqueFisico">Ataque físico</button>
+      <button class="AtaqueMagico">Ataque mágico</button>
 
     <br><br>
-    <h3>
-      Rei das formigas, líder das formigas da Ilha de Jeju. Ele é tão poderoso que dá conta facilmente de caçadores de nível S.
-    </h3>
+   
     <details>
       <summary class="sumario">DESAFIAR</summary>
       <br>
-      
+       <h3>
+      Rei das formigas, líder das formigas da Ilha de Jeju. Ele é tão poderoso que dá conta facilmente de caçadores de nível S.<br><br> “Você tinha muito a dizer para alguém que está prestes a morrer” 
+    </h3> <br>
+
       <fieldset class="temafieldset">
         <h3 class="sublinhado">Status do Rei Formiga</h3>
 
         <fieldset class="luta">
-          <h3 class="luta" id="idVidaRei">❤️ Vida: -25%</h3>
-          <h3 class="luta" id="idFadigaRei">🪫Fadiga : +20%</h3>
-          <h3 class="luta" id="idAgilidadeRei">🦵 Agilidade: 300</h3>
-          <h3 class="luta" id="idForcaRei">💪 Força: 400</h3>
-          <h3 class="luta" id="idPercepcaoRei">👀 Percepção: 250</h3>
-          <h3 class="luta" id="idInteligenciaRei">🧠 Inteligência: 200</h3>
+          
+          <h3 class="luta" id="idRequisitoRei">🐜 Rainha das Formigas derrotada: Não</h3>
+          <h3 class="luta" id="idVidaRei">❤️ Vida: 80%</h3>
+          <h3 class="luta" id="idFadigaRei">🪫Fadiga: 70%</h3>
+          <h3 class="luta" id="idAgilidadeRei">🦵 Agilidade: 1050</h3>
+          <h3 class="luta" id="idForcaRei">💪 Força: 1500</h3>
+          <h3 class="luta" id="idPercepcaoRei">👀 Percepção: 600</h3>
+          <h3 class="luta" id="idInteligenciaRei">🧠 Inteligência: 650</h3>
+          <button class="botaoNovo" id="idRei">⚔️ Rounds da batalha: 0/1</button>
+          <button class="botaoNovo">🏅 Troca do Rank A para S</button>
+           <button class="botaoNovo">🏅 O caçador mais forte da humanidade!</button>
 
          
         </fieldset>
@@ -3207,15 +4547,11 @@ src="https://i.redd.it/byjg7fduecqe1.gif"  />
           Você quer desafiar o Rei?
         </h3>
 
-        <button
-          class="blob"
-          onclick="LutaContraReiBotao()"
-          id="idLutaContraReiBotao"
-        >
-          Sim
-        </button>
+        
 
-        <button class="blob" onclick="AnalisarLutaContraKinReiBotao()">
+        <button class="blob"   onclick="LutaContraReiBotao()"  id="idLutaContraReiBotao" >   Sim  </button>
+
+        <button class="blob" onclick="AnalisarLutaContraReiBotao()">
           Analisar Luta
         </button>
       </fieldset>
