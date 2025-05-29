@@ -8,11 +8,20 @@ var vida = 100;
 var fadiga = 0;
 var mana = 10;
 var AumentoDoNivelDaMana = 20;
+
 var agilidade = 10;
 var forca = 10;
 var percepcao = 10;
 var inteligencia = 10;
 
+var agilidadeDasSombras = 0;
+var forcaDasSombras = 0;
+var percepcaoDasSombras = 0;
+var inteligenciaDasSombras = 0;
+
+var experienciaBaran = 0;
+var experienciaMetus = 0;
+var experienciaVulcano = 0;
 var experienciaKargalgan = 0;
 var experienciaBaruka = 0;
 var experienciaElfos = 0;
@@ -41,6 +50,9 @@ var RecompensaDoTitulo999Cristais = 0;
 var RecompensaDaMisaoDiaria = 0;
 var RecompensaDiaria = 0;
 
+var SomaPedraDeEssenciaBaran = 0;
+var SomaPedraDeEssenciaMetus = 0;
+var SomaPedraDeEssenciaVulcano = 0;
 var SomaPedraDeEssenciaKargalgan = 0;
 var SomaDoIndicadorDoNivel = 6;
 var SomaDaPocaoDeRecuperacao = 0;
@@ -60,9 +72,20 @@ var SomaPedraDeEssenciaKasaka = 0;
 var SomaPedraDeEssenciaCacadores = 0;
 var SomaDaPedraDeEssenciaParaMissaDiaria = 0;
 
+var AdagasSombraLuaEquipada = 0;
+var EspadaDemoniacaFlorAmeixeiraEquipada = 0;
+var GrimorioDemonioArdenteEquipada = 0;
+var ManoplaEquipada = 0;
+var ArcoElfoGeloEquipada = 0;
+var AnelEquipada = 0;
+var EspadaMonarcaDemonioEquipada = 0;
+var ColarEquipada = 0;
+var BrincoEquipada = 0;
+var OrbeVulcanoEquipada = 0;
 var AdagaDeBarukaEquipada = 0;
 var ToqueDoDominadorEquipada = 0;
 var EscudoEquipada = 0;
+var FoiceDoCoveiroEquipada = 0;
 var ElmoEquipada = 0;
 var AssassinaCavaleirosEquipada = 0;
 var EspadaSimplesEquipada = 0;
@@ -86,6 +109,13 @@ var Elfos = 0;
 var KinChul = 0;
 var Baruka = 0;
 var Kargalgan = 0;
+var Rei = 0;
+var Rainha = 0;
+var Demonios = 0;
+var Vulcano = 0;
+var Metus = 0;
+var Esil = 0;
+var Baran = 0;
 var Goblin = 0;
 var PopulacaoGoblin = 0;
 var Lycan = 0;
@@ -95,7 +125,10 @@ var Kasaka = 0;
 var PopulacaoKasaka = 0;
 
 var Kandiaru = 1;
+var Kandiaru1 = 1;
+var  Kandiaru2 = 1;
 
+var DominioDoMonarca = 0;
 var Provocar = 0;
 var Fortalecimento = 0;
 var Arrancada = 0;
@@ -103,6 +136,7 @@ var ArrancadaEmUso = 0;
 var Assassina = 0;
 var Furtividade = 0;
 
+var FuncaoAqueleQueSuperouAdversidadeUplevel2 = 0;
 var SaudeElogenvidadeNivel2 = 0;
 var ArrancadaNivel2 = 0;
 
@@ -110,98 +144,217 @@ var SombraIgris = 0;
 var SombraMago = 0;
 var SombraTank = 0;
 var SombraIron = 0;
+var SombraTusk = 0;
+var SombraBeru = 0;
+var SombraKaisel = 0;
 
 var ElixirDaVida = 0;
 var FragmentoDaAvoreDaVida = 0;
 var AguaNascenteDaFlorestaEcoante = 0;
 var SanguePurificadoDoMonarcaDemoniaco = 0;
 
+var AdagasSombraLuaNivel2EmUso = 0;
+var FloracaoCompletaNivel2EmUso = 0;
+var TituloMestreDasArmasEmUso = 0;
 var TituloLordeDaMineracaoEstaEmUso = 0;
 var TituloEntusiastaEstaEmUso = 0;
 var TituloExterminadorDeGoblinsEstaEmUso = 0;
 var TituloAssassinoDeLobosEstaEmUso = 0;
 var TituloAdversidadeEstaEmUso = 0;
 
-/*início da fução Deus*/
+var PrimeiraVezDoIgris = 0;
+var PrimeiraVezDoMago = 0;
+var PrimeiraVezDoTank = 0;
+var PrimeiraVezDoIron = 0;
+var PrimeiraVezDoTusk = 0;
+var PrimeiraVezDoKaisel = 0;
+var PrimeiraVezDoBeru = 0;
+
+var Golen = 0;
+var SomaPedraDeEssenciaGolen = 0;
+var experienciaGolen = 0;
+var MarteloGolemEquipada = 0;
+
+var RespostaParaEnigima = 0;
+var ManaDaEsil = 500;
+var AmizadeEsil = 0;
 var Deus = 0;
+
+var RastroDeSombra = 0;
+var TempestadeDeChamasBrancasATIVA = 0;
+var HinoDoDragaoDeFogoATIVA = 0;
+var GritoDeProvocacaoATIVA = 0;
+
+ var Orcs = 0;
+ var experienciaOrcs = 0;
+
+  var Mutilacao = 0;
+
+   var FlameSpear = 0;
+    var HabilidadeLiberadaFlameSpear = 0;
+
+/*INÍCIO FUNÇÃO*/
 function deus() {
-  
-  if (Deus === 0){
 
-    alert("Você achou um Easter Egg e virou Deus no jogo, aproveite os prêmios");
+/*usado para teste, tem muito de tudo*/
+  if (Deus === 2){
+  Deus = 3;
+    alert("usado para teste, tem muito de tudo");
 
-    Deus = 1;
   
-    agilidade = 1000;
-    forca = 1000;
-    percepcao = 1000;
-    inteligencia = 1000;
-    experienciaParaUsarNasHabilidades = 1000;
   
-mana = 1000;
-    ouro = 7450;
-    cristal = 2000000;
-    SomaDosCristais =  3910;
+  RastroDeSombra = 1000;
+dia = 1;
+RecompensaDiaria = 0;
 
-    atributo = 1000;
-    SomaDaPocaoDeRecuperacao = 250;
+     agilidade = 1051; /*74 em estoque + 145 = 219*/
+  forca = 1501;  /*92 em estoque + 295 = 387*/
+  percepcao = 601; /*71 em estoque + 55 = 126*/
+  inteligencia = 651;/*56 em estoque + 90 = 146*/
+    experienciaParaUsarNasHabilidades = 10000000000;
+  
+     AumentoDoNivelDaMana = 100;
+    mana = 10000;
+    ouro = 50000;
+    cristal = 10000000000;
+    
+
+    atributo = 10000;
+    SomaDosCristais =  30000;
+    SomaDaPocaoDeRecuperacao = 360;
+    SomaDaPocaoDeVida = 160;
+
     vida = 100;
-    SomaDaPocaoDeVida = 125;
-    FragmentoDaAvoreDaVida = 1000;
-AguaNascenteDaFlorestaEcoante = 1;
-SanguePurificadoDoMonarcaDemoniaco = 1;
-SomaDaPedraDeEssenciaParaMissaDiaria = 36;
+    fadiga = 0;
 
-Lycan = 19;
+    SomaDaPresaDeLycan = 20;
+    FragmentoDaAvoreDaVida = 1000;
+AguaNascenteDaFlorestaEcoante = 0;
+SanguePurificadoDoMonarcaDemoniaco = 1;
+SomaDaPedraDeEssenciaParaMissaDiaria = 100;
+
+Lycan = 20;
 Goblin = 10;
-Magos = 2;
+Kasaka = 1;
+Cacadores = 6;
+Magos = 0;
 Kang = 1;
-Ursos = 5;
+Ursos = 6;
 KinChul = 1;
+Baruka = 2;
+Igris = 2;
+Metus = 1;
+Vulcano = 1;
+Baran = 1;
+Cerberus = 1;
+Kargalgan = 1;
+Rainha = 1;
+Rei = 0;
+Enxame = 1;
+
 
   }
 
-  else if(Deus === 1){  /*pontos equivalente a todo a primeira parte do Jogo*/
-alert("Pontos equivalente a todo a primeira parte do Jogo");
-  agilidade = 55;
-  forca = 69;
-  percepcao = 61;
-  inteligencia = 64;
-  experienciaParaUsarNasHabilidades = 106;
-  
-  fadiga = 0;
-  vida = 100;
-  
-  cristal = 9;
-  SomaDosCristais =  14519;
-  ouro = 516;
-  SomaDaPocaoDeRecuperacao = 354;
-  SomaDaPocaoDeVida = 157;
-  SomaDaPedraDeEssenciaParaMissaDiaria = 36;
-  dia = 10;
-  nivel = 48;
-  
+  else if(Deus === 0){  /*6 MAGOS */
+    Deus = 1;
+alert("Pontos equivalente a todo a primeira parte do Jogo - Até a luta dos 6 Magos");
+
+
+  atributo = 6;/* é 2 porém irá ter os 2 dos títulos de diamantes então não irei adicionar*/
+  agilidade = 62; /*62 + 20 + 15 = 97*/
+  forca = 71;  /*71 + 5 + 15 + 25 + 20 = 136*/
+  percepcao = 71; /*71 + 20 + 5 + 20= 16*/
+  inteligencia = 56;/*56 + 10 + 10 = 76*/
+
+ experienciaParaUsarNasHabilidades = 100; /*5 + 45 da Arrancada + 50 do Aquele que Superou a Adversidade*/
+ ouro = 1271; /*806 + adaga(50) + espada(100) + Escudo(115) + Assassina de cavaleiros(200)*/
+  SomaDosCristais =  16698;
+  SomaDaPocaoDeRecuperacao = 322;
+  SomaDaPocaoDeVida = 160;
+ SomaDaPedraDeEssenciaParaMissaDiaria = 12;
+  SomaDaPresaDeLycan = 20;
+
+fadiga = 0;
+vida = 100;
+
+
+  PedraDeEssencia = 0;
+  cristal = 0;
+
+
+EqualizadoDoNivel = 36; /*Nível 36*/
+dia = 10;
+RecompensaDiaria = 9;
+PresaDeLycan = 4000000000;
+ 
   Kandiaru = 2;
   Goblin = 10;
-  SomaDaPresaDeLycan = 20;
-  PresaDeLycan = 20;
   Lycan = 20;
   Kasaka = 1;
-
-  Cacadores = 1;
-  Kang = 1;
+  Cacadores = 6;
   Cerberus = 1;
+  Kang = 1;
   Igris = 3;
   Magos = 2;
-  Ursos = 5;
-  Baruka = 2;
 
+  mana = 40;
+  AumentoDoNivelDaMana = 50;
+ 
 
-  mana = 5000;
-  AumentoDoNivelDaMana = 60;
-  atributo = 2;
 }
-    
+else if(Deus === 1){  /*LUTA DO KARGALGAN*/
+  Deus = 2;
+  alert("Pontos equivalente até a luta do Kargalgan");
+
+
+   atributo = 29;/* é 31 porém irá ter os 2 dos títulos de diamantes então não irei adicionar*/
+  agilidade = 74; /*74 em estoque + 145 = 219*/
+  forca = 92;  /*92 em estoque + 295 = 387*/
+  percepcao = 71; /*71 em estoque + 55 = 126*/
+  inteligencia = 56;/*56 em estoque + 90 = 146*/
+
+ experienciaParaUsarNasHabilidades = 155; /*10 em estoque + 45 da Arrancada + 100 do Aquele que Superou a Adversidade*/
+ ouro = 3684; /*119 em estoque + 3565 todas os equipamentos*/
+  SomaDosCristais =  16698;
+  SomaDaPocaoDeRecuperacao = 322;
+  SomaDaPocaoDeVida = 160;
+ SomaDaPedraDeEssenciaParaMissaDiaria = 12;
+  SomaDaPresaDeLycan = 20;
+
+fadiga = 0;
+vida = 100;
+
+
+  PedraDeEssencia = 0;
+  cristal = 0;
+
+
+EqualizadoDoNivel = 42; /*Nível 42*/
+dia = 13;
+RecompensaDiaria = 12;
+PresaDeLycan = 4000000000;
+ 
+  Kandiaru = 2;
+  Goblin = 10;
+  Lycan = 20;
+  Kasaka = 1;
+  Cacadores = 6;
+  Cerberus = 1;
+  Kang = 1;
+  Igris = 3;
+  Magos = 2;
+  Ursos = 6;
+  Elfos = 1;
+  KinChul = 1;
+  Baruka = 2;
+  Kargalgan = 1;
+
+  mana = 100;
+  AumentoDoNivelDaMana = 100;
+
+RastroDeSombra = 63;
+  
+  }
   }
   
   /*fim da fução Deus*/
@@ -209,8 +362,12 @@ alert("Pontos equivalente a todo a primeira parte do Jogo");
 /*Início da função minerar cristais*/
 function funcaominerarcristal() {
   
+
+
+
+
   /* Início apagar as mensagem de RETORNO */
-  document.getElementById("idRetornoMissaoDiaria").innerHTML = "";   /* Remover Missão diária */
+  document.getElementById("idRetornoMissaoDiaria").innerHTML = "Ao realizar a Tarefa, clique na imagem para receber as recompensas";   /* Remover Missão diária */
   document.getElementById("idatributopercepcao").innerHTML = ""; /* Remover Pontos de atributo */
   document.getElementById("idminerarcristal").innerHTML = "";  /* Remover Mensagem que mostra quantos Cristais foram minerados */
   document.getElementById("idTituloAlerta").innerHTML = ""; /* Remover Alerta dos títulos */
@@ -266,12 +423,11 @@ function funcaominerarcristal() {
   
       RecompensaDoTitulo50Cristais = 1;
       
-      alert(
-        "Parabéns você trocou de Título e ganhou 5 Pontos de experiência. Novo título: Entusiasta da Mineração",
-      );
-      document.getElementById("idtitulo").innerHTML = "Novo Título disponível";
+      alert("Parabéns você ganhou um novo Título e ganhou 5 Pontos de experiência.", );
+       alert("✨ Novo título: Entusiasta da Mineração  ✨", );
+      document.getElementById("idtitulo").innerHTML = "Novo Título disponível - Para trocar de Título vá na aba Classe e Títulos";
 
-        document.getElementById("idTituloAlerta").innerHTML =   "⚠️";
+      document.getElementById("idTituloAlerta").innerHTML = "⚠️";
 
       document.getElementById("idCheckEntusiasta").innerHTML = "⚠️ Título: Entusiasta da Mineração";
       document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
@@ -288,10 +444,10 @@ function funcaominerarcristal() {
     if (SomaDosCristais > 3999 && RecompensaDoTitulo999Cristais === 0) {
       RecompensaDoTitulo999Cristais = 1;
   
-      alert(
-        "Parabéns você trocou de Título e ganhou 5 Pontos de experiência. Novo título: Lorde da Mineração",
-      );
-      document.getElementById("idtitulo").innerHTML =  "Novo Título disponível";
+      alert("Parabéns você ganhou um novo Título e ganhou 5 Pontos de experiência.", );
+       alert("✨ Novo título: Lorde da Mineração ✨", );
+
+      document.getElementById("idtitulo").innerHTML =  "Novo Título disponível - Para trocar de Título vá na aba Classe e Títulos";
 
          document.getElementById("idTituloAlerta").innerHTML = "⚠️";
 
@@ -306,8 +462,7 @@ function funcaominerarcristal() {
         
     }
 
-    document.getElementById("idminerarcristal").innerHTML =
-      "Cristais minerado: " + SomaDaPercepcao;
+    document.getElementById("idminerarcristal").innerHTML = "Quantidade de Cristais minerado por vez: " + SomaDaPercepcao;
 
     if (dia === 1) {
       document.getElementById("idMissaoDiariaCristais").innerHTML =
@@ -357,14 +512,19 @@ function funcaominerarcristal() {
     }
 
     if (dia === 10) {
-      document.getElementById("idMissaoDiariaCristais").innerHTML =
-        "Tenha 14.000 Cristais de Mana minerados: " +
-        SomaDosCristais +
-        "/14000";
+      document.getElementById("idMissaoDiariaCristais").innerHTML =   "Tenha 20.000 Cristais de Mana minerados: " +
+        SomaDosCristais +  "/20000";
+    }
+    if (dia === 11) {
+      document.getElementById("idMissaoDiariaCristais").innerHTML =   "Tenha 25.000 Cristais de Mana minerados: " +
+        SomaDosCristais +  "/25000";
+    }
+    if (dia === 12) {
+      document.getElementById("idMissaoDiariaCristais").innerHTML =   "Tenha 23.000 Cristais de Mana minerados: " +
+        SomaDosCristais +  "/30000";
     }
 
-    document.getElementById("idcristal").innerHTML =
-      "Cristais de Mana: " + cristal;
+    document.getElementById("idcristal").innerHTML ="Cristais de Mana no Inventário: " + cristal;
 
     document.getElementById("idcristalinventario").innerHTML =
       "⚠️ Cristais de Mana: " + cristal;
@@ -375,8 +535,7 @@ function funcaominerarcristal() {
 
     progresso.setAttribute("style", "width: " + fadiga + "%");
   } else {
-    document.getElementById("idminerarcristal").innerHTML =
-      "Sua Fadiga está em 100% [Compre poção de fadiga na loja de itens ou realize a missão diária para regarregar]";
+    document.getElementById("idminerarcristal").innerHTML = "Sua Fadiga está em 100% [Compre poção de fadiga na loja de itens ou realize a missão diária para regarregar]";
   }
 }
 /* Fim da função minerar cristais */
@@ -388,7 +547,7 @@ function funcaominerarcristalAteAfadigaSer100() {
   "⚠️ Inventário";
 
   /* Início apagar as mensagem de RETORNO */
-  document.getElementById("idRetornoMissaoDiaria").innerHTML = "";   /* Remover Missão diária */
+  document.getElementById("idRetornoMissaoDiaria").innerHTML = "Ao realizar a Tarefa, clique na imagem para receber as recompensas";   /* Remover Missão diária */
   document.getElementById("idatributopercepcao").innerHTML = ""; /* Remover Pontos de atributo */
   document.getElementById("idminerarcristal").innerHTML = "";  /* Remover Mensagem que mostra quantos Cristais foram minerados */
   document.getElementById("idTituloAlerta").innerHTML = ""; /* Remover Alerta dos títulos */
@@ -444,12 +603,12 @@ function funcaominerarcristalAteAfadigaSer100() {
   
       RecompensaDoTitulo50Cristais = 1;
       atributo = atributo + 1;
-      alert(
-        "Parabéns você trocou de Título e ganhou 1 Ponto de atributo. Novo título: Entusiasta da Mineração",
-      );
-      document.getElementById("idtitulo").innerHTML = "Novo Título disponível";
+      alert("Parabéns você ganhou um novo Título e ganhou 1 Ponto de atributo.",);
+       alert("✨ Novo título: Entusiasta da Mineração  ✨",);
 
-        document.getElementById("idTituloAlerta").innerHTML =  "⚠️";
+      document.getElementById("idtitulo").innerHTML = "Novo Título disponível - Para trocar de Título vá na aba Classe e Títulos";
+
+      document.getElementById("idTituloAlerta").innerHTML = "⚠️";
 
       document.getElementById("idCheckEntusiasta").innerHTML =   "⚠️ Título: Entusiata da Mineração";
 
@@ -463,11 +622,10 @@ function funcaominerarcristalAteAfadigaSer100() {
     if (SomaDosCristais > 3999 && RecompensaDoTitulo999Cristais === 0) {
       RecompensaDoTitulo999Cristais = 1;
       atributo = atributo + 1;
-      alert(
-        "Parabéns você trocou de Título e ganhou 1 Ponto de atributo. Novo título: Lorde da Mineração",
-      );
+      alert("Parabéns você ganhou um novo Título e ganhou 1 Ponto de atributo.",);
+       alert(" ✨ Novo título: Lorde da Mineração  ✨",);
      
-      document.getElementById("idtitulo").innerHTML =  "Novo Título disponível";
+      document.getElementById("idtitulo").innerHTML =  "Novo Título disponível - Para trocar de Título vá na aba Classe e Títulos";
 
       document.getElementById("idTituloAlerta").innerHTML = "⚠️";
 
@@ -483,8 +641,7 @@ function funcaominerarcristalAteAfadigaSer100() {
         "⚠️ Atributos";
     }
 
-    document.getElementById("idminerarcristal").innerHTML =
-      "Cristais minerado: " + SomaDaPercepcao;
+    document.getElementById("idminerarcristal").innerHTML = "Quantidade de Cristais minerado por vez: " + SomaDaPercepcao;
 
     if (dia === 1) {
       document.getElementById("idMissaoDiariaCristais").innerHTML =
@@ -535,13 +692,24 @@ function funcaominerarcristalAteAfadigaSer100() {
 
     if (dia === 10) {
       document.getElementById("idMissaoDiariaCristais").innerHTML =
-        "Tenha 14.000 Cristais de Mana minerados: " +
+        "Tenha 20.000 Cristais de Mana minerados: " +
         SomaDosCristais +
-        "/14000";
+        "/20000";
+    }
+    if (dia === 11) {
+      document.getElementById("idMissaoDiariaCristais").innerHTML =
+        "Tenha 25.000 Cristais de Mana minerados: " +
+        SomaDosCristais +
+        "/25000";
+    }
+    if (dia === 12) {
+      document.getElementById("idMissaoDiariaCristais").innerHTML =
+        "Tenha 30.000 Cristais de Mana minerados: " +
+        SomaDosCristais +
+        "/30000";
     }
 
-    document.getElementById("idcristal").innerHTML =
-      "Cristais de Mana: " + cristal;
+    document.getElementById("idcristal").innerHTML =      "Cristais de Mana no Inventário: " + cristal;
 
     document.getElementById("idcristalinventario").innerHTML =
       "⚠️ Cristais de Mana: " + cristal;
@@ -553,8 +721,7 @@ function funcaominerarcristalAteAfadigaSer100() {
 
     progresso.setAttribute("style", "width: " + fadiga + "%");
   } if(fadiga > 99) {
-    document.getElementById("idminerarcristal").innerHTML =
-      "Sua Fadiga está em 100% [Compre poção de fadiga na loja de itens ou realize a missão diária para regarregar]";
+    document.getElementById("idminerarcristal").innerHTML =   "Sua Fadiga está em 100% [Compre poção de fadiga na loja de itens ou realize a missão diária para regarregar]";
   }
   
 }
@@ -563,6 +730,14 @@ function funcaominerarcristalAteAfadigaSer100() {
 /*Início da fução atribuir pontos na Força*/
 function funcaoatribuirforca() {
   if (atributo > 0) {
+
+/*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
     document.getElementById("idminerarcristal").innerHTML = "";
     document.getElementById("idvendercristal").innerHTML = "";
 
@@ -587,7 +762,7 @@ function funcaoatribuirforca() {
       document.getElementById("idnivel").innerHTML =
         "Nível: " + EqualizadoDoNivel;
 
-      alert("Level Up");
+      alert("Você subiu de Nível!");
 
       EqualizadoDoNivel = EqualizadoDoNivel + 1;
       SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
@@ -603,8 +778,14 @@ function funcaoatribuirforca() {
 /*início da função comprar poção de Vida*/
 function funcaoComprarPocaoVida() {
 
-  document.getElementById("idAlertaNoMenuLoja").innerHTML =
-        "Loja";
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
+  document.getElementById("idAlertaNoMenuLoja").innerHTML = "Loja";
 
   if (ouro > 4 && vida < 100) {
     vida = vida + 10;
@@ -615,16 +796,20 @@ function funcaoComprarPocaoVida() {
       vida = 100;
     }
 
-    
+    if (AmizadeEsil === 0){
+    document.getElementById("idRetornoCompraPocaoVida").innerHTML = "10% de Vida recuperada";
+    }
 
-    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+    if (AmizadeEsil === 3){
+      vida = vida + 10;
+      document.getElementById("idRetornoCompraPocaoVida").innerHTML = "10% de Vida recuperada + 10% da Habilidade Gula";
+      }
+
+      document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
 
     document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
 
     progresso2.setAttribute("style", "width: " + vida + "%");
-
-    document.getElementById("idRetornoCompraPocaoVida").innerHTML =
-      "10% de Vida recuperada";
 
 /*início do efeito de compra da poção de Vida*/
       var vidaContainer = document.getElementById("vida");
@@ -643,9 +828,7 @@ setTimeout(function(seta) {
 
     if (dia === 4) {
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
-        "Faça a compra de 5 Poções de Vida na loja: " +
-        SomaDaPocaoDeVida +
-        "/5";
+        "Faça a compra de 5 Poções de Vida na loja: " +   SomaDaPocaoDeVida +    "/5";
     }
     if (dia === 5) {
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
@@ -655,9 +838,9 @@ setTimeout(function(seta) {
     }
     if (dia === 6) {
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
-        "Faça a compra de 30 Poções de Vida na loja: " +
+        "Faça a compra de 20 Poções de Vida na loja: " +
         SomaDaPocaoDeVida +
-        "/30";
+        "/20";
     }
     if (dia === 7) {
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
@@ -667,9 +850,9 @@ setTimeout(function(seta) {
     }
     if (dia === 8) {
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
-        "Faça a compra de 100 Poções de Vida na loja: " +
+        "Faça a compra de 60 Poções de Vida na loja: " +
         SomaDaPocaoDeVida +
-        "/100";
+        "/60";
     }
     if (dia === 9) {
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
@@ -679,10 +862,24 @@ setTimeout(function(seta) {
     }
     if (dia === 10) {
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
-        "Faça a compra de 180 Poções de Vida na loja: " +
+        "Faça a compra de 130 Poções de Vida na loja: " +
         SomaDaPocaoDeVida +
-        "/180";
+        "/130";
     }
+    if (dia === 11) {
+      document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
+        "Faça a compra de 150 Poções de Vida na loja: " +
+        SomaDaPocaoDeVida +
+        "/150";
+    }
+
+    if (dia === 12) {
+      document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
+        "Faça a compra de 160 Poções de Vida na loja: " +
+        SomaDaPocaoDeVida +
+        "/160";
+    }
+
   } else {
     document.getElementById("idRetornoCompraPocaoVida").innerHTML =
       "Compra não realizada, você não tem ouro suficiente ou sua vida está 100%";
@@ -692,22 +889,39 @@ setTimeout(function(seta) {
 
 /*início da função comprar poção de Mana*/
 function funcaoComprarPocaoMana() {
+
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
   if (ouro > 9 && mana < AumentoDoNivelDaMana) {
-    mana = mana + 5;
+    mana = mana + 10;
     ouro = ouro - 10;
 
-    if (mana > AumentoDoNivelDaMana) {
-      mana = AumentoDoNivelDaMana;
-    }
+   
+
+    if (AmizadeEsil === 0){
+      document.getElementById("idRetornoCompraPocaoMana").innerHTML = "10% de Mana restaurada";
+      }
+  
+      if (AmizadeEsil === 3){
+        mana = mana + 10;
+        document.getElementById("idRetornoCompraPocaoMana").innerHTML = "10% de Mana restaurada [+ 10% da Habilidade Gula]"; 
+        }
+
+        if (mana > AumentoDoNivelDaMana) {
+          mana = AumentoDoNivelDaMana;
+        }
 
     document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
 
-    document.getElementById("idAumentoDoNivelDaMana").innerHTML =
-      "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    document.getElementById("idAumentoDoNivelDaMana").innerHTML =   "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
 
-    document.getElementById("idRetornoCompraPocaoMana").innerHTML =
-      "Mana restaurada";
+    
 
        /*INICIO DO EFEITO DA MANA*/
        var bolhasContainer = document.getElementById("bolhas");
@@ -751,7 +965,7 @@ function funcaoComprarEspada() {
     document.getElementById("idRetornoCompraEspada").innerHTML =
       "Espada comprada e equipada com sucesso";
 
-    document.getElementById("idCheckCompraEspada").innerHTML = "✅ Espada";
+    document.getElementById("idCheckCompraEspada").innerHTML = "✅ Espada da Luz";
 
     document.getElementById("idRetornoCompraEspadaComum3").innerHTML = "+ 15";
   } else {
@@ -764,7 +978,7 @@ function funcaoComprarEspada() {
 function funcaoComprarEscudo() {
   if (EscudoEquipada === 1) {
     document.getElementById("idRetornoCompraEscudo").innerHTML =
-      "Escudo já equipada";
+      "Escudo já equipado";
   } else if (ouro > 114 && EscudoEquipada === 0) {
     EscudoEquipada = 1;
     ouro = ouro - 115;
@@ -789,6 +1003,197 @@ function funcaoComprarEscudo() {
   }
 }
 /*Fim da função comprar Escudo*/
+
+/*início da função comprar Foice do Coveiro das Sombras*/
+function funcaoEquiparFoiceDoCoveiro() {
+  if (FoiceDoCoveiroEquipada === 1) {
+    document.getElementById("idRetornoEquiparFoiceDoCoveiro").innerHTML = "Foice já equipada";
+  } else if (ouro > 299 && FoiceDoCoveiroEquipada === 0) {
+    FoiceDoCoveiroEquipada = 1;
+    ouro = ouro - 300;
+
+    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+    document.getElementById("idRetornoEquiparFoiceDoCoveiro").innerHTML = "Foice comprada e equipada com sucesso";
+
+    document.getElementById("idItemFoiceDoCoveiroAdquirida").innerHTML = "✅ Foice do Coveiro das Sombras";
+
+  
+    percepcao = percepcao + 20;
+    inteligencia = inteligencia + 10;
+   
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+    document.getElementById("idinteligencia").innerHTML =   "🧠 Inteligência: " + inteligencia;
+
+    document.getElementById("idRetornoFoiceDoCoveiroNoStatus").innerHTML = "+ 20";
+    document.getElementById("idRetornoFoiceDoCoveiroNoStatus2").innerHTML = "+ 10";
+  } else {
+    document.getElementById("idRetornoEquiparFoiceDoCoveiro").innerHTML =
+      "Ouro insuficiente";
+  }
+}
+/*Fim da função comprar Foice do Coveiro das Sombras*/
+
+/*início da função comprar Arco do Elfo do Gelo*/
+function funcaoEquiparArcoElfoGelo() {
+  if (ArcoElfoGeloEquipada === 1) {
+    document.getElementById("idRetornoEquiparArcoElfoGelo").innerHTML = "Arco já equipado";
+  } else if (ouro > 299 && ArcoElfoGeloEquipada === 0) {
+   ArcoElfoGeloEquipada = 1;
+    ouro = ouro - 300;
+
+    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+    document.getElementById("idRetornoEquiparArcoElfoGelo").innerHTML = "Arco comprado e equipado com sucesso";
+
+    document.getElementById("idItemArcoElfoGeloAdquirida").innerHTML = "✅ Arco do Elfo do Gelo";
+
+  
+    percepcao = percepcao + 10;
+    inteligencia = inteligencia + 20;
+   
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+    document.getElementById("idinteligencia").innerHTML =   "🧠 Inteligência: " + inteligencia;
+
+    document.getElementById("idRetornoArcoElfoGeloNoStatus").innerHTML = "+ 10";
+    document.getElementById("idRetornoArcoElfoGeloNoStatus2").innerHTML = "+ 20";
+  } else {
+    document.getElementById("idRetornoEquiparArcoElfoGelo").innerHTML =
+      "Ouro insuficiente";
+  }
+}
+/*Fim da função comprar Arco do Elfo do Gelo*/
+
+/*início da função comprar Manopla alma uivante do tigre branco*/
+function funcaoEquipaManopla() {
+  if (ManoplaEquipada === 1) {
+    document.getElementById("idRetornoEquiparManopla").innerHTML = "Manopla já equipada";
+  } else if (ouro > 499 && ManoplaEquipada === 0) {
+   ManoplaEquipada = 1;
+    ouro = ouro - 500;
+
+    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+    document.getElementById("idRetornoEquiparManopla").innerHTML = "Manopla comprada e equipada com sucesso";
+
+    document.getElementById("idItemManoplaAdquirida").innerHTML = "✅ Manopla alma uivante do tigre branco";
+
+  
+   forca = forca + 50;
+
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+    document.getElementById("idRetornoManoplaNoStatus").innerHTML = "+ 50";
+  
+  } else {
+    document.getElementById("idRetornoEquiparManopla").innerHTML =   "Ouro insuficiente";
+  }
+}
+/*Fim da função comprar Manopla alma uivante do tigre branco*/
+
+/*início da função comprar Grimório do Demônio Ardente*/
+function funcaoEquiparGrimorioDemonioArdente() {
+  if (GrimorioDemonioArdenteEquipada === 1) {
+    document.getElementById("idRetornoEquiparGrimorioDemonioArdente").innerHTML = "Grimório já equipado";
+  } 
+  
+  else if (ouro > 499 && GrimorioDemonioArdenteEquipada === 0) {
+
+   GrimorioDemonioArdenteEquipada = 1;
+    ouro = ouro - 500;
+
+    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+    document.getElementById("idRetornoEquiparGrimorioDemonioArdente").innerHTML = "Grimório comprado e equipado com sucesso";
+
+    document.getElementById("idItemGrimorioDemonioArdenteAdquirida").innerHTML = "✅ Grimório do Demônio Ardente";
+
+     criarChama();
+  
+    inteligencia = inteligencia + 50;
+
+    document.getElementById("idinteligencia").innerHTML =   "🧠 Inteligência: " + inteligencia;
+
+    document.getElementById("idRetornoGrimorioDemonioArdenteNoStatus").innerHTML = "+ 50";
+  
+  } else {
+    
+    document.getElementById("idRetornoEquiparGrimorioDemonioArdente").innerHTML =   "Ouro insuficiente";
+  }
+}
+/*Fim da função comprar Grimório do Demônio Ardente*/
+
+/*início da função comprar Espada Demoníaca Flor de Ameixeira*/
+function funcaoEquiparEspadaDemoniacaFlorAmeixeira() {
+  if (EspadaDemoniacaFlorAmeixeiraEquipada === 1) {
+    document.getElementById("idRetornoEquiparEspadaDemoniacaFlorAmeixeira").innerHTML = "Flor de Ameixeira já equipada";
+  } 
+  
+  else if (ouro > 499 && EspadaDemoniacaFlorAmeixeiraEquipada === 0) {
+
+ setTimeout(() => { petalasDeRosa(); }, 100);  
+
+
+   EspadaDemoniacaFlorAmeixeiraEquipada = 1;
+    ouro = ouro - 500;
+
+    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+    document.getElementById("idRetornoEquiparEspadaDemoniacaFlorAmeixeira").innerHTML = "Flor de Ameixeira comprada e equipada com sucesso";
+
+    document.getElementById("idItemEspadaDemoniacaFlorAmeixeiraAdquirida").innerHTML = "✅ Espada Demoníaca Flor de Ameixeira";
+
+  
+    agilidade = agilidade + 50;
+   
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+
+    document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+  
+  } else {
+    document.getElementById("idRetornoEquiparEspadaDemoniacaFlorAmeixeira").innerHTML =   "Ouro insuficiente";
+
+   
+  }
+}
+/*Fim da função comprar Espada Demoníaca Flor de Ameixeira*/
+
+/*início da função comprar Adagas Sombra da Lua*/
+function funcaoEquiparAdagasSombraLua() {
+  if (AdagasSombraLuaEquipada === 1) {
+    document.getElementById("idRetornoEquiparAdagasSombraLua").innerHTML = "Sombra da Lua já equipada";
+  } 
+  
+  else if (ouro > 999 && AdagasSombraLuaEquipada === 0) {
+
+    criarLua();
+   AdagasSombraLuaEquipada = 1;
+    ouro = ouro - 1000;
+
+    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+    document.getElementById("idRetornoEquiparAdagasSombraLua").innerHTML = "Sombra da Lua comprada e equipada com sucesso";
+
+    document.getElementById("idItemAdagasSombraLuaAdquirida").innerHTML = "✅ Adagas Sombra da Lua";
+
+  
+    agilidade = agilidade + 50;
+    forca = forca + 50;
+
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+
+    document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = "+ 50";
+    document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = "+ 50";
+  
+  } else {
+
+    document.getElementById("idRetornoEquiparAdagasSombraLua").innerHTML =   "Ouro insuficiente";
+  }
+}
+/*Fim da função comprar Adagas Sombra da Lua*/
 
 /*início da função comprar ADAGA*/
 function funcaoComprarEspadaComum() {
@@ -821,7 +1226,7 @@ function funcaoComprarEspadaComum() {
 function misaoDiaria() {
 
   if (TurnoDeLutaCentopeia === 1){
-    document.getElementById("idtreino").innerHTML = "⛔ Você optou por realizar a Missão de Penalidade: Sobrevivência";
+    document.getElementById("idtreino").innerHTML = "🚫 Você optou por realizar a Missão de Penalidade: Sobrevivência";
   }
 
   else if (fadiga > 99 && RecompensaDaMisaoDiaria === 0){
@@ -861,7 +1266,7 @@ function misaoDiaria() {
     if (SomaDoNivel > SomaDoIndicadorDoNivel) {
       document.getElementById("idnivel").innerHTML = "Nível: " + EqualizadoDoNivel;
 
-      alert("Level Up");
+      alert("Você subiu de Nível!");
 
       EqualizadoDoNivel = EqualizadoDoNivel + 1;
       SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
@@ -971,7 +1376,7 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById(
         "idRetornoMissaoDiariaPocaoDeRecuperacao",
       ).innerHTML =
-        "Faça a compra de 20 Poções de recuperação na loja: " +
+        "Faça a compra de 20 Poções de Fadiga na loja: " +
         SomaDaPocaoDeRecuperacao +
         "/20";
 
@@ -1023,14 +1428,14 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById(
         "idRetornoMissaoDiariaPocaoDeRecuperacao",
       ).innerHTML =
-        "Faça a compra de 35 Poções de recuperação na loja: " +
+        "Faça a compra de 35 Poções de Fadiga na loja: " +
         SomaDaPocaoDeRecuperacao +
         "/35";
 
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
         "Faça a compra de 5 Poções de Vida na loja: " +
         SomaDaPocaoDeVida +
-        "/5";
+        "/5 [Dica: Nas Dangeons você pode batalhar com os inimigos e perder vida, por exemplo com as Estátuas na Dangeon Dupla]";
 
       treino = 0;
       TurnoDeLutaCentopeia = 0;
@@ -1081,7 +1486,7 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById(
         "idRetornoMissaoDiariaPocaoDeRecuperacao",
       ).innerHTML =
-        "Faça a compra de 70 Poções de recuperação na loja: " +
+        "Faça a compra de 70 Poções de Fadiga na loja: " +
         SomaDaPocaoDeRecuperacao +
         "/70";
 
@@ -1132,12 +1537,9 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById("idMissaoDiariaCristais").innerHTML =
         "Tenha 3500 Cristais de Mana minerados: " + SomaDosCristais + "/3500";
 
-      SomaDaPedraDeEssenciaParaMissaDiaria =
-        SomaDaPedraDeEssenciaParaMissaDiaria + Goblin;
-      document.getElementById("idMissaoDiariaPedrasDeEssencia").innerHTML =
-        "Ganhe 10 Pedras de essência: " +
-        SomaDaPedraDeEssenciaParaMissaDiaria +
-        "/10";
+      SomaDaPedraDeEssenciaParaMissaDiaria =  SomaDaPedraDeEssenciaParaMissaDiaria + Goblin;
+      document.getElementById("idMissaoDiariaPedrasDeEssencia").innerHTML = "Ganhe 10 Pedras de essência: " + SomaDaPedraDeEssenciaParaMissaDiaria +
+        "/10 [As pedras de essência são obtidas ao derrotar monstros, por exemplo os Goblins na Dangeon Eminete]";
 
       alert(
         "Receba as recompensas do dia 5 [3 Pontos de atributos - Recuperação total da Fadiga - Caixa misteriosa vazia]",
@@ -1146,14 +1548,14 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById(
         "idRetornoMissaoDiariaPocaoDeRecuperacao",
       ).innerHTML =
-        "Faça a compra de 100 Poções de recuperação na loja: " +
+        "Faça a compra de 80 Poções de Fadiga na loja: " +
         SomaDaPocaoDeRecuperacao +
-        "/100";
+        "/80";
 
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
-        "Faça a compra de 30 Poções de Vida na loja: " +
+        "Faça a compra de 20 Poções de Vida na loja: " +
         SomaDaPocaoDeVida +
-        "/30";
+        "/20";
 
       treino = 0;
       TurnoDeLutaCentopeia = 0;
@@ -1167,11 +1569,11 @@ function misaoDiariaReceberRecompensa() {
 
   if (dia === 6) {
     if (
-      SomaDaPocaoDeVida > 29 &&
+      SomaDaPocaoDeVida > 19 &&
       SomaDosCristais > 3499 &&
       RecompensaDiaria === 5 &&
       treino === 100 &&
-      SomaDaPocaoDeRecuperacao > 99 &&
+      SomaDaPocaoDeRecuperacao > 79 &&
       SomaDaPedraDeEssenciaParaMissaDiaria > 9
     ) {
       RecompensaDiaria = 6;
@@ -1199,7 +1601,7 @@ function misaoDiariaReceberRecompensa() {
         "Tenha 5000 Cristais de Mana minerados: " + SomaDosCristais + "/5000";
 
       document.getElementById("idMissaoDiariaPresaDeLycan").innerHTML =
-        "Ganhe 10 presas de Lycan: " + Lycan + "/10";
+        "Ganhe 20 presas de Lycan: " + Lycan + "/20 [Derrote os Lycan com Presas de Aço na Dangeon Eminente]";
 
       alert(
         "Receba as recompensas do dia 6 [3 Pontos de atributos - Recuperação total da Fadiga - Caixa misteriosa contém 3 pontos de atributos]",
@@ -1208,7 +1610,7 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById(
         "idRetornoMissaoDiariaPocaoDeRecuperacao",
       ).innerHTML =
-        "Faça a compra de 150 Poções de recuperação na loja: " +
+        "Faça a compra de 150 Poções de Fadiga na loja: " +
         SomaDaPocaoDeRecuperacao +
         "/150";
 
@@ -1223,9 +1625,7 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById("idtreino").innerHTML = "Um novo dia começou";
 
       document.getElementById("idMissaoDiariaPedrasDeEssencia").innerHTML =
-        "Ganhe 11 Pedras de essência: " +
-        SomaDaPedraDeEssenciaParaMissaDiaria +
-        "/11";
+        "Ganhe 11 Pedras de essência: " +  SomaDaPedraDeEssenciaParaMissaDiaria +  "/11";
     } else {
       document.getElementById("idRetornoMissaoDiaria").innerHTML =
         "Missão do dia 6 incompleta";
@@ -1239,7 +1639,7 @@ function misaoDiariaReceberRecompensa() {
       RecompensaDiaria === 6 &&
       treino === 100 &&
       SomaDaPocaoDeRecuperacao > 149 &&
-      Lycan > 9 &&
+      Lycan > 19 &&
       SomaDaPedraDeEssenciaParaMissaDiaria > 10
     ) {
       RecompensaDiaria = 7;
@@ -1267,7 +1667,7 @@ function misaoDiariaReceberRecompensa() {
         "Tenha 7000 Cristais de Mana minerados: " + SomaDosCristais + "/7000";
 
       document.getElementById("idMissaoDiariaPresaDeLycan").innerHTML =
-        "Ganhe 15 presas de Lycan: " + Lycan + "/15";
+        "";
 
       document.getElementById("idMissaoDiariaPedrasDeEssencia").innerHTML =
         "Ganhe 12 Pedras de essência: " +
@@ -1281,14 +1681,14 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById(
         "idRetornoMissaoDiariaPocaoDeRecuperacao",
       ).innerHTML =
-        "Faça a compra de 200 Poções de recuperação na loja: " +
+        "Faça a compra de 180 Poções de Fadiga na loja: " +
         SomaDaPocaoDeRecuperacao +
-        "/200";
+        "/180";
 
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
-        "Faça a compra de 100 Poções de Vida na loja: " +
+        "Faça a compra de 60 Poções de Vida na loja: " +
         SomaDaPocaoDeVida +
-        "/100";
+        "/60";
 
       treino = 0;
       TurnoDeLutaCentopeia = 0;
@@ -1302,12 +1702,12 @@ function misaoDiariaReceberRecompensa() {
 
   if (dia === 8) {
     if (
-      Lycan > 14 &&
-      SomaDaPocaoDeVida > 99 &&
+      Lycan > 19 &&
+      SomaDaPocaoDeVida > 59 &&
       SomaDosCristais > 6999 &&
       RecompensaDiaria === 7 &&
       treino === 100 &&
-      SomaDaPocaoDeRecuperacao > 199 &&
+      SomaDaPocaoDeRecuperacao > 179 &&
       SomaDaPedraDeEssenciaParaMissaDiaria > 11
     ) {
       RecompensaDiaria = 8;
@@ -1345,7 +1745,7 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById(
         "idRetornoMissaoDiariaPocaoDeRecuperacao",
       ).innerHTML =
-        "Faça a compra de 250 Poções de recuperação na loja: " +
+        "Faça a compra de 250 Poções de Fadiga na loja: " +
         SomaDaPocaoDeRecuperacao +
         "/250";
 
@@ -1396,9 +1796,9 @@ function misaoDiariaReceberRecompensa() {
         "Objetivo do dia: " + dia;
 
       document.getElementById("idMissaoDiariaCristais").innerHTML =
-        "Tenha 14.000 Cristais de Mana minerados: " +
+        "Tenha 20.000 Cristais de Mana minerados: " +
         SomaDosCristais +
-        "/14000";
+        "/20000";
 
 
       alert(
@@ -1408,14 +1808,14 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById(
         "idRetornoMissaoDiariaPocaoDeRecuperacao",
       ).innerHTML =
-        "Faça a compra de 350 Poções de recuperação na loja: " +
+        "Faça a compra de 300 Poções de Fadiga na loja: " +
         SomaDaPocaoDeRecuperacao +
-        "/350";
+        "/300";
 
       document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
-        "Faça a compra de 180 Poções de Vida na loja: " +
+        "Faça a compra de 130 Poções de Vida na loja: " +
         SomaDaPocaoDeVida +
-        "/180";
+        "/130";
 
       treino = 0;
       TurnoDeLutaCentopeia = 0;
@@ -1428,15 +1828,15 @@ function misaoDiariaReceberRecompensa() {
   }
     if (dia === 10) {
     if (
-      SomaDaPocaoDeVida > 179 &&
-      SomaDosCristais > 13999 &&
+      SomaDaPocaoDeVida > 129 &&
+      SomaDosCristais > 19999 &&
       RecompensaDiaria === 9 &&
       treino === 100 &&
-      SomaDaPocaoDeRecuperacao > 349
+      SomaDaPocaoDeRecuperacao > 299
     ) {
-      RecompensaDiaria = 11;
+      RecompensaDiaria = 10;
 
-      document.getElementById("idRetornoMissaoDiaria").innerHTML = "Você zerou a Missão Diária!!";
+      document.getElementById("idRetornoMissaoDiaria").innerHTML = "";
 
       fadiga = 0;
       document.getElementById("idfadiga").innerHTML =
@@ -1453,14 +1853,141 @@ function misaoDiariaReceberRecompensa() {
 
       dia = 11;
       document.getElementById("idDiaMissaoDiaria").innerHTML =
+        "Objetivo do dia: " + dia;
+
+      document.getElementById("idMissaoDiariaCristais").innerHTML =
+        "Tenha 25.000 Cristais de Mana minerados: " +
+        SomaDosCristais +
+        "/25000";
+
+        ouro = ouro + 500;
+        document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+      alert("Receba as recompensas do dia 10 [3 Pontos de atributos - Recuperação total da Fadiga - Caixa misteriosa com 500 Moedas]",
+      );
+
+      document.getElementById(
+        "idRetornoMissaoDiariaPocaoDeRecuperacao",
+      ).innerHTML =
+        "Faça a compra de 350 Poções de Fadiga na loja: " +
+        SomaDaPocaoDeRecuperacao +
+        "/350";
+
+      document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
+        "Faça a compra de 150 Poções de Vida na loja: " +
+        SomaDaPocaoDeVida +
+        "/150";
+
+      treino = 0;
+      TurnoDeLutaCentopeia = 0;
+      RecompensaDaMisaoDiaria = 0;
+      document.getElementById("idtreino").innerHTML = "Um novo dia começou";
+    } else {
+      document.getElementById("idRetornoMissaoDiaria").innerHTML =
+        "Missão do dia 10 incompleta";
+    }
+  }
+
+  if (dia === 11) {
+    if (
+      SomaDaPocaoDeVida > 149 &&
+      SomaDosCristais > 24999 &&
+      RecompensaDiaria === 10 &&
+      treino === 100 &&
+      SomaDaPocaoDeRecuperacao > 249
+    ) {
+      RecompensaDiaria = 11;
+
+      document.getElementById("idRetornoMissaoDiaria").innerHTML = "";
+
+      fadiga = 0;
+      document.getElementById("idfadiga").innerHTML =
+        "🪫Fadiga: " + fadiga + "%";
+
+      progresso.setAttribute("style", "width: " + fadiga + "%");
+
+      atributo = atributo + 3;
+      document.getElementById("idatributo").innerHTML =
+        "Disponíveis: " + atributo;
+
+        document.getElementById("idAlertaNoMenuAtributos").innerHTML =
+        "⚠️ Atributos";
+
+      dia = 12;
+      document.getElementById("idDiaMissaoDiaria").innerHTML =
+        "Objetivo do dia: " + dia;
+
+      document.getElementById("idMissaoDiariaCristais").innerHTML =
+        "Tenha 30.000 Cristais de Mana minerados: " +
+        SomaDosCristais +
+        "/30000";
+
+        ouro = ouro + 500;
+        document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+      alert(
+        "Receba as recompensas do dia 11 [3 Pontos de atributos - Recuperação total da Fadiga - Caixa misteriosa com 500 Moedas]",
+      );
+
+      document.getElementById(
+        "idRetornoMissaoDiariaPocaoDeRecuperacao",
+      ).innerHTML =
+        "Faça a compra de 360 Poções de Fadiga na loja: " +
+        SomaDaPocaoDeRecuperacao +
+        "/360";
+
+      document.getElementById("idRetornoMissaoDiariaPocaoDeVida").innerHTML =
+        "Faça a compra de 160 Poções de Vida na loja: " +
+        SomaDaPocaoDeVida +
+        "/160";
+
+      treino = 0;
+      TurnoDeLutaCentopeia = 0;
+      RecompensaDaMisaoDiaria = 0;
+      document.getElementById("idtreino").innerHTML = "Um novo dia começou";
+    } else {
+      document.getElementById("idRetornoMissaoDiaria").innerHTML =
+        "Missão do dia 11 incompleta";
+    }
+  }
+
+  if (dia === 12) {
+    if (
+      SomaDaPocaoDeVida > 159 &&
+      SomaDosCristais > 29999 &&
+      RecompensaDiaria === 11 &&
+      treino === 100 &&
+      SomaDaPocaoDeRecuperacao > 359
+    ) {
+      RecompensaDiaria = 12;
+
+      document.getElementById("idRetornoMissaoDiaria").innerHTML = "✨ Você zerou a Missão Diária!! ✨";
+
+      fadiga = 0;
+      document.getElementById("idfadiga").innerHTML =
+        "🪫Fadiga: " + fadiga + "%";
+
+      progresso.setAttribute("style", "width: " + fadiga + "%");
+
+      atributo = atributo + 3;
+      document.getElementById("idatributo").innerHTML =
+        "Disponíveis: " + atributo;
+
+        document.getElementById("idAlertaNoMenuAtributos").innerHTML =
+        "⚠️ Atributos";
+
+      dia = 13;
+      document.getElementById("idDiaMissaoDiaria").innerHTML =
         "Todos os dias foram realizados";
 
       document.getElementById("idMissaoDiariaCristais").innerHTML =
         "";
 
 
-      alert(
-        "Receba as recompensas do dia 10 [3 Pontos de atributos - Recuperação total da Fadiga - Caixa misteriosa vazia]",
+        ouro = ouro + 500;
+        document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+      alert("Receba as recompensas do dia 12 [3 Pontos de atributos - Recuperação total da Fadiga - Caixa misteriosa com 500 Moedas]",
       );
 
       document.getElementById(
@@ -1477,9 +2004,10 @@ function misaoDiariaReceberRecompensa() {
       document.getElementById("idtreino").innerHTML = "Você zerou a Missão Diária!!";
     } else {
       document.getElementById("idRetornoMissaoDiaria").innerHTML =
-        "Missão do dia 10 incompleta";
+        "Missão do dia 12 incompleta";
     }
   }
+
 
 }
 /*fim da função Objetivo do dia(MISSÃO DIÁRIA)*/
@@ -1533,12 +2061,12 @@ function LutaContraGoblinBotao() {
     progresso.setAttribute("style", "width: " + fadiga + "%");
     document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
 
-    Goblin = Goblin + 1;
+    Goblin = Goblin + 2;
     document.getElementById("idGoblin").innerHTML =
       "🚶‍♂️População: " + Goblin + "/10";
 
-    PedraDeEssencia = PedraDeEssencia + 1;
-    SomaPedraDeEssenciaGoblin = SomaPedraDeEssenciaGoblin + 1;
+    PedraDeEssencia = PedraDeEssencia + 2;
+    SomaPedraDeEssenciaGoblin = SomaPedraDeEssenciaGoblin + 2;
     document.getElementById("idPedrasDeEssenciaGoblin").innerHTML = "💎 Pedras de Essência: " + SomaPedraDeEssenciaGoblin;
 
     document.getElementById("idpedrainventario").innerHTML =  "⚠️ Pedras de Essência: " + PedraDeEssencia;
@@ -1546,13 +2074,14 @@ function LutaContraGoblinBotao() {
       document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
 
     document.getElementById("idQuadroDeRetornoGoblin").innerHTML =
-      "✨ VITÓRIA ✨ Você derrotou um Goblin [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - 1 Pedra de essência]";
+      "✨ VITÓRIA ✨ Você derrotou dois Goblin [Recompensas: 2 ponto de experiência - 8 pontos distribuidos em seus atributos - 2 Pedra de essência]";
 
     if (Goblin > 9) {
      
-      alert("Parabéns você trocou de Título . Novo título: Exterminador de Goblins", );
+      alert("Parabéns você ganhou um novo Título.", );
+      alert("✨ Novo título: Exterminador de Goblins ✨", );
 
-        document.getElementById("idtitulo").innerHTML = "Novo Título disponível";
+        document.getElementById("idtitulo").innerHTML = "Novo Título disponível - Para trocar de Título vá na aba Classe e Títulos";
         document.getElementById("idTituloAlerta").innerHTML = "⚠️";
         document.getElementById("idCheckGoblins").innerHTML =   "⚠️ Título: Exterminador de Goblins";
         document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
@@ -1561,7 +2090,7 @@ function LutaContraGoblinBotao() {
     }
 
     if (dia === 6){
-    SomaDaPedraDeEssenciaParaMissaDiaria = SomaDaPedraDeEssenciaParaMissaDiaria + 1;
+    SomaDaPedraDeEssenciaParaMissaDiaria = SomaDaPedraDeEssenciaParaMissaDiaria + 2;
     document.getElementById("idMissaoDiariaPedrasDeEssencia").innerHTML =
       "Ganhe 10 Pedras de essência: " +
       SomaDaPedraDeEssenciaParaMissaDiaria +
@@ -1576,8 +2105,8 @@ function LutaContraGoblinBotao() {
       "/11";
   }
 
-    experienciaGoblin = experienciaGoblin + 1;
-    experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 1;
+    experienciaGoblin = experienciaGoblin + 2;
+    experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 2;
 
     document.getElementById("idexperiencia").innerHTML =
       "🏆 Experiência: " + experienciaGoblin;
@@ -1588,10 +2117,10 @@ function LutaContraGoblinBotao() {
     document.getElementById("idLutaContraGoblinBotao").innerHTML =
       "Lutar novamente";
 
-    agilidade = agilidade + 1;
-    forca = forca + 1;
-    percepcao = percepcao + 1;
-    inteligencia = inteligencia + 1;
+    agilidade = agilidade + 2;
+    forca = forca + 2;
+    percepcao = percepcao + 2;
+    inteligencia = inteligencia + 2;
     document.getElementById("idagilidade").innerHTML =
       "🦵 Agilidade: " + agilidade;
     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
@@ -1600,15 +2129,42 @@ function LutaContraGoblinBotao() {
 
     document.getElementById("idinteligencia").innerHTML =
       "🧠 Inteligência: " + inteligencia;
+    /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+      /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+
+
 
     /* início da função subir de nível */
 
-    SomaDoNivel = SomaDoNivel + 5;
+    SomaDoNivel = SomaDoNivel + 8;
     if (SomaDoNivel > SomaDoIndicadorDoNivel) {
       document.getElementById("idnivel").innerHTML =
         "Nível: " + EqualizadoDoNivel;
 
-      alert("Level Up");
+        alert("Você subiu de Nível!");
 
       EqualizadoDoNivel = EqualizadoDoNivel + 1;
       SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
@@ -1682,7 +2238,7 @@ document.getElementById("idCheckSaudelongevidade").innerHTML =
       "⚠️ Habilidades";
       
     document.getElementById("idLutaContraKandiaruBotao").innerHTML =
-      "Dangeon fechada";
+      "Você escapou vivo";
 
 
     
@@ -1691,23 +2247,18 @@ document.getElementById("idCheckSaudelongevidade").innerHTML =
     forca = forca + 1;
     percepcao = percepcao + 1;
     inteligencia = inteligencia + 1;
-    document.getElementById("idagilidade").innerHTML =
-      "🦵 Agilidade: " + agilidade;
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
-    document.getElementById("idpercepcao").innerHTML =
-      "👀 Percepção: " + percepcao;
-
-    document.getElementById("idinteligencia").innerHTML =
-      "🧠 Inteligência: " + inteligencia;
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+    document.getElementById("idinteligencia").innerHTML =   "🧠 Inteligência: " + inteligencia;
 
     /*início da função subir de nível*/
-    SomaDoNivel = SomaDoNivel + 5;
-
+    SomaDoNivel = SomaDoNivel + 4;
     if (SomaDoNivel > SomaDoIndicadorDoNivel) {
       document.getElementById("idnivel").innerHTML =
         "Nível: " + EqualizadoDoNivel;
 
-      alert("Level Up");
+      alert("Você subiu de Nível!");
 
       EqualizadoDoNivel = EqualizadoDoNivel + 1;
       SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
@@ -1748,7 +2299,7 @@ function AnalisarLutaContraKandiaruBotao() {
 
   if (inteligencia < 12) {
     document.getElementById("idInteligenciaKandiaru").innerHTML =
-      "🧠 Inteligência: 11/" + inteligencia + " ❌";
+      "🧠 Inteligência: 11/" + inteligencia + " ❌ - Melhore seu Atributo Inteligência na Aba Atributos";
   }
 
   if (inteligencia > 11) {
@@ -1758,7 +2309,7 @@ function AnalisarLutaContraKandiaruBotao() {
 
   if (vida !== 100) {
     document.getElementById("idVidaKandiaru").innerHTML =
-      "❤️ Vida: 100%/" + vida + "%" + " ❌";
+      "❤️ Vida: 100%/" + vida + "%" + " ❌ - Para repor vida, vá em Loja ➔ Poções e compre Poção de vida";
   }
 
   if (vida === 100) {
@@ -1768,12 +2319,12 @@ function AnalisarLutaContraKandiaruBotao() {
 
   if (fadiga !== 99) {
     document.getElementById("idFadigaKandiaru").innerHTML =
-      "🪫Fadiga: 0%/" + fadiga + "%" + " ❌";
+      "🪫Fadiga: 100%/" + fadiga + "%" + " ❌ - Para repor a Fadiga, vá em Loja ➔ Poções e compre Poção de Fadiga";
   }
 
   if (fadiga === 0) {
     document.getElementById("idFadigaKandiaru").innerHTML =
-      "🪫Fadiga: 0%/" + fadiga + "%" + " ✅";
+      "🪫Fadiga: 100%/" + fadiga + "%" + " ✅";
   }
 
   if (agilidade > 9) {
@@ -1787,6 +2338,194 @@ function AnalisarLutaContraKandiaruBotao() {
 }
 
 /*FIM DO BOTÃO ANALISAR LUTA Kandiaru*/
+
+/*INÍCIO DA LUTA DO Kandiaru1*/
+function LutaContraKandiaru1Botao() {
+  if (vida < 10) { document.getElementById("idQuadroDeRetornoKandiaru").innerHTML =  "Você precisa de no mínimo 10% de vida para seguir com a luta"; } 
+  
+  else if (vida > 9 && Kandiaru1 === 2) {  document.getElementById("idQuadroDeRetornoKandiaru1").innerHTML =  "✨ Você já sobreviveu ao Primeiro Mandamento ✨";} 
+  
+  else if ( vida > 9 &&  agilidade > 9 && Kandiaru1 === 1  ) {
+    Kandiaru1 = 2;
+
+    document.getElementById("idKandiaru1").innerHTML = "⚔️ Rounds da batalha: 1/1";
+
+    vida = vida - 10;
+    if (vida < 1) {
+      vida = 0;
+    }
+
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    document.getElementById("idQuadroDeRetornoKandiaru1").innerHTML =
+      "✨ VITÓRIA ✨ Você sobreviveu ao Primeiro Mandamento, siga para a próxima Estátua de Deus";
+
+      
+    document.getElementById("idLutaContraKandiaru1Botao").innerHTML =  "Você escapou vivo";
+  } 
+  
+  
+  else {
+    vida = vida - 10;
+    if (vida < 1) {
+      vida = 0;
+    }
+
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    document.getElementById("idQuadroDeRetornoKandiaru1").innerHTML =
+      "☠️ DERROTA ☠️  Tente melhorar os seus atributos antes de lutar novamente ";
+
+    document.getElementById("idLutaContraKandiaru1Botao").innerHTML =
+      "Tentar novamente";
+  }
+}
+/*FIM DA LUTA DO Kandiaru1*/
+
+
+/*INÍCIO DO BOTÃO ANALISAR LUTA Kandiaru1*/
+function AnalisarLutaContraKandiaru1Botao() {
+  document.getElementById("idQuadroDeRetornoKandiaru1").innerHTML =
+    "Análise dos seus Status e da Estátua de Deus";
+
+  document.getElementById("idLutaContraKandiaru1Botao").innerHTML =
+    "Seguir com a Luta";
+
+  if (vida < 10) {
+    document.getElementById("idVidaKandiaru1").innerHTML =
+      "❤️ Vida: 10%/" + vida + "%" + " ❌ - Sua vida é inferior ao que será perdida, compre Poção de Vida na Loja ➡ Poções";
+  }
+
+  if (vida > 9) {
+    document.getElementById("idVidaKandiaru1").innerHTML =
+      "❤️ Vida: 10%/" + vida + "%" + " ✅ - Sua vida é maior que o necessário, você pode seguir com a luta";
+  }
+
+  if (agilidade > 9) {
+    document.getElementById("idAgilidadeKandiaru1").innerHTML =
+      "🦵 Agilidade: 9/" + agilidade + " ✅ - Sua Agilidade é superior ao do Inimigo, você pode seguir com a luta";
+  }
+
+  if (agilidade < 10) {
+    document.getElementById("idAgilidadeKandiaru1").innerHTML =
+      "🦵 Agilidade: 9/" + agilidade + " ❌";
+  }
+}
+
+/*FIM DO BOTÃO ANALISAR LUTA Kandiaru1*/
+
+/*INÍCIO DO BOTÃO ANALISAR LUTA Kandiaru2*/
+function AnalisarLutaContraKandiaru2Botao() {
+  document.getElementById("idQuadroDeRetornoKandiaru2").innerHTML =    "Análise dos seus Status e da Estátua de Deus";
+
+  document.getElementById("idLutaContraKandiaru2Botao").innerHTML =    "Seguir com a Luta";
+
+  if (vida < 40) {
+    document.getElementById("idVidaKandiaru2").innerHTML =
+      "❤️ Vida: 40%/" + vida + "%" + " ❌";
+  }
+
+  if (vida > 39) {
+    document.getElementById("idVidaKandiaru2").innerHTML =
+      "❤️ Vida: 40%/" + vida + "%" + " ✅";
+  }
+
+   if (fadiga > 90) {
+    document.getElementById("idFadigaKandiaru2").innerHTML =
+      "🪫Fadiga: 10%/" + fadiga + "%" + " ❌";
+  }
+
+  if (fadiga < 91) {
+    document.getElementById("idFadigaKandiaru2").innerHTML =
+      "🪫Fadiga: 10%/" + fadiga + "%" + " ✅";
+  }
+
+  if (agilidade > 9) {
+    document.getElementById("idAgilidadeKandiaru2").innerHTML =
+      "🦵 Agilidade: 9/" + agilidade + " ✅";
+  }
+
+  if (agilidade < 10) {
+    document.getElementById("idAgilidadeKandiaru2").innerHTML =
+      "🦵 Agilidade: 9/" + agilidade + " ❌";
+  }
+
+   if (inteligencia < 11) {
+    document.getElementById("idInteligenciaKandiaru2").innerHTML =
+      "🧠 Inteligência: 10/" + inteligencia + " ❌ - Melhore seu Atributo Inteligência na Aba Atributos";
+  }
+
+  if (inteligencia > 10) {
+    document.getElementById("idInteligenciaKandiaru2").innerHTML =
+      "🧠 Inteligência: 10/" + inteligencia + " ✅";
+  }
+
+}
+
+/*FIM DO BOTÃO ANALISAR LUTA Kandiaru2*/
+
+/*INÍCIO DA LUTA DO Kandiaru2*/
+function LutaContraKandiaru2Botao() {
+  if (vida < 40 || fadiga > 90) {  document.getElementById("idQuadroDeRetornoKandiaru2").innerHTML =
+      "Você está sem vida ou com a fadiga em 100%";
+  } else if (vida > 39 && fadiga < 91 && Kandiaru2 === 2) {
+    document.getElementById("idQuadroDeRetornoKandiaru2").innerHTML =
+      "✨ Você já sobreviveu ao Segundo Mandamento, siga para a próxima Estátua de Deus ✨";
+  } else if (
+    vida > 39 &&
+    fadiga < 91 &&
+    agilidade > 9 &&
+    Kandiaru2 === 1 &&
+    inteligencia > 10
+  ) {
+    Kandiaru2 = 2;
+ 
+    document.getElementById("idKandiaru2").innerHTML = "⚔️ Rounds da batalha: 1/1";
+
+    vida = vida - 40;
+    if (vida < 1) {
+      vida = 0;
+    }
+  
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+ 
+    fadiga = fadiga + 10;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    document.getElementById("idQuadroDeRetornoKandiaru2").innerHTML =
+      "✨ VITÓRIA ✨ Você sobreviveu ao Segundo Mandamento, siga para a próxima Estátua de Deus";
+
+  } else {
+    vida = vida - 40;
+    if (vida < 1) {
+      vida = 0;
+    }
+
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 10;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    document.getElementById("idQuadroDeRetornoKandiaru2").innerHTML =
+      "☠️ DERROTA ☠️  Tente melhorar os seus atributos antes de lutar novamente";
+
+    document.getElementById("idLutaContraKandiaru2Botao").innerHTML =
+      "Tentar novamente";
+  }
+}
+/*FIM DA LUTA DO Kandiaru2*/
 
 /*INÍCIO DO BOTÃO ANALISAR LUTA GOBLIN*/
 function AnalisarLutaContraGoblinBotao() {
@@ -1841,6 +2580,14 @@ function AnalisarLutaContraGoblinBotao() {
 
 /*INÍCIO DA FUNÇÃO ATRIBUIR PONTOS NA AGILIDADE*/
 function funcaoatribuiragilidade() {
+
+/*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
   if (atributo > 0) {
     atributo = atributo - 1;
 
@@ -1863,7 +2610,7 @@ function funcaoatribuiragilidade() {
       document.getElementById("idnivel").innerHTML =
         "Nível: " + EqualizadoDoNivel;
 
-      alert("Level Up");
+       alert("Você subiu de Nível!");
 
       EqualizadoDoNivel = EqualizadoDoNivel + 1;
       SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
@@ -1878,6 +2625,14 @@ function funcaoatribuiragilidade() {
 
 /*INÍCIO DA FUNÇÃO ATRIBUIR PONTOS NA INTELIGÊNCIA*/
 function funcaoatribuirinteligencia() {
+
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
   if (atributo > 0) {
     atributo = atributo - 1;
 
@@ -1900,7 +2655,7 @@ function funcaoatribuirinteligencia() {
       document.getElementById("idnivel").innerHTML =
         "Nível: " + EqualizadoDoNivel;
 
-      alert("Level Up");
+      alert("Você subiu de Nível!");
 
       EqualizadoDoNivel = EqualizadoDoNivel + 1;
       SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
@@ -1941,7 +2696,7 @@ function FuncaoSaudeElogenvidade() {
 
   } else if (Kandiaru === 1) {
     document.getElementById("idRetornoSaudeElogenvidade").innerHTML =
-      "Habilidade será liberada ao derrotar o Kandiaru";
+      "Habilidade será liberada ao derrotar a Estátua de Deus";
   } else {
     document.getElementById("idRetornoSaudeElogenvidade").innerHTML =
       "Os requisitos desta habilidade não foram cumpridos";
@@ -2015,7 +2770,7 @@ else if (SaudeElogenvidadeNivel2 === 1 && experienciaParaUsarNasHabilidades ){
 }
 /*FIM DA HABILIDADE SUBIR O NÍVEL DA SAÚDE E LONGEVIDADE*/
 
-/*INÍCIO DA LUTA DO LYCAN*/
+/*INÍCIO DA LUTA LYCAN*/
 function LutaContraLycanBotao() {
   if (vida < 30 || fadiga > 70) {
     document.getElementById("idQuadroDeRetornoLycan").innerHTML =
@@ -2045,38 +2800,35 @@ function LutaContraLycanBotao() {
     progresso.setAttribute("style", "width: " + fadiga + "%");
     document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
 
-    Lycan = Lycan + 1;
+    Lycan = Lycan + 2;
     document.getElementById("idLycan").innerHTML =
       "🚶‍♂️População: " + Lycan + "/20";
 
     if (dia === 7) {
       document.getElementById("idMissaoDiariaPresaDeLycan").innerHTML =
-        "Ganhe 10 presas de Lycan: " + Lycan + "/10";
+        "Ganhe 20 presas de Lycan: " + Lycan + "/20";
     }
 
-    if (dia === 8) {
-      document.getElementById("idMissaoDiariaPresaDeLycan").innerHTML =
-        "Ganhe 15 presas de Lycan: " + Lycan + "/15";
-    }
+  
 
-    PresaDeLycan = PresaDeLycan + 1;
-    SomaDaPresaDeLycan = SomaDaPresaDeLycan + 1;
+    PresaDeLycan = PresaDeLycan + 2;
+    SomaDaPresaDeLycan = SomaDaPresaDeLycan + 2;
 
-    document.getElementById("idPresaDeLycan").innerHTML =
-      "💰 Presas de Lycan: " + SomaDaPresaDeLycan;
+    document.getElementById("idPresaDeLycan").innerHTML = "💰 Presas de Lycan: " + SomaDaPresaDeLycan;
 
     document.getElementById("idPresainventario").innerHTML = "⚠️ Presa de Lycan: " + PresaDeLycan;
 
     document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
 
     document.getElementById("idQuadroDeRetornoLycan").innerHTML =
-      "✨ VITÓRIA ✨ Você derrotou um Lycan [Recompensas: 2 pontos de experiência - 4 pontos distribuidos em seus atributos - 1 Presa de Lycan]";
+      "✨ VITÓRIA ✨ Você derrotou dois Lycan [Recompensas: 4 pontos de experiência - 8 pontos distribuidos em seus atributos - 2 Presas de Lycan]";
 
     if (Lycan > 19) {
      
-      alert("Parabéns você trocou de Título. Novo título: Assassino de Lobos",);
-     
-      document.getElementById("idtitulo").innerHTML = "Novo Título disponível";
+      alert("Parabéns você ganhou um novo Título.",);
+     alert("✨ Novo título: Assassino de Lobos ✨",);
+
+      document.getElementById("idtitulo").innerHTML = "Novo Título disponível - Para trocar de Título vá na aba Classe e Títulos";
       document.getElementById("idTituloAlerta").innerHTML = "⚠️";
       document.getElementById("idCheckLobos").innerHTML =   "⚠️ Título: Assassino de Lobos";
       document.getElementById("idTituloRetornoLobos",).innerHTML = "";
@@ -2086,10 +2838,9 @@ function LutaContraLycanBotao() {
        
     }
 
-    experienciaLican = experienciaLican + 2;
-    experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 2;
-    document.getElementById("idexperienciaLycan").innerHTML =
-      "🏆 Experiência: " + experienciaLican;
+    experienciaLican = experienciaLican + 4;
+    experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 4;
+    document.getElementById("idexperienciaLycan").innerHTML = "🏆 Experiência: " + experienciaLican;
 
     document.getElementById(
       "idContarExperienciaNoQuadroHabilidades",
@@ -2098,10 +2849,10 @@ function LutaContraLycanBotao() {
     document.getElementById("idLutaContraLycanBotao").innerHTML =
       "Lutar novamente";
 
-    agilidade = agilidade + 1;
-    forca = forca + 1;
-    percepcao = percepcao + 1;
-    inteligencia = inteligencia + 1;
+    agilidade = agilidade + 2;
+    forca = forca + 2;
+    percepcao = percepcao + 2;
+    inteligencia = inteligencia + 2;
     document.getElementById("idagilidade").innerHTML =
       "🦵 Agilidade: " + agilidade;
     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
@@ -2110,53 +2861,392 @@ function LutaContraLycanBotao() {
 
     document.getElementById("idinteligencia").innerHTML =
       "🧠 Inteligência: " + inteligencia;
+    /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+/*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
 
     /*início da função subir de nível*/
 
-    SomaDoNivel = SomaDoNivel + 5;
+    SomaDoNivel = SomaDoNivel + 8;
     if (SomaDoNivel > SomaDoIndicadorDoNivel) {
       document.getElementById("idnivel").innerHTML =
         "Nível: " + EqualizadoDoNivel;
 
-      alert("Level Up");
+       alert("Você subiu de Nível!");
 
       EqualizadoDoNivel = EqualizadoDoNivel + 1;
       SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
     }
     /*Fim da função subir de nível*/
 
-    /* Início de remover Arrancada*/
-    if (Arrancada === 1) {
-      Arrancada = 0;
+    /*Início de remover a habilidade Domínio do Monarca*/
+if (DominioDoMonarca === 1) {
 
-      if (ArrancadaNivel2 === 0){
-agilidade = agilidade - 10;
-}
-if (ArrancadaNivel2 === 1){
-agilidade = agilidade - 20;
+  DominioDoMonarca = 0;
+  
+  agilidade = agilidade - 20;
+  forca = forca - 20;
+  percepcao = percepcao - 20;
+  inteligencia = inteligencia - 20;
+  document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = "";
+  document.getElementById("idCheckDominioDoMonarca").innerHTML = "Habilidade: Domínio do Monarca";
+  document.getElementById("idRetornoDominioDoMonarca").innerHTML = "";  
+  }
+  /* Fim de remover a habilidade Domínio do Monarca */
+  
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
 }
 
-      document.getElementById("idagilidade").innerHTML =
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+  
+       /* Início do remover a Sombra do Igris*/
+    if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+      SombraIgris = 0;
+      document.getElementById("idRetornoExtracao1").innerHTML = "";
+      document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+  
+      agilidade = agilidade - 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+      forca = forca - 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+      percepcao = percepcao - 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+      inteligencia = inteligencia - 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+      }
+  /* Fim do remover a Sombra do Igris*/
+  
+   /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+  
+  /* Início do remover a Sombra do Tank*/
+  if (SombraTank === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+  SombraTank = 0;
+  document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+  document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+  
+  agilidade = agilidade - 48;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 46;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 28;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 22;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tank*/
+  
+  /* Início do remover a Sombra do Iron*/
+  if (SombraIron === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+  SombraIron = 0;
+  document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+  document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+  
+  agilidade = agilidade - 90;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 140;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 70;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 40;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Iron*/
+  
+  /* Início do remover a Sombra do Tusk Xamã das Sombras*/
+  if (SombraTusk === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+  SombraTusk = 0;
+  document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+  document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+  
+  agilidade = agilidade - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 100;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+  
+   /* Início do remover a Sombra do Kaisel - Rank Dragão*/
+   if (SombraKaisel === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 50;
+      forcaDasSombras = forcaDasSombras - 100;
+      percepcaoDasSombras = percepcaoDasSombras - 30;
+      inteligenciaDasSombras = inteligenciaDasSombras - 50;
+
+    SombraKaisel = 0;
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML = "";
+    document.getElementById("idChecDoKaisel").innerHTML = "Kaisel - Xamã das Sombras";
+    
+    agilidade = agilidade - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselAgilidade").innerHTML = "";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+    
+    forca = forca - 100;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselForca").innerHTML = "";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+    
+    percepcao = percepcao - 30;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselPercepcao").innerHTML = "";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+    
+    inteligencia = inteligencia - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselInteligencia").innerHTML = "";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+    }
+    /* Fim do remover a Sombra do Kaisel - Rank Dragão*/
+
+  /*Início do remover a habilidade Provocar*/
+  
+  if (Provocar === 1) {
+  
+      Provocar = 0;
+      
+  
+    agilidade = agilidade - 40;
+    percepcao = percepcao - 10;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  
+    document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+    document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";
+  
+    document.getElementById("idCheckProvocar").innerHTML = "Habilidade: Provocar";
+    document.getElementById("idRetornoProvocar").innerHTML = "";
+  }
+  /* Fim do remover a habilidade Provocar*/
+  
+   /*Início de remover a habilidade Fortalecimento*/
+    if (Fortalecimento === 1) {
+  
+        Fortalecimento = 0;
+        
+        agilidade = agilidade - 10;
+        forca = forca - 10;
+        percepcao = percepcao - 10;
+        inteligencia = inteligencia - 10;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+        document.getElementById("idCheckFortalecimento").innerHTML = "Habilidade: Fortalecimento";
+        document.getElementById("idRetornoFortalecimento").innerHTML = "";  
+    }
+    /* Fim de remover a habilidade Fortalecimento */
+  
+  /* Início de remover Arrancada*/
+  if (Arrancada === 1){
+  
+  Arrancada = 0;
+  
+  if (ArrancadaNivel2 === 0){
+  agilidade = agilidade - 10;
+  }
+  if (ArrancadaNivel2 === 1){
+  agilidade = agilidade - 20;
+  }
+  
+   document.getElementById("idagilidade").innerHTML =
         "🦵 Agilidade: " + agilidade;
-
+  
         document.getElementById("idCheckArrancada").innerHTML = "Habilidade: Arrancada";
         document.getElementById("idRetornoArrancada").innerHTML = "";
         document.getElementById("idRetornoArrancadaNoStatus").innerHTML = "";
-    }
-    /*Fim de remover Arrancada */
-
-    /*Início de remover Intenção Assassina */
-    if (Assassina === 1) {
-
-      Assassina = 0;
+  
+  }
+  /* Fim de remover Arrancada*/
+  
+  /* Início de remover Intenção Assassina */
+  if (Assassina === 1){
+  
+  Assassina = 0;
       agilidade = agilidade - 5;
-
+  
       document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
       document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
       document.getElementById("idRetornoAssassina").innerHTML = "";
       document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
+  
+  }
+  /*Fim de remover Intenção Assassina*/
+  
+  /* Início de remover Furtividade */
+  if (Furtividade === 1){
+  
+    Furtividade = 0;
+    
+    agilidade = agilidade - 30;
+    
+     document.getElementById("idagilidade").innerHTML =
+          "🦵 Agilidade: " + agilidade;
+    
+    document.getElementById("idCheckFurtividade").innerHTML = "Habilidade: Furtividade";
+    document.getElementById("idRetornoFurtividade").innerHTML = "";
+    document.getElementById("idRetornoFurtividadeNoStatus").innerHTML = "";
+    
     }
-    /* Fim de remover Intenção Assassina */
+    /*Fim de remover Furtividade*/
   } else {
     vida = vida - 30;
     if (vida < 1) {
@@ -2180,7 +3270,7 @@ agilidade = agilidade - 20;
       "Tentar novamente";
   }
 }
-/*FIM DA LUTA DO LYCAN*/
+/*FIM DA LUTA LYCAN*/
 
 /*INÍCIO DO BOTÃO ANALISAR LUTA LYCAN*/
 function AnalisarLutaContraLycanBotao() {
@@ -2212,7 +3302,7 @@ function AnalisarLutaContraLycanBotao() {
 
   if (agilidade < 31) {
     document.getElementById("idAgilidadeLycan").innerHTML =
-      "🦵 Agilidade: 30/" + agilidade + " ❌";
+      "🦵 Agilidade: 30/" + agilidade + " ❌ - Dica: Para melhorar seus Atributos você pode comprar equipamentos na aba Loja ➡ Equipamentos";
   }
 
   if (agilidade > 30) {
@@ -2227,23 +3317,28 @@ function AnalisarLutaContraLycanBotao() {
 
   if (forca < 45) {
     document.getElementById("idForcaLycan").innerHTML =
-      "💪 Força: 44/" + forca + " ❌";
+      "💪 Força: 44/" + forca + " ❌ - Dica: Para melhorar seus Atributos você pode comprar equipamentos na aba Loja ➡ Equipamentos";
   }
 }
 
 /* FIM DO BOTÃO ANALISAR LUTA LYCAN */
 
+
 /* INÍCIO DA LUTA Kasaka */
 function LutaContraKasakaBotao() {
 
-  if (vida < 70 || fadiga > 30) {
+  if (Golen === 1){
+      document.getElementById("idQuadroDeRetornoKasaka").innerHTML =   "Você optou por lutar contra o Golem de Pedra";
+  }
+
+  else if (vida < 70 || fadiga > 30) {
     document.getElementById("idQuadroDeRetornoKasaka").innerHTML =
       "Vida ou Fadiga insuficiente";
   } 
   
   else if (vida > 0 && fadiga < 100 && Kasaka > 0) {
     document.getElementById("idQuadroDeRetornoKasaka").innerHTML =
-      "✨ Você derrotou Kasaka o Chefe da Dangeon✨";
+      "✨ Você já derrotou Kasaka o Chefe da Dangeon✨";
   } 
   
   else if (
@@ -2253,6 +3348,9 @@ function LutaContraKasakaBotao() {
     agilidade > 50 &&
     Kasaka < 2
   ) {
+
+     mostrarEstrela(); /* Efeito Estrela 2 */
+
     vida = vida - 70;
     if (vida < 1) {
       vida = 0;
@@ -2275,14 +3373,19 @@ function LutaContraKasakaBotao() {
     PedraDeEssencia = PedraDeEssencia + 1;
     SomaPedraDeEssenciaKasaka = SomaPedraDeEssenciaKasaka + 1;
 
+    document.getElementById("idNivelDoRank").innerHTML = "Rank: D ⭐⭐";
+    alert("Parabéns você subiu do Rank E para o Rank D",);
+
     document.getElementById("idPedrasDeEssenciaKasaka").innerHTML =
       "💎 Pedras de Essência: " + SomaPedraDeEssenciaKasaka;
     document.getElementById("idpedrainventario").innerHTML = "⚠️ Pedras de Essência: " + PedraDeEssencia;
 
-      document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
+     
 
     document.getElementById("idQuadroDeRetornoKasaka").innerHTML =
       "✨ VITÓRIA ✨ Você derrotou a Kasaka [Recompensas: 4 pontos de experiência - 4 pontos distribuidos em seus atributos - 1 Pedra de essência - Adaga Presa Venenosa de Kasaka - Habilidade: Arrancada]";
+
+       document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
 
     document.getElementById("idCheckArrancada").innerHTML =
       "⚠️ Habilidade: Arrancada";
@@ -2343,14 +3446,39 @@ function LutaContraKasakaBotao() {
     document.getElementById("idinteligencia").innerHTML =
       "🧠 Inteligência: " + inteligencia;
 
+    /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+      /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
     /* início da função subir de nível */
 
-    SomaDoNivel = SomaDoNivel + 5;
+    SomaDoNivel = SomaDoNivel + 4;
     if (SomaDoNivel > SomaDoIndicadorDoNivel) {
       document.getElementById("idnivel").innerHTML =
         "Nível: " + EqualizadoDoNivel;
 
-      alert("Level Up");
+      alert("Você subiu de Nível!");
 
       EqualizadoDoNivel = EqualizadoDoNivel + 1;
       SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
@@ -2432,6 +3560,204 @@ function AnalisarLutaContraKasakaBotao() {
 
 /*FIM DO BOTÃO ANALISAR LUTA Kasaka*/
 
+/*INÍCIO DO BOTÃO ANALISAR LUTA GOLEM DE PEDRA */
+function AnalisarLutaContraGolenBotao() {
+  document.getElementById("idQuadroDeRetornoGolen").innerHTML =
+    "Análise dos seus Status e do Golem";
+
+  document.getElementById("idLutaContraGolenBotao").innerHTML =
+    "Seguir com a Luta";
+
+  if (vida < 60) {
+    document.getElementById("idVidaGolen").innerHTML =
+      "❤️ Vida: 60%/" + vida + "%" + " ❌";
+  }
+
+  if (vida > 59) {
+    document.getElementById("idVidaGolen").innerHTML =
+      "❤️ Vida: 60%/" + vida + "%" + " ✅";
+  }
+
+  if (fadiga > 40) {
+    document.getElementById("idFadigaGolen").innerHTML =
+      "🪫Fadiga: 60%/" + fadiga + "%" + " ❌";
+  }
+
+  if (fadiga < 41) {
+    document.getElementById("idFadigaGolen").innerHTML =
+      "🪫Fadiga: 60%/" + fadiga + "%" + " ✅";
+  }
+
+  if (agilidade < 51) {
+    document.getElementById("idAgilidadeGolen").innerHTML =
+      "🦵 Agilidade: 50/" + agilidade + " ❌";
+  }
+
+  if (agilidade > 50) {
+    document.getElementById("idAgilidadeGolen").innerHTML =
+      "🦵 Agilidade: 50/" + agilidade + " ✅";
+  }
+
+  if (forca > 50) {
+    document.getElementById("idForcaGolen").innerHTML =
+      "💪 Força: 50/" + forca + " ✅";
+  }
+
+  if (forca < 51) {
+    document.getElementById("idForcaGolen").innerHTML =
+      "💪 Força: 50/" + forca + " ❌";
+  }
+}
+
+/*FIM DO BOTÃO ANALISAR LUTA GOLEM DE PEDRA*/
+
+/* INÍCIO DA LUTA GOLEM DE PEDRA */
+function LutaContraGolenBotao() {
+
+  if (Kasaka === 1){
+document.getElementById("idQuadroDeRetornoGolen").innerHTML = "Você optou por lutar contra a Kasaka";
+  }
+  else if (vida < 60 || fadiga > 40) {
+    document.getElementById("idQuadroDeRetornoGolen").innerHTML = "Vida ou Fadiga insuficiente";
+  } 
+  
+  else if (vida > 0 && fadiga < 100 && Golen > 0) {
+    document.getElementById("idQuadroDeRetornoGolen").innerHTML =  "✨ Você já derrotou o Golem Chefe da Dangeon Break✨";
+  } 
+  
+  else if (
+    vida > 59 &&
+    fadiga < 41 &&
+    forca > 50 &&
+    agilidade > 50 &&
+    Golen < 2
+  ) {
+
+     mostrarEstrela(); /* Efeito Estrela 2 */
+
+      atributo = atributo + 25;
+      document.getElementById("idatributo").innerHTML =   "Disponíveis: " + atributo;
+  
+        document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
+
+    vida = vida - 60;
+    if (vida < 1) {
+      vida = 0;
+    }
+
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 60;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    Golen = Golen + 1;
+    document.getElementById("idGolen").innerHTML = "🚶‍♂️População: " + Golen + "/1";
+
+    PedraDeEssencia = PedraDeEssencia + 1;
+    SomaPedraDeEssenciaGolen = SomaPedraDeEssenciaGolen + 1;
+
+    document.getElementById("idNivelDoRank").innerHTML = "Rank: D ⭐⭐";
+    alert("Parabéns você subiu do Rank E para o Rank D",);
+
+    document.getElementById("idPedrasDeEssenciaGolen").innerHTML = "💎 Pedras de Essência: " + SomaPedraDeEssenciaGolen;
+    document.getElementById("idpedrainventario").innerHTML = "⚠️ Pedras de Essência: " + PedraDeEssencia;
+
+      document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
+
+    document.getElementById("idQuadroDeRetornoGolen").innerHTML =
+      "✨ VITÓRIA ✨ Você derrotou o Golem [Recompensas: 4 pontos de experiência  - 1 Pedra de essência - 25 Pontos de Atributos para distribuir como quiser - Equipamento Martelo do Golem de Pedra]";
+
+ document.getElementById("idItemMarteloGolemAdquirida").innerHTML = "⚠️ Martelo do Golem de Pedra";
+
+    SomaDaPedraDeEssenciaParaMissaDiaria =   SomaDaPedraDeEssenciaParaMissaDiaria + 1;
+
+      if (dia === 6) {
+        document.getElementById("idMissaoDiariaPedrasDeEssencia").innerHTML =
+          "Ganhe 10 Pedras de essência: " +
+          SomaDaPedraDeEssenciaParaMissaDiaria +
+          "/10";}
+
+    if (dia === 7) {
+      document.getElementById("idMissaoDiariaPedrasDeEssencia").innerHTML =
+        "Ganhe 11 Pedras de essência: " +
+        SomaDaPedraDeEssenciaParaMissaDiaria +
+        "/11";
+    }
+
+    if (dia === 8) {
+      document.getElementById("idMissaoDiariaPedrasDeEssencia").innerHTML =
+        "Ganhe 12 Pedras de essência: " +
+        SomaDaPedraDeEssenciaParaMissaDiaria +
+        "/12";
+    }
+
+    if (dia > 8) {
+      document.getElementById("idMissaoDiariaPedrasDeEssencia").innerHTML =
+        "";
+    }
+
+    experienciaGolen = experienciaGolen + 4;
+    experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 4;
+    document.getElementById("idexperienciaGolen").innerHTML =  "🏆 Experiência: " + experienciaGolen;
+
+    document.getElementById( "idContarExperienciaNoQuadroHabilidades", ).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+
+    document.getElementById("idLutaContraGolenBotao").innerHTML = "Golem derrotado";
+
+    /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+      /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+  } else {
+    vida = vida - 60;
+    if (vida < 1) {
+      vida = 0;
+    }
+
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 60;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    document.getElementById("idQuadroDeRetornoGolen").innerHTML =
+      "☠️ DERROTA - Tente melhorar os seus atributos antes de lutar novamente ☠️";
+
+    document.getElementById("idLutaContraGolenBotao").innerHTML =
+      "Tentar novamente";
+  }
+}
+/*FIM DA LUTA DO GOLEM DE PEDRA*/
   
   /*Início da função vender Presas de Lycan*/
   
@@ -2475,18 +3801,27 @@ for (var i = 0; i < 5; i++) {
         "Presa de Lycan insuficiente";
     }
   }
-  
+   /*Fim da função vender Presas de Lycan*/
+
+
   /* INÍCIO VENDER CRISTAIS DE MANA*/
   function funcaovendercristal() {
     
-    document.getElementById("idAlertaNoMenuInventario").innerHTML =
-    "Inventário";
+    document.getElementById("idAlertaNoMenuInventario").innerHTML =  "Inventário";
 
-     /*Início da função vender cristais 100*/
-  if (cristal > 99)
-    if (cristal > 99) {
+     /*Início da função vender cristais 1000*/
+    if (cristal > 999){
 
-       /*INÍCIO DOS EFEITOS DE MOEDAS NA COMPRA $ 1*/
+       document.getElementById("idvendercristal").innerHTML =  "Venda realizada com sucesso";
+  
+      cristal = cristal - 1000;
+      document.getElementById("idcristal").innerHTML = "Cristais de Mana no Inventário: " + cristal;
+      document.getElementById("idcristalinventario").innerHTML =  "Cristais de Mana: " + cristal;
+  
+      ouro = ouro + 100;
+      document.getElementById("idouro").innerHTML = "Ouro: " + ouro;   
+      
+       /*INÍCIO DOS EFEITOS DE MOEDAS NA COMPRA $ */
        var moedas = document.getElementById("moedas");
 var direcoes = ["direita", "esquerda", "cima", "baixo"];
 for (var i = 0; i < 5; i++) {
@@ -2504,45 +3839,26 @@ for (var i = 0; i < 5; i++) {
     moeda.parentNode.removeChild(moeda);
   }, 2000, moeda);
 }      
- /*FIM DOS EFEITOS DE MOEDAS NA COMPRA $ 1*/
+ /*FIM DOS EFEITOS DE MOEDAS NA COMPRA $ */
+    } 
+ /*Fim da função vender cristais 1000*/
 
-       document.getElementById("idvendercristal").innerHTML =
-        "Venda realizada com sucesso";
+/*Início da função vender cristais 100*/
+    else if (cristal > 99) {
+
+       document.getElementById("idvendercristal").innerHTML =  "Venda realizada com sucesso";
   
       cristal = cristal - 100;
   
-      document.getElementById("idcristal").innerHTML =
-        "Cristais de Mana: " + cristal;
+      document.getElementById("idcristal").innerHTML = "Cristais de Mana no Inventário: " + cristal;
   
-      document.getElementById("idcristalinventario").innerHTML =
-        "Cristais de Mana: " + cristal;
+      document.getElementById("idcristalinventario").innerHTML =  "Cristais de Mana: " + cristal;
   
       ouro = ouro + 10;
   
       document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
 
-        
-
-    } else {
-      document.getElementById("idminerarcristal").innerHTML = "";
-  
-      document.getElementById("idatributopercepcao").innerHTML = "";
-  
-      document.getElementById("idvendercristal").innerHTML =
-        "Cristais insuficiente";
-  
-        document.getElementById("idAlertaNoMenuInventario").innerHTML =
-        "Inventário";
-    
-  }
-  
-  /* Fim da função vender cristais 100*/
-  
-    /* Início da função vender cristais 10*/
-    else {
-    if (cristal > 9) {
-
- /*INÍCIO DOS EFEITOS DE MOEDAS NA COMPRA $ 1*/
+         /*INÍCIO DOS EFEITOS DE MOEDAS NA COMPRA $ */
        var moedas = document.getElementById("moedas");
 var direcoes = ["direita", "esquerda", "cima", "baixo"];
 for (var i = 0; i < 5; i++) {
@@ -2560,28 +3876,50 @@ for (var i = 0; i < 5; i++) {
     moeda.parentNode.removeChild(moeda);
   }, 2000, moeda);
 }      
- /*FIM DOS EFEITOS DE MOEDAS NA COMPRA $ 1*/
-     
-
-      document.getElementById("idvendercristal").innerHTML =
-        "Venda realizada com sucesso";
+ /*FIM DOS EFEITOS DE MOEDAS NA COMPRA $ */
+    } 
+  /* Fim da função vender cristais 100*/
   
-        document.getElementById("idAlertaNoMenuInventario").innerHTML =
-        "Inventário";
+/* Início da função vender cristais 10*/
+    else if (cristal > 9) {
+
+      document.getElementById("idvendercristal").innerHTML =    "Venda realizada com sucesso";
+  
+        document.getElementById("idAlertaNoMenuInventario").innerHTML =    "Inventário";
   
       cristal = cristal - 10;
   
-      document.getElementById("idcristal").innerHTML =
-        "Cristais de Mana: " + cristal;
+      document.getElementById("idcristal").innerHTML =     "Cristais de Mana no Inventário: " + cristal;
   
-      document.getElementById("idcristalinventario").innerHTML =
-        "Cristais de Mana: " + cristal;
+      document.getElementById("idcristalinventario").innerHTML =   "Cristais de Mana: " + cristal;
   
       ouro = ouro + 1;
   
       document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
 
-    } else {
+       /*INÍCIO DOS EFEITOS DE MOEDAS NA COMPRA $ */
+       var moedas = document.getElementById("moedas");
+var direcoes = ["direita", "esquerda", "cima", "baixo"];
+for (var i = 0; i < 5; i++) {
+  var moeda = document.createElement("div");
+  moeda.classList.add("moeda");
+  moeda.textContent = "$";
+  moeda.style.left = document.getElementById("botao-moeda").offsetLeft + document.getElementById("botao-moeda").offsetWidth / 2 + "px";
+  moeda.style.top = document.getElementById("botao-moeda").offsetTop + document.getElementById("botao-moeda").offsetHeight / 2 + "px";
+  moedas.appendChild(moeda);
+  var direcao = direcoes[Math.floor(Math.random() * direcoes.length)];
+  moeda.classList.add("moeda-animacao");
+  moeda.style.animationName = "sair-moeda-" + direcao;
+  moeda.style.opacity = 1;
+  setTimeout(function(moeda) {
+    moeda.parentNode.removeChild(moeda);
+  }, 2000, moeda);
+}      
+ /*FIM DOS EFEITOS DE MOEDAS NA COMPRA $ */
+    } 
+    /* Fim da função vender cristais 10*/
+
+    else {
       document.getElementById("idminerarcristal").innerHTML = "";
   
       document.getElementById("idatributopercepcao").innerHTML = "";
@@ -2592,48 +3930,9 @@ for (var i = 0; i < 5; i++) {
         document.getElementById("idAlertaNoMenuInventario").innerHTML =
         "Inventário";
     }
-    }
-    /* Fim da função vender cristais 10*/
-  
-  
   }
-  
   /* FIM VENDER CRISTAIS DE MANA*/
   
-  /*Início da função vender cristais 100*/
-  
-  function funcaovendercristal100() {
-    if (cristal > 99) {
-
-
-      document.getElementById("idvendercristal").innerHTML =
-        "Venda realizada com sucesso";
-  
-      cristal = cristal - 100;
-  
-      document.getElementById("idcristal").innerHTML =
-        "Cristais de Mana: " + cristal;
-  
-      document.getElementById("idcristalinventario").innerHTML =
-        "Cristais de Mana: " + cristal;
-  
-      ouro = ouro + 10;
-  
-      document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
-    } else {
-      document.getElementById("idminerarcristal").innerHTML = "";
-  
-      document.getElementById("idatributopercepcao").innerHTML = "";
-  
-      document.getElementById("idvendercristal").innerHTML =
-        "Cristais insuficiente";
-  
-        document.getElementById("idAlertaNoMenuInventario").innerHTML =
-        "Inventário";
-    }
-  }
-  
-  /* Fim da função vender cristais 100*/
   
   /*Início da função vender Pedras de essência*/
   
@@ -2710,6 +4009,33 @@ for (var i = 0; i < 5; i++) {
   }
   
   /* Fim da função equipar Kasaka */
+
+   /*início da função equipar Martelo do Golem de Pedra*/
+  
+  function funcaoEquiparMarteloGolem() {
+    if (MarteloGolemEquipada === 1) {
+      document.getElementById("idRetornoEquiparMarteloGolem").innerHTML =  "Martelo do Golem de Pedra já equipado";
+    } 
+    
+    else if (Golen > 0 && MarteloGolemEquipada === 0) {
+      MarteloGolemEquipada = 1;
+  
+      agilidade = agilidade + 20;
+
+       document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  
+      document.getElementById("idRetornoEquiparMarteloGolem").innerHTML = "Martelo do Golem de Pedra equipado com sucesso";
+  
+      document.getElementById("idItemMarteloGolemAdquirida").innerHTML = "✅ Martelo do Golem de Pedra";
+  
+      document.getElementById("idRetornoMarteloGolemAtributo").innerHTML = " + 20";
+
+    } else {
+      document.getElementById("idRetornoEquiparMarteloGolem").innerHTML = "Necessário derrotar o Golem de Pedra para adquirir esse Martelo";
+    }
+  }
+  
+  /* Fim da função equipar Martelo do Golem de Pedra */
   
   /* início da função equipar Coleira do Guardião */
   
@@ -2792,23 +4118,28 @@ for (var i = 0; i < 5; i++) {
         "Necessário derrotar o Cerberus Guardião do Inferno para adquirir essa Habilidade";
     } 
     
+   
+
+    else if(Cerberus === 1 && ElixirDaVida === 0 && Metus === 1 && Vulcano === 1 && Baran === 1) {
+      ElixirDaVida = 1;
+  
+  
+      document.getElementById("idRetornoElixirDaVida").innerHTML =
+        "Elixir da Vida criado com sucesso.";
+
+         document.getElementById("idCheckElixirDaVida").innerHTML =    "✅ Habilidade: Elixir da vida";
+
+        document.getElementById("UsaElixir").innerHTML =      "Toque aqui quando quiser usar o Elixir!";
+  
+    } 
+    
     else if(Cerberus === 1 && ElixirDaVida === 0){
       document.getElementById("idRetornoElixirDaVida").innerHTML =
       "Ceberus derrotado [Necessário todos os ingredientes para criar o Elixir da Vida]";
       document.getElementById("idAlertaNoMenuHabilidade").innerHTML = "Habilidades";
     }
-
-    else if(Cerberus === 1 && ElixirDaVida === 0 && FragmentoDaAvoreDaVida === 1 && AguaNascenteDaFlorestaEcoante === 1 && SanguePurificadoDoMonarcaDemoniaco === 1) {
-      ElixirDaVida = 1;
-  
-  
-      document.getElementById("idRetornoElixirDaVida").innerHTML =
-        "Elixir da Vida criado com sucesso. Toque na imagem novamente quando quiser usar!";
-  
-        document.getElementById("idCheckElixirDaVida").innerHTML =
-        "✅ Habilidade: Elixir da Vida";
-  
-    } else if(ElixirDaVida === 1) {
+    
+    else if(ElixirDaVida === 1) {
       ElixirDaVida = 2;
 
       vida = 100;
@@ -2827,11 +4158,22 @@ for (var i = 0; i < 5; i++) {
       "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
 
-      document.getElementById("idRetornoElixirDaVida").innerHTML =
-        "Você usou o Elixir da Vida";
+      document.getElementById("UsaElixir").innerHTML =      "Botão Bloqueado";
+
+      document.getElementById("idRetornoElixirDaVida").innerHTML =    "Você usou o Elixir da Vida [Habilidade de uso único]";
   
-      document.getElementById("idCheckElixirDaVida").innerHTML =
-        "⛔Habilidade: Elixir da Vida (Não pode mais ser usada)";
+      document.getElementById("idCheckElixirDaVida").innerHTML =    "🚫 Habilidade Bloqueada: Elixir da Vida";
+
+          document.getElementById("idCheckFragmentoDaAvoreDaVida").innerHTML =  "❌ Fragmento da árvore do mundo";
+
+document.getElementById("idCheckAguaNascenteDaFlorestaEcoante").innerHTML =  "❌ Água nascente da floresta ecoante";
+
+document.getElementById("idCheckSamguePurificadoMonarcaDemoniaco").innerHTML =  "❌ Sangue Purificado do Monarca Demoníaco";
+
+    }
+    else if(ElixirDaVida === 2) {
+      document.getElementById("idRetornoElixirDaVida").innerHTML =  "Essa habilidade só pode ser usado uma vez";
+  
     }
   }
   
@@ -2840,12 +4182,29 @@ for (var i = 0; i < 5; i++) {
   /* início da função comprar poção de recuperação */
   function funcaoComprarPocaoRecuperacao() {
   
+    /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
     document.getElementById("idAlertaNoMenuLoja").innerHTML = "Loja";
   
     if (ouro > 0 && fadiga > 0) {
       fadiga = fadiga - 10;
       ouro = ouro - 1;
       SomaDaPocaoDeRecuperacao = SomaDaPocaoDeRecuperacao + 1;
+
+      if (AmizadeEsil === 0){
+        document.getElementById("idRetornoCompraPocaoRecuperacao").innerHTML =    "10% de recuperação aplicada em Fadiga";
+        }
+    
+        if (AmizadeEsil === 3){
+          fadiga = fadiga - 10;
+          document.getElementById("idRetornoCompraPocaoRecuperacao").innerHTML =  "10% de recuperação aplicada em Fadiga + 10% da Habilidade Gula";  
+          }
+
   
       if (fadiga < 1) {
         fadiga = 0;
@@ -2856,8 +4215,7 @@ for (var i = 0; i < 5; i++) {
   
       progresso.setAttribute("style", "width: " + fadiga + "%");
   
-      document.getElementById("idRetornoCompraPocaoRecuperacao").innerHTML =
-        "10% de recuperação aplicada em Fadiga";
+      
 
   /*INÍCIO DO EFEITO DA FADIGA*/
   var setaContainer = document.getElementById("botao-seta-vermelha").parentNode;
@@ -2878,7 +4236,7 @@ for (var i = 0; i < 5; i++) {
         document.getElementById(
           "idRetornoMissaoDiariaPocaoDeRecuperacao",
         ).innerHTML =
-          "Faça a compra de 20 Poções de recuperação na loja: " +
+          "Faça a compra de 20 Poções de Fadiga na loja: " +
           SomaDaPocaoDeRecuperacao +
           "/20";
       }
@@ -2887,7 +4245,7 @@ for (var i = 0; i < 5; i++) {
         document.getElementById(
           "idRetornoMissaoDiariaPocaoDeRecuperacao",
         ).innerHTML =
-          "Faça a compra de 35 Poções de recuperação na loja: " +
+          "Faça a compra de 35 Poções de Fadiga na loja: " +
           SomaDaPocaoDeRecuperacao +
           "/35";
       }
@@ -2895,7 +4253,7 @@ for (var i = 0; i < 5; i++) {
         document.getElementById(
           "idRetornoMissaoDiariaPocaoDeRecuperacao",
         ).innerHTML =
-          "Faça a compra de 70 Poções de recuperação na loja: " +
+          "Faça a compra de 70 Poções de Fadiga na loja: " +
           SomaDaPocaoDeRecuperacao +
           "/70";
       }
@@ -2903,16 +4261,16 @@ for (var i = 0; i < 5; i++) {
         document.getElementById(
           "idRetornoMissaoDiariaPocaoDeRecuperacao",
         ).innerHTML =
-          "Faça a compra de 100 Poções de recuperação na loja: " +
+          "Faça a compra de 80 Poções de Fadiga na loja: " +
           SomaDaPocaoDeRecuperacao +
-          "/100";
+          "/80";
       }
   
       if (dia === 7) {
         document.getElementById(
           "idRetornoMissaoDiariaPocaoDeRecuperacao",
         ).innerHTML =
-          "Faça a compra de 150 Poções de recuperação na loja: " +
+          "Faça a compra de 150 Poções de Fadiga na loja: " +
           SomaDaPocaoDeRecuperacao +
           "/150";
       }
@@ -2920,25 +4278,29 @@ for (var i = 0; i < 5; i++) {
         document.getElementById(
           "idRetornoMissaoDiariaPocaoDeRecuperacao",
         ).innerHTML =
-          "Faça a compra de 200 Poções de recuperação na loja: " +
+          "Faça a compra de 180 Poções de Fadiga na loja: " +
           SomaDaPocaoDeRecuperacao +
-          "/200";
+          "/180";
       }
       if (dia === 9) {
         document.getElementById(
           "idRetornoMissaoDiariaPocaoDeRecuperacao",
         ).innerHTML =
-          "Faça a compra de 250 Poções de recuperação na loja: " +
+          "Faça a compra de 250 Poções de Fadiga na loja: " +
           SomaDaPocaoDeRecuperacao +
           "/250";
       }
       if (dia === 10) {
-        document.getElementById(
-          "idRetornoMissaoDiariaPocaoDeRecuperacao",
-        ).innerHTML =
-          "Faça a compra de 350 Poções de recuperação na loja: " +
-          SomaDaPocaoDeRecuperacao +
-          "/350";
+        document.getElementById("idRetornoMissaoDiariaPocaoDeRecuperacao", ).innerHTML =
+          "Faça a compra de 300 Poções de Fadiga na loja: " +  SomaDaPocaoDeRecuperacao + "/300";
+      }
+      if (dia === 11) {
+        document.getElementById("idRetornoMissaoDiariaPocaoDeRecuperacao", ).innerHTML =
+          "Faça a compra de 350 Poções de Fadiga na loja: " +  SomaDaPocaoDeRecuperacao + "/350";
+      }
+      if (dia === 12) {
+        document.getElementById("idRetornoMissaoDiariaPocaoDeRecuperacao", ).innerHTML =
+          "Faça a compra de 360 Poções de Fadiga na loja: " +  SomaDaPocaoDeRecuperacao + "/360";
       }
     } else {
       document.getElementById("idRetornoCompraPocaoRecuperacao").innerHTML =
@@ -2961,7 +4323,6 @@ for (var i = 0; i < 5; i++) {
       forca > 70 &&
       agilidade > 50 &&
       Insectoids < 5 &&
-      Kasaka === 1 &&
       percepcao > 45
     ) {
       vida = vida - 10;
@@ -2999,12 +4360,35 @@ for (var i = 0; i < 5; i++) {
         "Lutar novamente";
   
       atributo = atributo + 1;
-      document.getElementById("idatributo").innerHTML =
-        "Disponíveis: " + atributo;
+      document.getElementById("idatributo").innerHTML =   "Disponíveis: " + atributo;
   
-        document.getElementById("idAlertaNoMenuAtributos").innerHTML =
-          "⚠️ Atributos";
-  
+        document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
+
+      /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+          /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
         /* Início de remover Arrancada*/
   if (Arrancada === 1){
   
@@ -3041,19 +4425,6 @@ for (var i = 0; i < 5; i++) {
   }
   /*Fim de remover Intenção Assassina*/
   
-      /* início da função subir de nível */
-  
-      SomaDoNivel = SomaDoNivel + 5;
-      if (SomaDoNivel > SomaDoIndicadorDoNivel) {
-        document.getElementById("idnivel").innerHTML =
-          "Nível: " + EqualizadoDoNivel;
-  
-        alert("Level Up");
-  
-        EqualizadoDoNivel = EqualizadoDoNivel + 1;
-        SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
-      }
-      /* Fim da função subir de nível */
     } else {
       vida = vida - 10;
       if (vida < 1) {
@@ -3136,15 +4507,8 @@ for (var i = 0; i < 5; i++) {
         "👀 Percepção: 45/" + percepcao + " ❌";
     }
   
-    if (Kasaka === 0) {
-      document.getElementById("idRequisitoInsectoids").innerHTML =
-        "🐍 Kasaka derrotada: Não ❌";
-    }
   
-   if (Kasaka === 1) {
-      document.getElementById("idRequisitoInsectoids").innerHTML =
-        "🐍 Kasaka derrotada: Sim ✅";
-    }
+ 
   
   }
   
@@ -3154,7 +4518,7 @@ for (var i = 0; i < 5; i++) {
   function LutaContraCentopeiasBotao() {
 
    
-    if (vida < 50 || fadiga > 49 && TurnoDeLutaCentopeia === 0) {
+    if (vida < 50 || fadiga > 50 && TurnoDeLutaCentopeia === 0) {
       document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
         "Vida ou Fadiga insuficiente";
     } 
@@ -3164,13 +4528,20 @@ for (var i = 0; i < 5; i++) {
         "Você já realizou a Missão de Penalidade: Sobrevivência";
     }
     
-else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLutaCentopeia === 0 && treino < 100 && Centopeias < 3) {
+else if (
+  vida > 49 && 
+  fadiga < 51 && 
+  forca > 50 && 
+  agilidade > 50 && 
+  TurnoDeLutaCentopeia === 0 && 
+  treino < 100 && 
+  Centopeias < 3) {
  
   document.getElementById("idAlertaNoMenuHabilidade").innerHTML =
     "⚠️ Habilidades";
 
       treino = 100;
-      document.getElementById("idtreino").innerHTML = "⛔ Você optou por realizar a Missão de Penalidade: Sobrevivência ";
+      document.getElementById("idtreino").innerHTML = "🚫 Você optou por realizar a Missão de Penalidade: Sobrevivência ";
 
       TurnoDeLutaCentopeia = 1;
 
@@ -3199,7 +4570,358 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
         document.getElementById("idAlertaNoMenuHabilidade").innerHTML =
           "⚠️ Habilidade";
   
-        /* Início de remover Arrancada*/
+              /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+          /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+        /*Início de remover a habilidade Domínio do Monarca*/
+if (DominioDoMonarca === 1) {
+
+  DominioDoMonarca = 0;
+  
+  agilidade = agilidade - 20;
+  forca = forca - 20;
+  percepcao = percepcao - 20;
+  inteligencia = inteligencia - 20;
+  document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = "";
+  document.getElementById("idCheckDominioDoMonarca").innerHTML = "Habilidade: Domínio do Monarca";
+  document.getElementById("idRetornoDominioDoMonarca").innerHTML = "";  
+  }
+  /* Fim de remover a habilidade Domínio do Monarca */
+  
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+  
+       /* Início do remover a Sombra do Igris*/
+    if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+      SombraIgris = 0;
+      document.getElementById("idRetornoExtracao1").innerHTML = "";
+      document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+  
+      agilidade = agilidade - 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+      forca = forca - 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+      percepcao = percepcao - 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+      inteligencia = inteligencia - 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+      }
+  /* Fim do remover a Sombra do Igris*/
+  
+   /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+  
+  /* Início do remover a Sombra do Tank*/
+  if (SombraTank === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+  SombraTank = 0;
+  document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+  document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+  
+  agilidade = agilidade - 48;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 46;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 28;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 22;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tank*/
+  
+  /* Início do remover a Sombra do Iron*/
+  if (SombraIron === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+  SombraIron = 0;
+  document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+  document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+  
+  agilidade = agilidade - 90;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 140;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 70;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 40;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Iron*/
+  
+  /* Início do remover a Sombra do Tusk Xamã das Sombras*/
+  if (SombraTusk === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+  SombraTusk = 0;
+  document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+  document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+  
+  agilidade = agilidade - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 100;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+  
+   /* Início do remover a Sombra do Kaisel - Rank Dragão*/
+   if (SombraKaisel === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 50;
+      forcaDasSombras = forcaDasSombras - 100;
+      percepcaoDasSombras = percepcaoDasSombras - 30;
+      inteligenciaDasSombras = inteligenciaDasSombras - 50;
+
+    SombraKaisel = 0;
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML = "";
+    document.getElementById("idChecDoKaisel").innerHTML = "Kaisel - Xamã das Sombras";
+    
+    agilidade = agilidade - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselAgilidade").innerHTML = "";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+    
+    forca = forca - 100;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselForca").innerHTML = "";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+    
+    percepcao = percepcao - 30;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselPercepcao").innerHTML = "";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+    
+    inteligencia = inteligencia - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselInteligencia").innerHTML = "";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+    }
+    /* Fim do remover a Sombra do Kaisel - Rank Dragão*/
+
+    /* Início do remover a Sombra do Beru*/
+  if (SombraBeru === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 200;
+      forcaDasSombras = forcaDasSombras - 240;
+      percepcaoDasSombras = percepcaoDasSombras - 160;
+      inteligenciaDasSombras = inteligenciaDasSombras - 200;
+
+  SombraBeru = 0;
+  document.getElementById("idRetornoExtracaoBeru").innerHTML = "";
+  document.getElementById("idChecDoBeru").innerHTML = "Beru - Rei das Formigas";
+  
+  agilidade = agilidade - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 240;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 160;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Beru*/
+
+  /*Início do remover a habilidade Provocar*/
+  
+  if (Provocar === 1) {
+  
+      Provocar = 0;
+      
+  
+    agilidade = agilidade - 40;
+    percepcao = percepcao - 10;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  
+    document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+    document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";
+  
+    document.getElementById("idCheckProvocar").innerHTML = "Habilidade: Provocar";
+    document.getElementById("idRetornoProvocar").innerHTML = "";
+  }
+  /* Fim do remover a habilidade Provocar*/
+  
+   /*Início de remover a habilidade Fortalecimento*/
+    if (Fortalecimento === 1) {
+  
+        Fortalecimento = 0;
+        
+        agilidade = agilidade - 10;
+        forca = forca - 10;
+        percepcao = percepcao - 10;
+        inteligencia = inteligencia - 10;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+        document.getElementById("idCheckFortalecimento").innerHTML = "Habilidade: Fortalecimento";
+        document.getElementById("idRetornoFortalecimento").innerHTML = "";  
+    }
+    /* Fim de remover a habilidade Fortalecimento */
+  
+  /* Início de remover Arrancada*/
   if (Arrancada === 1){
   
   Arrancada = 0;
@@ -3224,16 +4946,33 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
   /* Início de remover Intenção Assassina */
   if (Assassina === 1){
   
-    Assassina = 0;
-    agilidade = agilidade - 5;
-
-    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
-    document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
-    document.getElementById("idRetornoAssassina").innerHTML = "";
-    document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
+  Assassina = 0;
+      agilidade = agilidade - 5;
+  
+      document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+      document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
+      document.getElementById("idRetornoAssassina").innerHTML = "";
+      document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
   
   }
   /*Fim de remover Intenção Assassina*/
+  
+  /* Início de remover Furtividade */
+  if (Furtividade === 1){
+  
+    Furtividade = 0;
+    
+    agilidade = agilidade - 30;
+    
+     document.getElementById("idagilidade").innerHTML =
+          "🦵 Agilidade: " + agilidade;
+    
+    document.getElementById("idCheckFurtividade").innerHTML = "Habilidade: Furtividade";
+    document.getElementById("idRetornoFurtividade").innerHTML = "";
+    document.getElementById("idRetornoFurtividadeNoStatus").innerHTML = "";
+    
+    }
+    /*Fim de remover Furtividade*/
   } 
     
     else if(vida > 49 && fadiga < 51 && forca < 51 &&  agilidade < 51 && TurnoDeLutaCentopeia === 0 && treino < 100){
@@ -3267,7 +5006,7 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
 
     else if (TurnoDeLutaCentopeia === 0 && treino > 99){
       document.getElementById("idQuadroDeRetornoCentopeias").innerHTML =
-        "⛔ Você optou por realizar o Treino Diário: Ganho de Força";
+        "🚫 Você optou por realizar o Treino Diário: Ganho de Força";
     }
 
     else if (Centopeias === 3){    
@@ -3474,16 +5213,16 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
      "🧠 Inteligência: " +
      inteligencia;
   
-    /*início da função subir de nível 123456789*/
+    /*início da função subir de nível*/
   
-    SomaDoNivel = SomaDoNivel + 5;
+    SomaDoNivel = SomaDoNivel + 4;
     if (SomaDoNivel >
      SomaDoIndicadorDoNivel) {
      document.getElementById(
        "idnivel").innerHTML =
       "Nível: " + EqualizadoDoNivel;
   
-     alert("Level Up");
+      alert("Você subiu de Nível!");
   
      EqualizadoDoNivel =
       EqualizadoDoNivel + 1;
@@ -3492,6 +5231,31 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
     }
     /*Fim da função subir de nível*/
   
+        /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+    /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
      /* Início de remover Arrancada*/
   if (Arrancada === 1){
   
@@ -3575,11 +5339,11 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
      "%" + " ✅";
    }
   
-   if (fadiga > 60) {
+   if (fadiga > 40) {
     document.getElementById(
       "idFadigaAranha").innerHTML =
      "🪫Fadiga: 60%/" +
-     fadiga + "%" + " ❌";
+     fadiga + "%" + " ❌ ";
    }
   
    if (fadiga < 41) {
@@ -3591,7 +5355,7 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
    if (agilidade < 71) {
     document.getElementById(
       "idAgilidadeAranha").innerHTML =
-     "🦵 Agilidade: 70/" +  agilidade + " ❌";
+     "🦵 Agilidade: 70/" +  agilidade + " ❌ Dica: Para melhorar seus Atributos você pode usar equipamentos que foram ganhos nas batalhas. Aba Inventário ➡ Equipamentos";
    }
   
    if (agilidade > 70) {
@@ -3609,7 +5373,7 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
    if (forca < 86) {
     document.getElementById(
       "idForcaAranha").innerHTML =
-     "💪 Força: 85/" +   forca + " ❌";
+     "💪 Força: 85/" +   forca + " ❌ Dica: Para melhorar seus Atributos você pode comprar equipamentos na aba Loja ➡ Equipamentos";
    }
   }
   
@@ -3627,12 +5391,12 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
     document.getElementById(
       "idQuadroDeRetornoCacadores")
      .innerHTML =
-     "✨ Você derrotou todos os Caçadores ✨";
+     "✨ Você já derrotou todos os Caçadores ✨";
    } else if (
     vida > 4 &&
     fadiga < 96 &&
     forca > 90 &&
-    agilidade > 90 &&
+    agilidade > 84 &&
     Cacadores < 6 &&
     inteligencia > 35 &&
     percepcao > 50
@@ -3665,15 +5429,55 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
      "/6";
   
   
+     if (Cacadores === 1){
     document.getElementById(
       "idQuadroDeRetornoCacadores")
      .innerHTML =
      "✨ VITÓRIA ✨ Você derrotou um Caçador [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - Habilidade Intenção Assassina]";
+    }
   
+    document.getElementById(
+      "idQuadroDeRetornoCacadores")
+     .innerHTML =
+     "✨ VITÓRIA ✨ Você derrotou um Caçador [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos]";
   
+
    document.getElementById("idCheckAssassina").innerHTML =
         "⚠️ Habilidade: Intenção Assassina";
   
+if(Cacadores > 5){
+  document.getElementById("idNivelDoRank").innerHTML = "Rank: C ⭐⭐⭐";
+  alert("Parabéns você subiu do Rank D para o Rank C",);
+
+   mostrarEstrela2(); /* Efeito Estrela 2 */
+
+}
+
+    /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+/*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
   /* Início de remover Arrancada */
   if (Arrancada === 1){
   
@@ -3721,7 +5525,6 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
     agilidade = agilidade + 1;
     forca = forca + 1;
     percepcao = percepcao + 1;
-  
     inteligencia = inteligencia + 1;
     document.getElementById(
       "idagilidade").innerHTML =
@@ -3740,14 +5543,14 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
   
     /*início da função subir de nível*/
   
-    SomaDoNivel = SomaDoNivel + 5;
+    SomaDoNivel = SomaDoNivel + 4;
     if (SomaDoNivel >
      SomaDoIndicadorDoNivel) {
      document.getElementById(
        "idnivel").innerHTML =
       "Nível: " + EqualizadoDoNivel;
   
-     alert("Level Up");
+     alert("Você subiu de Nível!");
   
      EqualizadoDoNivel =
       EqualizadoDoNivel + 1;
@@ -3863,16 +5666,16 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
      "🪫Fadiga: 5%/" +  fadiga + "%" + " ✅";
    }
   
-   if (agilidade < 91) {
+   if (agilidade < 85) {
     document.getElementById(
       "idAgilidadeCacadores").innerHTML =
-     "🦵 Agilidade: 90/" + agilidade + " ❌";
+     "🦵 Agilidade: 84/" + agilidade + " ❌ - Dica: Você pode usar as Habilidades para melhorar os seus atributos";
    }
   
-   if (agilidade > 90) {
+   if (agilidade > 84) {
     document.getElementById(
       "idAgilidadeCacadores").innerHTML =
-     "🦵 Agilidade: 90/" + forca + " ✅";
+     "🦵 Agilidade: 84/" + forca + " ✅";
    }
   
    if (forca > 90) {
@@ -3884,13 +5687,13 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
    if (forca < 91) {
     document.getElementById(
       "idForcaCacadores").innerHTML =
-     "💪 Força: 90/" + forca + " ❌";
+     "💪 Força: 90/" + forca + " ❌ - Dica: Você pode usar as Habilidades para melhorar os seus atributos";
    }
   
    if (inteligencia < 36) {
     document.getElementById(
       "idInteligenciaCacadores").innerHTML =
-     "🧠 Inteligência: 35/" + inteligencia + " ❌";
+     "🧠 Inteligência: 35/" + inteligencia + " ❌ - Dica: Você pode usar as Habilidades para melhorar os seus atributos";
    }
    if (inteligencia > 35) {
     document.getElementById(
@@ -3901,7 +5704,7 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
     if (percepcao < 51) {
     document.getElementById(
       "idPercepcaoCacadores").innerHTML =
-     "👀 Percepção: 50/" +  percepcao + " ❌";
+     "👀 Percepção: 50/" +  percepcao + " ❌ - Dica: Você pode usar as Habilidades para melhorar os seus atributos";
    }
    if (percepcao > 50) {
     document.getElementById(
@@ -3942,7 +5745,7 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
       "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
   
-      document.getElementById("idRetornoAssassina").innerHTML = "Buff aplicado";
+      document.getElementById("idRetornoAssassina").innerHTML = "Buff foi Ativado";
     }
   
     if (Cacadores > 0 && Assassina === 0 && mana < 4) {
@@ -3965,108 +5768,94 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
    } 
    
    else if (vida > 0 && fadiga < 100 && Cerberus > 0) {
-    document.getElementById(
-      "idQuadroDeRetornoCerberus")
-     .innerHTML =
-     "✨ Você já derrotou o Cerberus ✨";
+  
+    document.getElementById("idQuadroDeRetornoCerberus").innerHTML = "✨ Você já derrotou o Cerberus ✨";
    } 
    
    else if ( vida === 100 && fadiga === 0 && forca > 140 && agilidade > 110 && Cerberus === 0 && percepcao > 90 ) {
+
+    Cerberus = 1;
+
     vida = vida - 100;
     if (vida < 1) {
      vida = 0;
     }
-  
-    progresso2.setAttribute("style",
-     "width: " + vida + "%");
-    document.getElementById("idvida")
-     .innerHTML = "❤️ Vida: " + vida +
-     "%";
-  
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
     fadiga = fadiga + 100;
     if (fadiga > 99) {
      fadiga = 100;
     }
-    progresso.setAttribute("style",
-     "width: " + fadiga + "%");
-    document.getElementById(
-      "idfadiga").innerHTML =
-     "🪫Fadiga: " + fadiga + "%";
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
   
-  Cerberus = 1;
+
     document.getElementById("idCerberus").innerHTML = "🚶‍♂️População: " + Cerberus +  "/1";
   
   
-    document.getElementById( "idQuadroDeRetornoCerberus")  .innerHTML =
-     "✨ VITÓRIA ✨ Você derrotou o Cerbero [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - 1 Pedra de essência - Coleira do Guardião - Habilidade: Elixir da Vida]";
+    document.getElementById( "idQuadroDeRetornoCerberus")  .innerHTML = "✨ VITÓRIA ✨ Você derrotou o Cerbero [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - 1 Pedra de essência - Coleira do Guardião - Habilidade Elixir da Vida]";
   
   document.getElementById("idItemColeiraAdquirida").innerHTML = "⚠️ Coleira do Guardião";
-  document.getElementById("idCheckElixirDaVida").innerHTML = "⚠️ Habilidade: Elixir da Vida";
+  document.getElementById("idCheckElixirDaVida").innerHTML = "✅  Habilidade Disponível: Elixir da Vida";
   document.getElementById("idAlertaNoMenuHabilidade").innerHTML = "⚠️ Habilidades";
   document.getElementById("idAlertaNoMenuInventario").innerHTML =  "⚠️ Inventário";
   
   
+    experienciaCerberus = experienciaCerberus + 1;
+    experienciaParaUsarNasHabilidades  =  experienciaParaUsarNasHabilidades +   1;
   
-    experienciaCerberus =
-     experienciaCerberus + 1;
-    experienciaParaUsarNasHabilidades
-     =
-     experienciaParaUsarNasHabilidades +
-     1;
+    document.getElementById( "idexperienciaCerberus").innerHTML = "🏆 Experiência: " +  experienciaCerberus;
+    document.getElementById("idContarExperienciaNoQuadroHabilidades", ).innerHTML = "Pontos de experiência: " +  experienciaParaUsarNasHabilidades;
   
-    document.getElementById(
-      "idexperienciaCerberus").innerHTML =
-     "🏆 Experiência: " +
-     experienciaCerberus;
-    document.getElementById(
-      "idContarExperienciaNoQuadroHabilidades",
-     ).innerHTML =
-     "Pontos de experiência: " +
-     experienciaParaUsarNasHabilidades;
-  
-    document.getElementById(
-      "idLutaContraCerberusBotao")
-     .innerHTML =
-     "Cerberus derrotado";
+    document.getElementById("idLutaContraCerberusBotao") .innerHTML =  "Cerberus derrotado";
   
     agilidade = agilidade + 1;
     forca = forca + 1;
     percepcao = percepcao + 1;
-   
     inteligencia = inteligencia + 1;
-    document.getElementById(
-      "idagilidade").innerHTML =
-     "🦵 Agilidade: " + agilidade;
-    document.getElementById("idforca")
-     .innerHTML = "💪 Força: " +
-     forca;
-    document.getElementById(
-      "idpercepcao").innerHTML =
-     "👀 Percepção: " + percepcao;
-    
-    document.getElementById(
-      "idinteligencia").innerHTML =
-     "🧠 Inteligência: " +
-     inteligencia;
+    document.getElementById( "idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+    document.getElementById("idforca")  .innerHTML = "💪 Força: " +   forca;
+    document.getElementById( "idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+    document.getElementById("idinteligencia").innerHTML =  "🧠 Inteligência: " +  inteligencia;
   
     /* início da função subir de nível */
+    SomaDoNivel = SomaDoNivel + 4;
+    if (SomaDoNivel >  SomaDoIndicadorDoNivel) {
+     document.getElementById( "idnivel").innerHTML = "Nível: " + EqualizadoDoNivel;
   
-    SomaDoNivel = SomaDoNivel + 5;
-    if (SomaDoNivel >
-     SomaDoIndicadorDoNivel) {
-     document.getElementById(
-       "idnivel").innerHTML =
-      "Nível: " + EqualizadoDoNivel;
+      alert("Você subiu de Nível!");
   
-     alert("Level Up");
-  
-     EqualizadoDoNivel =
-      EqualizadoDoNivel + 1;
-     SomaDoIndicadorDoNivel =
-      SomaDoIndicadorDoNivel + 6;
+     EqualizadoDoNivel = EqualizadoDoNivel + 1;
+     SomaDoIndicadorDoNivel =  SomaDoIndicadorDoNivel + 6;
     }
     /*Fim da função subir de nível*/
   
+        /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+    /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
     /* Início de remover Arrancada */
   if (Arrancada === 1){
   
@@ -4137,7 +5926,7 @@ else if (vida > 49 && fadiga < 51 && forca > 50 && agilidade > 50 && TurnoDeLuta
   }
 
 
-  if (TituloAssassinoDeLobosEstaEmUso === 1){
+  else if (TituloAssassinoDeLobosEstaEmUso === 1){
 
 agilidade = agilidade + 40;
 forca = forca + 40;
@@ -4146,15 +5935,14 @@ percepcao = percepcao + 40;
     if (vida < 100 || fadiga > 0) {
      document.getElementById(
        "idQuadroDeRetornoCerberus")
-      .innerHTML =
-      "Vida ou Fadiga insuficiente";
-    } else if (vida > 0 && fadiga <
-     100 && Cerberus > 0) {
-     document.getElementById(
-       "idQuadroDeRetornoCerberus")
-      .innerHTML =
-      "✨ Você já derrotou o Cerberus ✨";
-    } else if ( vida === 100 && fadiga === 0 && forca > 140 && agilidade > 110 && Cerberus === 0 && percepcao > 90 ) {
+      .innerHTML =   "Vida ou Fadiga insuficiente";
+    } 
+    
+    else if (vida > 0 && fadiga <   100 && Cerberus > 0) {
+     document.getElementById( "idQuadroDeRetornoCerberus")    .innerHTML =  "✨ Você já derrotou o Cerberus ✨";
+    } 
+    
+    else if ( vida === 100 && fadiga === 0 && forca > 140 && agilidade > 110 && Cerberus === 0 && percepcao > 90 ) {
      vida = vida - 100;
      if (vida < 1) {
       vida = 0;
@@ -4239,14 +6027,14 @@ percepcao = percepcao + 40;
    
      /* início da função subir de nível */
    
-     SomaDoNivel = SomaDoNivel + 5;
+     SomaDoNivel = SomaDoNivel + 4;
      if (SomaDoNivel >
       SomaDoIndicadorDoNivel) {
       document.getElementById(
         "idnivel").innerHTML =
        "Nível: " + EqualizadoDoNivel;
    
-      alert("Level Up");
+       alert("Você subiu de Nível!");
    
       EqualizadoDoNivel =
        EqualizadoDoNivel + 1;
@@ -4335,15 +6123,9 @@ percepcao = percepcao - 40;
   function AnalisarLutaContraCerberusBotao() {
 
     if(TituloAssassinoDeLobosEstaEmUso === 0){
-   document.getElementById(
-     "idQuadroDeRetornoCerberus")
-    .innerHTML =
-    "Análise dos seus Status e do Cerberus";
+   document.getElementById("idQuadroDeRetornoCerberus").innerHTML ="Análise dos seus Status e do Cerberus";
   
-   document.getElementById(
-     "idLutaContraCerberusBotao")
-    .innerHTML =
-    "Seguir com a Luta";
+   document.getElementById("idLutaContraCerberusBotao").innerHTML = "Seguir com a Luta";
   
    if (vida < 100) {
     document.getElementById(
@@ -4376,7 +6158,7 @@ percepcao = percepcao - 40;
    if (agilidade < 111) {
     document.getElementById(
       "idAgilidadeCerberus").innerHTML =
-     "🦵 Agilidade: 110/" + agilidade + " ❌";
+     "🦵 Agilidade: 110/" + agilidade + " ❌ - Dica: O Título Assassino de Lobos pode ser usado nessa luta";
    }
   
    if (agilidade > 110) {
@@ -4394,7 +6176,7 @@ percepcao = percepcao - 40;
    if (forca < 141) {
     document.getElementById(
       "idForcaCerberus").innerHTML =
-     "💪 Força: 140/" +  forca + " ❌";
+     "💪 Força: 140/" +  forca + " ❌ - Dica: O Título Assassino de Lobos pode ser usado nessa luta";
    }
   
   
@@ -4402,7 +6184,7 @@ percepcao = percepcao - 40;
     if (percepcao < 91) {
     document.getElementById(
       "idPercepcaoCerberus").innerHTML =
-     "👀 Percepção: 90/" + percepcao + " ❌";
+     "👀 Percepção: 90/" + percepcao + " ❌ - Dica: O Título Assassino de Lobos pode ser usado nessa luta";
    }
    if (percepcao > 90) {
     document.getElementById(
@@ -4412,21 +6194,17 @@ percepcao = percepcao - 40;
     }
 
 
-    if(TituloAssassinoDeLobosEstaEmUso === 1){
+   else if(TituloAssassinoDeLobosEstaEmUso === 1){
+
+      document.getElementById("idQuadroDeRetornoCerberus").innerHTML ="Análise dos seus Status e do Cerberus [+ 40 Pontos em cada atributo do Título: Assassino de Lobos]";
+  
+      document.getElementById("idLutaContraCerberusBotao").innerHTML = "Seguir com a Luta";
+
+      
 
 agilidade = agilidade + 40;
 forca = forca + 40;
 percepcao = percepcao + 40;
-
-      document.getElementById(
-        "idQuadroDeRetornoCerberus")
-       .innerHTML =
-       "Análise dos seus Status e do Cerberus";
-     
-      document.getElementById(
-        "idLutaContraCerberusBotao")
-       .innerHTML =
-       "Seguir com a Luta";
      
       if (vida < 100) {
        document.getElementById(
@@ -4435,7 +6213,7 @@ percepcao = percepcao + 40;
         "%" + " ❌";
       }
      
-      if (vida === 100) {
+      if (vida > 99) {
        document.getElementById(
          "idVidaCerberus").innerHTML =
         "❤️ Vida: 100%/" + vida +
@@ -4449,48 +6227,46 @@ percepcao = percepcao + 40;
         fadiga + "%" + " ❌";
       }
      
-      if (fadiga === 0) {
+      if (fadiga < 1) {
        document.getElementById(
          "idFadigaCerberus").innerHTML =
         "🪫Fadiga: 100%/" +
         fadiga + "%" + " ✅";
       }
      
-      if (agilidade < 76) {
+      if (agilidade < 111) {
        document.getElementById(
          "idAgilidadeCerberus").innerHTML =
-        "🦵 Agilidade: 75/" + agilidade + " ❌";
+        "🦵 Agilidade: 110/" + agilidade + " ❌";
       }
      
-      if (agilidade > 75) {
+      if (agilidade > 110) {
        document.getElementById(
          "idAgilidadeCerberus").innerHTML =
-        "🦵 Agilidade: 75/" + agilidade + " ✅";
+        "🦵 Agilidade: 110/" + agilidade + " ✅";
       }
      
-      if (forca > 90) {
+      if (forca > 140) {
        document.getElementById(
          "idForcaCerberus").innerHTML =
-        "💪 Força: 90/" + forca + " ✅";
+        "💪 Força: 140/" + forca + " ✅";
       }
      
-      if (forca < 91) {
+      if (forca < 141) {
        document.getElementById(
          "idForcaCerberus").innerHTML =
-        "💪 Força: 90/" +  forca + " ❌";
+        "💪 Força: 140/" +  forca + " ❌";
       }
      
-     
-     
-       if (percepcao < 51) {
+       if (percepcao < 91) {
        document.getElementById(
          "idPercepcaoCerberus").innerHTML =
-        "👀 Percepção: 50/" + percepcao + " ❌";
+        "👀 Percepção: 90/" + percepcao + " ❌";
       }
-      if (percepcao > 50) {
+      if (percepcao > 90) {
        document.getElementById(
          "idPercepcaoCerberus").innerHTML =
-        "👀 Percepção: 50/" + percepcao + " ✅";
+        "👀 Percepção: 90/" + percepcao + " ✅";
       }
 
 agilidade = agilidade - 40;
@@ -4557,7 +6333,7 @@ percepcao = percepcao - 40;
     document.getElementById(
       "idQuadroDeRetornoKang")
      .innerHTML =
-     "✨ VITÓRIA ✨ Você derrotou o Mr. Kang [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - Habilidade: Furtividade]";
+     "✨ VITÓRIA ✨ Você derrotou o Mr. Kang [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - Habilidade Furtividade]";
   
    document.getElementById(
       "idCheckFurtividade")
@@ -4607,14 +6383,14 @@ percepcao = percepcao - 40;
   
     /* início da função subir de nível */
   
-    SomaDoNivel = SomaDoNivel + 5;
+    SomaDoNivel = SomaDoNivel + 4;
     if (SomaDoNivel >
      SomaDoIndicadorDoNivel) {
      document.getElementById(
        "idnivel").innerHTML =
       "Nível: " + EqualizadoDoNivel;
   
-     alert("Level Up");
+      alert("Você subiu de Nível!");
   
      EqualizadoDoNivel =
       EqualizadoDoNivel + 1;
@@ -4623,6 +6399,31 @@ percepcao = percepcao - 40;
     }
     /*Fim da função subir de nível*/
   
+        /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+    /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
     /* Início de remover Arrancada */
   if (Arrancada === 1){
   
@@ -4813,7 +6614,7 @@ percepcao = percepcao - 40;
       "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
 
-      document.getElementById("idRetornoFurtividade").innerHTML = "Buff aplicado";
+      document.getElementById("idRetornoFurtividade").innerHTML = "Buff foi Ativado";
     }
   
     
@@ -4855,7 +6656,7 @@ percepcao = percepcao - 40;
       "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
 
-      document.getElementById("idRetornoProvocar").innerHTML = "Buff aplicado";
+      document.getElementById("idRetornoProvocar").innerHTML = "Buff foi Ativado";
     }
   
     if (Provocar === 0 && mana < 30) {
@@ -4901,7 +6702,7 @@ percepcao = percepcao - 40;
         "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
         progresso3.setAttribute("style", "width: " + mana + "%");
   
-        document.getElementById("idRetornoFortalecimento").innerHTML = "Buff aplicado";
+        document.getElementById("idRetornoFortalecimento").innerHTML = "Buff foi Ativado";
       }
     
       if (Fortalecimento === 0 && mana < 30) {
@@ -4912,6 +6713,57 @@ percepcao = percepcao - 40;
      
     }
     /* Fim da habilidade Fortalecimento */
+
+   
+
+    /*Início da habilidade Mutilacao*/
+  function FuncaoMutilacao() {
+  
+    if (Enxame < 1) {
+        document.getElementById("idRetornoMutilacao").innerHTML =   "Habilidade será desbloqueada ao derrotar o Enxame de Formigas";
+      }
+    
+        else if (Mutilacao === 1) {
+        document.getElementById("idRetornoMutilacao").innerHTML =   "Buff já aplicado";
+      }
+      
+
+      else if (Mutilacao === 0 && mana > 49 && Enxame > 0) {
+        Mutilacao = 1;
+        
+    
+        agilidade = agilidade + 15;
+        forca = forca + 15;
+        percepcao = percepcao + 15;
+        inteligencia = inteligencia + 15;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoMutilacaoNoStatus").innerHTML = " + 15";
+        document.getElementById("idRetornoMutilacaoNoStatus2").innerHTML = " + 15";
+        document.getElementById("idRetornoMutilacaoNoStatus3").innerHTML = " + 15";
+        document.getElementById("idRetornoMutilacaoNoStatus4").innerHTML = " + 15";
+    
+        document.getElementById("idCheckMutilacao").innerHTML =    "✅ Habilidade: Mutilação";
+    
+        mana = mana - 50;
+        document.getElementById("idAumentoDoNivelDaMana").innerHTML =
+        "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+        progresso3.setAttribute("style", "width: " + mana + "%");
+  
+        document.getElementById("idRetornoMutilacao").innerHTML = "Buff foi Ativado";
+      }
+    
+      else if (Mutilacao === 0 && mana < 50) {
+        document.getElementById("idRetornoMutilacao").innerHTML =
+          "Mana insuficiente";
+      }
+    
+     
+    }
+    /* Fim da habilidade Mutilação */
   
   /* INÍCIO DO BOTÃO ANALISAR LUTA DO Igris */
   function AnalisarLutaContraIgrisBotao() {
@@ -5066,8 +6918,31 @@ percepcao = percepcao - 40;
      .innerHTML =
      "✨ VITÓRIA ✨";
   
+         /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
   
-  
+  /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
   /* Início de remover Furtividade */
   if (Furtividade === 1){
   
@@ -5167,15 +7042,20 @@ percepcao = percepcao - 40;
      document.getElementById(
       "idQuadroDeRetornoIgris")
      .innerHTML =
-     "✨ VITÓRIA ✨ Você derrotou o Igris [Recompensas: Elmo do Cavaleiro Carmesim - Assassina de Cavaleiros disponível para compra - Novo título: Aquele que Superou a Adversidade - Habilidade: Toque do Dominador]";
+     "✨ VITÓRIA ✨ Você derrotou o Igris [Recompensas: Elmo do Cavaleiro Carmesim - Assassina de Cavaleiros disponível para compra - Novo título: Aquele que Superou a Adversidade - Habilidade Toque do Dominador - 4 pontos de atributos]";
   
+      document.getElementById("idNivelDoRank").innerHTML = "Rank: B ⭐⭐⭐⭐";
+      alert("Parabéns você subiu do Rank C para o Rank B",);
+ 
+       mostrarEstrela3(); /* Efeito Estrela 3 */
+
      document.getElementById("idItemAssassinaCavaleirosAdquirida").innerHTML = "⚠️ Assassina de Cavaleiros";
   
         document.getElementById("idItemElmoAdquirida").innerHTML =  "⚠️ Elmo do Cavaleiro Carmesim";
 
         document.getElementById("idItemToqueDoDominadorAdquirida").innerHTML =  "⚠️ Toque do Dominador";
         
-        document.getElementById("idtitulo").innerHTML = "Novo Título disponível";
+        document.getElementById("idtitulo").innerHTML = "Novo Título disponível - Para trocar de Título vá na aba Classe e Títulos";
 
         document.getElementById("idTituloAlerta").innerHTML =   "⚠️";
 
@@ -5187,10 +7067,8 @@ percepcao = percepcao - 40;
   
   
         
-  
-          alert(
-          "Parabéns você trocou de Título. Novo título: Aquele que Superou a Adversidade",
-        );
+   alert("Parabéns você ganhou um novo Título", );
+          alert("✨ Novo título: Aquele que Superou a Adversidade  ✨", );
   
   }
   
@@ -5223,14 +7101,15 @@ percepcao = percepcao - 40;
   
     /* início da função subir de nível */
   
-    SomaDoNivel = SomaDoNivel + 5;
+    SomaDoNivel = SomaDoNivel + 4;
     if (SomaDoNivel >
      SomaDoIndicadorDoNivel) {
      document.getElementById(
        "idnivel").innerHTML =
       "Nível: " + EqualizadoDoNivel;
   
-     alert("Level Up");
+       alert("Você subiu de Nível!");
+
   
      EqualizadoDoNivel =
       EqualizadoDoNivel + 1;
@@ -5355,7 +7234,7 @@ percepcao = percepcao - 40;
     document.getElementById(
       "idAgilidadeYoo").innerHTML =
      "🦵 Agilidade: 200/" +
-     agilidade + " ❌";
+     agilidade + " ❌ Dica: O Título Exterminador de Goblins pode ser usado nessa Dangeon";
    }
   
    if (agilidade > 200) {
@@ -5376,14 +7255,14 @@ percepcao = percepcao - 40;
     document.getElementById(
       "idForcaYoo").innerHTML =
      "💪 Força: 150/" +
-     forca + " ❌";
+     forca + " ❌ Dica: O Título Exterminador de Goblins pode ser usado nessa Dangeon";
    }
   
     if (percepcao < 126) {
     document.getElementById(
       "idPercepcaoYoo").innerHTML =
      "👀 Percepção: 125/" +
-     percepcao + " ❌";
+     percepcao + " ❌ Dica: O Título Exterminador de Goblins pode ser usado nessa Dangeon";
    }
    if (percepcao > 125) {
     document.getElementById(
@@ -5506,10 +7385,10 @@ percepcao = percepcao - 40;
     document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
   
   Yoo = Yoo + 1;
-    document.getElementById("idYoo").innerHTML = "🚶‍♂️População: " + Yoo + "/?";
+    document.getElementById("idYoo").innerHTML = "🚶‍♂️Dangeons: " + Yoo + "/Dangeons Infinitas";
   
   
-    document.getElementById("idQuadroDeRetornoYoo") .innerHTML = "✨ VITÓRIA ✨ Você derrotou um Mostro [Recompensas: 1 ponto de experiência - 2 pontos de atributos para distribuir onde quiser]";
+    document.getElementById("idQuadroDeRetornoYoo") .innerHTML = "✨ VITÓRIA ✨ Você derrotou uma Dangeon [Recompensas: 1 ponto de experiência - 1 ponto de atributo para distribuir onde quiser]";
   
   
     experienciaYoo = experienciaYoo + 1;
@@ -5518,56 +7397,476 @@ percepcao = percepcao - 40;
     document.getElementById("idexperienciaYoo").innerHTML =  "🏆 Experiência: " + experienciaYoo;
     document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " +  experienciaParaUsarNasHabilidades;
   
-    document.getElementById( "idLutaContraYooBotao")
-     .innerHTML = "Mostro derrotado";
   
-  atributo = atributo + 2;
+  
+  atributo = atributo + 1;
   
       document.getElementById("idatributo").innerHTML =  "Disponíveis: " + atributo;
   
         document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
     
-    /* Início de remover Furtividade */
-  if (Furtividade === 1){
-  
-    Furtividade = 0;
-    
-    agilidade = agilidade - 30;
-    
-     document.getElementById("idagilidade").innerHTML =
-          "🦵 Agilidade: " + agilidade;
-    
-    document.getElementById("idCheckFurtividade").innerHTML = "Habilidade: Furtividade";
-    document.getElementById("idRetornoFurtividade").innerHTML = "";
-    document.getElementById("idRetornoFurtividadeNoStatus").innerHTML = "";
-    
-    }
-    /*Fim de remover Furtividade*/
-  
-  /* Início de remover Provocar */
-  if (Provocar === 1){
-  
-    Provocar = 0;
-    
-    document.getElementById("idCheckProvocar").innerHTML =
-          "Habilidade: Provocar";
-    
-          agilidade = agilidade - 40;
-          percepcao = percepcao - 10;
-          document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
-          document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
-        
-            document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
-            document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";    
-    }
-    /*Fim de remover Provocar*/  
 
-     /* Início de remover Fortalecimento */
-   if (Fortalecimento === 1){
+ /*INÍCIO DOS PRÊMIOS DA MISSÃO DE SUBIR DE NÍVEL 1*/
+if(Yoo === 1){
+     document.getElementById("iditem1").innerHTML = "✅ Item: Peitoral do grande cavaleiro [+ 1 ponto de atributo adicionado em Força]";
+
+   forca = forca + 1;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+}
+
+if(Yoo === 2){
+     document.getElementById("iditem2").innerHTML = "✅ Item: Manopla do grande guerreiro [+ 1 ponto de atributo adicionado em Agilidade]";
+
+     agilidade = agilidade + 1;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+}
+
+if(Yoo === 3){
+     document.getElementById("iditem3").innerHTML = "✅ Item: Item: Botas do grande Assassino [+ 2 ponto de atributo adicionado em Inteligência]";
+
+     inteligencia = inteligencia + 2;
+     document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+}
+
+if(Yoo === 4){
+     document.getElementById("iditem4").innerHTML = "✅ Item: Luvas do Arqueiro [+ 2 ponto de atributo adicionado em Percepção]";
+
+     percepcao = percepcao + 2;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+}
   
-    Fortalecimento = 0;
+if(Yoo === 5){
+     document.getElementById("iditem5").innerHTML = "✅ Item: Anel do grande Mago [+ 3 ponto de atributo adicionado em Inteligência]";
+
+  inteligencia = inteligencia + 3;
+     document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+}
+
+if(Yoo === 6){
+     document.getElementById("iditem6").innerHTML = "✅ Item: Saco de couro [+ 500 moedas de ouro adicionadas no seu inventário]";
+
+ ouro = ouro + 500;
+  document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+}
+
+if(Yoo === 7){
+     document.getElementById("iditem7").innerHTML = "✅ Habilidade: Perseverança [+ 3 pontos de atributos adicionados em Inteligência]";
+
+ inteligencia = inteligencia + 3;
+     document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+}
+
+if(Yoo === 8){
+     document.getElementById("iditem8").innerHTML = "✅ Habilidade: Ataque Vital [+ 4 pontos de atributos adicionados em Agilidade]";
+
+  agilidade = agilidade + 4;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+}
+
+if(Yoo === 9){
+     document.getElementById("iditem9").innerHTML = "✅ Habilidade: Artes Avançadas com Adagas [+ 4 pontos de atributos adicionados em Força]";
+
+ forca = forca + 4;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+}
+if(Yoo === 10){
+     document.getElementById("iditem10").innerHTML = "✅ Habilidade: Detectar [+ 4 pontos de atributos adicionados em Percepção]";
+
+ percepcao = percepcao + 4;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+}
+
+if(Yoo === 11){
+     document.getElementById("iditem11").innerHTML = "✅ Habilidade: Arremesso de Adaga [+ 5 pontos de atributos adicionados em Agilidade]";
+
+  agilidade = agilidade + 5;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+}
+
+if(Yoo === 12){
+     document.getElementById("iditem12").innerHTML = "✅ Efeito: Orbe da Avareza - Desejo pela destruição [+ 5 pontos de atributos adicionados em Inteligência]";
+
+   inteligencia = inteligencia + 5;
+     document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+}
+
+if(Yoo === 14){
+     document.getElementById("iditem14").innerHTML = "✅ Habilidade: Golpe Fatal[+ 4 pontos de atributos adicionados em Percepção]";
+
+ percepcao = percepcao + 4;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+}
+
+if(Yoo === 15){
+     document.getElementById("iditem15").innerHTML = "✅ Habilidade: Flame Spear desbloqueada [Aba ➜ Habilidades ➜ Healer e Magos]";
+
+   HabilidadeLiberadaFlameSpear = 1;
+     document.getElementById("idCheckFlameSpear").innerHTML =  "⚠️ Habilidade: Flame Spear";
+}
+
+if(Yoo === 16){
+     document.getElementById("iditem16").innerHTML = "✅ Item: Veneno da Kasaka Azul de Presas Venenosas [Recupere 100% da sua vida]";
+
+     vida = 100;
+     progresso2.setAttribute("style",
+         "width: " + vida + "%");
+        document.getElementById("idvida")
+         .innerHTML = "❤️ Vida: " + vida +
+         "%";
+}
+
+if(Yoo === 19){
+     document.getElementById("iditem19").innerHTML = "✅ Habilidade: Força de vontade [Recupere 100% da sua vida]";
+
+     vida = 100;
+     progresso2.setAttribute("style", "width: " + vida + "%");
+        document.getElementById("idvida") .innerHTML = "❤️ Vida: " + vida + "%";
+}
+
+ if(Yoo === 20){
+     document.getElementById("iditem20").innerHTML = "✅ Posição: Mestre de Guilda [+ 3000 moedas de ouro adicionadas no seu inventário]";
+
+ ouro = ouro + 3000;
+  document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+}
+/*FIM DOS PRÊMIOS DA MISSÃO DE SUBIR DE NÍVEL*/
+
+
+
+/*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+/*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+ /*Início de remover a habilidade Domínio do Monarca*/
+if (DominioDoMonarca === 1) {
+
+  DominioDoMonarca = 0;
+  
+  agilidade = agilidade - 20;
+  forca = forca - 20;
+  percepcao = percepcao - 20;
+  inteligencia = inteligencia - 20;
+  document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = "";
+  document.getElementById("idCheckDominioDoMonarca").innerHTML = "Habilidade: Domínio do Monarca";
+  document.getElementById("idRetornoDominioDoMonarca").innerHTML = "";  
+  }
+  /* Fim de remover a habilidade Domínio do Monarca */
+  
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+  
+       /* Início do remover a Sombra do Igris*/
+    if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+      SombraIgris = 0;
+      document.getElementById("idRetornoExtracao1").innerHTML = "";
+      document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+  
+      agilidade = agilidade - 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+      forca = forca - 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+      percepcao = percepcao - 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+      inteligencia = inteligencia - 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+      }
+  /* Fim do remover a Sombra do Igris*/
+  
+   /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+  
+  /* Início do remover a Sombra do Tank*/
+  if (SombraTank === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+  SombraTank = 0;
+  document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+  document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+  
+  agilidade = agilidade - 48;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 46;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 28;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 22;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tank*/
+  
+  /* Início do remover a Sombra do Iron*/
+  if (SombraIron === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+  SombraIron = 0;
+  document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+  document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+  
+  agilidade = agilidade - 90;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 140;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 70;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 40;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Iron*/
+  
+  /* Início do remover a Sombra do Tusk Xamã das Sombras*/
+  if (SombraTusk === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+  SombraTusk = 0;
+  document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+  document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+  
+  agilidade = agilidade - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 100;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+  
+   /* Início do remover a Sombra do Kaisel - Rank Dragão*/
+   if (SombraKaisel === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 50;
+      forcaDasSombras = forcaDasSombras - 100;
+      percepcaoDasSombras = percepcaoDasSombras - 30;
+      inteligenciaDasSombras = inteligenciaDasSombras - 50;
+
+    SombraKaisel = 0;
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML = "";
+    document.getElementById("idChecDoKaisel").innerHTML = "Kaisel - Xamã das Sombras";
     
-    agilidade = agilidade - 10;
+    agilidade = agilidade - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselAgilidade").innerHTML = "";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+    
+    forca = forca - 100;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselForca").innerHTML = "";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+    
+    percepcao = percepcao - 30;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselPercepcao").innerHTML = "";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+    
+    inteligencia = inteligencia - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselInteligencia").innerHTML = "";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+    }
+    /* Fim do remover a Sombra do Kaisel - Rank Dragão*/
+
+    /* Início do remover a Sombra do Beru*/
+  if (SombraBeru === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 200;
+      forcaDasSombras = forcaDasSombras - 240;
+      percepcaoDasSombras = percepcaoDasSombras - 160;
+      inteligenciaDasSombras = inteligenciaDasSombras - 200;
+
+  SombraBeru = 0;
+  document.getElementById("idRetornoExtracaoBeru").innerHTML = "";
+  document.getElementById("idChecDoBeru").innerHTML = "Beru - Rei das Formigas";
+  
+  agilidade = agilidade - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 240;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 160;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Beru*/
+
+  /*Início do remover a habilidade Provocar*/
+  
+  if (Provocar === 1) {
+  
+      Provocar = 0;
+      
+  
+    agilidade = agilidade - 40;
+    percepcao = percepcao - 10;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  
+    document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+    document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";
+  
+    document.getElementById("idCheckProvocar").innerHTML = "Habilidade: Provocar";
+    document.getElementById("idRetornoProvocar").innerHTML = "";
+  }
+  /* Fim do remover a habilidade Provocar*/
+  
+   /*Início de remover a habilidade Fortalecimento*/
+    if (Fortalecimento === 1) {
+  
+        Fortalecimento = 0;
+        
+        agilidade = agilidade - 10;
         forca = forca - 10;
         percepcao = percepcao - 10;
         inteligencia = inteligencia - 10;
@@ -5580,13 +7879,12 @@ percepcao = percepcao - 40;
         document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
         document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
         document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
-    
-        document.getElementById("idCheckFortalecimento").innerHTML =
-          "Habilidade: Fortalecimento";   
+        document.getElementById("idCheckFortalecimento").innerHTML = "Habilidade: Fortalecimento";
+        document.getElementById("idRetornoFortalecimento").innerHTML = "";  
     }
-    /*Fim de remover Fortalecimento*/ 
-
-    /* Início de remover Arrancada */
+    /* Fim de remover a habilidade Fortalecimento */
+  
+  /* Início de remover Arrancada*/
   if (Arrancada === 1){
   
   Arrancada = 0;
@@ -5606,21 +7904,38 @@ percepcao = percepcao - 40;
         document.getElementById("idRetornoArrancadaNoStatus").innerHTML = "";
   
   }
-  /*Fim de remover Arrancada*/
+  /* Fim de remover Arrancada*/
   
   /* Início de remover Intenção Assassina */
   if (Assassina === 1){
   
-    Assassina = 0;
-    agilidade = agilidade - 5;
-
-    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
-    document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
-    document.getElementById("idRetornoAssassina").innerHTML = "";
-    document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
+  Assassina = 0;
+      agilidade = agilidade - 5;
+  
+      document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+      document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
+      document.getElementById("idRetornoAssassina").innerHTML = "";
+      document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
   
   }
-  /* Fim de remover Intenção Assassina */
+  /*Fim de remover Intenção Assassina*/
+  
+  /* Início de remover Furtividade */
+  if (Furtividade === 1){
+  
+    Furtividade = 0;
+    
+    agilidade = agilidade - 30;
+    
+     document.getElementById("idagilidade").innerHTML =
+          "🦵 Agilidade: " + agilidade;
+    
+    document.getElementById("idCheckFurtividade").innerHTML = "Habilidade: Furtividade";
+    document.getElementById("idRetornoFurtividade").innerHTML = "";
+    document.getElementById("idRetornoFurtividadeNoStatus").innerHTML = "";
+    
+    }
+    /*Fim de remover Furtividade*/
   
    } 
    
@@ -5700,8 +8015,7 @@ percepcao = percepcao - 40;
         document.getElementById("idexperienciaYoo").innerHTML =  "🏆 Experiência: " + experienciaYoo;
         document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " +  experienciaParaUsarNasHabilidades;
       
-        document.getElementById( "idLutaContraYooBotao")
-         .innerHTML = "Mostro derrotado";
+       
       
       atributo = atributo + 2;
       
@@ -5709,6 +8023,156 @@ percepcao = percepcao - 40;
       
             document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
         
+             /*INÍCIO DOS PRÊMIOS DA MISSÃO DE SUBIR DE NÍVEL 2*/
+if(Yoo === 1){
+     document.getElementById("iditem1").innerHTML = "✅ Item: Peitoral do grande cavaleiro [+ 1 ponto de atributo adicionado em Força]";
+
+   forca = forca + 1;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+}
+
+if(Yoo === 2){
+     document.getElementById("iditem2").innerHTML = "✅ Item: Manopla do grande guerreiro [+ 1 ponto de atributo adicionado em Agilidade]";
+
+     agilidade = agilidade + 1;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+}
+
+if(Yoo === 3){
+     document.getElementById("iditem3").innerHTML = "✅ Item: Item: Botas do grande Assassino [+ 2 ponto de atributo adicionado em Inteligência]";
+
+     inteligencia = inteligencia + 2;
+     document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+}
+
+if(Yoo === 4){
+     document.getElementById("iditem4").innerHTML = "✅ Item: Luvas do Arqueiro [+ 2 ponto de atributo adicionado em Percepção]";
+
+     percepcao = percepcao + 2;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+}
+  
+if(Yoo === 5){
+     document.getElementById("iditem5").innerHTML = "✅ Item: Anel do grande Mago [+ 3 ponto de atributo adicionado em Inteligência]";
+
+  inteligencia = inteligencia + 3;
+     document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+}
+
+if(Yoo === 6){
+     document.getElementById("iditem6").innerHTML = "✅ Item: Saco de couro [+ 500 moedas de ouro adicionadas no seu inventário]";
+
+ ouro = ouro + 500;
+  document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+}
+
+if(Yoo === 7){
+     document.getElementById("iditem7").innerHTML = "✅ Habilidade: Perseverança [+ 3 pontos de atributos adicionados em Inteligência]";
+
+ inteligencia = inteligencia + 3;
+     document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+}
+
+if(Yoo === 8){
+     document.getElementById("iditem8").innerHTML = "✅ Habilidade: Ataque Vital [+ 4 pontos de atributos adicionados em Agilidade]";
+
+  agilidade = agilidade + 4;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+}
+
+if(Yoo === 9){
+     document.getElementById("iditem9").innerHTML = "✅ Habilidade: Artes Avançadas com Adagas [+ 4 pontos de atributos adicionados em Força]";
+
+ forca = forca + 4;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+}
+if(Yoo === 10){
+     document.getElementById("iditem10").innerHTML = "✅ Habilidade: Detectar [+ 4 pontos de atributos adicionados em Percepção]";
+
+ percepcao = percepcao + 4;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+}
+
+if(Yoo === 11){
+     document.getElementById("iditem11").innerHTML = "✅ Habilidade: Arremesso de Adaga [+ 5 pontos de atributos adicionados em Agilidade]";
+
+  agilidade = agilidade + 5;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+}
+
+if(Yoo === 12){
+     document.getElementById("iditem12").innerHTML = "✅ Efeito: Orbe da Avareza - Desejo pela destruição [+ 5 pontos de atributos adicionados em Inteligência]";
+
+   inteligencia = inteligencia + 5;
+     document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+}
+
+if(Yoo === 14){
+     document.getElementById("iditem14").innerHTML = "✅ Habilidade: Golpe Fatal[+ 4 pontos de atributos adicionados em Percepção]";
+
+ percepcao = percepcao + 4;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+}
+
+if(Yoo === 15){
+     document.getElementById("iditem15").innerHTML = "✅ Habilidade: Flame Spear desbloqueada [Aba ➜ Habilidades ➜ Healer e Magos]";
+
+   HabilidadeLiberadaFlameSpear = 1;
+     document.getElementById("idCheckFlameSpear").innerHTML =  "⚠️ Habilidade: Flame Spear";
+}
+
+if(Yoo === 16){
+     document.getElementById("iditem16").innerHTML = "✅ Item: Veneno da Kasaka Azul de Presas Venenosas [Recupere 100% da sua vida]";
+
+     vida = 100;
+     progresso2.setAttribute("style",
+         "width: " + vida + "%");
+        document.getElementById("idvida")
+         .innerHTML = "❤️ Vida: " + vida +
+         "%";
+}
+
+if(Yoo === 19){
+     document.getElementById("iditem19").innerHTML = "✅ Habilidade: Força de vontade [Recupere 100% da sua vida]";
+
+     vida = 100;
+     progresso2.setAttribute("style", "width: " + vida + "%");
+        document.getElementById("idvida") .innerHTML = "❤️ Vida: " + vida + "%";
+}
+
+ if(Yoo === 20){
+     document.getElementById("iditem20").innerHTML = "✅ Posição: Mestre de Guilda [+ 3000 moedas de ouro adicionadas no seu inventário]";
+
+ ouro = ouro + 3000;
+  document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+}
+/*FIM DOS PRÊMIOS DA MISSÃO DE SUBIR DE NÍVEL*/
+
+/*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+            /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
       /* Início de remover Furtividade */
   if (Furtividade === 1){
   
@@ -5910,11 +8374,71 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
 
     } else {
       document.getElementById("idRetornoEquiparAdagaDeBaruka").innerHTML =
-        "Necessário derrotar o Baruka Elfo do gelo para adquirir essa Adaga";
+        "Necessário derrotar o Baruka Elfo do gelo para adquirir essa Adaga.";
     }
   }
   
   /* Fim da função equipar Adaga de Baruka */
+
+  /* início da função Orbe da Avareza */
+  
+  function funcaoEquiparOrbeVulcano() {
+    if (OrbeVulcanoEquipada === 1) {
+      document.getElementById("idRetornoEquiparOrbeVulcano").innerHTML =
+        "Orbe já equipado";
+    } else if (Vulcano > 0 && OrbeVulcanoEquipada === 0) {
+      OrbeVulcanoEquipada = 1;
+  
+      inteligencia = inteligencia + 50;
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+      document.getElementById("idRetornoEquiparOrbeVulcano").innerHTML =
+        "Orbe equipado com sucesso";
+  
+      document.getElementById("idItemOrbeVulcanoAdquirida").innerHTML = "✅ Orbe da Avareza";
+  
+  
+      document.getElementById("idRetornoOrbeVulcano").innerHTML = "+ 50";
+     
+document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
+
+    } else {
+      document.getElementById("idRetornoEquiparOrbeVulcano").innerHTML =
+        "Necessário derrotar o Vulcano Avarento para adquirir esse Orbe.";
+    }
+  }
+  
+  /* Fim da função equipar Orbe da Avareza */
+
+    /* início da função Brinco do Monarca Demoníaco */
+  
+    function funcaoEquiparBrinco() {
+      if (BrincoEquipada === 1) {
+        document.getElementById("idRetornoEquiparBrinco").innerHTML =
+          "Brinco já equipado";
+
+      } else if (Vulcano > 0 && BrincoEquipada === 0) {
+        BrincoEquipada = 1;
+    
+        percepcao = percepcao + 50;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  
+        document.getElementById("idRetornoEquiparBrinco").innerHTML = "Brinco equipado com sucesso";
+    
+        document.getElementById("idItemBrincoAdquirida").innerHTML = "✅ Brinco do Monarca Demoníaco";
+    
+    
+        document.getElementById("idRetornoBrinco").innerHTML = "+ 50";
+       
+  document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
+  
+      } else {
+        document.getElementById("idRetornoEquiparBrinco").innerHTML =
+          "Necessário derrotar o Vulcano Avarento para adquirir esse Brinco.";
+      }
+    }
+    
+    /* Fim da função equipar Brinco do Monarca Demoníaco */
 
   /*início da função equipar Assassina de Cavaleiros*/
   
@@ -5948,7 +8472,7 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
       document.getElementById("idRetornoCompraAssassinaCavaleiros").innerHTML = "+ 20";
     } else {
       document.getElementById("idRetornoEquiparAssassinaCavaleiros").innerHTML =
-        "Necessário derrotar o Igris para adquirir essa Adaga";
+        "Necessário derrotar o Igris para comprar essa Adaga";
     }
   }
   
@@ -6052,27 +8576,31 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
   
   /* INÍCIO DA LUTA DOS MAGOS*/
   function LutaContraMagosBotao() {
+
    if (vida < 100 || fadiga > 0) {
-    document.getElementById(
-      "idQuadroDeRetornoMagos")
-     .innerHTML =
-     "Vida ou Fadiga insuficiente";
+    document.getElementById("idQuadroDeRetornoMagos").innerHTML ="Vida ou Fadiga insuficiente";
    } 
    
-   else if (vida > 0 && fadiga < 100 && Magos === 1) {
-    document.getElementById(
-      "idQuadroDeRetornoMagos")
-     .innerHTML =
-     "✨ Você já derrotou os Magos ✨";
-   } 
-   
-   else if (vida === 100 && fadiga === 0 && forca > 145 && agilidade > 140 &&  Magos === 0 && percepcao > 85 && inteligencia > 70) {
+   else if (
+    vida === 100 && 
+    fadiga  === 0 &&
+    forca > 145 &&
+    agilidade > 140 &&
+    percepcao > 85 &&
+    inteligencia > 70 && 
+    Magos === 0
+    ) {
 
     document.getElementById("trocar-conteudo").innerHTML = "Clique aqui para aceitar a Classe Necromante [Monarca das Sombras]";
 
-    alert("Aonde o Jogador vai, o anjo da morte o segue. Qualquer caminho que o Jogador seguir estará repleto de cadáveres e o fedor de sangue permanecerá. Além disso, o Jogador anseia por grande poder e abriu seu próprio caminho sem depender de outros. Sua sede de poder invoca os espíritos que vagam pelo vale da morte. Os fantasmas convocados pelo exército das sombras seguirão as ordens do Jogador e obedecerão apenas o Jogador. Sua classe foi alterada para: Necromante - Monarca das Sombras");
-   
-    document.getElementById("idQuadroDeRetornoMagos").innerHTML = "✨ VITÓRIA ✨ Você derrotou os 6 Magos";
+    alert("Aonde o Jogador vai, o anjo da morte o segue. Qualquer caminho que o Jogador seguir estará repleto de cadáveres e o fedor de sangue permanecerá. Além disso, o Jogador anseia por grande poder e abriu seu próprio caminho sem depender de outros. Sua sede de poder invoca os espíritos que vagam pelo vale da morte. Os fantasmas convocados pelo exército das sombras seguirão as ordens do Jogador e obedecerão apenas o Jogador.");
+    alert("Sua classe foi alterada para: Necromante - Monarca das Sombras");
+    alert("✨✨ Parabéns por derrotar um exército, nada mais justo que recolher os espólios da batalha ✨✨");
+       alert("[Adicionado 50 Pedras de Essência no seu Inventário]");
+    PedraDeEssencia = PedraDeEssencia + 50;
+      document.getElementById("idpedrainventario").innerHTML =  "⚠️ Pedras de Essência: " + PedraDeEssencia;
+
+    document.getElementById("idQuadroDeRetornoMagos").innerHTML = "✨ VITÓRIA ✨ Você derrotou os 6 Magos [Necessário aceitar a Classe Necromante]";
     document.getElementById("idChecDosMagos").innerHTML = "⚠️ 6 Magos das Sombras";
     document.getElementById("idChecDoIgris").innerHTML = "⚠️ Igris - O Vermelho-Sangue";
     document.getElementById("idAlertaNoMenuClasseTitulo").innerHTML = "⚠️ Classe e Títulos";
@@ -6087,23 +8615,68 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
  Magos = 1;
     
   
-     document.getElementById("idLutaContraMagosBotao") .innerHTML = "Magos derrotado";
+     document.getElementById("idLutaContraMagosBotao") .innerHTML = "Magos derrotados";
+
+         /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+     /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
 
 /*Início do título Aquele que superou a Adversidade*/
-  if (TituloAdversidadeEstaEmUso === 1){
-   
-    mana = mana + 30;
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
 
-    if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
 
-    document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
-      progresso3.setAttribute("style", "width: " + mana + "%");
-      alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
-    
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
   }
-  /*Fim do título Aquele que superou a Adversidade*/
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
 
-     /* Início de remover Furtividade */
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+
+     /* Início de remover Furtividade*/
   if (Furtividade === 1){
   
     Furtividade = 0;
@@ -6138,7 +8711,7 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
     }
     /*Fim de remover Provocar*/  
 
-     /* Início de remover Fortalecimento */ 
+     /* Início de remover Fortalecimento*/
    if (Fortalecimento === 1){
   
     Fortalecimento = 0;
@@ -6162,7 +8735,7 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
     }
     /*Fim de remover Fortalecimento*/ 
     
-    /* Início de remover Arrancada */ 
+    /* Início de remover Arrancada*/ 
   if (Arrancada === 1){
   
   Arrancada = 0;
@@ -6184,7 +8757,7 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
   }
   /*Fim de remover Arrancada*/
   
-  /* Início de remover Intenção Assassina */ 
+  /* Início de remover Intenção Assassina*/
   if (Assassina === 1){
   
     Assassina = 0;
@@ -6196,12 +8769,19 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
     document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
   
   }
-  /*Fim de remover Intenção Assassina*/
+    /* Fim de remover Intenção Assassina*/
 
  
   
-   } 
+}
    
+   else if (vida > 0 && fadiga < 100 && Magos === 1) {
+    document.getElementById(
+      "idQuadroDeRetornoMagos")
+     .innerHTML =
+     "✨ Você já derrotou os Magos ✨";
+   } 
+
    else {
     vida = vida - 100;
     
@@ -6220,10 +8800,7 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
       "idfadiga").innerHTML =
      "🪫Fadiga: " + fadiga + "%";
   
-    document.getElementById(
-      "idQuadroDeRetornoMagos")
-     .innerHTML =
-     "☠️ DERROTA - Tente melhorar os seus atributos antes de lutar novamente ☠️";
+    document.getElementById( "idQuadroDeRetornoMagos")    .innerHTML =     "☠️ DERROTA - Tente melhorar os seus atributos antes de lutar novamente ☠️";
   
     document.getElementById(
       "idLutaContraMagosBotao")
@@ -6233,7 +8810,8 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
   }
   /*FIM DA LUTA DO MAGOS*/
 
-  /* Início da habilidade Arrancada 12345678910*/
+
+  /* Início da habilidade Arrancada */
 function FuncaoArrancada() {
 
   if (ArrancadaNivel2 === 0){
@@ -6266,7 +8844,7 @@ function FuncaoArrancada() {
     document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
 
-    document.getElementById("idRetornoArrancada").innerHTML = "Buff aplicado";
+    document.getElementById("idRetornoArrancada").innerHTML = "Buff foi Ativado";
   }
 
   if (Kasaka > 0 && Arrancada === 0 && mana < 6) {
@@ -6302,7 +8880,7 @@ if (ArrancadaNivel2 === 1){
       "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
 
-    document.getElementById("idRetornoArrancada").innerHTML = "Buff aplicado";
+    document.getElementById("idRetornoArrancada").innerHTML = "Buff foi Ativado";
   }
 
   if (Kasaka > 0 && Arrancada === 0 && mana < 6) {
@@ -6334,7 +8912,7 @@ experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades - 45;
 
 } 
 
-else if (ArrancadaNivel2 === 0 && experienciaParaUsarNasHabilidades < 25){
+else if (ArrancadaNivel2 === 0 && experienciaParaUsarNasHabilidades < 45){
   document.getElementById("idRetornoArrancada").innerHTML =
       "Experiência insuficiente";
 }
@@ -6378,6 +8956,14 @@ else if (SaudeElogenvidadeNivel2 === 1 && experienciaParaUsarNasHabilidades ){
 
 /* Início da função atribuir pontos na PERCEPÇÃO  */
 function funcaoatribuirpercepcao() {
+
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
   if (atributo > 0) {
     document.getElementById("idminerarcristal").innerHTML = "";
     document.getElementById("idvendercristal").innerHTML = "";
@@ -6406,7 +8992,7 @@ function funcaoatribuirpercepcao() {
       document.getElementById("idnivel").innerHTML =
         "Nível: " + EqualizadoDoNivel;
 
-      alert("Level Up");
+       alert("Você subiu de Nível!");
 
       EqualizadoDoNivel = EqualizadoDoNivel + 1;
       SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
@@ -6422,9 +9008,17 @@ function funcaoatribuirpercepcao() {
 /*Início da habilidade Extração de Sombras IGRIS*/
 function FuncaoExtracaoIgris() {
 
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
   if (Magos < 2){
     document.getElementById("idRetornoExtracao1").innerHTML =
       "Habilidade exclussiva da Classe Necromante [Monarca das Sombras] - Derrote os 6 Magos para utilizar essa Habilidade!";
+      
   }
 
   else if (SombraIgris === 1){
@@ -6438,10 +9032,23 @@ function FuncaoExtracaoIgris() {
 
        document.getElementById("idChecDoIgris").innerHTML = "✅ Igris - O Vermelho-Sangue";
 
+       /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
+
+ if (PrimeiraVezDoIgris === 0)  { 
+  PrimeiraVezDoIgris = 1; 
+criarVagalumes();
+ }
       mana = mana - 50;
       document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
 
+      agilidadeDasSombras = agilidadeDasSombras + 100;
+      forcaDasSombras = forcaDasSombras + 120;
+      percepcaoDasSombras = percepcaoDasSombras + 80;
+      inteligenciaDasSombras = inteligenciaDasSombras + 60;
 
       agilidade = agilidade + 100;
       document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "+ 100";
@@ -6464,6 +9071,8 @@ function FuncaoExtracaoIgris() {
    else if (Magos > 1 && mana < 50 && SombraIgris === 0){
      document.getElementById("idRetornoExtracao1").innerHTML =
       "Mana insuficiente";
+
+  
    }
 
  
@@ -6473,6 +9082,13 @@ function FuncaoExtracaoIgris() {
 
 /*Início da habilidade Extração de Sombras MAGOS*/
 function FuncaoExtracaoMagos() {
+
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
 
   if (Magos < 2){
     document.getElementById("idRetornoExtracaoMagos").innerHTML =
@@ -6492,11 +9108,26 @@ function FuncaoExtracaoMagos() {
       SombraMago = SombraMago + 1;
     document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída com sucesso [1 Mago no campo de batalha]";
 
+       if (PrimeiraVezDoMago === 0)  { 
+  PrimeiraVezDoMago  = 1; 
+criarVagalumes();
+ }
+
       document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
+
+      /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
 
       mana = mana - 10;
       document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
+
+      agilidadeDasSombras = agilidadeDasSombras + 24;
+      forcaDasSombras = forcaDasSombras + 23;
+      percepcaoDasSombras = percepcaoDasSombras + 14;
+      inteligenciaDasSombras = inteligenciaDasSombras + 11;
 
       agilidade = agilidade + 24;
       document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 24";
@@ -6522,9 +9153,19 @@ function FuncaoExtracaoMagos() {
 
     document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
 
+    /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
+
     mana = mana - 10;
     document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
     progresso3.setAttribute("style", "width: " + mana + "%");
+
+    agilidadeDasSombras = agilidadeDasSombras + 24;
+      forcaDasSombras = forcaDasSombras + 23;
+      percepcaoDasSombras = percepcaoDasSombras + 14;
+      inteligenciaDasSombras = inteligenciaDasSombras + 11;
 
     agilidade = agilidade + 24;
     document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 48";
@@ -6550,9 +9191,19 @@ document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída co
 
   document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
 
+  /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
+
   mana = mana - 10;
   document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
   progresso3.setAttribute("style", "width: " + mana + "%");
+
+  agilidadeDasSombras = agilidadeDasSombras + 24;
+      forcaDasSombras = forcaDasSombras + 23;
+      percepcaoDasSombras = percepcaoDasSombras + 14;
+      inteligenciaDasSombras = inteligenciaDasSombras + 11;
 
   agilidade = agilidade + 24;
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 72";
@@ -6578,9 +9229,19 @@ document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída co
 
   document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
 
+  /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
+
   mana = mana - 10;
   document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
   progresso3.setAttribute("style", "width: " + mana + "%");
+
+  agilidadeDasSombras = agilidadeDasSombras + 24;
+      forcaDasSombras = forcaDasSombras + 23;
+      percepcaoDasSombras = percepcaoDasSombras + 14;
+      inteligenciaDasSombras = inteligenciaDasSombras + 11;
 
   agilidade = agilidade + 24;
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 96";
@@ -6606,9 +9267,19 @@ document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída co
 
   document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
 
+  /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
+
   mana = mana - 10;
   document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
   progresso3.setAttribute("style", "width: " + mana + "%");
+
+  agilidadeDasSombras = agilidadeDasSombras + 24;
+      forcaDasSombras = forcaDasSombras + 23;
+      percepcaoDasSombras = percepcaoDasSombras + 14;
+      inteligenciaDasSombras = inteligenciaDasSombras + 11;
 
   agilidade = agilidade + 24;
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 120";
@@ -6634,9 +9305,19 @@ document.getElementById("idRetornoExtracaoMagos").innerHTML = "Alma extraída co
 
   document.getElementById("idChecDosMagos").innerHTML = "✅ 6 Magos das Sombras";
 
+  /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
+
   mana = mana - 10;
   document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
   progresso3.setAttribute("style", "width: " + mana + "%");
+
+  agilidadeDasSombras = agilidadeDasSombras + 24;
+      forcaDasSombras = forcaDasSombras + 23;
+      percepcaoDasSombras = percepcaoDasSombras + 14;
+      inteligenciaDasSombras = inteligenciaDasSombras + 11;
 
   agilidade = agilidade + 24;
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "+ 144";
@@ -6712,6 +9393,24 @@ function abrirAba(id) {
 }
  /*Fim abas do menu Treino*/
 
+  /*Início abas do menu Kasaka*/
+ function abrirAbaKasaka(id) {
+  const abasKasaka = document.querySelectorAll('.abaKasaka');
+  const botoesKasaka = document.querySelectorAll('.botaoKasaka');
+
+  abasKasaka.forEach((abaKasaka) => {
+    abaKasaka.classList.remove('ativo');
+  });
+
+  botoesKasaka.forEach((botaoKasaka) => {
+    botaoKasaka.classList.remove('ativo');
+  });
+
+  document.getElementById(`abaKasaka${id}`).classList.add('ativo');
+  botoesKasaka[id - 1].classList.add('ativo');
+}
+ /*Fim abas do menu Kasaka*/
+
   /*Início abas do menu Classes e Títulos*/
   function abrirAbaArise(id) {
     const abasArise = document.querySelectorAll('.abaArise');
@@ -6729,6 +9428,24 @@ function abrirAba(id) {
     botoesArise[id - 1].classList.add('ativo');
   }
    /*Fim abas do menu Classes e Títulos*/
+
+   /*Início abas do menu Esil Radiru*/
+  function abrirAbaArise2(id) {
+    const abasArise2 = document.querySelectorAll('.abaArise2');
+    const botoesArise2 = document.querySelectorAll('.botaoArise2');
+  
+    abasArise2.forEach((abaArise2) => {
+      abaArise2.classList.remove('ativo');
+    });
+  
+    botoesArise2.forEach((botaoArise2) => {
+      botaoArise2.classList.remove('ativo');
+    });
+  
+    document.getElementById(`abaArise2${id}`).classList.add('ativo');
+    botoesArise2[id - 1].classList.add('ativo');
+  }
+   /*Fim abas do menu Esil Radiru*/
 
  /*Início abas do menu Loja*/
  function abrirAbaLoja(id) {
@@ -6826,6 +9543,8 @@ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
     document.getElementById("idPontosExtrasEntusiasta").innerHTML = "+ 5";
 
     /*início Remover os outros títulos*/
+
+     /*Título: Lorde da Mineração*/
     if(TituloLordeDaMineracaoEstaEmUso === 1){
       TituloLordeDaMineracaoEstaEmUso = 0;
     document.getElementById("idCheckLordeDaMineracao").innerHTML = "Título: Lorde da Mineração";
@@ -6835,6 +9554,7 @@ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
     document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
     }
 
+     /*Título: Exterminador de Goblins*/
     if(TituloExterminadorDeGoblinsEstaEmUso === 1){
       TituloExterminadorDeGoblinsEstaEmUso = 0;
       document.getElementById("idCheckGoblins").innerHTML =  "Título: Exterminador de Goblins";
@@ -6845,6 +9565,7 @@ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
       document.getElementById("idPontosExtrasGoblins4").innerHTML = "";
     }
 
+     /*Título: Assassino de Lobos*/
     if(TituloAssassinoDeLobosEstaEmUso === 1){
       TituloAssassinoDeLobosEstaEmUso = 0;
       document.getElementById("idCheckLobos").innerHTML =  "Título: Assassino de Lobos";
@@ -6855,12 +9576,14 @@ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
       document.getElementById("idPontosExtrasLobos4").innerHTML = "";
     }
 
+     /*Título: Aquele que Superou a Adversidade*/
     if(TituloAdversidadeEstaEmUso === 1){
       TituloAdversidadeEstaEmUso = 0;
       document.getElementById("idCheckAdversidade").innerHTML =  "Título: Aquele que Superou a Adversidade";
       document.getElementById("idTituloRetornoAdversidade",).innerHTML = "";
   
     }
+
  /*Fim Remover os outros títulos*/
 
   }
@@ -6896,7 +9619,9 @@ function FuncaoTrocarTituloLordeDaMineracao() {
     document.getElementById("idPontosExtrasLordeDaMineracao").innerHTML = "+ 10";
 
  /*início Remover os outros títulos*/
- if (TituloEntusiastaEstaEmUso === 1){
+
+    /*Título: Entusiasta da Mineração*/
+    if (TituloEntusiastaEstaEmUso === 1){
   TituloEntusiastaEstaEmUso = 0;
 
     document.getElementById("idCheckEntusiasta").innerHTML =  "Título: Entusiata da Mineração";
@@ -6906,32 +9631,36 @@ function FuncaoTrocarTituloLordeDaMineracao() {
     document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
  }
 
- if(TituloExterminadorDeGoblinsEstaEmUso === 1){
-    TituloExterminadorDeGoblinsEstaEmUso = 0;
-  document.getElementById("idCheckGoblins").innerHTML =  "Título: Exterminador de Goblins";
-  document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
-     document.getElementById("idPontosExtrasGoblins1").innerHTML = "";
-  document.getElementById("idPontosExtrasGoblins2").innerHTML = "";
-  document.getElementById("idPontosExtrasGoblins3").innerHTML = "";
-  document.getElementById("idPontosExtrasGoblins4").innerHTML = "";
-}
+     /*Título: Exterminador de Goblins*/
+    if(TituloExterminadorDeGoblinsEstaEmUso === 1){
+      TituloExterminadorDeGoblinsEstaEmUso = 0;
+      document.getElementById("idCheckGoblins").innerHTML =  "Título: Exterminador de Goblins";
+      document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+         document.getElementById("idPontosExtrasGoblins1").innerHTML = "";
+      document.getElementById("idPontosExtrasGoblins2").innerHTML = "";
+      document.getElementById("idPontosExtrasGoblins3").innerHTML = "";
+      document.getElementById("idPontosExtrasGoblins4").innerHTML = "";
+    }
 
-if(TituloAssassinoDeLobosEstaEmUso === 1){
-  TituloAssassinoDeLobosEstaEmUso = 0;
-  document.getElementById("idCheckLobos").innerHTML =  "Título: Assassino de Lobos";
-  document.getElementById("idTituloRetornoLobos",).innerHTML = "";
-  document.getElementById("idPontosExtrasLobos1").innerHTML = "";
-  document.getElementById("idPontosExtrasLobos2").innerHTML = "";
-  document.getElementById("idPontosExtrasLobos3").innerHTML = "";
-  document.getElementById("idPontosExtrasLobos4").innerHTML = "";
-}
+     /*Título: Assassino de Lobos*/
+    if(TituloAssassinoDeLobosEstaEmUso === 1){
+      TituloAssassinoDeLobosEstaEmUso = 0;
+      document.getElementById("idCheckLobos").innerHTML =  "Título: Assassino de Lobos";
+      document.getElementById("idTituloRetornoLobos",).innerHTML = "";
+      document.getElementById("idPontosExtrasLobos1").innerHTML = "";
+      document.getElementById("idPontosExtrasLobos2").innerHTML = "";
+      document.getElementById("idPontosExtrasLobos3").innerHTML = "";
+      document.getElementById("idPontosExtrasLobos4").innerHTML = "";
+    }
 
-if(TituloAdversidadeEstaEmUso === 1){
-  TituloAdversidadeEstaEmUso = 0;
-  document.getElementById("idCheckAdversidade").innerHTML =  "Título: Aquele que Superou a Adversidade";
-  document.getElementById("idTituloRetornoAdversidade",).innerHTML = "";
+     /*Título: Aquele que Superou a Adversidade*/
+    if(TituloAdversidadeEstaEmUso === 1){
+      TituloAdversidadeEstaEmUso = 0;
+      document.getElementById("idCheckAdversidade").innerHTML =  "Título: Aquele que Superou a Adversidade";
+      document.getElementById("idTituloRetornoAdversidade",).innerHTML = "";
+  
+    }
 
-}
  /*Fim Remover os outros títulos*/
 
   } else if(SomaDosCristais > 3999 && TituloLordeDaMineracaoEstaEmUso === 1){
@@ -6966,39 +9695,47 @@ function FuncaoTrocarTituloGoblins() {
     document.getElementById("idPontosExtrasGoblins4").innerHTML = "+ 50 [Somente contra Goblins]";
 
  /*início Remover os outros títulos*/
- if(TituloLordeDaMineracaoEstaEmUso === 1){
-  TituloLordeDaMineracaoEstaEmUso = 0;
-document.getElementById("idCheckLordeDaMineracao").innerHTML = "Título: Lorde da Mineração";
-document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
-document.getElementById("idPontosExtrasLordeDaMineracao").innerHTML = "";
-percepcao = percepcao - 10;
-document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
-}
 
- if (TituloEntusiastaEstaEmUso === 1){
+    /*Título: Entusiasta da Mineração*/
+    if (TituloEntusiastaEstaEmUso === 1){
   TituloEntusiastaEstaEmUso = 0;
-    document.getElementById("idCheckEntusiasta").innerHTML = "Título: Entusiata da Mineração";
+
+    document.getElementById("idCheckEntusiasta").innerHTML =  "Título: Entusiata da Mineração";
     document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
     document.getElementById("idPontosExtrasEntusiasta").innerHTML = "";
     percepcao = percepcao - 5;
     document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
  }
 
- if(TituloAssassinoDeLobosEstaEmUso === 1){
-  TituloExterminadorDeGoblinsEstaEmUso = 0;
-  document.getElementById("idCheckLobos").innerHTML =  "Título: Assassino de Lobos";
-  document.getElementById("idTituloRetornoLobos",).innerHTML = "";
-  document.getElementById("idPontosExtrasLobos1").innerHTML = "";
-  document.getElementById("idPontosExtrasLobos2").innerHTML = "";
-  document.getElementById("idPontosExtrasLobos3").innerHTML = "";
-  document.getElementById("idPontosExtrasLobos4").innerHTML = "";
-}
-if(TituloAdversidadeEstaEmUso === 1){
-  TituloAdversidadeEstaEmUso = 0;
-  document.getElementById("idCheckAdversidade").innerHTML =  "Título: Aquele que Superou a Adversidade";
-  document.getElementById("idTituloRetornoAdversidade",).innerHTML = "";
+     /*Título: Lorde da Mineração*/
+    if(TituloLordeDaMineracaoEstaEmUso === 1){
+      TituloLordeDaMineracaoEstaEmUso = 0;
+    document.getElementById("idCheckLordeDaMineracao").innerHTML = "Título: Lorde da Mineração";
+    document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+    document.getElementById("idPontosExtrasLordeDaMineracao").innerHTML = "";
+    percepcao = percepcao - 10;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+    }
 
-}
+     /*Título: Assassino de Lobos*/
+    if(TituloAssassinoDeLobosEstaEmUso === 1){
+      TituloAssassinoDeLobosEstaEmUso = 0;
+      document.getElementById("idCheckLobos").innerHTML =  "Título: Assassino de Lobos";
+      document.getElementById("idTituloRetornoLobos",).innerHTML = "";
+      document.getElementById("idPontosExtrasLobos1").innerHTML = "";
+      document.getElementById("idPontosExtrasLobos2").innerHTML = "";
+      document.getElementById("idPontosExtrasLobos3").innerHTML = "";
+      document.getElementById("idPontosExtrasLobos4").innerHTML = "";
+    }
+
+     /*Título: Aquele que Superou a Adversidade*/
+    if(TituloAdversidadeEstaEmUso === 1){
+      TituloAdversidadeEstaEmUso = 0;
+      document.getElementById("idCheckAdversidade").innerHTML =  "Título: Aquele que Superou a Adversidade";
+      document.getElementById("idTituloRetornoAdversidade",).innerHTML = "";
+  
+    }
+
  /*Fim Remover os outros títulos*/
 
   } else if(Goblin > 9 && TituloExterminadorDeGoblinsEstaEmUso === 1){
@@ -7034,40 +9771,47 @@ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
     document.getElementById("idPontosExtrasLobos4").innerHTML = "+ 40 [Somente contra Bestas Mágicas]";
 
  /*início Remover os outros títulos*/
- if(TituloLordeDaMineracaoEstaEmUso === 1){
-  TituloLordeDaMineracaoEstaEmUso = 0;
-document.getElementById("idCheckLordeDaMineracao").innerHTML = "Título: Lorde da Mineração";
-document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
-document.getElementById("idPontosExtrasLordeDaMineracao").innerHTML = "";
-percepcao = percepcao - 10;
-document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
-}
 
- if (TituloEntusiastaEstaEmUso === 1){
+    /*Título: Entusiasta da Mineração*/
+    if (TituloEntusiastaEstaEmUso === 1){
   TituloEntusiastaEstaEmUso = 0;
-    document.getElementById("idCheckEntusiasta").innerHTML = "Título: Entusiata da Mineração";
+
+    document.getElementById("idCheckEntusiasta").innerHTML =  "Título: Entusiata da Mineração";
     document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
     document.getElementById("idPontosExtrasEntusiasta").innerHTML = "";
     percepcao = percepcao - 5;
     document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
  }
 
- if(TituloExterminadorDeGoblinsEstaEmUso === 1){
-  TituloExterminadorDeGoblinsEstaEmUso = 0;
-  document.getElementById("idCheckGoblins").innerHTML =  "Título: Exterminador de Goblins";
-  document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
-     document.getElementById("idPontosExtrasGoblins1").innerHTML = "";
-  document.getElementById("idPontosExtrasGoblins2").innerHTML = "";
-  document.getElementById("idPontosExtrasGoblins3").innerHTML = "";
-  document.getElementById("idPontosExtrasGoblins4").innerHTML = "";
-}
+     /*Título: Lorde da Mineração*/
+    if(TituloLordeDaMineracaoEstaEmUso === 1){
+      TituloLordeDaMineracaoEstaEmUso = 0;
+    document.getElementById("idCheckLordeDaMineracao").innerHTML = "Título: Lorde da Mineração";
+    document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+    document.getElementById("idPontosExtrasLordeDaMineracao").innerHTML = "";
+    percepcao = percepcao - 10;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+    }
 
-if(TituloAdversidadeEstaEmUso === 1){
-  TituloAdversidadeEstaEmUso = 0;
-  document.getElementById("idCheckAdversidade").innerHTML =  "Título: Aquele que Superou a Adversidade";
-  document.getElementById("idTituloRetornoAdversidade",).innerHTML = "";
+     /*Título: Exterminador de Goblins*/
+    if(TituloExterminadorDeGoblinsEstaEmUso === 1){
+      TituloExterminadorDeGoblinsEstaEmUso = 0;
+      document.getElementById("idCheckGoblins").innerHTML =  "Título: Exterminador de Goblins";
+      document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+         document.getElementById("idPontosExtrasGoblins1").innerHTML = "";
+      document.getElementById("idPontosExtrasGoblins2").innerHTML = "";
+      document.getElementById("idPontosExtrasGoblins3").innerHTML = "";
+      document.getElementById("idPontosExtrasGoblins4").innerHTML = "";
+    }
 
-}
+     /*Título: Aquele que Superou a Adversidade*/
+    if(TituloAdversidadeEstaEmUso === 1){
+      TituloAdversidadeEstaEmUso = 0;
+      document.getElementById("idCheckAdversidade").innerHTML =  "Título: Aquele que Superou a Adversidade";
+      document.getElementById("idTituloRetornoAdversidade",).innerHTML = "";
+  
+    }
+
  /*Fim Remover os outros títulos*/
 
   } else if(Lycan > 19 && TituloAssassinoDeLobosEstaEmUso === 1){
@@ -7082,6 +9826,7 @@ if(TituloAdversidadeEstaEmUso === 1){
 
  /*INÍCIO DO TÍTULO AQUELE QUE SUPEROU A ADVERSIDADE*/
 function FuncaoTrocarTituloAdversidade() {
+
   if (Igris > 2 && TituloAdversidadeEstaEmUso === 0){
 
     TituloAdversidadeEstaEmUso = 1;
@@ -7098,15 +9843,18 @@ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
 
     /*início Remover os outros títulos*/
 
+    /*Título: Entusiasta da Mineração*/
     if (TituloEntusiastaEstaEmUso === 1){
-      TituloEntusiastaEstaEmUso = 0;
-        document.getElementById("idCheckEntusiasta").innerHTML = "Título: Entusiata da Mineração";
-        document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
-        document.getElementById("idPontosExtrasEntusiasta").innerHTML = "";
-        percepcao = percepcao - 5;
-        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
-     }
+  TituloEntusiastaEstaEmUso = 0;
 
+    document.getElementById("idCheckEntusiasta").innerHTML =  "Título: Entusiata da Mineração";
+    document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
+    document.getElementById("idPontosExtrasEntusiasta").innerHTML = "";
+    percepcao = percepcao - 5;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+ }
+
+     /*Título: Lorde da Mineração*/
     if(TituloLordeDaMineracaoEstaEmUso === 1){
       TituloLordeDaMineracaoEstaEmUso = 0;
     document.getElementById("idCheckLordeDaMineracao").innerHTML = "Título: Lorde da Mineração";
@@ -7116,6 +9864,7 @@ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
     document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
     }
 
+     /*Título: Exterminador de Goblins*/
     if(TituloExterminadorDeGoblinsEstaEmUso === 1){
       TituloExterminadorDeGoblinsEstaEmUso = 0;
       document.getElementById("idCheckGoblins").innerHTML =  "Título: Exterminador de Goblins";
@@ -7126,6 +9875,7 @@ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
       document.getElementById("idPontosExtrasGoblins4").innerHTML = "";
     }
 
+     /*Título: Assassino de Lobos*/
     if(TituloAssassinoDeLobosEstaEmUso === 1){
       TituloAssassinoDeLobosEstaEmUso = 0;
       document.getElementById("idCheckLobos").innerHTML =  "Título: Assassino de Lobos";
@@ -7135,6 +9885,7 @@ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
       document.getElementById("idPontosExtrasLobos3").innerHTML = "";
       document.getElementById("idPontosExtrasLobos4").innerHTML = "";
     }
+
  /*Fim Remover os outros títulos*/
 
   }
@@ -7148,16 +9899,47 @@ document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
 }
  /*FIM DO TÍTULO AQUELE QUE SUPEROU A ADVERSIDADE*/
 
+/*INÍCIO DO TÍTULO MESTRE DAS ARMAS*/
+function FuncaoTrocarTituloMestreDasArmas() {
 
+
+  if (experienciaParaUsarNasHabilidades > 99 && TituloMestreDasArmasEmUso === 0){
+
+    experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades - 100;
+    document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+
+     TituloMestreDasArmasEmUso = 1;
+
+  document.getElementById("idtituloMestreDasArmas").innerHTML = "Título: Mestre das armas";
+document.getElementById("idCheckMestreDasArmas").innerHTML =  "✅ Título: Mestre das armas";
+document.getElementById("idTituloRetornoMestreDasArmas",).innerHTML = "Título em Uso";
+
+ 
+document.getElementById("idTituloRetornoLobos",).innerHTML = "";
+ document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
+ document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
+
+  }
+  else if ( TituloMestreDasArmasEmUso === 1){
+    document.getElementById("idTituloRetornoMestreDasArmas",).innerHTML = "Título já está em uso";
+  }
+
+  else if (experienciaParaUsarNasHabilidades < 100 && TituloMestreDasArmasEmUso === 0){
+    document.getElementById("idTituloRetornoMestreDasArmas",).innerHTML = "Experiência insuficiente";
+  }
+}
+ /*FIM DO TÍTULO MESTRE DAS ARMAS*/
  
 
 
 
-/*INÍCIO IR PARA O SOLO LEVELING ARISE*/
+/*INÍCIO IR PARA O Solo Leveling Arise from the Shadow*/
 document.getElementById("trocar-conteudo").addEventListener("click", function() {
-
   document.getElementById("idClasse").innerHTML = "Classe: Necromante [Monarca das Sombras]";
   Magos = 2;
+
+ 
 
   /*Apagar todos os cards
 document.getElementById("idDIVEsconderKandiaru").innerHTML = "";
@@ -7177,7 +9959,7 @@ Apagar todos os cards*/
   var conteudo = document.getElementById("conteudo");
   var conteudoAlternativo = document.getElementById("conteudo-alternativo");
   conteudo.innerHTML = conteudoAlternativo.innerHTML;
-  
+ 
 
 });
 /*FIM IR PARA O SOLO LEVELING ARISE*/
@@ -7216,22 +9998,22 @@ function abrirAbaNova(id) {
     if (fadiga < 91) { document.getElementById( "idFadigaUrsos").innerHTML =  "🪫Fadiga: 10%/" + fadiga + "%" + " ✅";
     }
    
-    if (agilidade < 331) { document.getElementById("idAgilidadeUrsos").innerHTML = "🦵 Agilidade: 330/" + agilidade + " ❌";
+    if (agilidade < 331) { document.getElementById("idAgilidadeUrsos").innerHTML = "🦵 Agilidade: 330/" + agilidade + " ❌ - Dica: Use a Habilidade Extração de Alma, colocando o Igris e os Magos para lutar";
     }
     if (agilidade > 330) { document.getElementById("idAgilidadeUrsos").innerHTML = "🦵 Agilidade: 330/" +  agilidade + " ✅";
     }
    
     if (forca > 410) {document.getElementById("idForcaUrsos").innerHTML =  "💪 Força: 410/" + forca + " ✅";
     }
-    if (forca < 411) { document.getElementById( "idForcaUrsos").innerHTML = "💪 Força: 410/" + forca + " ❌";
+    if (forca < 411) { document.getElementById( "idForcaUrsos").innerHTML = "💪 Força: 410/" + forca + " ❌ - Dica: Use a Habilidade Extração de Alma, colocando o Igris e os Magos para lutar";
     }
    
-     if (percepcao < 251) { document.getElementById( "idPercepcaoUrsos").innerHTML = "👀 Percepção: 250/" +  percepcao + " ❌";
+     if (percepcao < 251) { document.getElementById( "idPercepcaoUrsos").innerHTML = "👀 Percepção: 250/" +  percepcao + " ❌ - Dica: Use a Habilidade Extração de Alma, colocando o Igris e os Magos para lutar";
     }
     if (percepcao > 250) {document.getElementById("idPercepcaoUrsos").innerHTML =  "👀 Percepção: 250/" +  percepcao + " ✅";
     }
    
-    if (inteligencia < 201) {document.getElementById( "idInteligenciaUrsos").innerHTML = "🧠 Inteligência: 200/" +  inteligencia + " ❌";
+    if (inteligencia < 201) {document.getElementById( "idInteligenciaUrsos").innerHTML = "🧠 Inteligência: 200/" +  inteligencia + " ❌ - Dica: Use a Habilidade Extração de Alma, colocando o Igris e os Magos para lutar";
     }
     if (inteligencia > 200) { document.getElementById( "idInteligenciaUrsos").innerHTML = "🧠 Inteligência: 200/" + inteligencia + " ✅";
     }
@@ -7245,7 +10027,7 @@ function abrirAbaNova(id) {
 
     if (vida < 15 || fadiga > 90) {document.getElementById("idQuadroDeRetornoUrsos").innerHTML = "Vida ou Fadiga insuficiente"; } 
     
-    else if (vida > 14 && fadiga < 91 && Ursos > 4) {document.getElementById("idQuadroDeRetornoUrsos")
+    else if (vida > 14 && fadiga < 91 && Ursos > 5) {document.getElementById("idQuadroDeRetornoUrsos")
       .innerHTML = "✨ Você derrotou todos os Ursos ✨";} 
     
     else if (
@@ -7255,7 +10037,7 @@ function abrirAbaNova(id) {
       forca > 410 && 
       percepcao > 250 &&
       inteligencia > 200 &&  
-      Ursos < 5 
+      Ursos < 6 
       ) {
 
       vida = vida - 15;
@@ -7268,56 +10050,106 @@ function abrirAbaNova(id) {
       progresso.setAttribute("style", "width: " + fadiga + "%");
       document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
   
-     Ursos = Ursos + 1;
-      document.getElementById("idUrsos").innerHTML = "🚶‍♂️População: " + Ursos + "/5";
+     Ursos = Ursos + 2;
+      document.getElementById("idUrsos").innerHTML = "🚶‍♂️População: " + Ursos + "/6";
   
       document.getElementById("idQuadroDeRetornoUrsos").innerHTML = 
-      "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 4 Pontos de Atributos - 2 Pedras de Essência]";
+      "✨ VITÓRIA ✨ [Recompensas: 20 ponto de experiência - 8 Pontos de Atributos - 4 Pedras de Essência]";
   
-      experienciaUrsos = experienciaUrsos + 10;
+      experienciaUrsos = experienciaUrsos + 20;
       document.getElementById("idexperienciaUrsos").innerHTML =  "🏆 Experiência: " + experienciaUrsos;
 
-      experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 10;
+      experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 20;
       document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
   
       document.getElementById("idLutaContraUrsosBotao").innerHTML = "Lutar novamente";
   
-      atributo = atributo + 4;
+      atributo = atributo + 8;
       document.getElementById("idatributo").innerHTML =  "Disponíveis: " + atributo;
       document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
 
-      PedraDeEssencia = PedraDeEssencia + 2;
+      PedraDeEssencia = PedraDeEssencia + 4;
       document.getElementById("idpedrainventario").innerHTML =  "⚠️ Pedras de Essência: " + PedraDeEssencia;
       
-      SomaPedraDeEssenciaUrsos = SomaPedraDeEssenciaUrsos + 2;
+      SomaPedraDeEssenciaUrsos = SomaPedraDeEssenciaUrsos + 4;
       document.getElementById("idPedrasDeEssenciaUrsos").innerHTML = "💎 Pedras de Essência: " + SomaPedraDeEssenciaUrsos;
   
      
   
         document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
 
-        if (Ursos === 5){
+        if (Ursos === 6){
           document.getElementById("idChecDoTank").innerHTML = "⚠️ Tank - Urso de gelo escuro";
           document.getElementById("idAlertaNoMenuClasseTitulo").innerHTML = "⚠️ Classe e Títulos";
         }
         
-  
-      /*Início do título Aquele que superou a Adversidade*/
-  if (TituloAdversidadeEstaEmUso === 1){
-   
-    mana = mana + 30;
+            /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
 
-    if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
 
-    document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
-      progresso3.setAttribute("style", "width: " + mana + "%");
-      alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
-    
+  /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
   }
-  /*Fim do título Aquele que superou a Adversidade*/
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
   
        /* Início do remover a Sombra do Igris*/
     if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
       SombraIgris = 0;
       document.getElementById("idRetornoExtracao1").innerHTML = "";
       document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
@@ -7341,35 +10173,45 @@ function abrirAbaNova(id) {
       }
  /* Fim do remover a Sombra do Igris*/
 
- /* Início do remover a Sombra dos Magos*/
-if (SombraMago >= 1 && SombraMago <= 6) {
+  /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
   const atributos = {
     agilidade: [24, 48, 72, 96, 120, 144],
     forca: [23, 46, 69, 92, 115, 138],
     percepcao: [14, 28, 42, 56, 70, 84],
-    inteligencia: [11, 22, 33, 44, 55, 66]
-  };
+    inteligencia: [11, 22, 33, 44, 55, 66],
 
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
   agilidade -= atributos.agilidade[SombraMago - 1];
   forca -= atributos.forca[SombraMago - 1];
   percepcao -= atributos.percepcao[SombraMago - 1];
   inteligencia -= atributos.inteligencia[SombraMago - 1];
 
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
   document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
   document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
-
+  
   document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
   document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
   document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
-
+  
   SombraMago = 0;
-}
-/* Fim do remover a Sombra dos Magos*/
+  }
+  /* Fim do remover a Sombra dos Magos*/
 
 /*Início do remover a habilidade Provocar*/
   
@@ -7467,19 +10309,6 @@ if (SombraMago >= 1 && SombraMago <= 6) {
     }
     /*Fim de remover Furtividade*/
 
-      /* início da função subir de nível */
-  
-      SomaDoNivel = SomaDoNivel + 5;
-      if (SomaDoNivel > SomaDoIndicadorDoNivel) {
-        document.getElementById("idnivel").innerHTML =
-          "Nível: " + EqualizadoDoNivel;
-  
-        alert("Level Up");
-  
-        EqualizadoDoNivel = EqualizadoDoNivel + 1;
-        SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
-      }
-      /* Fim da função subir de nível */
     } 
     
     else {
@@ -7510,6 +10339,13 @@ if (SombraMago >= 1 && SombraMago <= 6) {
    /*Início da habilidade Extração de Sombras Tank*/
 function FuncaoExtracaoTank() {
 
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
   if (Magos < 2){
     document.getElementById("idRetornoExtracaoTank").innerHTML =
       "Habilidade exclussiva da Classe Necromante [Monarca das Sombras] - Derrote os 6 Magos para utilizar essa Habilidade!";
@@ -7520,7 +10356,7 @@ function FuncaoExtracaoTank() {
      "Tank já está em batalha!";
   }
 
-  else if (Magos > 1 && Ursos < 5 && mana > 14 && SombraTank === 0){
+  else if (Magos > 1 && Ursos < 6 && mana > 14 && SombraTank === 0){
     document.getElementById("idRetornoExtracaoTank").innerHTML = "Necessário matar todos os Ursos de Gelo para extrair a sua alma!";
   }
 
@@ -7528,12 +10364,26 @@ function FuncaoExtracaoTank() {
       SombraTank = 1;
     document.getElementById("idRetornoExtracaoTank").innerHTML = "Alma extraída com sucesso";
 
+     if (PrimeiraVezDoTank === 0)  { 
+  PrimeiraVezDoTank  = 1; 
+criarVagalumes();
+ }
+
        document.getElementById("idChecDoTank").innerHTML = "✅ Tank - Urso de gelo escuro";
+
+       /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
 
       mana = mana - 15;
       document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
 
+      agilidadeDasSombras = agilidadeDasSombras + 48;
+      forcaDasSombras = forcaDasSombras + 46;
+      percepcaoDasSombras = percepcaoDasSombras + 28;
+      inteligenciaDasSombras = inteligenciaDasSombras + 22;
 
       agilidade = agilidade + 48;
       document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "+ 48";
@@ -7563,13 +10413,90 @@ function FuncaoExtracaoTank() {
 }
 /*Fim da habilidade Extração de Sombras Tank*/
 
+/*Início da habilidade Extração de Sombras Tusk*/
+function FuncaoExtracaoTusk() {
+
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
+  if (Magos < 2){
+    document.getElementById("idRetornoExtracaoTusk").innerHTML =
+      "Habilidade exclussiva da Classe Necromante [Monarca das Sombras] - Derrote os 6 Magos para utilizar essa Habilidade!";
+  }
+
+  else if (SombraTusk === 1){
+    document.getElementById("idRetornoExtracaoTusk").innerHTML =
+     "Tusk já está em batalha!";
+  }
+
+  else if (Magos > 1 && Kargalgan < 1 && mana > 49 && SombraTusk === 0){
+    document.getElementById("idRetornoExtracaoTusk").innerHTML = "Necessário matar Kargalgan Xamã Orc para extrair a sua alma!";
+  }
+
+    else if (Magos > 1 && Kargalgan > 0 && mana > 49 && SombraTusk === 0){
+      SombraTusk = 1;
+    document.getElementById("idRetornoExtracaoTusk").innerHTML = "Alma extraída com sucesso";
+
+       if (PrimeiraVezDoTusk  === 0)  { 
+  PrimeiraVezDoTusk   = 1; 
+criarVagalumes();
+ }
+
+       document.getElementById("idChecDoTusk").innerHTML = "✅ Tusk - Xamã das Sombras";
+
+       /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
+
+      mana = mana - 50;
+      document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
+
+      agilidadeDasSombras = agilidadeDasSombras + 150;
+      forcaDasSombras = forcaDasSombras + 200;
+      percepcaoDasSombras = percepcaoDasSombras + 100;
+      inteligenciaDasSombras = inteligenciaDasSombras + 150;
+
+      agilidade = agilidade + 150;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "+ 150";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+      forca = forca + 200;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "+ 200";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+      percepcao = percepcao + 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "+ 100";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+      inteligencia = inteligencia + 150;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "+ 150";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+
+  }
+   else if (Magos > 1 && mana < 50 && SombraTusk === 0){
+     document.getElementById("idRetornoExtracaoTusk").innerHTML =
+      "Mana insuficiente";
+   }
+
+ 
+  
+}
+/*Fim da habilidade Extração de Sombras Tusk*/
+
    /*INÍCIO DA LUTA DOS ELFOS*/
    function LutaContraElfosBotao() {
 
     if (vida < 20 || fadiga > 75) {document.getElementById("idQuadroDeRetornoElfos").innerHTML = "Vida ou Fadiga insuficiente"; } 
     
-    else if (vida > 19 && fadiga < 76 && Elfos > 4) {document.getElementById("idQuadroDeRetornoElfos")
-      .innerHTML = "✨ Você derrotou todos os Elfos ✨";} 
+    else if (vida > 19 && fadiga < 76 && Elfos > 0) {document.getElementById("idQuadroDeRetornoElfos")
+      .innerHTML = "✨ Você já derrotou os Elfos ✨";} 
     
     else if (
       vida > 19 && 
@@ -7578,7 +10505,7 @@ function FuncaoExtracaoTank() {
       forca > 460 && 
       percepcao > 290 &&
       inteligencia > 230 &&  
-      Elfos < 5 
+      Elfos < 1 
       ) {
 
       vida = vida - 20;
@@ -7592,7 +10519,7 @@ function FuncaoExtracaoTank() {
       document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
   
       Elfos = Elfos + 1;
-      document.getElementById("idElfos").innerHTML = "🚶‍♂️População: " + Elfos + "/5";
+      document.getElementById("idElfos").innerHTML = "⚔️ Rounds da batalha: " + Elfos + "/1";
   
       document.getElementById("idQuadroDeRetornoElfos").innerHTML = 
       "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 4 Pontos de Atributos - 2 Pedras de Essência]";
@@ -7619,24 +10546,73 @@ function FuncaoExtracaoTank() {
   
         document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
 
+            /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
              
-  
-      /*Início do título Aquele que superou a Adversidade*/
-  if (TituloAdversidadeEstaEmUso === 1){
-   
-    mana = mana + 30;
+  /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
 
-    if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
 
-    document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
-      progresso3.setAttribute("style", "width: " + mana + "%");
-      alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
-    
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
   }
-  /*Fim do título Aquele que superou a Adversidade*/
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
   
        /* Início do remover a Sombra do Igris*/
     if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
       SombraIgris = 0;
       document.getElementById("idRetornoExtracao1").innerHTML = "";
       document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
@@ -7660,38 +10636,54 @@ function FuncaoExtracaoTank() {
       }
 /* Fim do remover a Sombra do Igris*/
 
- /* Início do remover a Sombra dos Magos*/
-if (SombraMago >= 1 && SombraMago <= 6) {
+  /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
   const atributos = {
     agilidade: [24, 48, 72, 96, 120, 144],
     forca: [23, 46, 69, 92, 115, 138],
     percepcao: [14, 28, 42, 56, 70, 84],
-    inteligencia: [11, 22, 33, 44, 55, 66]
-  };
+    inteligencia: [11, 22, 33, 44, 55, 66],
 
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
   agilidade -= atributos.agilidade[SombraMago - 1];
   forca -= atributos.forca[SombraMago - 1];
   percepcao -= atributos.percepcao[SombraMago - 1];
   inteligencia -= atributos.inteligencia[SombraMago - 1];
 
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
   document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
   document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
-
+  
   document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
   document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
   document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
-
+  
   SombraMago = 0;
-}
- /* Início do remover a Sombra dos Magos*/
+  }
+  /* Fim do remover a Sombra dos Magos*/
 
    /* Início do remover a Sombra do Tank*/
    if (SombraTank === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
     SombraTank = 0;
     document.getElementById("idRetornoExtracaoTank").innerHTML = "";
     document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
@@ -7811,19 +10803,6 @@ if (SombraMago >= 1 && SombraMago <= 6) {
     }
     /*Fim de remover Furtividade*/
     
-      /* início da função subir de nível */
-  
-      SomaDoNivel = SomaDoNivel + 5;
-      if (SomaDoNivel > SomaDoIndicadorDoNivel) {
-        document.getElementById("idnivel").innerHTML =
-          "Nível: " + EqualizadoDoNivel;
-  
-        alert("Level Up");
-  
-        EqualizadoDoNivel = EqualizadoDoNivel + 1;
-        SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
-      }
-      /* Fim da função subir de nível */
     } 
     
     else {
@@ -7981,24 +10960,73 @@ if (SombraMago >= 1 && SombraMago <= 6) {
      document.getElementById("idChecDoIron").innerHTML = "⚠️ Iron - Caçador Rank A";
      document.getElementById("idAlertaNoMenuClasseTitulo").innerHTML = "⚠️ Classe e Títulos";
       
-        
+         /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+    /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */    
   
-      /*Início do título Aquele que superou a Adversidade*/
-  if (TituloAdversidadeEstaEmUso === 1){
-   
-    mana = mana + 30;
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
 
-    if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
 
-    document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
-      progresso3.setAttribute("style", "width: " + mana + "%");
-      alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
-    
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
   }
-  /*Fim do título Aquele que superou a Adversidade*/
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
   
        /* Início do remover a Sombra do Igris*/
     if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
       SombraIgris = 0;
       document.getElementById("idRetornoExtracao1").innerHTML = "";
       document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
@@ -8022,38 +11050,54 @@ if (SombraMago >= 1 && SombraMago <= 6) {
       }
  /* Fim do remover a Sombra do Igris*/
 
- /* Início do remover a Sombra dos Magos*/
-if (SombraMago >= 1 && SombraMago <= 6) {
+  /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
   const atributos = {
     agilidade: [24, 48, 72, 96, 120, 144],
     forca: [23, 46, 69, 92, 115, 138],
     percepcao: [14, 28, 42, 56, 70, 84],
-    inteligencia: [11, 22, 33, 44, 55, 66]
-  };
+    inteligencia: [11, 22, 33, 44, 55, 66],
 
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
   agilidade -= atributos.agilidade[SombraMago - 1];
   forca -= atributos.forca[SombraMago - 1];
   percepcao -= atributos.percepcao[SombraMago - 1];
   inteligencia -= atributos.inteligencia[SombraMago - 1];
 
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
   document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
   document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
-
+  
   document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
   document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
   document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
-
+  
   SombraMago = 0;
-}
-/* Fim do remover a Sombra dos Magos*/
+  }
+  /* Fim do remover a Sombra dos Magos*/
 
 /* Início do remover a Sombra do Tank*/
 if (SombraTank === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
   SombraTank = 0;
   document.getElementById("idRetornoExtracaoTank").innerHTML = "";
   document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
@@ -8173,19 +11217,6 @@ if (SombraTank === 1){
     }
     /*Fim de remover Furtividade*/
 
-      /* início da função subir de nível */
-  
-      SomaDoNivel = SomaDoNivel + 5;
-      if (SomaDoNivel > SomaDoIndicadorDoNivel) {
-        document.getElementById("idnivel").innerHTML =
-          "Nível: " + EqualizadoDoNivel;
-  
-        alert("Level Up");
-  
-        EqualizadoDoNivel = EqualizadoDoNivel + 1;
-        SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
-      }
-      /* Fim da função subir de nível */
     } 
     
     else {
@@ -8217,6 +11248,13 @@ if (SombraTank === 1){
  /*Início da habilidade Extração de Sombras Iron*/
  function FuncaoExtracaoIron() {
 
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
   if (Magos < 2){
     document.getElementById("idRetornoExtracaoIron").innerHTML =
       "Habilidade exclussiva da Classe Necromante [Monarca das Sombras] - Derrote os 6 Magos para utilizar essa Habilidade!";
@@ -8235,12 +11273,26 @@ if (SombraTank === 1){
       SombraIron = 1;
     document.getElementById("idRetornoExtracaoIron").innerHTML = "Alma extraída com sucesso";
 
+       if (PrimeiraVezDoIron === 0)  { 
+  PrimeiraVezDoIron  = 1; 
+criarVagalumes();
+ }
+ 
        document.getElementById("idChecDoIron").innerHTML = "✅ Iron - Caçador Rank A";
+
+       /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
 
       mana = mana - 50;
       document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
       progresso3.setAttribute("style", "width: " + mana + "%");
 
+      agilidadeDasSombras = agilidadeDasSombras + 90;
+      forcaDasSombras = forcaDasSombras + 140;
+      percepcaoDasSombras = percepcaoDasSombras + 70;
+      inteligenciaDasSombras = inteligenciaDasSombras + 40;
 
       agilidade = agilidade + 90;
       document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "+ 90";
@@ -8343,7 +11395,7 @@ function AnalisarLutaContraBarukaBotao() {
       document.getElementById("idBaruka").innerHTML = "⚔️ Rounds da batalha: " + Baruka + "/2";
   
       document.getElementById("idQuadroDeRetornoBaruka").innerHTML = 
-      "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 4 Pontos de Atributos - 2 Pedras de Essência]";
+      "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 4 Pontos de Atributos - 2 Pedras de Essência - Equipamento Adaga de Baruka - Habilidade Domínio do Monarca]";
   
       experienciaBaruka = experienciaBaruka + 10;
       document.getElementById("idexperienciaBaruka").innerHTML =  "🏆 Experiência: " + experienciaBaruka;
@@ -8372,28 +11424,81 @@ function AnalisarLutaContraBarukaBotao() {
         if(Baruka === 2){
           
           document.getElementById("idQuadroDeRetornoBaruka").innerHTML = 
-      "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 4 Pontos de Atributos - 2 Pedras de Essência - Adaga de Baruka]";
+      "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 4 Pontos de Atributos - 2 Pedras de Essência - Adaga de Baruka - Habilidade Domínio do Monarca]";
 
-          
+      document.getElementById("idNivelDoRank").innerHTML = "Rank: A ⭐⭐⭐⭐⭐";
+      alert("Parabéns você subiu do Rank B para o Rank A",);
+   mostrarEstrela4(); /* Efeito Estrela 4 */
           document.getElementById("idItemAdagaDeBarukaAdquirida").innerHTML = "⚠️ Adaga de Baruka";
        }
 
-      /*Início do título Aquele que superou a Adversidade*/
-  if (TituloAdversidadeEstaEmUso === 1){
-   
-    mana = mana + 30;
+           /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
 
-    if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
 
-    document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
-      progresso3.setAttribute("style", "width: " + mana + "%");
-      alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
-    
+       /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
   }
-  /*Fim do título Aquele que superou a Adversidade*/
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
   
        /* Início do remover a Sombra do Igris*/
     if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
       SombraIgris = 0;
       document.getElementById("idRetornoExtracao1").innerHTML = "";
       document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
@@ -8417,38 +11522,54 @@ function AnalisarLutaContraBarukaBotao() {
       }
  /* Fim do remover a Sombra do Igris*/
 
- /* Início do remover a Sombra dos Magos*/
-if (SombraMago >= 1 && SombraMago <= 6) {
+  /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
   const atributos = {
     agilidade: [24, 48, 72, 96, 120, 144],
     forca: [23, 46, 69, 92, 115, 138],
     percepcao: [14, 28, 42, 56, 70, 84],
-    inteligencia: [11, 22, 33, 44, 55, 66]
-  };
+    inteligencia: [11, 22, 33, 44, 55, 66],
 
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
   agilidade -= atributos.agilidade[SombraMago - 1];
   forca -= atributos.forca[SombraMago - 1];
   percepcao -= atributos.percepcao[SombraMago - 1];
   inteligencia -= atributos.inteligencia[SombraMago - 1];
 
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
   document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
   document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
-
+  
   document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
   document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
   document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
-
+  
   SombraMago = 0;
-}
-/* Fim do remover a Sombra dos Magos*/
+  }
+  /* Fim do remover a Sombra dos Magos*/
 
  /* Início do remover a Sombra do Tank*/
  if (SombraTank === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
   SombraTank = 0;
   document.getElementById("idRetornoExtracaoTank").innerHTML = "";
   document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
@@ -8474,6 +11595,12 @@ if (SombraMago >= 1 && SombraMago <= 6) {
 
  /* Início do remover a Sombra do Iron*/
  if (SombraIron === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
   SombraIron = 0;
   document.getElementById("idRetornoExtracaoIron").innerHTML = "";
   document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
@@ -8595,19 +11722,20 @@ if (SombraMago >= 1 && SombraMago <= 6) {
 
       /* início da função subir de nível */
   
-      SomaDoNivel = SomaDoNivel + 5;
+      SomaDoNivel = SomaDoNivel + 4;
       if (SomaDoNivel > SomaDoIndicadorDoNivel) {
         document.getElementById("idnivel").innerHTML =
           "Nível: " + EqualizadoDoNivel;
   
-        alert("Level Up");
+        alert("Você subiu de Nível!");
   
         EqualizadoDoNivel = EqualizadoDoNivel + 1;
         SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
       }
       /* Fim da função subir de nível */
 
-     
+      
+
     } 
     
     else {
@@ -8707,15 +11835,21 @@ function AnalisarLutaContraKargalganBotao() {
   
       document.getElementById("idQuadroDeRetornoKargalgan").innerHTML = 
       "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 4 Pontos de Atributos - 2 Pedras de Essência]";
-  
+
+      document.getElementById("idChecDoTusk").innerHTML = "⚠️ Tusk - Xamã das Sombras";
+     document.getElementById("idAlertaNoMenuClasseTitulo").innerHTML = "⚠️ Classe e Títulos";
+
       experienciaKargalgan = experienciaKargalgan + 10;
       document.getElementById("idexperienciaKargalgan").innerHTML =  "🏆 Experiência: " + experienciaKargalgan;
 
       experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 10;
-      document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+      document.getElementById("idContarExperienciaNoQuadroHabilidades",)
+      .innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
   
       document.getElementById("idLutaContraKargalganBotao").innerHTML = "Lutar novamente";
   
+     
+
       atributo = atributo + 4;
       document.getElementById("idatributo").innerHTML =  "Disponíveis: " + atributo;
       document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
@@ -8723,28 +11857,102 @@ function AnalisarLutaContraKargalganBotao() {
       PedraDeEssencia = PedraDeEssencia + 2;
       document.getElementById("idpedrainventario").innerHTML =  "⚠️ Pedras de Essência: " + PedraDeEssencia;
      
+     
       SomaPedraDeEssenciaKargalgan = SomaPedraDeEssenciaKargalgan + 2;
       document.getElementById("idPedrasDeEssenciaKargalgan").innerHTML = "💎 Pedras de Essência: " + SomaPedraDeEssenciaKargalgan;
   
         document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
      
+            /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
 
-      /*Início do título Aquele que superou a Adversidade*/
-  if (TituloAdversidadeEstaEmUso === 1){
-   
-    mana = mana + 30;
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
 
-    if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+        /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
 
-    document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
-      progresso3.setAttribute("style", "width: " + mana + "%");
-      alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
-    
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+/*Início de remover a habilidade Domínio do Monarca*/
+if (DominioDoMonarca === 1) {
+
+  DominioDoMonarca = 0;
+  
+  agilidade = agilidade - 20;
+  forca = forca - 20;
+  percepcao = percepcao - 20;
+  inteligencia = inteligencia - 20;
+  document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = "";
+  document.getElementById("idCheckDominioDoMonarca").innerHTML = "Habilidade: Domínio do Monarca";
+  document.getElementById("idRetornoDominioDoMonarca").innerHTML = "";  
+}
+/* Fim de remover a habilidade Domínio do Monarca */
+
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
   }
-  /*Fim do título Aquele que superou a Adversidade*/
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
   
        /* Início do remover a Sombra do Igris*/
     if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
       SombraIgris = 0;
       document.getElementById("idRetornoExtracao1").innerHTML = "";
       document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
@@ -8768,38 +11976,54 @@ function AnalisarLutaContraKargalganBotao() {
       }
  /* Fim do remover a Sombra do Igris*/
 
- /* Início do remover a Sombra dos Magos*/
-if (SombraMago >= 1 && SombraMago <= 6) {
+  /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
   const atributos = {
     agilidade: [24, 48, 72, 96, 120, 144],
     forca: [23, 46, 69, 92, 115, 138],
     percepcao: [14, 28, 42, 56, 70, 84],
-    inteligencia: [11, 22, 33, 44, 55, 66]
-  };
+    inteligencia: [11, 22, 33, 44, 55, 66],
 
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
   agilidade -= atributos.agilidade[SombraMago - 1];
   forca -= atributos.forca[SombraMago - 1];
   percepcao -= atributos.percepcao[SombraMago - 1];
   inteligencia -= atributos.inteligencia[SombraMago - 1];
 
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
   document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
   document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
   document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
-
+  
   document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
   document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
   document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
-
+  
   SombraMago = 0;
-}
-/* Fim do remover a Sombra dos Magos*/
+  }
+  /* Fim do remover a Sombra dos Magos*/
 
  /* Início do remover a Sombra do Tank*/
  if (SombraTank === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
   SombraTank = 0;
   document.getElementById("idRetornoExtracaoTank").innerHTML = "";
   document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
@@ -8825,6 +12049,12 @@ if (SombraMago >= 1 && SombraMago <= 6) {
 
  /* Início do remover a Sombra do Iron*/
  if (SombraIron === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
   SombraIron = 0;
   document.getElementById("idRetornoExtracaoIron").innerHTML = "";
   document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
@@ -8946,12 +12176,12 @@ if (SombraMago >= 1 && SombraMago <= 6) {
 
       /* início da função subir de nível */
   
-      SomaDoNivel = SomaDoNivel + 5;
+      SomaDoNivel = SomaDoNivel + 4;
       if (SomaDoNivel > SomaDoIndicadorDoNivel) {
         document.getElementById("idnivel").innerHTML =
           "Nível: " + EqualizadoDoNivel;
   
-        alert("Level Up");
+         alert("Você subiu de Nível!");
   
         EqualizadoDoNivel = EqualizadoDoNivel + 1;
         SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
@@ -8986,11 +12216,5005 @@ if (SombraMago >= 1 && SombraMago <= 6) {
 
    /*FIM DA LUTA DO Kargalgan*/
 
+   /*INÍCIO DO SUBIR O NÍVEL DO TÍTULO: AQUELE QUE SUPEROU A ADVERSIDADE*/
+function FuncaoAqueleQueSuperouAdversidadeUplevel() {
 
+  if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+    document.getElementById("idTituloRetornoAdversidade").innerHTML =  "Nível máximo alcançado!";
+  }
+
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0 && experienciaParaUsarNasHabilidades > 49){
+  
+  FuncaoAqueleQueSuperouAdversidadeUplevel2 = 1;
+  experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades - 50;
+  
+   document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+  
+    document.getElementById("idTituloRetornoAdversidade").innerHTML =  "Você subiu o nível da habilidade";
+  
+  document.getElementById("AdversidadeUplevel").innerHTML = "[Ganhe 50% de Mana ao finalizar uma luta]";
+
+  } 
+
+   else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1 && experienciaParaUsarNasHabilidades > 49){
+  
+  FuncaoAqueleQueSuperouAdversidadeUplevel2 = 2;
+  experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades - 50;
+  
+   document.getElementById("idContarExperienciaNoQuadroHabilidades",).innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+  
+    document.getElementById("idTituloRetornoAdversidade").innerHTML =  "Você subiu o nível da habilidade";
+  
+  document.getElementById("AdversidadeUplevel").innerHTML = "[Ganhe 100% de Mana ao finalizar uma luta]";
+
+  } 
+  
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 < 2 && experienciaParaUsarNasHabilidades < 50){
+    document.getElementById("idTituloRetornoAdversidade").innerHTML = "Experiência insuficiente";
+  }
+ 
+  
+  }
+  /*FIM DO SUBIR O NÍVEL DO TÍTULO: AQUELE QUE SUPEROU A ADVERSIDADE*/
+
+   /*Início da habilidade Domínio do Monarca*/
+   function FuncaoDominioDoMonarca() {
+  
+    if (DominioDoMonarca === 1) {
+        document.getElementById("idRetornoDominioDoMonarca").innerHTML =
+          "Habilidade já aplicada";
+      }
+    
+      
+
+      if (DominioDoMonarca === 0 && mana > 49 && Baruka > 1) {
+        DominioDoMonarca = 1;
+        
+    
+        agilidade = agilidade + 20;
+        forca = forca + 20;
+        percepcao = percepcao + 20;
+        inteligencia = inteligencia + 20;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = " + 20";
+        document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = " + 20";
+        document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = " + 20";
+        document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = " + 20";
+    
+        document.getElementById("idCheckDominioDoMonarca").innerHTML =
+          "✅ Habilidade: Domínio do Monarca";
+    
+        mana = mana - 50;
+        document.getElementById("idAumentoDoNivelDaMana").innerHTML =
+        "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+        progresso3.setAttribute("style", "width: " + mana + "%");
+  
+        document.getElementById("idRetornoDominioDoMonarca").innerHTML = "Buff foi Ativado";
+      }
+    
+      if (DominioDoMonarca === 0 && mana < 50) {
+        document.getElementById("idRetornoDominioDoMonarca").innerHTML =
+          "Mana insuficiente";
+      }
+      if (Baruka < 2) {
+        document.getElementById("idRetornoDominioDoMonarca").innerHTML = "Necessário derrotar o Baruka Elfo de gelo para utilizar essa Habilidade";
+      }
+     
+    }
+    /* Fim da habilidade Domínio do Monarca */
 
    
 
+    /*Início da habilidade Flame Spear */
+   function FuncaoFlameSpear() {
+  
+    if (FlameSpear === 1) {
+        document.getElementById("idRetornoFlameSpear").innerHTML = "Habilidade já aplicada";
+      }
+    
+      
+
+      if (FlameSpear === 0 && mana > 4 && HabilidadeLiberadaFlameSpear === 1) {
+        FlameSpear = 1;
+        
+    
+        agilidade = agilidade + 25;
+        inteligencia = inteligencia + 5;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFlameSpearNoStatus1").innerHTML = " + 25";
+        document.getElementById("idRetornoFlameSpearNoStatus2").innerHTML = " + 5";
+       
+    
+        document.getElementById("idCheckFlameSpear").innerHTML =  "✅ Habilidade: Flame Spear";
+    
+        mana = mana - 5;
+        document.getElementById("idAumentoDoNivelDaMana").innerHTML =
+        "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+        progresso3.setAttribute("style", "width: " + mana + "%");
+  
+        document.getElementById("idRetornoFlameSpear").innerHTML = "Buff foi Ativado";
+      }
+    
+      if (FlameSpear === 0 && mana < 5) {
+        document.getElementById("idRetornoFlameSpear").innerHTML = "Mana insuficiente";
+      }
+      if (HabilidadeLiberadaFlameSpear === 0) {
+        document.getElementById("idRetornoFlameSpear").innerHTML = "Necessário desbloquear essa habilidade na 'Missão subir de nível'";
+      }
+     
+    }
+    /* Fim da habilidade Flame Spear */
+
+
+    /* INÍCIO DO BOTÃO ANALISAR LUTA DO Vulcano Avarento */
+function AnalisarLutaContraVulcanoBotao() {
+
+  document.getElementById("idQuadroDeRetornoVulcano") .innerHTML = "Análise dos seus Status e do Vulcano";
+ 
+  document.getElementById("idLutaContraVulcanoBotao") .innerHTML = "Seguir com a Luta";
+ 
+  if (vida < 50) {document.getElementById("idVidaVulcano").innerHTML = "❤️ Vida: 50%/" + vida + "%" + " ❌"; 
+
+  }
+  if (vida > 49) { document.getElementById( "idVidaVulcano").innerHTML = "❤️ Vida: 50%/" + vida + "%" + " ✅";  
+
+  }
+ 
+  if (fadiga > 40) {document.getElementById( "idFadigaVulcano").innerHTML = "🪫Fadiga: 60%/" + fadiga + "%" + " ❌"; 
+  }
+  
+  if (fadiga < 41) { document.getElementById( "idFadigaVulcano").innerHTML =  "🪫Fadiga: 60%/" + fadiga + "%" + " ✅";  
+
+  }
+
+  if (agilidade < 781) { document.getElementById("idAgilidadeVulcano").innerHTML = "🦵 Agilidade: 780/" + agilidade + " ❌"; 
+
+  }
+  if (agilidade > 780) { document.getElementById("idAgilidadeVulcano").innerHTML = "🦵 Agilidade: 780/" +  agilidade + " ✅";  
+
+  }
+ 
+  if (forca > 930) {document.getElementById("idForcaVulcano").innerHTML =  "💪 Força: 930/" + forca + " ✅";  
+
+  }
+  if (forca < 931) { document.getElementById( "idForcaVulcano").innerHTML = "💪 Força: 930/" + forca + " ❌";  
+
+  }
+ 
+   if (percepcao < 481) { document.getElementById( "idPercepcaoVulcano").innerHTML = "👀 Percepção: 480/" +  percepcao + " ❌";  
+
+   }
+  if (percepcao > 480) {document.getElementById("idPercepcaoVulcano").innerHTML =  "👀 Percepção: 480/" +  percepcao + " ✅";  
+
+  }
+ 
+  if (inteligencia < 431) {document.getElementById( "idInteligenciaVulcano").innerHTML = "🧠 Inteligência: 430/" +  inteligencia + " ❌"; 
+
+  }
+  if (inteligencia > 430) { document.getElementById( "idInteligenciaVulcano").innerHTML = "🧠 Inteligência: 430/" + inteligencia + " ✅"; 
+
+  }
+ 
+ }
+ 
+ /*FIM DO BOTÃO ANALISAR  LUTA DO Vulcano Avarento */
+
+  /*INÍCIO DA LUTA DO Vulcano Avarento */
+  function LutaContraVulcanoBotao() {
+
+    if (vida < 50 || fadiga > 40) {document.getElementById("idQuadroDeRetornoVulcano").innerHTML = "Vida ou Fadiga insuficiente"; } 
+    
+    else if (Vulcano > 0) {document.getElementById("idQuadroDeRetornoVulcano")
+      .innerHTML = "✨ Você já derrotou o Vulcano ✨";} 
+    
+    else if (
+      vida > 49 && 
+      fadiga < 40 && 
+      agilidade > 780 &&
+      forca > 930 && 
+      percepcao > 480 &&
+      inteligencia > 430
+      ) {
+       
+      vida = vida - 50;
+      if (vida < 1) {vida = 0;}
+      progresso2.setAttribute("style", "width: " + vida + "%");
+      document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+  
+      fadiga = fadiga + 60;
+      if (fadiga > 99) {fadiga = 100; }
+      progresso.setAttribute("style", "width: " + fadiga + "%");
+      document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+  
+      Vulcano = Vulcano + 1;
+      document.getElementById("idVulcano").innerHTML = "⚔️ Rounds da batalha: " + Vulcano + "/1";
+  
+      FragmentoDaAvoreDaVida = 1;
+      document.getElementById("idCheckFragmentoDaAvoreDaVida").innerHTML =  "✅ Fragmento da árvore do mundo";
+
+      document.getElementById("idQuadroDeRetornoVulcano").innerHTML = 
+      "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 4 Pontos de Atributos - 10 Pedras de Essência - Equipamento Orbe da Avareza - Equipamento Brinco do Monarca Demônio - Fragmento da Árvore do Mundo]";
+
+      document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
+      document.getElementById("idItemOrbeVulcanoAdquirida").innerHTML = "⚠️ Orbe da Avareza";
+      document.getElementById("idItemBrincoAdquirida").innerHTML = "⚠️ Brinco do Monarca Demoníaco";
+
+      experienciaVulcano = experienciaVulcano + 10;
+      document.getElementById("idexperienciaVulcano").innerHTML =  "🏆 Experiência: " + experienciaVulcano;
+
+      experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 10;
+      document.getElementById("idContarExperienciaNoQuadroHabilidades",)
+      .innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+  
+      document.getElementById("idLutaContraVulcanoBotao").innerHTML = "Lutar novamente";
+  
+     
+
+      atributo = atributo + 5;
+      document.getElementById("idatributo").innerHTML =  "Disponíveis: " + atributo;
+      document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
+
+      PedraDeEssencia = PedraDeEssencia + 10;
+      document.getElementById("idpedrainventario").innerHTML =  "⚠️ Pedras de Essência: " + PedraDeEssencia;
+     
+     
+      SomaPedraDeEssenciaVulcano = SomaPedraDeEssenciaVulcano + 10;
+      document.getElementById("idPedrasDeEssenciaVulcano").innerHTML = "💎 Pedras de Essência: " + SomaPedraDeEssenciaVulcano;
+  
+        document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
+     
+            /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+        /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+/*Início de remover a habilidade Domínio do Monarca*/
+if (DominioDoMonarca === 1) {
+
+  DominioDoMonarca = 0;
+  
+  agilidade = agilidade - 20;
+  forca = forca - 20;
+  percepcao = percepcao - 20;
+  inteligencia = inteligencia - 20;
+  document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = "";
+  document.getElementById("idCheckDominioDoMonarca").innerHTML = "Habilidade: Domínio do Monarca";
+  document.getElementById("idRetornoDominioDoMonarca").innerHTML = "";  
+}
+/* Fim de remover a habilidade Domínio do Monarca */
+
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+  
+       /* Início do remover a Sombra do Igris*/
+    if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+      SombraIgris = 0;
+      document.getElementById("idRetornoExtracao1").innerHTML = "";
+      document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+
+      agilidade = agilidade - 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+      forca = forca - 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+      percepcao = percepcao - 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+      inteligencia = inteligencia - 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+      }
+ /* Fim do remover a Sombra do Igris*/
+
+  /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+
+ /* Início do remover a Sombra do Tank*/
+ if (SombraTank === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+  SombraTank = 0;
+  document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+  document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+
+  agilidade = agilidade - 48;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+  forca = forca - 46;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+  percepcao = percepcao - 28;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+  inteligencia = inteligencia - 22;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+  }
+/* Fim do remover a Sombra do Tank*/
+
+ /* Início do remover a Sombra do Iron*/
+ if (SombraIron === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+  SombraIron = 0;
+  document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+  document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+
+  agilidade = agilidade - 90;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+  forca = forca - 140;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+  percepcao = percepcao - 70;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+  inteligencia = inteligencia - 40;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+  }
+/* Fim do remover a Sombra do Iron*/
+
+/* Início do remover a Sombra do Tusk Xamã das Sombras*/
+if (SombraTusk === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+  SombraTusk = 0;
+  document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+  document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+
+  agilidade = agilidade - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+  forca = forca - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+  percepcao = percepcao - 100;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+  inteligencia = inteligencia - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+  }
+/* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+
+/*Início do remover a habilidade Provocar*/
+  
+  if (Provocar === 1) {
+
+      Provocar = 0;
+      
+  
+    agilidade = agilidade - 40;
+    percepcao = percepcao - 10;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  
+    document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+    document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";
+  
+    document.getElementById("idCheckProvocar").innerHTML = "Habilidade: Provocar";
+    document.getElementById("idRetornoProvocar").innerHTML = "";
+  }
+  /* Fim do remover a habilidade Provocar*/
+
+   /*Início de remover a habilidade Fortalecimento*/
+    if (Fortalecimento === 1) {
+
+        Fortalecimento = 0;
+        
+        agilidade = agilidade - 10;
+        forca = forca - 10;
+        percepcao = percepcao - 10;
+        inteligencia = inteligencia - 10;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+        document.getElementById("idCheckFortalecimento").innerHTML = "Habilidade: Fortalecimento";
+        document.getElementById("idRetornoFortalecimento").innerHTML = "";  
+    }
+    /* Fim de remover a habilidade Fortalecimento */
+
+  /* Início de remover Arrancada*/
+  if (Arrancada === 1){
+  
+  Arrancada = 0;
+  
+  if (ArrancadaNivel2 === 0){
+  agilidade = agilidade - 10;
+  }
+  if (ArrancadaNivel2 === 1){
+  agilidade = agilidade - 20;
+  }
+  
+   document.getElementById("idagilidade").innerHTML =
+        "🦵 Agilidade: " + agilidade;
+  
+        document.getElementById("idCheckArrancada").innerHTML = "Habilidade: Arrancada";
+        document.getElementById("idRetornoArrancada").innerHTML = "";
+        document.getElementById("idRetornoArrancadaNoStatus").innerHTML = "";
+  
+  }
+  /* Fim de remover Arrancada*/
+  
+  /* Início de remover Intenção Assassina */
+  if (Assassina === 1){
+  
+  Assassina = 0;
+      agilidade = agilidade - 5;
+
+      document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+      document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
+      document.getElementById("idRetornoAssassina").innerHTML = "";
+      document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
+  
+  }
+  /*Fim de remover Intenção Assassina*/
+  
+  /* Início de remover Furtividade */
+  if (Furtividade === 1){
+  
+    Furtividade = 0;
+    
+    agilidade = agilidade - 30;
+    
+     document.getElementById("idagilidade").innerHTML =
+          "🦵 Agilidade: " + agilidade;
+    
+    document.getElementById("idCheckFurtividade").innerHTML = "Habilidade: Furtividade";
+    document.getElementById("idRetornoFurtividade").innerHTML = "";
+    document.getElementById("idRetornoFurtividadeNoStatus").innerHTML = "";
+    
+    }
+    /*Fim de remover Furtividade*/
+
+     
+    } 
+    
+    else {
+      vida = vida - 50;
+      if (vida < 1) {
+        vida = 0;
+      }
+      progresso2.setAttribute("style", "width: " + vida + "%");
+      document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+  
+      fadiga = fadiga + 60;
+      if (fadiga > 99) {
+        fadiga = 100;
+      }
+      progresso.setAttribute("style", "width: " + fadiga + "%");
+      document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+  
+      document.getElementById("idQuadroDeRetornoVulcano").innerHTML =
+        "☠️ DERROTA - Tente melhorar os seus atributos antes de lutar novamente ☠️";
+  
+      document.getElementById("idLutaContraVulcanoBotao").innerHTML =
+        "Tentar novamente";
+    }
+  }
+
+   /*FIM DA LUTA DO Vulcano Avarento*/
+
+   /* INÍCIO DO BOTÃO ANALISAR LUTA DO Metus guía das almas */
+function AnalisarLutaContraMetusBotao() {
+
+  document.getElementById("idQuadroDeRetornoMetus") .innerHTML = "Análise dos seus Status e do Metus";
+ 
+  document.getElementById("idLutaContraMetusBotao") .innerHTML = "Seguir com a Luta";
+ 
+  if (vida < 50) {document.getElementById("idVidaMetus").innerHTML = "❤️ Vida: 50%/" + vida + "%" + " ❌"; }
+  if (vida > 49) { document.getElementById( "idVidaMetus").innerHTML = "❤️ Vida: 50%/" + vida + "%" + " ✅";  }
+ 
+  if (fadiga > 40) {document.getElementById( "idFadigaMetus").innerHTML = "🪫Fadiga: 60%/" + fadiga + "%" + " ❌"; }
+  if (fadiga < 41) { document.getElementById( "idFadigaMetus").innerHTML =  "🪫Fadiga: 60%/" + fadiga + "%" + " ✅";  }
+ 
+  if (agilidade < 781) { document.getElementById("idAgilidadeMetus").innerHTML = "🦵 Agilidade: 780/" + agilidade + " ❌"; }
+  if (agilidade > 780) { document.getElementById("idAgilidadeMetus").innerHTML = "🦵 Agilidade: 780/" +  agilidade + " ✅";  }
+ 
+  if (forca > 930) {document.getElementById("idForcaMetus").innerHTML =  "💪 Força: 930/" + forca + " ✅";  }
+  if (forca < 931) { document.getElementById( "idForcaMetus").innerHTML = "💪 Força: 930/" + forca + " ❌";  }
+ 
+   if (percepcao < 481) { document.getElementById( "idPercepcaoMetus").innerHTML = "👀 Percepção: 480/" +  percepcao + " ❌";  }
+  if (percepcao > 480) {document.getElementById("idPercepcaoMetus").innerHTML =  "👀 Percepção: 480/" +  percepcao + " ✅";  }
+ 
+  if (inteligencia < 431) {document.getElementById( "idInteligenciaMetus").innerHTML = "🧠 Inteligência: 430/" +  inteligencia + " ❌"; }
+  if (inteligencia > 430) { document.getElementById( "idInteligenciaMetus").innerHTML = "🧠 Inteligência: 430/" + inteligencia + " ✅"; }
+ 
+ }
+ 
+ /*FIM DO BOTÃO ANALISAR  LUTA DO Metus guía das almas */
+
+
+  /*INÍCIO DA LUTA DO Metus guía das almas*/
+  function LutaContraMetusBotao() {
+
+    if (vida < 50 || fadiga > 40) {document.getElementById("idQuadroDeRetornoMetus").innerHTML = "Vida ou Fadiga insuficiente"; } 
+    
+    else if (Metus > 0) {document.getElementById("idQuadroDeRetornoMetus")
+      .innerHTML = "✨ Você já derrotou o Metus ✨";} 
+    
+    else if (
+      vida > 49 && 
+      fadiga < 40 && 
+      agilidade > 780 &&
+      forca > 930 && 
+      percepcao > 480 &&
+      inteligencia > 430
+      ) {
+       
+      vida = vida - 50;
+      if (vida < 1) {vida = 0;}
+      progresso2.setAttribute("style", "width: " + vida + "%");
+      document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+  
+      fadiga = fadiga + 60;
+      if (fadiga > 99) {fadiga = 100; }
+      progresso.setAttribute("style", "width: " + fadiga + "%");
+      document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+  
+      Metus = Metus + 1;
+      document.getElementById("idMetus").innerHTML = "⚔️ Rounds da batalha: " + Metus + "/1";
+  
+      document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
+      document.getElementById("idItemColarAdquirida").innerHTML = "⚠️ Colar do Monarca Demoníaco";
+
+      AguaNascenteDaFlorestaEcoante = 1;
+      document.getElementById("idCheckAguaNascenteDaFlorestaEcoante").innerHTML =  "✅ Água nascente da floresta ecoante";
+
+      document.getElementById("idQuadroDeRetornoMetus").innerHTML = 
+      "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 5 Pontos de Atributos - 10 Pedras de Essência - Equipamento Colar do Monarca Demônio - Água nascente da floresta ecoante]";
+
     
 
+      experienciaMetus = experienciaMetus + 10;
+      document.getElementById("idexperienciaMetus").innerHTML =  "🏆 Experiência: " + experienciaMetus;
+
+      experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 10;
+      document.getElementById("idContarExperienciaNoQuadroHabilidades",)
+      .innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+  
+      document.getElementById("idLutaContraMetusBotao").innerHTML = "Lutar novamente";
+  
+     
+
+      atributo = atributo + 5;
+      document.getElementById("idatributo").innerHTML =  "Disponíveis: " + atributo;
+      document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
+
+      PedraDeEssencia = PedraDeEssencia + 10;
+      document.getElementById("idpedrainventario").innerHTML =  "⚠️ Pedras de Essência: " + PedraDeEssencia;
+     
+     
+      SomaPedraDeEssenciaMetus = SomaPedraDeEssenciaMetus + 10;
+      document.getElementById("idPedrasDeEssenciaMetus").innerHTML = "💎 Pedras de Essência: " + SomaPedraDeEssenciaMetus;
+  
+        document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
+     
+            /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+        /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+/*Início de remover a habilidade Domínio do Monarca*/
+if (DominioDoMonarca === 1) {
+
+  DominioDoMonarca = 0;
+  
+  agilidade = agilidade - 20;
+  forca = forca - 20;
+  percepcao = percepcao - 20;
+  inteligencia = inteligencia - 20;
+  document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = "";
+  document.getElementById("idCheckDominioDoMonarca").innerHTML = "Habilidade: Domínio do Monarca";
+  document.getElementById("idRetornoDominioDoMonarca").innerHTML = "";  
+}
+/* Fim de remover a habilidade Domínio do Monarca */
+
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+  
+       /* Início do remover a Sombra do Igris*/
+    if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+      SombraIgris = 0;
+      document.getElementById("idRetornoExtracao1").innerHTML = "";
+      document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+
+      agilidade = agilidade - 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+      forca = forca - 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+      percepcao = percepcao - 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+      inteligencia = inteligencia - 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+      }
+ /* Fim do remover a Sombra do Igris*/
+
+  /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+
+ /* Início do remover a Sombra do Tank*/
+ if (SombraTank === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+  SombraTank = 0;
+  document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+  document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+
+  agilidade = agilidade - 48;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+  forca = forca - 46;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+  percepcao = percepcao - 28;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+  inteligencia = inteligencia - 22;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+  }
+/* Fim do remover a Sombra do Tank*/
+
+ /* Início do remover a Sombra do Iron*/
+ if (SombraIron === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+  SombraIron = 0;
+  document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+  document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+
+  agilidade = agilidade - 90;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+  forca = forca - 140;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+  percepcao = percepcao - 70;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+  inteligencia = inteligencia - 40;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+  }
+/* Fim do remover a Sombra do Iron*/
+
+/* Início do remover a Sombra do Tusk Xamã das Sombras*/
+if (SombraTusk === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+  SombraTusk = 0;
+  document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+  document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+
+  agilidade = agilidade - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+  forca = forca - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+  percepcao = percepcao - 100;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+  inteligencia = inteligencia - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+  }
+/* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+
+/*Início do remover a habilidade Provocar*/
+  
+  if (Provocar === 1) {
+
+      Provocar = 0;
+      
+  
+    agilidade = agilidade - 40;
+    percepcao = percepcao - 10;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  
+    document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+    document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";
+  
+    document.getElementById("idCheckProvocar").innerHTML = "Habilidade: Provocar";
+    document.getElementById("idRetornoProvocar").innerHTML = "";
+  }
+  /* Fim do remover a habilidade Provocar*/
+
+   /*Início de remover a habilidade Fortalecimento*/
+    if (Fortalecimento === 1) {
+
+        Fortalecimento = 0;
+        
+        agilidade = agilidade - 10;
+        forca = forca - 10;
+        percepcao = percepcao - 10;
+        inteligencia = inteligencia - 10;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+        document.getElementById("idCheckFortalecimento").innerHTML = "Habilidade: Fortalecimento";
+        document.getElementById("idRetornoFortalecimento").innerHTML = "";  
+    }
+    /* Fim de remover a habilidade Fortalecimento */
+
+  /* Início de remover Arrancada*/
+  if (Arrancada === 1){
+  
+  Arrancada = 0;
+  
+  if (ArrancadaNivel2 === 0){
+  agilidade = agilidade - 10;
+  }
+  if (ArrancadaNivel2 === 1){
+  agilidade = agilidade - 20;
+  }
+  
+   document.getElementById("idagilidade").innerHTML =
+        "🦵 Agilidade: " + agilidade;
+  
+        document.getElementById("idCheckArrancada").innerHTML = "Habilidade: Arrancada";
+        document.getElementById("idRetornoArrancada").innerHTML = "";
+        document.getElementById("idRetornoArrancadaNoStatus").innerHTML = "";
+  
+  }
+  /* Fim de remover Arrancada*/
+  
+  /* Início de remover Intenção Assassina */
+  if (Assassina === 1){
+  
+  Assassina = 0;
+      agilidade = agilidade - 5;
+
+      document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+      document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
+      document.getElementById("idRetornoAssassina").innerHTML = "";
+      document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
+  
+  }
+  /*Fim de remover Intenção Assassina*/
+  
+  /* Início de remover Furtividade */
+  if (Furtividade === 1){
+  
+    Furtividade = 0;
+    
+    agilidade = agilidade - 30;
+    
+     document.getElementById("idagilidade").innerHTML =
+          "🦵 Agilidade: " + agilidade;
+    
+    document.getElementById("idCheckFurtividade").innerHTML = "Habilidade: Furtividade";
+    document.getElementById("idRetornoFurtividade").innerHTML = "";
+    document.getElementById("idRetornoFurtividadeNoStatus").innerHTML = "";
+    
+    }
+    /*Fim de remover Furtividade*/
+
+     
+    } 
+    
+    else {
+      vida = vida - 50;
+      if (vida < 1) {
+        vida = 0;
+      }
+      progresso2.setAttribute("style", "width: " + vida + "%");
+      document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+  
+      fadiga = fadiga + 60;
+      if (fadiga > 99) {
+        fadiga = 100;
+      }
+      progresso.setAttribute("style", "width: " + fadiga + "%");
+      document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+  
+      document.getElementById("idQuadroDeRetornoMetus").innerHTML =
+        "☠️ DERROTA - Tente melhorar os seus atributos antes de lutar novamente ☠️";
+  
+      document.getElementById("idLutaContraMetusBotao").innerHTML =
+        "Tentar novamente";
+    }
+  }
+
+   /*FIM DA LUTA DO Metus guía das almas*/
+
+   /* início da função Colar do Monarca Demoníaco */
+  
+   function funcaoEquiparColar() {
+    if (ColarEquipada === 1) {
+      document.getElementById("idRetornoEquiparColar").innerHTML = "Colar já equipado";
+
+    } else if (Metus > 0 && ColarEquipada === 0) {
+      ColarEquipada = 1;
+  
+      agilidade = agilidade + 50;
+      document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+
+      document.getElementById("idRetornoEquiparColar").innerHTML = "Colar equipado com sucesso";
+  
+      document.getElementById("idItemColarAdquirida").innerHTML = "✅ Colar do Monarca Demoníaco";
+  
+  
+      document.getElementById("idRetornoColar").innerHTML = "+ 50";
+     
+document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
+
+    } else {
+      document.getElementById("idRetornoEquiparColar").innerHTML =
+        "Necessário derrotar o Metus guía das almas para adquirir esse Colar.";
+    }
+  }
+  
+  /* Fim da função equipar Colar do Monarca Demoníaco */
+
+   /* INÍCIO DO BOTÃO ANALISAR LUTA DO Baran */
+function AnalisarLutaContraBaranBotao() {
+
+  document.getElementById("idQuadroDeRetornoBaran") .innerHTML = "Análise dos seus Status e do Baran";
+ 
+  document.getElementById("idLutaContraBaranBotao") .innerHTML = "Seguir com a Luta";
+ 
+  if (vida < 1) {document.getElementById("idVidaBaran").innerHTML = "❤️ Vida: 100%/" + vida + "%" + " ❌"; }
+  if (vida > 99) { document.getElementById( "idVidaBaran").innerHTML = "❤️ Vida: 100%/" + vida + "%" + " ✅";  }
+ 
+  if (fadiga > 40) {document.getElementById( "idFadigaBaran").innerHTML = "🪫Fadiga: 60%/" + fadiga + "%" + " ❌"; }
+  if (fadiga < 41) { document.getElementById( "idFadigaBaran").innerHTML =  "🪫Fadiga: 60%/" + fadiga + "%" + " ✅";  }
+ 
+  if (agilidade < 781) { document.getElementById("idAgilidadeBaran").innerHTML = "🦵 Agilidade: 780/" + agilidade + " ❌"; }
+  if (agilidade > 780) { document.getElementById("idAgilidadeBaran").innerHTML = "🦵 Agilidade: 780/" +  agilidade + " ✅";  }
+ 
+  if (forca > 930) {document.getElementById("idForcaBaran").innerHTML =  "💪 Força: 930/" + forca + " ✅";  }
+  if (forca < 931) { document.getElementById( "idForcaBaran").innerHTML = "💪 Força: 930/" + forca + " ❌";  }
+ 
+   if (percepcao < 491) { document.getElementById( "idPercepcaoBaran").innerHTML = "👀 Percepção: 490/" +  percepcao + " ❌";  }
+  if (percepcao > 490) {document.getElementById("idPercepcaoBaran").innerHTML =  "👀 Percepção: 490/" +  percepcao + " ✅";  }
+ 
+  if (inteligencia < 431) {document.getElementById( "idInteligenciaBaran").innerHTML = "🧠 Inteligência: 440/" +  inteligencia + " ❌"; }
+  if (inteligencia > 430) { document.getElementById( "idInteligenciaBaran").innerHTML = "🧠 Inteligência: 440/" + inteligencia + " ✅"; }
+ 
+ }
+ 
+ /*FIM DO BOTÃO ANALISAR  LUTA DO Baran */
+
+ /*INÍCIO DA LUTA DO BARAN */
+ function LutaContraBaranBotao() {
+
+  if (vida < 100 || fadiga > 0) {document.getElementById("idQuadroDeRetornoBaran").innerHTML = "Vida ou Fadiga insuficiente"; } 
+  
+  else if (Baran > 0) {document.getElementById("idQuadroDeRetornoBaran").innerHTML = "✨ Você já derrotou o Baran ✨";} 
+  
+  else if (
+    vida === 100 && 
+    fadiga === 0 && 
+    agilidade > 790 &&
+    forca > 930 && 
+    percepcao > 490 &&
+    inteligencia > 440
+    ) {
+     
+    vida = vida - 100;
+    if (vida < 1) {vida = 0;}
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 100;
+    if (fadiga > 99) {fadiga = 100; }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    Baran = Baran + 1;
+    document.getElementById("idBaran").innerHTML = "⚔️ Rounds da batalha: " + Baran + "/1";
+
+    document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
+    document.getElementById("idItemEspadaMonarcaDemonioAdquirida").innerHTML = "⚠️ Espada Longa do Monarca Demoníaco";
+    document.getElementById("idItemAnelAdquirida").innerHTML = "⚠️ Anel do Monarca Demoníaco";
+    document.getElementById("idChecDoKaisel").innerHTML = "⚠️ Kaisel - Rank Dragão";
+
+    SanguePurificadoDoMonarcaDemoniaco = 1;
+    document.getElementById("idCheckSamguePurificadoMonarcaDemoniaco").innerHTML =  "✅ Sangue Purificado do Monarca Demoníaco";
+
+    document.getElementById("idQuadroDeRetornoBaran").innerHTML = 
+    "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 5 Pontos de Atributos - 10 Pedras de Essência - Equipamento Espada do Monarca Demônio - Equipamento Anel do Monarca Demoníaco - Sangue Purificado do Monarca Demoníaco]";
 
 
+
+    experienciaBaran = experienciaBaran + 10;
+    document.getElementById("idexperienciaBaran").innerHTML =  "🏆 Experiência: " + experienciaBaran;
+
+    experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 10;
+    document.getElementById("idContarExperienciaNoQuadroHabilidades",)
+    .innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+
+    document.getElementById("idLutaContraBaranBotao").innerHTML = "Lutar novamente";
+
+   
+
+    atributo = atributo + 5;
+    document.getElementById("idatributo").innerHTML =  "Disponíveis: " + atributo;
+    document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
+
+    PedraDeEssencia = PedraDeEssencia + 10;
+    document.getElementById("idpedrainventario").innerHTML =  "⚠️ Pedras de Essência: " + PedraDeEssencia;
+   
+   
+    SomaPedraDeEssenciaBaran = SomaPedraDeEssenciaBaran + 10;
+    document.getElementById("idPedrasDeEssenciaBaran").innerHTML = "💎 Pedras de Essência: " + SomaPedraDeEssenciaBaran;
+
+      document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
+   
+          /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+      /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+/*Início de remover a habilidade Domínio do Monarca*/
+if (DominioDoMonarca === 1) {
+
+DominioDoMonarca = 0;
+
+agilidade = agilidade - 20;
+forca = forca - 20;
+percepcao = percepcao - 20;
+inteligencia = inteligencia - 20;
+document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = "";
+document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = "";
+document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = "";
+document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = "";
+document.getElementById("idCheckDominioDoMonarca").innerHTML = "Habilidade: Domínio do Monarca";
+document.getElementById("idRetornoDominioDoMonarca").innerHTML = "";  
+}
+/* Fim de remover a habilidade Domínio do Monarca */
+
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+
+     /* Início do remover a Sombra do Igris*/
+  if (SombraIgris === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+    SombraIgris = 0;
+    document.getElementById("idRetornoExtracao1").innerHTML = "";
+    document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+
+    agilidade = agilidade - 100;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+    forca = forca - 120;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+    percepcao = percepcao - 80;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+    inteligencia = inteligencia - 60;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+    }
+/* Fim do remover a Sombra do Igris*/
+
+ /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+
+/* Início do remover a Sombra do Tank*/
+if (SombraTank === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+SombraTank = 0;
+document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+
+agilidade = agilidade - 48;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+forca = forca - 46;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+percepcao = percepcao - 28;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+inteligencia = inteligencia - 22;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+/* Fim do remover a Sombra do Tank*/
+
+/* Início do remover a Sombra do Iron*/
+if (SombraIron === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+SombraIron = 0;
+document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+
+agilidade = agilidade - 90;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+forca = forca - 140;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+percepcao = percepcao - 70;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+inteligencia = inteligencia - 40;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+/* Fim do remover a Sombra do Iron*/
+
+/* Início do remover a Sombra do Tusk Xamã das Sombras*/
+if (SombraTusk === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+SombraTusk = 0;
+document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+
+agilidade = agilidade - 150;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+forca = forca - 200;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+percepcao = percepcao - 100;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+inteligencia = inteligencia - 150;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+/* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+
+/*Início do remover a habilidade Provocar*/
+
+if (Provocar === 1) {
+
+    Provocar = 0;
+    
+
+  agilidade = agilidade - 40;
+  percepcao = percepcao - 10;
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+
+  document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+  document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";
+
+  document.getElementById("idCheckProvocar").innerHTML = "Habilidade: Provocar";
+  document.getElementById("idRetornoProvocar").innerHTML = "";
+}
+/* Fim do remover a habilidade Provocar*/
+
+ /*Início de remover a habilidade Fortalecimento*/
+  if (Fortalecimento === 1) {
+
+      Fortalecimento = 0;
+      
+      agilidade = agilidade - 10;
+      forca = forca - 10;
+      percepcao = percepcao - 10;
+      inteligencia = inteligencia - 10;
+      document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+      document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+      document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+      document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+      document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+      document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+      document.getElementById("idCheckFortalecimento").innerHTML = "Habilidade: Fortalecimento";
+      document.getElementById("idRetornoFortalecimento").innerHTML = "";  
+  }
+  /* Fim de remover a habilidade Fortalecimento */
+
+/* Início de remover Arrancada*/
+if (Arrancada === 1){
+
+Arrancada = 0;
+
+if (ArrancadaNivel2 === 0){
+agilidade = agilidade - 10;
+}
+if (ArrancadaNivel2 === 1){
+agilidade = agilidade - 20;
+}
+
+ document.getElementById("idagilidade").innerHTML =
+      "🦵 Agilidade: " + agilidade;
+
+      document.getElementById("idCheckArrancada").innerHTML = "Habilidade: Arrancada";
+      document.getElementById("idRetornoArrancada").innerHTML = "";
+      document.getElementById("idRetornoArrancadaNoStatus").innerHTML = "";
+
+}
+/* Fim de remover Arrancada*/
+
+/* Início de remover Intenção Assassina */
+if (Assassina === 1){
+
+Assassina = 0;
+    agilidade = agilidade - 5;
+
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
+    document.getElementById("idRetornoAssassina").innerHTML = "";
+    document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
+
+}
+/*Fim de remover Intenção Assassina*/
+
+/* Início de remover Furtividade */
+if (Furtividade === 1){
+
+  Furtividade = 0;
+  
+  agilidade = agilidade - 30;
+  
+   document.getElementById("idagilidade").innerHTML =
+        "🦵 Agilidade: " + agilidade;
+  
+  document.getElementById("idCheckFurtividade").innerHTML = "Habilidade: Furtividade";
+  document.getElementById("idRetornoFurtividade").innerHTML = "";
+  document.getElementById("idRetornoFurtividadeNoStatus").innerHTML = "";
+  
+  }
+  /*Fim de remover Furtividade*/
+   
+  } 
+  
+  else {
+    vida = vida - 100;
+    if (vida < 1) {
+      vida = 0;
+    }
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 100;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    document.getElementById("idQuadroDeRetornoBaran").innerHTML =
+      "☠️ DERROTA - Tente melhorar os seus atributos antes de lutar novamente ☠️";
+
+    document.getElementById("idLutaContraBaranBotao").innerHTML =
+      "Tentar novamente";
+  }
+}
+
+ /*FIM DA LUTA DO Baran */
+
+ /* início da função Anel do Monarca Demoníaco */
+  
+ function funcaoEquiparAnel() {
+  if (AnelEquipada === 1) {
+    document.getElementById("idRetornoEquiparAnel").innerHTML = "Anel já equipado";
+
+  } else if (Baran > 0 && AnelEquipada === 0) {
+    AnelEquipada = 1;
+
+    inteligencia = inteligencia + 50;
+    document.getElementById("idinteligencia").innerHTML =  "🧠 Inteligência: " + inteligencia;
+
+    document.getElementById("idRetornoEquiparAnel").innerHTML = "Anel equipado com sucesso";
+
+    document.getElementById("idItemAnelAdquirida").innerHTML = "✅ Anel do Monarca Demoníaco";
+
+
+    document.getElementById("idRetornoAnel").innerHTML = "+ 50";
+   
+document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
+
+  } else {
+    document.getElementById("idRetornoEquiparAnel").innerHTML =
+      "Necessário derrotar o Baran - Monarca das Chamas Branca para adquirir esse Anel.";
+  }
+}
+
+/* Fim da função equipar Anel do Monarca Demoníaco */
+
+ /* início da função Espada do Monarca Demoníaco */
+  
+ function funcaoEquiparEspadaMonarcaDemonio() {
+  if (EspadaMonarcaDemonioEquipada === 1) {
+    document.getElementById("idRetornoEquiparEspadaMonarcaDemonio").innerHTML = "Espada já equipada";
+
+  } else if (Baran > 0 && EspadaMonarcaDemonioEquipada === 0) {
+    EspadaMonarcaDemonioEquipada = 1;
+
+    forca = forca + 350;
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+    document.getElementById("idRetornoEquiparEspadaMonarcaDemonio").innerHTML = "Espada equipada com sucesso";
+
+    document.getElementById("idItemEspadaMonarcaDemonioAdquirida").innerHTML = "✅ Espada Longa do Monarca Demoníaco";
+
+
+    document.getElementById("idRetornoEspadaMonarcaDemonio").innerHTML = "+ 350";
+   
+document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
+
+  } else {
+    document.getElementById("idRetornoEquiparEspadaMonarcaDemonio").innerHTML =
+      "Necessário derrotar o Baran - Monarca das Chamas Branca para adquirir esse Espada.";
+  }
+}
+
+/* Fim da função equipar Espada do Monarca Demoníaco */
+
+
+/*Início da habilidade Extração de Sombras Kaisel */
+function FuncaoExtracaoKaisel() {
+
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
+  if (Magos < 2){
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML =
+      "Habilidade exclussiva da Classe Necromante [Monarca das Sombras] - Derrote os 6 Magos para utilizar essa Habilidade!";
+  }
+
+  else if (SombraKaisel === 1){
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML =
+     "Kaisel já está em batalha!";
+  }
+
+  else if (Magos > 1 && Baran < 1 && mana > 19 && SombraKaisel === 0){
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML = "Necessário matar Baran - Monarca das Chamas Branca para extrair a sua alma!";
+  }
+
+    else if (Magos > 1 && Baran > 0 && mana > 19 && SombraKaisel === 0){
+      SombraKaisel = 1;
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML = "Alma extraída com sucesso";
+
+       if (PrimeiraVezDoKaisel === 0)  { 
+  PrimeiraVezDoKaisel  = 1; 
+criarVagalumes();
+ }
+
+       document.getElementById("idChecDoKaisel").innerHTML = "✅  Kaisel - Rank Dragão";
+
+       /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
+
+      mana = mana - 20;
+      document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
+
+      agilidadeDasSombras = agilidadeDasSombras + 50;
+      forcaDasSombras = forcaDasSombras + 100;
+      percepcaoDasSombras = percepcaoDasSombras + 30;
+      inteligenciaDasSombras = inteligenciaDasSombras + 50;
+
+      agilidade = agilidade + 50;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselAgilidade").innerHTML = "+ 50";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+      forca = forca + 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselForca").innerHTML = "+ 100";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+      percepcao = percepcao + 30;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselPercepcao").innerHTML = "+ 30";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+      inteligencia = inteligencia + 50;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselInteligencia").innerHTML = "+ 50";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+
+  }
+   else if (Magos > 1 && mana < 50 && SombraKaisel === 0){
+     document.getElementById("idRetornoExtracaoKaisel").innerHTML = "Mana insuficiente";
+   }
+
+ 
+  
+}
+/*Fim da habilidade Extração de Sombras Kaisel */
+
+
+ /*Início efeito de corações Esil Radiru*/
+ function efeitoCorações(botao) {
+  for (let i = 0; i < 20; i++) {
+    const coracao = document.createElement('div');
+    coracao.classList.add('coracao');
+    coracao.textContent = '';
+    coracao.style.left = `${botao.offsetLeft + Math.random() * 100 - 50}px`;
+    coracao.style.top = `${botao.offsetTop + Math.random() * 50 - 25}px`;
+    document.body.appendChild(coracao);
+    setTimeout(() => {
+      coracao.classList.add('show');
+    }, 50 * i);
+    setTimeout(() => {
+      coracao.style.transform = `translateY(-${Math.random() * 200}px) scale(2)`;
+      coracao.style.opacity = 0;
+    }, 50 * i + 500);
+    setTimeout(() => {
+      coracao.remove();
+    }, 2000 + 50 * i);
+  }
+}
+ /*Fim efeito de corações Esil Radiru*/
+
+ /*Início poupar a vida da Esil Radiru*/
+ function FuncaoPouparVidaDaEsil() {
+
+  if(Metus === 0 && AmizadeEsil === 0){
+    document.getElementById("idPouparVidaDaEsil").innerHTML = "Você precisa derrotar o Metus guía das almas antes de seguir com essa amizade!";
+  }
+
+  else if(Metus === 1 && AmizadeEsil === 0){
+    AmizadeEsil = 1;
+  document.getElementById("idPouparVidaDaEsilTransferirMana").innerHTML = "Transferir Mana: 500 Pontos de Mana restante";
+  document.getElementById("idPouparVidaDaEsil").innerHTML = "Esil se apaixonou por um rapaz de outro mundo que visitou seu reino e, quando ele foi embora, ela decidiu segui-lo. Ao lado dele, ela está pronta para aceitar qualquer surpresa do destino. Esil te presentou com uma ligação de fios de mana. [Nova Habilidade: Coração negro - Você pode transferir mana da Easil Radiru para você]";
+  alert("Um demônio Nobre se juntou ao seu grupo!");
+}
+
+  else if (AmizadeEsil === 3){
+    document.getElementById("idPouparVidaDaEsil").innerHTML = "Você matou a Esil Radiru";
+  }
+
+  else if (ManaDaEsil === 0) {
+      
+    document.getElementById("idPouparVidaDaEsilTransferirMana").innerHTML = "Você não possui mais pontos de Mana para transferir!";
+
+  }
+
+  else if (AmizadeEsil === 1 && ManaDaEsil > 0 && AumentoDoNivelDaMana > mana){
+   
+    efeitoCorações(document.getElementById("idPouparVidaDaEsilTransferirMana"));
+
+   
+
+    if (ManaDaEsil > 9 && mana < AumentoDoNivelDaMana) {
+      mana = mana + 10;
+      ManaDaEsil = ManaDaEsil - 10;
+  
+      if (mana > AumentoDoNivelDaMana) {
+        mana = AumentoDoNivelDaMana;
+      }
+  
+      document.getElementById("idPouparVidaDaEsilTransferirMana").innerHTML = "Transferir Mana: " + ManaDaEsil + " Pontos de Mana restante";
+  
+      document.getElementById("idAumentoDoNivelDaMana").innerHTML = "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+        progresso3.setAttribute("style", "width: " + mana + "%");
+    } 
+
+  }
+
+  else if (ManaDaEsil > 0 && mana === AumentoDoNivelDaMana){
+    document.getElementById("idPouparVidaDaEsilTransferirMana").innerHTML = "Sua Mana está no limite!";
+  }
+}
+ /*Fim poupar a vida da Esil Radiru*/
+
+/* INÍCIO DO BOTÃO ANALISAR LUTA da Esil Radiru */
+function AnalisarLutaContraEsilBotao() {
+
+  document.getElementById("idQuadroDeRetornoEsil") .innerHTML = "Análise dos seus Status e da Esil";
+ 
+  document.getElementById("idLutaContraEsilBotao") .innerHTML = "Seguir com a Luta";
+ 
+  if (vida < 40) {document.getElementById("idVidaEsil").innerHTML = "❤️ Vida: 40%/" + vida + "%" + " ❌"; }
+  if (vida > 39) { document.getElementById( "idVidaEsil").innerHTML = "❤️ Vida: 40%/" + vida + "%" + " ✅";  }
+ 
+  if (fadiga > 70) {document.getElementById( "idFadigaEsil").innerHTML = "🪫Fadiga: 30%/" + fadiga + "%" + " ❌"; }
+  if (fadiga < 71) { document.getElementById( "idFadigaEsil").innerHTML =  "🪫Fadiga: 30%/" + fadiga + "%" + " ✅";  }
+ 
+  if (agilidade < 701) { document.getElementById("idAgilidadeEsil").innerHTML = "🦵 Agilidade: 700/" + agilidade + " ❌"; }
+  if (agilidade > 700) { document.getElementById("idAgilidadeEsil").innerHTML = "🦵 Agilidade: 700/" +  agilidade + " ✅";  }
+ 
+  if (forca > 900) {document.getElementById("idForcaEsil").innerHTML =  "💪 Força: 900/" + forca + " ✅";  }
+  if (forca < 901) { document.getElementById( "idForcaEsil").innerHTML = "💪 Força: 900/" + forca + " ❌";  }
+ 
+   if (percepcao < 401) { document.getElementById( "idPercepcaoEsil").innerHTML = "👀 Percepção: 400/" +  percepcao + " ❌";  }
+  if (percepcao > 400) {document.getElementById("idPercepcaoEsil").innerHTML =  "👀 Percepção: 400/" +  percepcao + " ✅";  }
+ 
+  if (inteligencia < 401) {document.getElementById( "idInteligenciaEsil").innerHTML = "🧠 Inteligência: 400/" +  inteligencia + " ❌"; }
+  if (inteligencia > 400) { document.getElementById( "idInteligenciaEsil").innerHTML = "🧠 Inteligência: 400/" + inteligencia + " ✅"; }
+ 
+ }
+ 
+ /*FIM DO BOTÃO ANALISAR  LUTA da Esil Radiru */
+
+ /*INÍCIO DA LUTA da Esil Radiru*/
+ function LutaContraEsilBotao() {
+
+if(AmizadeEsil === 1){
+  document.getElementById("idQuadroDeRetornoEsil").innerHTML = "Você optou por poupar a vida da Esil Radiru";
+}
+
+  else if (vida < 40 || fadiga > 70) {document.getElementById("idQuadroDeRetornoEsil").innerHTML = "Vida ou Fadiga insuficiente"; } 
+  
+  
+  else if (Esil > 0) {
+    document.getElementById("idQuadroDeRetornoEsil").innerHTML = "✨ Você já derrotou a Esil ✨ Habilidade Gula: Você dobra a eficiência de tudo que você bebe, como poções de Vida, Recuperação e Mana";
+  
+   
+  } 
+  
+  else if (
+    vida > 39 && 
+    fadiga < 71 && 
+    agilidade > 700 &&
+    forca > 900 && 
+    percepcao > 400 &&
+    inteligencia > 400 &&
+    AmizadeEsil === 0
+    ) {
+     
+    vida = vida - 40;
+    if (vida < 1) {vida = 0;}
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 30;
+    if (fadiga > 99) {fadiga = 100; }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    Esil = Esil + 1;
+    document.getElementById("idEsil").innerHTML = "⚔️ Rounds da batalha: " + Esil + "/1";
+
+    document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
+
+
+    document.getElementById("idQuadroDeRetornoEsil").innerHTML = 
+    "✨ VITÓRIA ✨ [Recompensas: 5 Pontos de Atributos - Habilidade Gula: Você dobra a eficiência de tudo que você bebe, como poções de Vida, Recuperação e Mana]";
+
+      alert("✨ Nova habilidade adquirida: Gula! ✨", );
+   alert("Você dobra a eficiência de tudo que você bebe, como poções de Vida, Recuperação e Mana", );
+
+AmizadeEsil = 3;
+
+    document.getElementById("idLutaContraEsilBotao").innerHTML = "Esil Derrotada";
+
+   
+
+    atributo = atributo + 5;
+    document.getElementById("idatributo").innerHTML =  "Disponíveis: " + atributo;
+    document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
+
+        /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+   /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+/*Início de remover a habilidade Domínio do Monarca*/
+if (DominioDoMonarca === 1) {
+
+DominioDoMonarca = 0;
+
+agilidade = agilidade - 20;
+forca = forca - 20;
+percepcao = percepcao - 20;
+inteligencia = inteligencia - 20;
+document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = "";
+document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = "";
+document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = "";
+document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = "";
+document.getElementById("idCheckDominioDoMonarca").innerHTML = "Habilidade: Domínio do Monarca";
+document.getElementById("idRetornoDominioDoMonarca").innerHTML = "";  
+}
+/* Fim de remover a habilidade Domínio do Monarca */
+
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+
+     /* Início do remover a Sombra do Igris*/
+  if (SombraIgris === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+    SombraIgris = 0;
+    document.getElementById("idRetornoExtracao1").innerHTML = "";
+    document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+
+    agilidade = agilidade - 100;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+    forca = forca - 120;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+    percepcao = percepcao - 80;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+    inteligencia = inteligencia - 60;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+    }
+/* Fim do remover a Sombra do Igris*/
+
+ /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+
+/* Início do remover a Sombra do Tank*/
+if (SombraTank === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+SombraTank = 0;
+document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+
+agilidade = agilidade - 48;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+forca = forca - 46;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+percepcao = percepcao - 28;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+inteligencia = inteligencia - 22;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+/* Fim do remover a Sombra do Tank*/
+
+/* Início do remover a Sombra do Iron*/
+if (SombraIron === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+SombraIron = 0;
+document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+
+agilidade = agilidade - 90;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+forca = forca - 140;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+percepcao = percepcao - 70;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+inteligencia = inteligencia - 40;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+/* Fim do remover a Sombra do Iron*/
+
+/* Início do remover a Sombra do Tusk Xamã das Sombras*/
+if (SombraTusk === 1){
+
+  agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+SombraTusk = 0;
+document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+
+agilidade = agilidade - 150;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+forca = forca - 200;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+percepcao = percepcao - 100;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+inteligencia = inteligencia - 150;
+document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+}
+/* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+
+/*Início do remover a habilidade Provocar*/
+
+if (Provocar === 1) {
+
+    Provocar = 0;
+    
+
+  agilidade = agilidade - 40;
+  percepcao = percepcao - 10;
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+
+  document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+  document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";
+
+  document.getElementById("idCheckProvocar").innerHTML = "Habilidade: Provocar";
+  document.getElementById("idRetornoProvocar").innerHTML = "";
+}
+/* Fim do remover a habilidade Provocar*/
+
+ /*Início de remover a habilidade Fortalecimento*/
+  if (Fortalecimento === 1) {
+
+      Fortalecimento = 0;
+      
+      agilidade = agilidade - 10;
+      forca = forca - 10;
+      percepcao = percepcao - 10;
+      inteligencia = inteligencia - 10;
+      document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+      document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+      document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+      document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+      document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+      document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+      document.getElementById("idCheckFortalecimento").innerHTML = "Habilidade: Fortalecimento";
+      document.getElementById("idRetornoFortalecimento").innerHTML = "";  
+  }
+  /* Fim de remover a habilidade Fortalecimento */
+
+/* Início de remover Arrancada*/
+if (Arrancada === 1){
+
+Arrancada = 0;
+
+if (ArrancadaNivel2 === 0){
+agilidade = agilidade - 10;
+}
+if (ArrancadaNivel2 === 1){
+agilidade = agilidade - 20;
+}
+
+ document.getElementById("idagilidade").innerHTML =
+      "🦵 Agilidade: " + agilidade;
+
+      document.getElementById("idCheckArrancada").innerHTML = "Habilidade: Arrancada";
+      document.getElementById("idRetornoArrancada").innerHTML = "";
+      document.getElementById("idRetornoArrancadaNoStatus").innerHTML = "";
+
+}
+/* Fim de remover Arrancada*/
+
+/* Início de remover Intenção Assassina */
+if (Assassina === 1){
+
+Assassina = 0;
+    agilidade = agilidade - 5;
+
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
+    document.getElementById("idRetornoAssassina").innerHTML = "";
+    document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
+
+}
+/*Fim de remover Intenção Assassina*/
+
+/* Início de remover Furtividade */
+if (Furtividade === 1){
+
+  Furtividade = 0;
+  
+  agilidade = agilidade - 30;
+  
+   document.getElementById("idagilidade").innerHTML =
+        "🦵 Agilidade: " + agilidade;
+  
+  document.getElementById("idCheckFurtividade").innerHTML = "Habilidade: Furtividade";
+  document.getElementById("idRetornoFurtividade").innerHTML = "";
+  document.getElementById("idRetornoFurtividadeNoStatus").innerHTML = "";
+  
+  }
+  /*Fim de remover Furtividade*/
+
+    /* início da função subir de nível */
+
+    SomaDoNivel = SomaDoNivel + 5;
+    if (SomaDoNivel > SomaDoIndicadorDoNivel) {
+      document.getElementById("idnivel").innerHTML =
+        "Nível: " + EqualizadoDoNivel;
+
+       alert("Você subiu de Nível!");
+
+      EqualizadoDoNivel = EqualizadoDoNivel + 1;
+      SomaDoIndicadorDoNivel = SomaDoIndicadorDoNivel + 6;
+    }
+    /* Fim da função subir de nível */
+
+   
+  } 
+  
+  else {
+    vida = vida - 40;
+    if (vida < 1) {
+      vida = 0;
+    }
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 30;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    document.getElementById("idQuadroDeRetornoEsil").innerHTML =
+      "☠️ DERROTA - Tente melhorar os seus atributos antes de lutar novamente ☠️";
+
+    document.getElementById("idLutaContraEsilBotao").innerHTML =
+      "Tentar novamente";
+  }
+}
+/*FIM DA LUTA da Esil Radiru*/
+
+
+/* INÍCIO DO BOTÃO ANALISAR LUTA DO Enxame de Formigas */
+function AnalisarLutaContraEnxameBotao() {
+
+  document.getElementById("idQuadroDeRetornoEnxame") .innerHTML = "Análise dos seus Status e do Enxame de Formigas";
+ 
+  document.getElementById("idLutaContraEnxameBotao") .innerHTML = "Seguir com a Luta";
+ 
+  if (vida < 50) {document.getElementById("idVidaEnxame").innerHTML = "❤️ Vida: 50%/" + vida + "%" + " ❌"; }
+  if (vida > 49) { document.getElementById( "idVidaEnxame").innerHTML = "❤️ Vida: 50%/" + vida + "%" + " ✅";
+  }
+ 
+  if (fadiga > 99) {document.getElementById( "idFadigaEnxame").innerHTML = "🪫Fadiga: 100%/" + fadiga + "%" + " ❌";
+  }
+  if (fadiga < 100) { document.getElementById( "idFadigaEnxame").innerHTML =  "🪫Fadiga: 100%/" + fadiga + "%" + " ✅";
+  }
+ 
+  if (agilidade < 901) { document.getElementById("idAgilidadeEnxame").innerHTML = "🦵 Agilidade: 900/" + agilidade + " ❌";
+  }
+  if (agilidade > 900) { document.getElementById("idAgilidadeEnxame").innerHTML = "🦵 Agilidade: 900/" +  agilidade + " ✅";
+  }
+ 
+  if (forca > 1000) {document.getElementById("idForcaEnxame").innerHTML =  "💪 Força: 1000/" + forca + " ✅";
+  }
+  if (forca < 1001) { document.getElementById( "idForcaEnxame").innerHTML = "💪 Força: 1000/" + forca + " ❌";
+  }
+ 
+   if (percepcao < 541) { document.getElementById( "idPercepcaoEnxame").innerHTML = "👀 Percepção: 540/" +  percepcao + " ❌";
+  }
+  if (percepcao > 540) {document.getElementById("idPercepcaoEnxame").innerHTML =  "👀 Percepção: 540/" +  percepcao + " ✅";
+  }
+ 
+  if (inteligencia < 551) {document.getElementById( "idInteligenciaEnxame").innerHTML = "🧠 Inteligência: 550/" +  inteligencia + " ❌";
+  }
+  if (inteligencia > 550) { document.getElementById( "idInteligenciaEnxame").innerHTML = "🧠 Inteligência: 550/" + inteligencia + " ✅";
+  }
+
+ }
+ 
+ /*FIM DO BOTÃO ANALISAR  LUTA DO Enxame de Formigas*/
+
+ var Enxame = 0;
+
+ /*INÍCIO DA LUTA DO Enxame de Formigas */
+ function LutaContraEnxameBotao() {
+
+  if (vida < 50 || fadiga > 99) {document.getElementById("idQuadroDeRetornoEnxame").innerHTML = "Vida ou Fadiga insuficiente"; } 
+  
+  else if (Enxame > 0) {document.getElementById("idQuadroDeRetornoEnxame")
+    .innerHTML = "✨ Você já derrotou o Enxame de Formigas ✨";} 
+  
+  else if (
+    vida > 49 && 
+    fadiga < 100 && 
+    agilidade > 900 &&
+    forca > 1000 && 
+    percepcao > 540 &&
+    inteligencia > 550
+    ) {
+     
+    vida = vida - 50;
+    if (vida < 1) {vida = 0;}
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 100;
+    if (fadiga > 99) {fadiga = 100; }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    Enxame = Enxame + 1;
+    document.getElementById("idEnxame").innerHTML = "⚔️ Rounds da batalha: " + Enxame + "/1";
+
+    document.getElementById("idQuadroDeRetornoEnxame").innerHTML =     "✨ VITÓRIA ✨ Você derrotou o Enxame de Formigas [Recompensas: Habilidade Mutilação]";
+
+      experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 10;
+      document.getElementById("idContarExperienciaNoQuadroHabilidades",)
+      .innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+      
+  document.getElementById("idCheckMutilacao").innerHTML ="⚠️ Habilidade: Mutilação";
+   document.getElementById("idAlertaNoMenuHabilidade").innerHTML = "⚠️ Habilidades";
+
+    document.getElementById("idLutaContraEnxameBotao").innerHTML = "Enxame de Formigas derrotado";
+
+    /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+    /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+/*Início de remover a habilidade Domínio do Monarca*/
+if (DominioDoMonarca === 1) {
+
+  DominioDoMonarca = 0;
+  
+  agilidade = agilidade - 20;
+  forca = forca - 20;
+  percepcao = percepcao - 20;
+  inteligencia = inteligencia - 20;
+  document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = "";
+  document.getElementById("idCheckDominioDoMonarca").innerHTML = "Habilidade: Domínio do Monarca";
+  document.getElementById("idRetornoDominioDoMonarca").innerHTML = "";  
+  }
+  /* Fim de remover a habilidade Domínio do Monarca */
+  
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+  
+       /* Início do remover a Sombra do Igris*/
+    if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+      SombraIgris = 0;
+      document.getElementById("idRetornoExtracao1").innerHTML = "";
+      document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+  
+      agilidade = agilidade - 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+      forca = forca - 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+      percepcao = percepcao - 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+      inteligencia = inteligencia - 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+      }
+  /* Fim do remover a Sombra do Igris*/
+  
+   /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+  
+  /* Início do remover a Sombra do Tank*/
+  if (SombraTank === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+  SombraTank = 0;
+  document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+  document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+  
+  agilidade = agilidade - 48;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 46;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 28;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 22;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tank*/
+  
+  /* Início do remover a Sombra do Iron*/
+  if (SombraIron === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+  SombraIron = 0;
+  document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+  document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+  
+  agilidade = agilidade - 90;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 140;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 70;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 40;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Iron*/
+  
+  /* Início do remover a Sombra do Tusk Xamã das Sombras*/
+  if (SombraTusk === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+  SombraTusk = 0;
+  document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+  document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+  
+  agilidade = agilidade - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 100;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+  
+   /* Início do remover a Sombra do Kaisel - Rank Dragão*/
+   if (SombraKaisel === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 50;
+      forcaDasSombras = forcaDasSombras - 100;
+      percepcaoDasSombras = percepcaoDasSombras - 30;
+      inteligenciaDasSombras = inteligenciaDasSombras - 50;
+
+    SombraKaisel = 0;
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML = "";
+    document.getElementById("idChecDoKaisel").innerHTML = "Kaisel - Xamã das Sombras";
+    
+    agilidade = agilidade - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselAgilidade").innerHTML = "";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+    
+    forca = forca - 100;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselForca").innerHTML = "";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+    
+    percepcao = percepcao - 30;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselPercepcao").innerHTML = "";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+    
+    inteligencia = inteligencia - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselInteligencia").innerHTML = "";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+    }
+    /* Fim do remover a Sombra do Kaisel - Rank Dragão*/
+
+  /*Início do remover a habilidade Provocar*/
+  
+  if (Provocar === 1) {
+  
+      Provocar = 0;
+      
+  
+    agilidade = agilidade - 40;
+    percepcao = percepcao - 10;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  
+    document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+    document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";
+  
+    document.getElementById("idCheckProvocar").innerHTML = "Habilidade: Provocar";
+    document.getElementById("idRetornoProvocar").innerHTML = "";
+  }
+  /* Fim do remover a habilidade Provocar*/
+  
+   /*Início de remover a habilidade Fortalecimento*/
+    if (Fortalecimento === 1) {
+  
+        Fortalecimento = 0;
+        
+        agilidade = agilidade - 10;
+        forca = forca - 10;
+        percepcao = percepcao - 10;
+        inteligencia = inteligencia - 10;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+        document.getElementById("idCheckFortalecimento").innerHTML = "Habilidade: Fortalecimento";
+        document.getElementById("idRetornoFortalecimento").innerHTML = "";  
+    }
+    /* Fim de remover a habilidade Fortalecimento */
+  
+  /* Início de remover Arrancada*/
+  if (Arrancada === 1){
+  
+  Arrancada = 0;
+  
+  if (ArrancadaNivel2 === 0){
+  agilidade = agilidade - 10;
+  }
+  if (ArrancadaNivel2 === 1){
+  agilidade = agilidade - 20;
+  }
+  
+   document.getElementById("idagilidade").innerHTML =
+        "🦵 Agilidade: " + agilidade;
+  
+        document.getElementById("idCheckArrancada").innerHTML = "Habilidade: Arrancada";
+        document.getElementById("idRetornoArrancada").innerHTML = "";
+        document.getElementById("idRetornoArrancadaNoStatus").innerHTML = "";
+  
+  }
+  /* Fim de remover Arrancada*/
+  
+  /* Início de remover Intenção Assassina */
+  if (Assassina === 1){
+  
+  Assassina = 0;
+      agilidade = agilidade - 5;
+  
+      document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+      document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
+      document.getElementById("idRetornoAssassina").innerHTML = "";
+      document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
+  
+  }
+  /*Fim de remover Intenção Assassina*/
+  
+  /* Início de remover Furtividade */
+  if (Furtividade === 1){
+  
+    Furtividade = 0;
+    
+    agilidade = agilidade - 30;
+    
+     document.getElementById("idagilidade").innerHTML =
+          "🦵 Agilidade: " + agilidade;
+    
+    document.getElementById("idCheckFurtividade").innerHTML = "Habilidade: Furtividade";
+    document.getElementById("idRetornoFurtividade").innerHTML = "";
+    document.getElementById("idRetornoFurtividadeNoStatus").innerHTML = "";
+    
+    }
+    /*Fim de remover Furtividade*/
+  
+     
+
+   
+  } 
+  
+  else {
+    vida = vida - 50;
+    if (vida < 1) {
+      vida = 0;
+    }
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 100;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    document.getElementById("idQuadroDeRetornoEnxame").innerHTML =
+      "☠️ DERROTA ☠️ Tente melhorar os seus atributos antes de lutar novamente ";
+
+    document.getElementById("idLutaContraEnxameBotao").innerHTML =
+      "Tentar novamente";
+  }
+}
+
+ /*FIM DA LUTA DO exame de formigas*/
+
+/* INÍCIO DO BOTÃO ANALISAR LUTA DO REI FORMIGA */
+function AnalisarLutaContraReiBotao() {
+
+  document.getElementById("idQuadroDeRetornoRei") .innerHTML = "Análise dos seus Status e do Rei Formiga";
+ 
+  document.getElementById("idLutaContraReiBotao") .innerHTML = "Seguir com a Luta";
+ 
+  if (vida < 20) {document.getElementById("idVidaRei").innerHTML = "❤️ Vida: 80%/" + vida + "%" + " ❌"; }
+  if (vida > 19) { document.getElementById( "idVidaRei").innerHTML = "❤️ Vida: 80%/" + vida + "%" + " ✅";
+  }
+ 
+  if (fadiga > 30) {document.getElementById( "idFadigaRei").innerHTML = "🪫Fadiga: 70%/" + fadiga + "%" + " ❌";
+  }
+  if (fadiga < 31) { document.getElementById( "idFadigaRei").innerHTML =  "🪫Fadiga: 70%/" + fadiga + "%" + " ✅";
+  }
+ 
+  if (agilidade < 1051) { document.getElementById("idAgilidadeRei").innerHTML = "🦵 Agilidade: 1050/" + agilidade + " ❌";
+  }
+  if (agilidade > 1050) { document.getElementById("idAgilidadeRei").innerHTML = "🦵 Agilidade: 1050/" +  agilidade + " ✅";
+  }
+ 
+  if (forca > 1500) {document.getElementById("idForcaRei").innerHTML =  "💪 Força: 1500/" + forca + " ✅";
+  }
+  if (forca < 1501) { document.getElementById( "idForcaRei").innerHTML = "💪 Força: 1500/" + forca + " ❌";
+  }
+ 
+   if (percepcao < 601) { document.getElementById( "idPercepcaoRei").innerHTML = "👀 Percepção: 600/" +  percepcao + " ❌";
+  }
+  if (percepcao > 600) {document.getElementById("idPercepcaoRei").innerHTML =  "👀 Percepção: 600/" +  percepcao + " ✅";
+  }
+ 
+  if (inteligencia < 651) {document.getElementById( "idInteligenciaRei").innerHTML = "🧠 Inteligência: 650/" +  inteligencia + " ❌";
+  }
+  if (inteligencia > 650) { document.getElementById( "idInteligenciaRei").innerHTML = "🧠 Inteligência: 650/" + inteligencia + " ✅";
+  }
+ 
+  if (Rainha === 0) {
+    document.getElementById("idRequisitoRei").innerHTML =  "🐜 Rainha das Formigas derrotada: Não ❌";
+  }
+
+ if (Rainha === 1) {
+    document.getElementById("idRequisitoRei").innerHTML =  "🐜 Rainha das Formigas derrotada: Sim ✅";
+  }
+
+ }
+ 
+ /*FIM DO BOTÃO ANALISAR  LUTA DO REI FORMIGA */
+
+ /*INÍCIO DA LUTA DO REI FORMIGA */
+ function LutaContraReiBotao() {
+
+  if (vida < 20 || fadiga > 30) {document.getElementById("idQuadroDeRetornoRei").innerHTML = "Vida ou Fadiga insuficiente"; } 
+  
+  else if (Rei > 0) {document.getElementById("idQuadroDeRetornoRei")
+    .innerHTML = "✨ Você já derrotou o Rei Formiga ✨";} 
+  
+  else if (
+    vida > 19 && 
+    fadiga < 31 && 
+    agilidade > 1050 &&
+    forca > 1500 && 
+    percepcao > 600 &&
+    inteligencia > 650 &&
+    Rainha === 1
+    ) {
+     
+    vida = vida - 80;
+    if (vida < 1) {vida = 0;}
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 70;
+    if (fadiga > 99) {fadiga = 100; }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    Rei = Rei + 1;
+    document.getElementById("idRei").innerHTML = "⚔️ Rounds da batalha: " + Rei + "/1";
+
+   
+
+
+
+    document.getElementById("idQuadroDeRetornoRei").innerHTML =     "✨ VITÓRIA ✨";
+
+    alert("Eu sou o registro da sua amarga luta. Eu sou a evidência da sua resistência. Eu sou a recompensa da sua dor. Eu sou a morte, eu sou o descanso eterno, e eu também sou o terror. Eu sou você!");
+
+
+    mostrarEstrela5(); /* Efeito Estrela 5 */
+    document.getElementById("idNivelDoRank").innerHTML = "Rank: S 💎";
+    alert("✨ Parabéns você subiu do Rank A para o Rank S ✨",);
+
+     document.getElementById("idtitulo").innerHTML = "Título: O caçador mais forte da humanidade!";
+    alert("Parabéns você ganhou um novo Título", );
+       alert("✨ Novo título: O caçador mais forte da humanidade! ✨", );
+alert("✨ Obrigado por jogar até aqui! ✨", );
+    document.getElementById("idChecDoBeru").innerHTML = "⚠️ Beru - Rei das Formigas";
+   document.getElementById("idAlertaNoMenuClasseTitulo").innerHTML = "⚠️ Classe e Títulos";
+
+
+    document.getElementById("idLutaContraReiBotao").innerHTML = "Rei das Formigas derrotado";
+
+    /*INÍCIO DO REMOVER ECLIPSE LUNAR */
+if (AdagasSombraLuaNivel2EmUso === 1){
+ AdagasSombraLuaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDoEclipseLunar").innerHTML = "";
+ agilidade = agilidade - 50;
+   forca = forca - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + 50"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + 50";
+}
+/*FIM DO REMOVER REMOVER ECLIPSE LUNAR */
+
+    /*INÍCIO DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+if (FloracaoCompletaNivel2EmUso === 1){
+ FloracaoCompletaNivel2EmUso = 0;
+
+ document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "";
+ agilidade = agilidade - 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = "+ 50";
+}
+/*FIM DO REMOVER FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+/*Início de remover a habilidade Domínio do Monarca*/
+if (DominioDoMonarca === 1) {
+
+  DominioDoMonarca = 0;
+  
+  agilidade = agilidade - 20;
+  forca = forca - 20;
+  percepcao = percepcao - 20;
+  inteligencia = inteligencia - 20;
+  document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus2").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus3").innerHTML = "";
+  document.getElementById("idRetornoDominioDoMonarcaNoStatus4").innerHTML = "";
+  document.getElementById("idCheckDominioDoMonarca").innerHTML = "Habilidade: Domínio do Monarca";
+  document.getElementById("idRetornoDominioDoMonarca").innerHTML = "";  
+  }
+  /* Fim de remover a habilidade Domínio do Monarca */
+  
+/*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+  
+       /* Início do remover a Sombra do Igris*/
+    if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+      SombraIgris = 0;
+      document.getElementById("idRetornoExtracao1").innerHTML = "";
+      document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+  
+      agilidade = agilidade - 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+      forca = forca - 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+      percepcao = percepcao - 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+      inteligencia = inteligencia - 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+      }
+  /* Fim do remover a Sombra do Igris*/
+  
+   /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+  
+  /* Início do remover a Sombra do Tank*/
+  if (SombraTank === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+  SombraTank = 0;
+  document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+  document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+  
+  agilidade = agilidade - 48;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 46;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 28;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 22;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tank*/
+  
+  /* Início do remover a Sombra do Iron*/
+  if (SombraIron === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+  SombraIron = 0;
+  document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+  document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+  
+  agilidade = agilidade - 90;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 140;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 70;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 40;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Iron*/
+  
+  /* Início do remover a Sombra do Tusk Xamã das Sombras*/
+  if (SombraTusk === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+  SombraTusk = 0;
+  document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+  document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+  
+  agilidade = agilidade - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 100;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+  
+   /* Início do remover a Sombra do Kaisel - Rank Dragão*/
+   if (SombraKaisel === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 50;
+      forcaDasSombras = forcaDasSombras - 100;
+      percepcaoDasSombras = percepcaoDasSombras - 30;
+      inteligenciaDasSombras = inteligenciaDasSombras - 50;
+
+    SombraKaisel = 0;
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML = "";
+    document.getElementById("idChecDoKaisel").innerHTML = "Kaisel - Xamã das Sombras";
+    
+    agilidade = agilidade - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselAgilidade").innerHTML = "";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+    
+    forca = forca - 100;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselForca").innerHTML = "";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+    
+    percepcao = percepcao - 30;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselPercepcao").innerHTML = "";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+    
+    inteligencia = inteligencia - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselInteligencia").innerHTML = "";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+    }
+    /* Fim do remover a Sombra do Kaisel - Rank Dragão*/
+
+  /*Início do remover a habilidade Provocar*/
+  
+  if (Provocar === 1) {
+  
+      Provocar = 0;
+      
+  
+    agilidade = agilidade - 40;
+    percepcao = percepcao - 10;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  
+    document.getElementById("idRetornoProvocarNoStatus").innerHTML = "";
+    document.getElementById("idRetornoProvocarNoStatus2").innerHTML = "";
+  
+    document.getElementById("idCheckProvocar").innerHTML = "Habilidade: Provocar";
+    document.getElementById("idRetornoProvocar").innerHTML = "";
+  }
+  /* Fim do remover a habilidade Provocar*/
+  
+   /*Início de remover a habilidade Fortalecimento*/
+    if (Fortalecimento === 1) {
+  
+        Fortalecimento = 0;
+        
+        agilidade = agilidade - 10;
+        forca = forca - 10;
+        percepcao = percepcao - 10;
+        inteligencia = inteligencia - 10;
+        document.getElementById( "idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+        document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+        document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+        document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+        document.getElementById("idRetornoFortalecimentoNoStatus").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus2").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus3").innerHTML = "";
+        document.getElementById("idRetornoFortalecimentoNoStatus4").innerHTML = "";
+        document.getElementById("idCheckFortalecimento").innerHTML = "Habilidade: Fortalecimento";
+        document.getElementById("idRetornoFortalecimento").innerHTML = "";  
+    }
+    /* Fim de remover a habilidade Fortalecimento */
+  
+  /* Início de remover Arrancada*/
+  if (Arrancada === 1){
+  
+  Arrancada = 0;
+  
+  if (ArrancadaNivel2 === 0){
+  agilidade = agilidade - 10;
+  }
+  if (ArrancadaNivel2 === 1){
+  agilidade = agilidade - 20;
+  }
+  
+   document.getElementById("idagilidade").innerHTML =
+        "🦵 Agilidade: " + agilidade;
+  
+        document.getElementById("idCheckArrancada").innerHTML = "Habilidade: Arrancada";
+        document.getElementById("idRetornoArrancada").innerHTML = "";
+        document.getElementById("idRetornoArrancadaNoStatus").innerHTML = "";
+  
+  }
+  /* Fim de remover Arrancada*/
+  
+  /* Início de remover Intenção Assassina */
+  if (Assassina === 1){
+  
+  Assassina = 0;
+      agilidade = agilidade - 5;
+  
+      document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+      document.getElementById("idCheckAssassina").innerHTML =  "Habilidade: Arrancada";
+      document.getElementById("idRetornoAssassina").innerHTML = "";
+      document.getElementById("idRetornoAssassinaNoStatus").innerHTML = "";
+  
+  }
+  /*Fim de remover Intenção Assassina*/
+  
+  /* Início de remover Furtividade */
+  if (Furtividade === 1){
+  
+    Furtividade = 0;
+    
+    agilidade = agilidade - 30;
+    
+     document.getElementById("idagilidade").innerHTML =
+          "🦵 Agilidade: " + agilidade;
+    
+    document.getElementById("idCheckFurtividade").innerHTML = "Habilidade: Furtividade";
+    document.getElementById("idRetornoFurtividade").innerHTML = "";
+    document.getElementById("idRetornoFurtividadeNoStatus").innerHTML = "";
+    
+    }
+    /*Fim de remover Furtividade*/
+  
+     
+
+   
+  } 
+  
+  else {
+    vida = vida - 80;
+    if (vida < 1) {
+      vida = 0;
+    }
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 70;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    document.getElementById("idQuadroDeRetornoRei").innerHTML =
+      "☠️ DERROTA ☠️ Tente melhorar os seus atributos antes de lutar novamente ";
+
+    document.getElementById("idLutaContraReiBotao").innerHTML =
+      "Tentar novamente";
+  }
+}
+
+ /*FIM DA LUTA DO REI FORMIGA*/
+
+/* INÍCIO DO BOTÃO ANALISAR LUTA DA RAINHA FORMIGA */
+function AnalisarLutaContraRainhaBotao() {
+
+  document.getElementById("idQuadroDeRetornoRainha") .innerHTML = "Análise dos seus Status e da Rainha Formiga";
+ 
+  document.getElementById("idLutaContraRainhaBotao") .innerHTML = "Seguir com a Luta";
+ 
+  if (vida < 100) {document.getElementById("idVidaRainha").innerHTML = "❤️ Vida: 100%/" + vida + "%" + " ❌"; }
+  if (vida > 99) { document.getElementById( "idVidaRainha").innerHTML = "❤️ Vida: 100%/" + vida + "%" + " ✅";
+  }
+ 
+  if (fadiga > 0) {document.getElementById( "idFadigaRainha").innerHTML = "🪫Fadiga: 100%/" + fadiga + "%" + " ❌";
+  }
+  if (fadiga < 1) { document.getElementById( "idFadigaRainha").innerHTML =  "🪫Fadiga: 100%/" + fadiga + "%" + " ✅";
+  }
+ 
+  if (agilidadeDasSombras < 831) { document.getElementById("idAgilidadeRainha").innerHTML = "🦵 Agilidade: 830/" + agilidadeDasSombras + " ❌";
+  }
+  if (agilidadeDasSombras > 830) { document.getElementById("idAgilidadeRainha").innerHTML = "🦵 Agilidade: 830/" +  agilidadeDasSombras + " ✅";
+  }
+ 
+  if (forcaDasSombras > 990) {document.getElementById("idForcaRainha").innerHTML =  "💪 Força: 990/" + forcaDasSombras + " ✅";
+  }
+  if (forcaDasSombras < 991) { document.getElementById( "idForcaRainha").innerHTML = "💪 Força: 990/" + forcaDasSombras + " ❌";
+  }
+ 
+   if (percepcaoDasSombras < 641) { document.getElementById( "idPercepcaoRainha").innerHTML = "👀 Percepção: 640/" +  percepcaoDasSombras + " ❌";
+  }
+  if (percepcaoDasSombras > 640) {document.getElementById("idPercepcaoRainha").innerHTML =  "👀 Percepção: 640/" +  percepcaoDasSombras + " ✅";
+  }
+ 
+  if (inteligenciaDasSombras < 581) {document.getElementById( "idInteligenciaRainha").innerHTML = "🧠 Inteligência: 580/" +  inteligenciaDasSombras + " ❌";
+  }
+  if (inteligenciaDasSombras > 580) { document.getElementById( "idInteligenciaRainha").innerHTML = "🧠 Inteligência: 580/" + inteligenciaDasSombras + " ✅";
+  }
+ 
+ }
+ 
+ /*FIM DO BOTÃO ANALISAR  LUTA DA RAINHA FORMIGA */
+
+ /*INÍCIO DA LUTA DA RAINHA FORMIGA */
+ function LutaContraRainhaBotao() {
+
+  if (vida < 100 || fadiga > 0) {document.getElementById("idQuadroDeRetornoRainha").innerHTML = "Vida ou Fadiga insuficiente"; } 
+  
+  else if (Rainha > 0) {document.getElementById("idQuadroDeRetornoRainha")
+    .innerHTML = "✨ Você já derrotou a Rainha Formiga ✨";} 
+  
+  else if (
+    vida === 100 && 
+    fadiga === 0 && 
+    agilidadeDasSombras > 830 &&
+    forcaDasSombras > 990 && 
+    percepcaoDasSombras > 640 &&
+    inteligenciaDasSombras > 580
+    ) {
+     
+    vida = vida - 100;
+    if (vida < 1) {vida = 0;}
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 100;
+    if (fadiga > 99) {fadiga = 100; }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    Rainha = Rainha + 1;
+    document.getElementById("idRainha").innerHTML = "⚔️ Rounds da batalha: " + Rainha + "/1";
+
+   
+
+
+    document.getElementById("idQuadroDeRetornoRainha").innerHTML =     "✨ VITÓRIA ✨ Você derrotou a Rainha das Formiga";
+
+
+    document.getElementById("idLutaContraRainhaBotao").innerHTML = "Rainha das Formigas derrotada";
+
+    experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 10;
+      document.getElementById("idContarExperienciaNoQuadroHabilidades",)
+      .innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+   
+  
+       /* Início do remover a Sombra do Igris*/
+    if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100 ;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+      if(TempestadeDeChamasBrancasATIVA === 1){
+
+        TempestadeDeChamasBrancasATIVA = 0;
+        agilidadeDasSombras = agilidadeDasSombras - 200 ;
+        forcaDasSombras = forcaDasSombras - 200;
+
+        
+     document.getElementById("RetornoDoEfeitoTempestanteDeChamasBrancas").innerHTML = "";
+     document.getElementById("AgilidadeIgrisEfeito").innerHTML = "";
+     document.getElementById("ForcaIgrisEfeito").innerHTML = "";
+
+      }
+
+      SombraIgris = 0;
+      document.getElementById("idRetornoExtracao1").innerHTML = "";
+      document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+
+      agilidade = agilidade - 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+      forca = forca - 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+      percepcao = percepcao - 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+      inteligencia = inteligencia - 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+      }
+  /* Fim do remover a Sombra do Igris*/
+  
+  /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+  
+  /* Início do remover a Sombra do Tank*/
+  if (SombraTank === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+  SombraTank = 0;
+  document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+  document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+
+  agilidade = agilidade - 48;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 46;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 28;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 22;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tank*/
+  
+  /* Início do remover a Sombra do Iron*/
+  if (SombraIron === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+       if(GritoDeProvocacaoATIVA === 1){
+
+        GritoDeProvocacaoATIVA = 0;
+  agilidadeDasSombras = agilidadeDasSombras - 50;
+    forcaDasSombras = forcaDasSombras - 50;
+    percepcaoDasSombras = percepcaoDasSombras - 50;
+
+     document.getElementById("RetornoDoEfeitoGritoDeProvocacao").innerHTML = "";
+       document.getElementById("AgilidadeIronEfeito").innerHTML = "";
+     document.getElementById("ForcaIronEfeito").innerHTML = "";
+         document.getElementById("PercepcaoIronEfeito").innerHTML = "";
+
+      }
+
+  SombraIron = 0;
+  document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+  document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+  
+  agilidade = agilidade - 90;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 140;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 70;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 40;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Iron*/
+  
+  /* Início do remover a Sombra do Tusk Xamã das Sombras*/
+  if (SombraTusk === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+       if(HinoDoDragaoDeFogoATIVA === 1){
+
+        HinoDoDragaoDeFogoATIVA = 0;
+       percepcaoDasSombras = percepcaoDasSombras - 200;
+    inteligenciaDasSombras = inteligenciaDasSombras - 200;
+
+     document.getElementById("RetornoDoEfeitoHinoDoDragaoDeFogo").innerHTML = "";
+       document.getElementById("inteligenciaTuskEfeito").innerHTML = "";
+     document.getElementById("percepcaoTuskEfeito").innerHTML = "";
+
+      }
+
+  SombraTusk = 0;
+  document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+  document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+
+  agilidade = agilidade - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 100;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+  
+   /* Início do remover a Sombra do Kaisel - Rank Dragão*/
+   if (SombraKaisel === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 50;
+      forcaDasSombras = forcaDasSombras - 100;
+      percepcaoDasSombras = percepcaoDasSombras - 30;
+      inteligenciaDasSombras = inteligenciaDasSombras - 50;
+
+    SombraKaisel = 0;
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML = "";
+    document.getElementById("idChecDoKaisel").innerHTML = "Kaisel - Xamã das Sombras";
+
+
+    agilidade = agilidade - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselAgilidade").innerHTML = "";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+    
+    forca = forca - 100;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselForca").innerHTML = "";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+    
+    percepcao = percepcao - 30;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselPercepcao").innerHTML = "";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+    
+    inteligencia = inteligencia - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselInteligencia").innerHTML = "";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+    }
+    /* Fim do remover a Sombra do Kaisel - Rank Dragão*/
+
+  } 
+  
+  else {
+    vida = vida - 100;
+    if (vida < 1) {
+      vida = 0;
+    }
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 100;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    document.getElementById("idQuadroDeRetornoRainha").innerHTML =
+      "☠️ DERROTA - Tente melhorar os seus atributos antes de lutar novamente ☠️";
+
+    document.getElementById("idLutaContraRainhaBotao").innerHTML =
+      "Tentar novamente";
+  }
+}
+
+ /*FIM DA LUTA DA RAINHA FORMIGA*/
+
+
+ /*Início da habilidade Extração de Sombras Beru */
+function FuncaoExtracaoBeru() {
+
+  /*INÍCIO DO ATUALIZAR GRÁFICO*/
+  const dados = {
+  agilidade, forca, percepcao, inteligencia,
+};
+atualizarGrafico(dados);
+/*FIM DO ATUALIZAR GRÁFICO*/
+
+  if (Magos < 2){
+    document.getElementById("idRetornoExtracaoBeru").innerHTML =
+      "Habilidade exclussiva da Classe Necromante [Monarca das Sombras] - Derrote os 6 Magos para utilizar essa Habilidade!";
+  }
+
+    else if (Magos > 1 && Rei < 1 && SombraBeru === 0){
+    document.getElementById("idRetornoExtracaoBeru").innerHTML = "Necessário matar o Rei das Formigas para extrair a sua alma!";
+  }
+
+   else if (Magos > 1 && mana < 60 && SombraBeru === 0 && Rei > 0){
+     document.getElementById("idRetornoExtracaoBeru").innerHTML =
+      "Mana insuficiente";
+   }
+
+  else if (SombraBeru === 1){
+    document.getElementById("idRetornoExtracaoBeru").innerHTML = "Beru já está em batalha!";
+  }
+
+
+
+    else if (Magos > 1 && Rei > 0 && mana > 59 && SombraBeru === 0){
+      SombraBeru = 1;
+    document.getElementById("idRetornoExtracaoBeru").innerHTML = "Alma extraída com sucesso";
+
+       if (PrimeiraVezDoBeru === 0)  { 
+  PrimeiraVezDoBeru   = 1; 
+criarVagalumes();
+ }
+
+       document.getElementById("idChecDoBeru").innerHTML = "✅ Beru - Rei das Formigas";
+
+       /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 1;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
+
+      mana = mana - 60;
+      document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
+
+      agilidadeDasSombras = agilidadeDasSombras + 200;
+      forcaDasSombras = forcaDasSombras + 240;
+      percepcaoDasSombras = percepcaoDasSombras + 160;
+      inteligenciaDasSombras = inteligenciaDasSombras + 200;
+
+      agilidade = agilidade + 200;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruAgilidade").innerHTML = "+ 200";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+
+      forca = forca + 240;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruForca").innerHTML = "+ 240";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+
+      percepcao = percepcao + 160;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruPercepcao").innerHTML = "+ 160";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+
+      inteligencia = inteligencia + 200;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruInteligencia").innerHTML = "+ 200";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+
+
+  }
+   else if (Magos > 1 && mana < 50 && SombraBeru === 0){
+     document.getElementById("idRetornoExtracaoBeru").innerHTML =
+      "Mana insuficiente";
+   }
+
+ 
+  
+}
+/*Fim da habilidade Extração de Sombras Beru */
+
+/* INÍCIO DO BOTÃO ANALISAR LUTA DOS Orcs Superiores*/
+function AnalisarLutaContraOrcsBotao() {
+
+  document.getElementById("idQuadroDeRetornoOrcs") .innerHTML = "Análise dos seus Status e dos Orcs Superiores";
+ 
+  document.getElementById("idLutaContraOrcsBotao") .innerHTML = "Seguir com a Luta";
+ 
+  if (vida < 20) {document.getElementById("idVidaOrcs").innerHTML = "❤️ Vida: 20%/" + vida + "%" + " ❌"; }
+  if (vida > 19) { document.getElementById( "idVidaOrcs").innerHTML = "❤️ Vida: 20%/" + vida + "%" + " ✅";
+  }
+ 
+  if (fadiga > 90) {document.getElementById( "idFadigaOrcs").innerHTML = "🪫Fadiga: 10%/" + fadiga + "%" + " ❌";
+  }
+  if (fadiga < 91) { document.getElementById( "idFadigaOrcs").innerHTML =  "🪫Fadiga: 10%/" + fadiga + "%" + " ✅";
+  }
+ 
+  if (agilidadeDasSombras < 431) { document.getElementById("idAgilidadeOrcs").innerHTML = "🦵 Agilidade: 430/" + agilidadeDasSombras + " ❌";
+  }
+  if (agilidadeDasSombras > 430) { document.getElementById("idAgilidadeOrcs").innerHTML = "🦵 Agilidade: 430/" +  agilidadeDasSombras + " ✅";
+  }
+ 
+  if (forcaDasSombras > 490) {document.getElementById("idForcaOrcs").innerHTML =  "💪 Força: 490/" + forcaDasSombras + " ✅";
+  }
+  if (forcaDasSombras < 491) { document.getElementById( "idForcaOrcs").innerHTML = "💪 Força: 490/" + forcaDasSombras + " ❌";
+  }
+ 
+   if (percepcaoDasSombras < 311) { document.getElementById( "idPercepcaoOrcs").innerHTML = "👀 Percepção: 310/" +  percepcaoDasSombras + " ❌";
+  }
+  if (percepcaoDasSombras > 310) {document.getElementById("idPercepcaoOrcs").innerHTML =  "👀 Percepção: 310/" +  percepcaoDasSombras + " ✅";
+  }
+ 
+  if (inteligenciaDasSombras < 181) {document.getElementById( "idInteligenciaOrcs").innerHTML = "🧠 Inteligência: 180/" +  inteligenciaDasSombras + " ❌";
+  }
+  if (inteligenciaDasSombras > 180) { document.getElementById( "idInteligenciaOrcs").innerHTML = "🧠 Inteligência: 180/" + inteligenciaDasSombras + " ✅";
+  }
+ 
+ }
+ 
+ /*FIM DO BOTÃO ANALISAR LUTA DOS Orcs Superiores */
+
+
+
+ /*INÍCIO DA LUTA DOS Orcs Superiores */
+ function LutaContraOrcsBotao() {
+
+  if (vida < 20 || fadiga > 90) {document.getElementById("idQuadroDeRetornoOrcs").innerHTML = "Vida ou Fadiga insuficiente"; } 
+  
+  
+  else if (
+    vida > 19 && 
+    fadiga < 91 && 
+    agilidadeDasSombras > 430 &&
+    forcaDasSombras > 490 && 
+    percepcaoDasSombras > 310 &&
+    inteligenciaDasSombras > 180
+    ) {
+     
+    vida = vida - 20;
+    if (vida < 1) {vida = 0;}
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 10;
+    if (fadiga > 99) {fadiga = 100; }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+     ouro = ouro + 10;
+    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+    Orcs = Orcs + 1;
+    document.getElementById("idOrcs").innerHTML = "🚶‍♂️População: " + Orcs + "/????????";
+
+    document.getElementById("idQuadroDeRetornoOrcs").innerHTML =  "✨ VITÓRIA ✨ Você derrotou um Orc - Você pode voltar aqui sempre que precisar melhorar seus pontos de Experiência[10 pontos de experiência - 100 pontos de Rastro de Sombras]";
+
+     experienciaOrcs = experienciaOrcs + 10;
+      document.getElementById("idexperienciaOrcs").innerHTML =  "🏆 Experiência: " + experienciaOrcs;
+
+      experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 10;
+      document.getElementById("idContarExperienciaNoQuadroHabilidades",)
+      .innerHTML = "Pontos de experiência: " + experienciaParaUsarNasHabilidades;
+
+
+    document.getElementById("idLutaContraOrcsBotao").innerHTML = "Lutar novamente";
+
+    /*Início do rastro de Sombra*/
+       RastroDeSombra = RastroDeSombra + 100;
+       document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+      /*Fim do rastro de Sombra*/
+
+   /*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+  
+       /* Início do remover a Sombra do Igris*/
+    if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+            if(TempestadeDeChamasBrancasATIVA === 1){
+
+        TempestadeDeChamasBrancasATIVA = 0;
+        agilidadeDasSombras = agilidadeDasSombras - 200 ;
+        forcaDasSombras = forcaDasSombras - 200;
+
+     document.getElementById("RetornoDoEfeitoTempestanteDeChamasBrancas").innerHTML = "";
+     document.getElementById("AgilidadeIgrisEfeito").innerHTML = "";
+     document.getElementById("ForcaIgrisEfeito").innerHTML = "";
+
+      }
+
+      SombraIgris = 0;
+      document.getElementById("idRetornoExtracao1").innerHTML = "";
+      document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+
+      agilidade = agilidade - 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+      forca = forca - 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+      percepcao = percepcao - 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+      inteligencia = inteligencia - 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+      }
+  /* Fim do remover a Sombra do Igris*/
+  
+  /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+  
+  /* Início do remover a Sombra do Tank*/
+  if (SombraTank === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+  SombraTank = 0;
+  document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+  document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+
+  agilidade = agilidade - 48;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 46;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 28;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 22;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tank*/
+  
+  /* Início do remover a Sombra do Iron*/
+  if (SombraIron === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+       if(GritoDeProvocacaoATIVA === 1){
+
+        GritoDeProvocacaoATIVA = 0;
+  agilidadeDasSombras = agilidadeDasSombras - 50;
+    forcaDasSombras = forcaDasSombras - 50;
+    percepcaoDasSombras = percepcaoDasSombras - 50;
+
+     document.getElementById("RetornoDoEfeitoGritoDeProvocacao").innerHTML = "";
+       document.getElementById("AgilidadeIronEfeito").innerHTML = "";
+     document.getElementById("ForcaIronEfeito").innerHTML = "";
+         document.getElementById("PercepcaoIronEfeito").innerHTML = "";
+
+      }
+
+  SombraIron = 0;
+  document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+  document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+
+  agilidade = agilidade - 90;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 140;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 70;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 40;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Iron*/
+  
+  /* Início do remover a Sombra do Tusk Xamã das Sombras*/
+  if (SombraTusk === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+       if(HinoDoDragaoDeFogoATIVA === 1){
+
+        HinoDoDragaoDeFogoATIVA = 0;
+       percepcaoDasSombras = percepcaoDasSombras - 200;
+    inteligenciaDasSombras = inteligenciaDasSombras - 200;
+
+     document.getElementById("RetornoDoEfeitoHinoDoDragaoDeFogo").innerHTML = "";
+       document.getElementById("inteligenciaTuskEfeito").innerHTML = "";
+     document.getElementById("percepcaoTuskEfeito").innerHTML = "";
+
+      }
+      
+  SombraTusk = 0;
+  document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+  document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+
+  agilidade = agilidade - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 100;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+  
+   /* Início do remover a Sombra do Kaisel - Rank Dragão*/
+   if (SombraKaisel === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 50;
+      forcaDasSombras = forcaDasSombras - 100;
+      percepcaoDasSombras = percepcaoDasSombras - 30;
+      inteligenciaDasSombras = inteligenciaDasSombras - 50;
+
+    SombraKaisel = 0;
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML = "";
+    document.getElementById("idChecDoKaisel").innerHTML = "Kaisel - Xamã das Sombras";
+
+    agilidade = agilidade - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselAgilidade").innerHTML = "";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+    
+    forca = forca - 100;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselForca").innerHTML = "";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+    
+    percepcao = percepcao - 30;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselPercepcao").innerHTML = "";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+    
+    inteligencia = inteligencia - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselInteligencia").innerHTML = "";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+    }
+    /* Fim do remover a Sombra do Kaisel - Rank Dragão*/
+
+        /* Início do remover a Sombra do Beru*/
+  if (SombraBeru === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 200;
+      forcaDasSombras = forcaDasSombras - 240;
+      percepcaoDasSombras = percepcaoDasSombras - 160;
+      inteligenciaDasSombras = inteligenciaDasSombras - 200;
+
+  SombraBeru = 0;
+  document.getElementById("idRetornoExtracaoBeru").innerHTML = "";
+  document.getElementById("idChecDoBeru").innerHTML = "Beru - Rei das Formigas";
+  
+  agilidade = agilidade - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 240;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 160;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasBeruInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Beru*/
+
+  } 
+  
+  else {
+    vida = vida - 20;
+    if (vida < 1) {
+      vida = 0;
+    }
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 10;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    document.getElementById("idQuadroDeRetornoOrcs").innerHTML =
+      "☠️ DERROTA ☠️ Tente melhorar os atributos das Sombras antes de lutar novamente";
+
+    document.getElementById("idLutaContraOrcsBotao").innerHTML =
+      "Tentar novamente";
+  }
+}
+
+ /*FIM DA LUTA DOS Orcs Superiores*/
+
+
+/* INÍCIO DO BOTÃO ANALISAR LUTA DOS DEMÔNIOS*/
+function AnalisarLutaContraDemoniosBotao() {
+
+  document.getElementById("idQuadroDeRetornoDemonios") .innerHTML = "Análise dos seus Status e dos Demônios";
+ 
+  document.getElementById("idLutaContraDemoniosBotao") .innerHTML = "Seguir com a Luta";
+ 
+  if (vida < 100) {document.getElementById("idVidaDemonios").innerHTML = "❤️ Vida: 100%/" + vida + "%" + " ❌"; }
+  if (vida > 99) { document.getElementById( "idVidaDemonios").innerHTML = "❤️ Vida: 100%/" + vida + "%" + " ✅";
+  }
+ 
+  if (fadiga > 0) {document.getElementById( "idFadigaDemonios").innerHTML = "🪫Fadiga: 100%/" + fadiga + "%" + " ❌";
+  }
+  if (fadiga < 1) { document.getElementById( "idFadigaDemonios").innerHTML =  "🪫Fadiga: 100%/" + fadiga + "%" + " ✅";
+  }
+ 
+  if (agilidadeDasSombras < 581) { document.getElementById("idAgilidadeDemonios").innerHTML = "🦵 Agilidade: 580/" + agilidadeDasSombras + " ❌";
+  }
+  if (agilidadeDasSombras > 580) { document.getElementById("idAgilidadeDemonios").innerHTML = "🦵 Agilidade: 580/" +  agilidadeDasSombras + " ✅";
+  }
+ 
+  if (forcaDasSombras > 690) {document.getElementById("idForcaDemonios").innerHTML =  "💪 Força: 690/" + forcaDasSombras + " ✅";
+  }
+  if (forcaDasSombras < 691) { document.getElementById( "idForcaDemonios").innerHTML = "💪 Força: 690/" + forcaDasSombras + " ❌";
+  }
+ 
+   if (percepcaoDasSombras < 411) { document.getElementById( "idPercepcaoDemonios").innerHTML = "👀 Percepção: 410/" +  percepcaoDasSombras + " ❌";
+  }
+  if (percepcaoDasSombras > 410) {document.getElementById("idPercepcaoDemonios").innerHTML =  "👀 Percepção: 410/" +  percepcaoDasSombras + " ✅";
+  }
+ 
+  if (inteligenciaDasSombras < 331) {document.getElementById( "idInteligenciaDemonios").innerHTML = "🧠 Inteligência: 330/" +  inteligenciaDasSombras + " ❌";
+  }
+  if (inteligenciaDasSombras > 330) { document.getElementById( "idInteligenciaDemonios").innerHTML = "🧠 Inteligência: 330/" + inteligenciaDasSombras + " ✅";
+  }
+ 
+ }
+ 
+ /*FIM DO BOTÃO ANALISAR LUTA DOS DEMÔNIOS */
+
+ /*INÍCIO DA LUTA DOS DEMÔNIOS */
+ function LutaContraDemoniosBotao() {
+
+  if (vida < 100 || fadiga > 0) {document.getElementById("idQuadroDeRetornoDemonios").innerHTML = "Vida ou Fadiga insuficiente"; } 
+  
+  else if (Demonios > 0) {document.getElementById("idQuadroDeRetornoDemonios")
+    .innerHTML = "✨ Você já derrotou os Demônios ✨";} 
+  
+  else if (
+    vida === 100 && 
+    fadiga === 0 && 
+    agilidadeDasSombras > 580 &&
+    forcaDasSombras > 690 && 
+    percepcaoDasSombras > 410 &&
+    inteligenciaDasSombras > 330
+    ) {
+     
+    vida = vida - 100;
+    if (vida < 1) {vida = 0;}
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 100;
+    if (fadiga > 99) {fadiga = 100; }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+     ouro = ouro + 1000;
+    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+
+    Demonios = Demonios + 1;
+    document.getElementById("idDemonios").innerHTML = "⚔️ Rounds da batalha: " + Demonios + "/1";
+
+    document.getElementById("idQuadroDeRetornoDemonios").innerHTML =  "✨ VITÓRIA ✨ As Sombras derrotaram os Demônios [Recompensa: 1000 moedas de ouro]";
+
+
+    document.getElementById("idLutaContraDemoniosBotao").innerHTML = "Demônios derrotados";
+
+   /*Início do título Aquele que superou a Adversidade*/
+if (TituloAdversidadeEstaEmUso === 1){
+ 
+if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 0){
+mana = mana + 30;
+
+if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+  progresso3.setAttribute("style", "width: " + mana + "%");
+  alert("Você ganhou 30% de mana referente ao Título: Aquele que Superou a Adversidade");
+}
+
+else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
+  mana = mana + 50;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 50% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+  else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 2){
+  mana = 100;
+
+  if (mana > AumentoDoNivelDaMana) { mana = AumentoDoNivelDaMana; }
+
+  document.getElementById("idAumentoDoNivelDaMana").innerHTML =  "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+    progresso3.setAttribute("style", "width: " + mana + "%");
+    alert("Você ganhou 100% de mana referente ao Título: Aquele que Superou a Adversidade");
+  }
+}
+/*Fim do título Aquele que superou a Adversidade*/
+  
+       /* Início do remover a Sombra do Igris*/
+    if (SombraIgris === 1){
+
+      agilidadeDasSombras = agilidadeDasSombras - 100;
+      forcaDasSombras = forcaDasSombras - 120;
+      percepcaoDasSombras = percepcaoDasSombras - 80;
+      inteligenciaDasSombras = inteligenciaDasSombras - 60;
+
+            if(TempestadeDeChamasBrancasATIVA === 1){
+
+        TempestadeDeChamasBrancasATIVA = 0;
+        agilidadeDasSombras = agilidadeDasSombras - 200 ;
+        forcaDasSombras = forcaDasSombras - 200;
+
+     document.getElementById("RetornoDoEfeitoTempestanteDeChamasBrancas").innerHTML = "";
+     document.getElementById("AgilidadeIgrisEfeito").innerHTML = "";
+     document.getElementById("ForcaIgrisEfeito").innerHTML = "";
+
+      }
+
+      SombraIgris = 0;
+      document.getElementById("idRetornoExtracao1").innerHTML = "";
+      document.getElementById("idChecDoIgris").innerHTML = "Igris - O Vermelho-Sangue";
+
+      agilidade = agilidade - 100;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisAgilidade").innerHTML = "";
+      document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+      forca = forca - 120;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisForca").innerHTML = "";
+      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+      percepcao = percepcao - 80;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisPercepcao").innerHTML = "";
+      document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+      inteligencia = inteligencia - 60;
+      document.getElementById("idPontosExtrasDosSoldadosDasSombrasIgrisInteligencia").innerHTML = "";
+      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+      }
+  /* Fim do remover a Sombra do Igris*/
+  
+  /* Início do remover a Sombra dos Magos*/
+  if (SombraMago >= 1 && SombraMago <= 6) {
+  const atributos = {
+    agilidade: [24, 48, 72, 96, 120, 144],
+    forca: [23, 46, 69, 92, 115, 138],
+    percepcao: [14, 28, 42, 56, 70, 84],
+    inteligencia: [11, 22, 33, 44, 55, 66],
+
+    agilidadeDasSombras: [24, 48, 72, 96, 120, 144],
+    forcaDasSombras: [23, 46, 69, 92, 115, 138],
+    percepcaoDasSombras: [14, 28, 42, 56, 70, 84],
+    inteligenciaDasSombras: [11, 22, 33, 44, 55, 66]
+  };
+  
+  agilidade -= atributos.agilidade[SombraMago - 1];
+  forca -= atributos.forca[SombraMago - 1];
+  percepcao -= atributos.percepcao[SombraMago - 1];
+  inteligencia -= atributos.inteligencia[SombraMago - 1];
+
+  agilidadeDasSombras -= atributos.agilidadeDasSombras[SombraMago - 1];
+  forcaDasSombras -= atributos.forcaDasSombras[SombraMago - 1];
+  percepcaoDasSombras -= atributos.percepcaoDasSombras[SombraMago - 1];
+  inteligenciaDasSombras -= atributos.inteligenciaDasSombras[SombraMago - 1];
+  
+  document.getElementById("idRetornoExtracaoMagos").innerHTML = "";
+  document.getElementById("idChecDosMagos").innerHTML = "6 Magos das Sombras";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosAgilidade").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosForca").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosPercepcao").innerHTML = "";
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasMagosInteligencia").innerHTML = "";
+  
+  document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  SombraMago = 0;
+  }
+  /* Fim do remover a Sombra dos Magos*/
+  
+  /* Início do remover a Sombra do Tank*/
+  if (SombraTank === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 48;
+      forcaDasSombras = forcaDasSombras - 46;
+      percepcaoDasSombras = percepcaoDasSombras - 28;
+      inteligenciaDasSombras = inteligenciaDasSombras - 22;
+
+  SombraTank = 0;
+  document.getElementById("idRetornoExtracaoTank").innerHTML = "";
+  document.getElementById("idChecDoTank").innerHTML = "Tank - Urso de gelo escuro";
+
+  agilidade = agilidade - 48;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 46;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 28;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 22;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTankInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tank*/
+  
+  /* Início do remover a Sombra do Iron*/
+  if (SombraIron === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 90;
+      forcaDasSombras = forcaDasSombras - 140;
+      percepcaoDasSombras = percepcaoDasSombras - 70;
+      inteligenciaDasSombras = inteligenciaDasSombras - 40;
+
+       if(GritoDeProvocacaoATIVA === 1){
+
+        GritoDeProvocacaoATIVA = 0;
+  agilidadeDasSombras = agilidadeDasSombras - 50;
+    forcaDasSombras = forcaDasSombras - 50;
+    percepcaoDasSombras = percepcaoDasSombras - 50;
+
+     document.getElementById("RetornoDoEfeitoGritoDeProvocacao").innerHTML = "";
+       document.getElementById("AgilidadeIronEfeito").innerHTML = "";
+     document.getElementById("ForcaIronEfeito").innerHTML = "";
+         document.getElementById("PercepcaoIronEfeito").innerHTML = "";
+
+      }
+
+  SombraIron = 0;
+  document.getElementById("idRetornoExtracaoIron").innerHTML = "";
+  document.getElementById("idChecDoIron").innerHTML = "Iron - Caçador Rank A";
+
+  agilidade = agilidade - 90;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 140;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 70;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 40;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasIronInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Iron*/
+  
+  /* Início do remover a Sombra do Tusk Xamã das Sombras*/
+  if (SombraTusk === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 150;
+      forcaDasSombras = forcaDasSombras - 200;
+      percepcaoDasSombras = percepcaoDasSombras - 100;
+      inteligenciaDasSombras = inteligenciaDasSombras - 150;
+
+       if(HinoDoDragaoDeFogoATIVA === 1){
+
+        HinoDoDragaoDeFogoATIVA = 0;
+       percepcaoDasSombras = percepcaoDasSombras - 200;
+    inteligenciaDasSombras = inteligenciaDasSombras - 200;
+
+     document.getElementById("RetornoDoEfeitoHinoDoDragaoDeFogo").innerHTML = "";
+       document.getElementById("inteligenciaTuskEfeito").innerHTML = "";
+     document.getElementById("percepcaoTuskEfeito").innerHTML = "";
+
+      }
+      
+  SombraTusk = 0;
+  document.getElementById("idRetornoExtracaoTusk").innerHTML = "";
+  document.getElementById("idChecDoTusk").innerHTML = "Tusk - Xamã das Sombras";
+
+  agilidade = agilidade - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskAgilidade").innerHTML = "";
+  document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+  
+  forca = forca - 200;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskForca").innerHTML = "";
+  document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+  
+  percepcao = percepcao - 100;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskPercepcao").innerHTML = "";
+  document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+  
+  inteligencia = inteligencia - 150;
+  document.getElementById("idPontosExtrasDosSoldadosDasSombrasTuskInteligencia").innerHTML = "";
+  document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+  
+  }
+  /* Fim do remover a Sombra do Tusk Xamã das Sombras*/
+  
+   /* Início do remover a Sombra do Kaisel - Rank Dragão*/
+   if (SombraKaisel === 1){
+
+    agilidadeDasSombras = agilidadeDasSombras - 50;
+      forcaDasSombras = forcaDasSombras - 100;
+      percepcaoDasSombras = percepcaoDasSombras - 30;
+      inteligenciaDasSombras = inteligenciaDasSombras - 50;
+
+    SombraKaisel = 0;
+    document.getElementById("idRetornoExtracaoKaisel").innerHTML = "";
+    document.getElementById("idChecDoKaisel").innerHTML = "Kaisel - Xamã das Sombras";
+
+    agilidade = agilidade - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselAgilidade").innerHTML = "";
+    document.getElementById("idagilidade").innerHTML =  "🦵 Agilidade: " + agilidade;
+    
+    forca = forca - 100;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselForca").innerHTML = "";
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+    
+    percepcao = percepcao - 30;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselPercepcao").innerHTML = "";
+    document.getElementById("idpercepcao").innerHTML =  "👀 Percepção: " + percepcao;
+    
+    inteligencia = inteligencia - 50;
+    document.getElementById("idPontosExtrasDosSoldadosDasSombrasKaiselInteligencia").innerHTML = "";
+    document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+    
+    }
+    /* Fim do remover a Sombra do Kaisel - Rank Dragão*/
+
+  } 
+  
+  else {
+    vida = vida - 100;
+    if (vida < 1) {
+      vida = 0;
+    }
+    progresso2.setAttribute("style", "width: " + vida + "%");
+    document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
+
+    fadiga = fadiga + 100;
+    if (fadiga > 99) {
+      fadiga = 100;
+    }
+    progresso.setAttribute("style", "width: " + fadiga + "%");
+    document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
+
+    document.getElementById("idQuadroDeRetornoDemonios").innerHTML =
+      "☠️ DERROTA - Tente melhorar os seus atributos antes de lutar novamente ☠️";
+
+    document.getElementById("idLutaContraDemoniosBotao").innerHTML =
+      "Tentar novamente";
+  }
+}
+
+ /*FIM DA LUTA DOS DEMÔNIOS*/
+
+/*INICIO DAS PETOLAS*/
+function petalasDeRosa() {
+  for (let i = 0; i < 50; i++) {
+    const petala = document.createElement('div');
+    petala.classList.add('petala');
+    petala.style.left = `${Math.random() * 100}%`;
+    petala.style.top = `${Math.random() * 100}%`;
+    document.getElementById("petalas-container").appendChild(petala);
+    animatePetala(petala);
+  }
+}
+
+function animatePetala(petala) {
+  let x = parseFloat(petala.style.left);
+  let y = parseFloat(petala.style.top);
+  let velocidadeX = Math.random() * 2 - 1;
+  let velocidadeY = Math.random() * 2 - 1;
+  function animar() {
+    x += velocidadeX;
+    y += velocidadeY;
+    velocidadeY += 0.01; // Gravidade
+    petala.style.left = `${x}%`;
+    petala.style.top = `${y}%`;
+    if (y > 100) {
+      petala.remove();
+    } else {
+      requestAnimationFrame(animar);
+    }
+  }
+  animar();
+}
+/*FIM DAS PETOLAS*/
+
+/*INICIO DA LUA*/
+
+function criarLua() {
+  const luaContainer = document.getElementById("lua-container");
+  const lua = document.createElement("div");
+  lua.classList.add("lua");
+  lua.style.top = `${50}%`;
+  lua.style.left = `0%`;
+  luaContainer.appendChild(lua);
+  animarLua(lua);
+}
+
+function animarLua(lua) {
+  let x = 0;
+  let velocidade = 0.5;
+  function animar() {
+    x += velocidade;
+    lua.style.left = `${x}%`;
+    if (x > 100) {
+      lua.remove();
+      document.getElementById("lua-container").innerHTML = "";
+    } else {
+      requestAnimationFrame(animar);
+    }
+  }
+  animar();
+}
+
+/*FIM DA LUA*/
+
+
+/*Início do efeito da estrela  */
+function mostrarEstrela() {
+  const conteinerEstrela = document.getElementById("conteinerEstrela");
+  const estrela = document.createElement("div");
+  estrela.classList.add("estrela");
+  estrela.textContent = "Rank: D ⭐⭐";
+  conteinerEstrela.appendChild(estrela);
+  
+  let opacidade = 0;
+  let inicio = performance.now();
+  function animar() {
+    let tempo = performance.now() - inicio;
+    opacidade = Math.min(tempo / 3000, 1);
+    estrela.style.opacity = opacidade;
+    if (tempo > 3000) {
+      setTimeout(() => {
+        estrela.remove();
+      }, 5000); // Manter a estrela visível por mais 1 segundo
+    } else {
+      requestAnimationFrame(animar);
+    }
+  }
+  animar();
+}
+/*Fim do efeito da estrela  */
+
+/*Início do efeito da estrela 2 */
+function mostrarEstrela2() {
+  const conteinerEstrela2 = document.getElementById("conteinerEstrela2");
+  const estrela2 = document.createElement("div");
+  estrela2.classList.add("estrela2");
+  estrela2.textContent = "Rank: C ⭐⭐⭐";
+  conteinerEstrela2.appendChild(estrela2);
+  let opacidade2 = 0;
+  let inicio2 = performance.now();
+  function animar2() {
+    let tempo2 = performance.now() - inicio2;
+    opacidade2 = Math.min(tempo2 / 3000, 1);
+    estrela2.style.opacity = opacidade2;
+    if (tempo2 > 3000) {
+      setTimeout(() => {
+        estrela2.remove();
+      }, 5000); 
+    } else {
+      requestAnimationFrame(animar2);
+    }
+  }
+  animar2();
+}
+/*Fim do efeito da estrela 2 */
+
+/*Início do efeito da estrela 3 */
+function mostrarEstrela3() {
+  const conteinerEstrela3 = document.getElementById("conteinerEstrela3");
+  const estrela3 = document.createElement("div");
+  estrela3.classList.add("estrela3");
+  estrela3.textContent = "Rank: B ⭐⭐⭐⭐";
+  conteinerEstrela3.appendChild(estrela3);
+  let opacidade3 = 0;
+  let inicio3 = performance.now();
+  function animar3() {
+    let tempo3 = performance.now() - inicio3;
+    opacidade3 = Math.min(tempo3 / 3000, 1);
+    estrela3.style.opacity = opacidade3;
+    if (tempo3 > 3000) {
+      setTimeout(() => {
+        estrela3.remove();
+      }, 5000); 
+    } else {
+      requestAnimationFrame(animar3);
+    }
+  }
+  animar3();
+}
+/*Fim do efeito da estrela 3 */
+
+/*Início do efeito da estrela 4 */
+function mostrarEstrela4() {
+  const conteinerEstrela4 = document.getElementById("conteinerEstrela4");
+  const estrela4 = document.createElement("div");
+  estrela4.classList.add("estrela4");
+  estrela4.textContent = "Rank: A ⭐⭐⭐⭐⭐";
+  conteinerEstrela4.appendChild(estrela4);
+  let opacidade4 = 0;
+  let inicio4 = performance.now();
+  function animar4() {
+    let tempo4 = performance.now() - inicio4;
+    opacidade4 = Math.min(tempo4 / 3000, 1);
+    estrela4.style.opacity = opacidade4;
+    if (tempo4 > 3000) {
+      setTimeout(() => {
+        estrela4.remove();
+      }, 5000); 
+    } else {
+      requestAnimationFrame(animar4);
+    }
+  }
+  animar4();
+}
+/*Fim do efeito da estrela 4 */
+
+/*Início do efeito da estrela 5 */
+function mostrarEstrela5() {
+  const conteinerEstrela5 = document.getElementById("conteinerEstrela5");
+  const estrela5 = document.createElement("div");
+  estrela5.classList.add("estrela5");
+  estrela5.textContent = "Rank: S 💎";
+  conteinerEstrela5.appendChild(estrela5);
+  let opacidade5 = 0;
+  let inicio5 = performance.now();
+  function animar5() {
+    let tempo5 = performance.now() - inicio5;
+    opacidade5 = Math.min(tempo5 / 3000, 1);
+    estrela5.style.opacity = opacidade5;
+    if (tempo5 > 3000) {
+      setTimeout(() => {
+        estrela5.remove();
+      }, 5000); 
+    } else {
+      requestAnimationFrame(animar5);
+    }
+  }
+  animar5();
+}
+/*Fim do efeito da estrela 5 */
+
+/*INÍCIO DA FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+function FloracaoCompleta() {
+
+  if (FloracaoCompletaNivel2EmUso === 1){
+    document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "Buff já está em uso!";
+  }
+
+  else if (EspadaDemoniacaFlorAmeixeiraEquipada === 0){
+     document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "É necessário primeiro comprar esta Espada";
+  }
+
+  else if (TituloMestreDasArmasEmUso === 0){
+    document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "Para utilizar o Buff das armas é necessario possuir o Título: Mestre das armas";
+  }
+
+  else if (TituloMestreDasArmasEmUso === 1 && mana > 4 && EspadaDemoniacaFlorAmeixeiraEquipada === 1){
+
+    FloracaoCompletaNivel2EmUso = 1;
+
+     setTimeout(() => { petalasDeRosa(); }, 100); 
+
+    mana = mana - 5;
+    document.getElementById("idAumentoDoNivelDaMana").innerHTML =   "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
+
+    agilidade = agilidade + 50;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoEspadaDemoniacaFlorAmeixeiraNoStatus").innerHTML = " + (50 + 50)";
+    document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "Buff em uso [ + 50 pontos em Agilidade]";
+
+  }
+   else{
+    document.getElementById("idRetornoDaFloracaoCompleta").innerHTML = "Mana insuficiente";
+
+  }
+
+}
+/*FIM DA FLORAÇÃO COMPLETA DA FLOR DE AMEIXEIRA */
+
+/*INÍCIO DO ECLIPSE LUNAR */
+function EclipseLunar() {
+
+  if (AdagasSombraLuaNivel2EmUso === 1){
+    document.getElementById("idRetornoDoEclipseLunar").innerHTML = "Buff já está em uso!";
+  }
+
+  else if (AdagasSombraLuaEquipada === 0){
+     document.getElementById("idRetornoDoEclipseLunar").innerHTML = "É necessário primeiro comprar estas Adagas";
+  }
+
+  else if (TituloMestreDasArmasEmUso === 0){
+    document.getElementById("idRetornoDoEclipseLunar").innerHTML = "Para utilizar o Buff das armas é necessario possuir o Título: Mestre das armas";
+  }
+
+  else if (TituloMestreDasArmasEmUso === 1 && mana > 4 && AdagasSombraLuaEquipada === 1){
+
+    AdagasSombraLuaNivel2EmUso = 1;
+
+     criarLua();
+
+    mana = mana - 5;
+    document.getElementById("idAumentoDoNivelDaMana").innerHTML =   "🪄 Mana: " + mana + "%/" + AumentoDoNivelDaMana + "%";
+      progresso3.setAttribute("style", "width: " + mana + "%");
+
+    agilidade = agilidade + 50;
+     forca = forca + 50;
+    document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+    document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+     document.getElementById("idRetornoAdagasSombraLuaNoStatus").innerHTML = " + (50 + 50)"; 
+      document.getElementById("idRetornoAdagasSombraLuaNoStatus2").innerHTML = " + (50 + 50)";
+    document.getElementById("idRetornoDoEclipseLunar").innerHTML = "Buff em uso [ + 50 pontos em Agilidade e + 50 em Força]";
+
+  }
+   else{
+    document.getElementById("idRetornoDoEclipseLunar").innerHTML = "Mana insuficiente";
+
+  }
+
+}
+/*FIM DO ECLIPSE LUNAR */
+
+/*INÍCIO DAS ESCRITURAS ANTIGAS */
+function EscriturasAntigas() {
+
+
+  if (GrimorioDemonioArdenteEquipada === 0){
+     document.getElementById("idRetornoDaEscriturasAntigas").innerHTML = "É necessário primeiro comprar este Grimório";
+  }
+
+  else if (TituloMestreDasArmasEmUso === 0){
+    document.getElementById("idRetornoDaEscriturasAntigas").innerHTML = "Para utilizar o Buff das armas é necessario possuir o Título: Mestre das armas";
+  }
+
+  else if (TituloMestreDasArmasEmUso === 1 && GrimorioDemonioArdenteEquipada === 1){
+ criarChama();
+     document.getElementById("idRetornoDaEscriturasAntigas").innerHTML = "Eu sou o que resta quando a escuridão consome a luz, mas ainda assim posso ser moldado e fortalecido. O que sou?";
+
+  }
+
+}
+
+document.getElementById("enviar").addEventListener("click", verificarResposta);
+
+function verificarResposta() {
+  const resposta = document.getElementById("resposta").value.toLowerCase();
+  const resultado = document.getElementById("resultado");
+  
+
+  if (resposta === "sombra") {
+
+    if(RespostaParaEnigima === 0){
+
+      RespostaParaEnigima = 1;
+    resultado.textContent = "Parabéns! Você desvendou o enigma e ganhou 10.000 de moedas de ouro!";
+    resultado.classList.add("sucesso");
+    resultado.classList.remove("erro");
+
+     ouro = ouro + 10000;
+    document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+     alert("✨ Parabéns! ✨ Você desvendou o enigma e ganhou 10.000 de moedas de ouro!");
+
+    }
+
+    else {
+      resultado.textContent = "Você já desvendou o enigma e já ganhou o seu prêmio";
+    }
+  } else {
+    resultado.textContent = "Resposta incorreta, tente novamente!";
+    resultado.classList.add("erro");
+    resultado.classList.remove("sucesso");
+  }
+}
+/*FIM DAS ESCRITURAS ANTIGAS */
+
+/*INÍCIO DAS CHAMAS DO GRIMÓRIO */
+function criarChama() {
+  const chamaContainer = document.getElementById("chama-container");
+  for (let i = 0; i < 20; i++) {
+    const chama = document.createElement("div");
+    chama.classList.add("chama");
+    const tamanho = Math.random();
+    if (tamanho < 0.33) {
+      chama.classList.add("pequena");
+    } else if (tamanho < 0.66) {
+      chama.classList.add("media");
+    } else {
+      chama.classList.add("grande");
+    }
+    chama.style.top = `${Math.random() * 100}%`;
+    chama.style.left = `${Math.random() * 100}%`;
+    chamaContainer.appendChild(chama);
+    
+    let opacidade = 0;
+    let escala = 0.5;
+    function animar() {
+      opacidade += 0.05;
+      escala += 0.01;
+      chama.style.opacity = opacidade;
+      chama.style.transform = `scale(${escala})`;
+      if (opacidade < 1) {
+        requestAnimationFrame(animar);
+      }
+    }
+    setTimeout(animar, Math.random() * 1000);
+    
+  
+    setTimeout(() => {
+      chama.remove();
+    }, 3000);
+  }
+  
+
+  setTimeout(() => {
+    chamaContainer.innerHTML = "";
+  }, 3000);
+}
+/*FIM DAS CHAMAS DO GRIMÓRIO */
+
+/*INÍCIO efeito erga-se */
+function criarVagalumes() {
+  const vagalumeContainer = document.getElementById("vagalume-container");
+  for (let i = 0; i < 50; i++) {
+    const vagalume = document.createElement("div");
+    vagalume.classList.add("vagalume");
+    vagalume.style.top = `${Math.random() * 100}%`;
+    vagalume.style.left = `${Math.random() * 100}%`;
+    vagalumeContainer.appendChild(vagalume);
+    
+    let x = Math.random() * 5 - 2.5;
+    let y = Math.random() * 5 - 2.5;
+    function animar() {
+      const top = vagalume.offsetTop + y;
+      const left = vagalume.offsetLeft + x;
+      vagalume.style.top = `${top}px`;
+      vagalume.style.left = `${left}px`;
+      
+      if (top < 0 || top > window.innerHeight - 10) {
+        y = -y;
+      }
+      if (left < 0 || left > window.innerWidth - 10) {
+        x = -x;
+      }
+      
+      requestAnimationFrame(animar);
+    }
+    animar();
+    
+  
+    setTimeout(() => {
+      vagalume.remove();
+    }, 9000);
+  }
+  
+ 
+  setTimeout(() => {
+    vagalumeContainer.innerHTML = "";
+  }, 9000);
+}
+/*FIM efeito erga-se */
+
+/*INÍCIO USAR EFEITO TEMPESTADE DE CHAMAS BRANCAS */
+function FuncaoEfeitoTempestadeDeChamasBrancas() {
+  if (Baran === 0){
+document.getElementById("RetornoDoEfeitoTempestanteDeChamasBrancas").innerHTML = "Você necessita da Espada Longa do Monarca Demoníaco";
+  }
+  else if (RastroDeSombra < 100){
+    document.getElementById("RetornoDoEfeitoTempestanteDeChamasBrancas").innerHTML = "Rastro de Sombras insuficiente";
+  }
+  else if (Baran > 0 && RastroDeSombra > 99 && TempestadeDeChamasBrancasATIVA === 0){
+
+    TempestadeDeChamasBrancasATIVA = 1;
+    RastroDeSombra = RastroDeSombra - 100;
+    agilidadeDasSombras = agilidadeDasSombras + 200;
+      forcaDasSombras = forcaDasSombras + 200;
+
+     document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+     document.getElementById("RetornoDoEfeitoTempestanteDeChamasBrancas").innerHTML = "Efeito em uso!";
+     document.getElementById("AgilidadeIgrisEfeito").innerHTML = " + 200";
+     document.getElementById("ForcaIgrisEfeito").innerHTML = " + 200";
+  }
+
+    else if (TempestadeDeChamasBrancasATIVA === 1){
+      document.getElementById("RetornoDoEfeitoTempestanteDeChamasBrancas").innerHTML = "Efeito já está em uso!";
+    }
+
+}
+/*FIM USAR EFEITO TEMPESTADE DE CHAMAS BRANCAS */
+
+/*INÍCIO USAR EFEITO HINO DO DRAGÃO DE FOGO */
+function FuncaoEfeitoHinoDoDragaoDeFogo() {
+
+  if (RastroDeSombra < 100){
+    document.getElementById("RetornoDoEfeitoHinoDoDragaoDeFogo").innerHTML = "Rastro de Sombras insuficiente";
+  }
+  else if (RastroDeSombra > 99 && HinoDoDragaoDeFogoATIVA === 0){
+
+    HinoDoDragaoDeFogoATIVA = 1;
+    RastroDeSombra = RastroDeSombra - 100;
+    percepcaoDasSombras = percepcaoDasSombras + 200;
+    inteligenciaDasSombras = inteligenciaDasSombras + 200;
+
+     document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+     document.getElementById("RetornoDoEfeitoHinoDoDragaoDeFogo").innerHTML = "Efeito em uso!";
+     document.getElementById("inteligenciaTuskEfeito").innerHTML = " + 200";
+     document.getElementById("percepcaoTuskEfeito").innerHTML = " + 200";
+  }
+
+    else if (HinoDoDragaoDeFogoATIVA === 1){
+      document.getElementById("RetornoDoEfeitoHinoDoDragaoDeFogo").innerHTML = "Efeito já está em uso!";
+    }
+
+}
+/*FIM USAR EFEITO HINO DO DRAGÃO DE FOGO */
+
+/*INÍCIO USAR EFEITO GRITO DE PROVOCAÇÃO */
+function FuncaoGritoDeProvocacao() {
+
+  if (RastroDeSombra < 30){
+    document.getElementById("RetornoDoEfeitoGritoDeProvocacao").innerHTML = "Rastro de Sombras insuficiente";
+  }
+  else if (RastroDeSombra > 29 && GritoDeProvocacaoATIVA === 0){
+
+    GritoDeProvocacaoATIVA = 1;
+    RastroDeSombra = RastroDeSombra - 30;
+    agilidadeDasSombras = agilidadeDasSombras + 50;
+    forcaDasSombras = forcaDasSombras + 50;
+    percepcaoDasSombras = percepcaoDasSombras + 50;
+  
+
+     document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
+     document.getElementById("RetornoDoEfeitoGritoDeProvocacao").innerHTML = "Efeito em uso!";
+     document.getElementById("AgilidadeIronEfeito").innerHTML = " + 50";
+     document.getElementById("ForcaIronEfeito").innerHTML = " + 50";
+         document.getElementById("PercepcaoIronEfeito").innerHTML = " + 50";
+  }
+
+    else if (GritoDeProvocacaoATIVA === 1){
+      document.getElementById("RetornoDoEfeitoGritoDeProvocacao").innerHTML = "Efeito já está em uso!";
+    }
+
+}
+/*FIM USAR EFEITO GRITO DE PROVOCAÇÃO */
+
+
+/*INÍCIO GRÁFICO */
+const ctx = document.getElementById('radar-chart').getContext('2d');
+const data = {
+  labels: ['AGILIDADE', 'FORÇA', 'PERCEPÇÃO', 'INTELIGÊNCIA'],
+  datasets: [{
+    label: 'STATUS',
+    data: [agilidade, forca, percepcao, inteligencia],
+    backgroundColor: 'rgba(100, 13, 199, 0.62)',
+    borderColor: 'rgb(255, 255, 255)',
+    borderWidth: 1
+  }]
+};
+
+const config = {
+  type: 'radar',
+  data: data,
+  options: {
+    scales: {
+      r: {
+        angleLines: {
+          display: true
+        },
+        suggestedMin: 0,
+        suggestedMax: 20
+      }
+    }
+  }
+};
+
+const radarChart = new Chart(ctx, config);
+
+
+function atualizarGrafico(dados) {
+  radarChart.data.datasets[0].data = [dados.agilidade, dados.forca, dados.percepcao, dados.inteligencia];
+  radarChart.update();
+}
+/*FIM GRÁFICO */
