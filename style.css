@@ -1446,6 +1446,25 @@ border-radius: 10px;
 /* Fim do efeito de estrela 5*/
 
 
+/* Início do efeito de estrela 6*/
+#conteinerEstrela6 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.estrela6 {
+  font-size: 100px;
+  opacity: 0;
+}
+/* Fim do efeito de estrela 6*/
 
 #resultado {
   margin-top: 20px;
@@ -1525,3 +1544,4 @@ border-radius: 10px;
   box-shadow: 0 0 20px rgb(167, 22, 207); /* Brilho rosa */
 }
 /*fim dos vagalumes*/
+
