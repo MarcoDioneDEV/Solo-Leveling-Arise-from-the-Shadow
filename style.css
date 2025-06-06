@@ -66,6 +66,13 @@ border: solid 2px #17e5f2;
 border-radius: 20px;
 }
 
+.imgqrcode{
+width: 250px;
+height: 250px;
+border: solid 2px #17e5f2;
+border-radius: 20px;
+}
+
 .imagemDeCapaParaCasteloDemoniaco{
   width: 350px;
   height: 200px;
@@ -1165,13 +1172,15 @@ border-radius: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 0px;
-  background-color: white;
+  background-color: #031833;
   cursor: pointer;
+  color: white;
 }
 
 .botaoNova.ativo {
-  background-color: #031833;
-  color: #fff;
+  background-color: white;
+  color: #031833;
+  border: solid 3px #7A288A;
 }
 
 .conteudoNova {
