@@ -615,11 +615,11 @@ Yogumunt = 1;
  
 
 /*INÍCIO FUNÇÃO*/
-function deusRemoverQuandoQuiserUsarEssaFuncao() {
+function deus() {
 
 /*usado para teste, tem muito de tudo*/
-  if (Deus === 2){
-  Deus = 3;
+  if (Deus === 0){
+  Deus = 1;
     alert("usado para teste, tem muito de tudo");
 
   
@@ -633,10 +633,10 @@ forcaDasSombras = 300;
 percepcaoDasSombras = 300;
 inteligenciaDasSombras = 300;
 
-     agilidade = 1201; 
-  forca = 1751;  
-  percepcao = 801; 
-  inteligencia = 951;
+     agilidade = 12010; 
+  forca = 17510;  
+  percepcao = 8001; 
+  inteligencia = 9501;
     experienciaParaUsarNasHabilidades = 10000000000;
   
      AumentoDoNivelDaMana = 100;
@@ -650,6 +650,11 @@ inteligenciaDasSombras = 300;
     SomaDaPocaoDeRecuperacao = 360;
     SomaDaPocaoDeVida = 160;
 
+agilidadeDasSombras = 10000;
+forcaDasSombras = 10000;
+percepcaoDasSombras = 10000;
+inteligenciaDasSombras = 10000;
+
     vida = 100;
     fadiga = 0;
 
@@ -659,30 +664,33 @@ AguaNascenteDaFlorestaEcoante = 0;
 SanguePurificadoDoMonarcaDemoniaco = 1;
 SomaDaPedraDeEssenciaParaMissaDiaria = 100;
 
-Lycan = 20;
-Goblin = 10;
-Kasaka = 1;
-Cacadores = 6;
-Magos = 2;
-Kang = 1;
-Ursos = 6;
-KinChul = 1;
-Baruka = 2;
+Lycan = 16;
+Goblin = 6;
+Kasaka = 0;
+Golen = 0;
+Cacadores = 4;
+Magos = 0;
+Kang = 0;
+Ursos = 4;
+KinChul = 0;
+Baruka = 1;
 Igris = 2;
 Metus = 1;
-Vulcano = 1;
-Baran = 1;
+Vulcano = 0;
+Baran = 0;
 Cerberus = 1;
-Kargalgan = 1;
+Kargalgan = 0;
 Rainha = 1;
-Rei = 1;
-Enxame = 1;
+Rei = 0;
+Enxame = 0;
+Yogumunt = 0;
+Querehsha = 0;
 
 
   }
 
-  else if(Deus === 0){  /*6 MAGOS */
-    Deus = 1;
+  else if(Deus === 2){  /*6 MAGOS */
+    Deus = 3;
 alert("Pontos equivalente a todo a primeira parte do Jogo - Até a luta dos 6 Magos");
 
 
@@ -2618,6 +2626,9 @@ function LutaContraGoblinBotao() {
         document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
         document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
         document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
+
+document.getElementById("idNome1Goblins").innerHTML =  "";
+document.getElementById("idNome2Goblins").innerHTML =  "Goblins";
     }
 
     if (dia === 6){
@@ -2771,7 +2782,8 @@ document.getElementById("idCheckSaudelongevidade").innerHTML =
     document.getElementById("idLutaContraKandiaruBotao").innerHTML =
       "Você escapou vivo";
 
-
+document.getElementById("idNome1ProvesuafeemDeus").innerHTML =  "";
+document.getElementById("idNome2ProvesuafeemDeus").innerHTML =  "Terceiro Mandamento: Prove sua fé em Deus";
     
 
     agilidade = agilidade + 1;
@@ -2894,6 +2906,10 @@ function LutaContraKandiaru1Botao() {
 
       
     document.getElementById("idLutaContraKandiaru1Botao").innerHTML =  "Você escapou vivo";
+
+    document.getElementById("idNome1PrimeiroMandamento").innerHTML =  "";
+     document.getElementById("idNome2PrimeiroMandamento").innerHTML =  "Primeiro Mandamento: Venere a Deus";
+    
   } 
   
   
@@ -3032,6 +3048,9 @@ function LutaContraKandiaru2Botao() {
 
     document.getElementById("idQuadroDeRetornoKandiaru2").innerHTML =
       "✨ VITÓRIA ✨ Você sobreviveu ao Segundo Mandamento, siga para a próxima Estátua de Deus";
+
+      document.getElementById("idNome1LouveDeus").innerHTML =  "";
+document.getElementById("idNome2LouveDeus").innerHTML =  "Segundo Mandamento: Louve a Deus";
 
   } else {
     vida = vida - 40;
@@ -3366,6 +3385,9 @@ function LutaContraLycanBotao() {
       document.getElementById("idTituloRetornoLordeDaMineracao",).innerHTML = "";
       document.getElementById("idTituloRetornoEntusiasta",).innerHTML = "";
       document.getElementById("idTituloRetornoGoblins",).innerHTML = "";
+
+document.getElementById("idNome1Lycan").innerHTML =  "";
+document.getElementById("idNome2Lycan").innerHTML =  "Lycan com Presas de Aço";
        
     }
 
@@ -3911,7 +3933,8 @@ function LutaContraKasakaBotao() {
       "💎 Pedras de Essência: " + SomaPedraDeEssenciaKasaka;
     document.getElementById("idpedrainventario").innerHTML = "⚠️ Pedras de Essência: " + PedraDeEssencia;
 
-     
+     document.getElementById("idNome1Kasaka").innerHTML =  "";
+document.getElementById("idNome2Kasaka").innerHTML =  "Kasaka Azul de Presas Venenosas";
 
     document.getElementById("idQuadroDeRetornoKasaka").innerHTML =
       "✨ VITÓRIA ✨ Você derrotou a Kasaka [Recompensas: 4 pontos de experiência - 4 pontos distribuidos em seus atributos - 1 Pedra de essência - Adaga Presa Venenosa de Kasaka - Habilidade: Arrancada]";
@@ -4204,6 +4227,9 @@ document.getElementById("idQuadroDeRetornoGolen").innerHTML = "Você optou por l
       "✨ VITÓRIA ✨ Você derrotou o Golem [Recompensas: 4 pontos de experiência  - 1 Pedra de essência - 25 Pontos de Atributos para distribuir como quiser - Equipamento Martelo do Golem de Pedra]";
 
  document.getElementById("idItemMarteloGolemAdquirida").innerHTML = "⚠️ Martelo do Golem de Pedra";
+
+ document.getElementById("idNome1Golem").innerHTML =  "";
+document.getElementById("idNome2Golem").innerHTML =  "Golem de pedra";
 
     SomaDaPedraDeEssenciaParaMissaDiaria =   SomaDaPedraDeEssenciaParaMissaDiaria + 1;
 
@@ -4897,6 +4923,7 @@ atualizarGrafico(dados);
         vida = 0;
       }
   
+      
       progresso2.setAttribute("style", "width: " + vida + "%");
       document.getElementById("idvida").innerHTML = "❤️ Vida: " + vida + "%";
   
@@ -4930,6 +4957,11 @@ atualizarGrafico(dados);
       document.getElementById("idatributo").innerHTML =   "Disponíveis: " + atributo;
   
         document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
+
+        if (Insectoids > 4){
+        document.getElementById("idNome1Insectoids").innerHTML =  "";
+document.getElementById("idNome2Insectoids").innerHTML =  "Insectoids";
+      }
 
       /*INÍCIO DO REMOVER ECLIPSE LUNAR */
 if (AdagasSombraLuaNivel2EmUso === 1){
@@ -5707,6 +5739,9 @@ else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
      .innerHTML =
      "✨ VITÓRIA ✨ Você derrotou a Aranha Gigante [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - 1 Pedra de essência]";
   
+     document.getElementById("idNome1Buryura").innerHTML =  "";
+document.getElementById("idNome2Buryura").innerHTML =  "Buryura";
+
   
     SomaDaPedraDeEssenciaParaMissaDiaria
      =
@@ -6017,6 +6052,9 @@ if(Cacadores > 5){
   alert("Parabéns você subiu do Rank D para o Rank C",);
 
    mostrarEstrela2(); /* Efeito Estrela 2 */
+
+   document.getElementById("idNome1Hwang").innerHTML =  "";
+document.getElementById("idNome2Hwang").innerHTML =  "Hwang Dong Suk e seu grupo";
 
 }
 
@@ -6368,6 +6406,9 @@ if (FloracaoCompletaNivel2EmUso === 1){
   document.getElementById("idAlertaNoMenuHabilidade").innerHTML = "⚠️ Habilidades";
   document.getElementById("idAlertaNoMenuInventario").innerHTML =  "⚠️ Inventário";
   
+  document.getElementById("idNome1Cerberus").innerHTML =  "";
+document.getElementById("idNome2Cerberus").innerHTML =  "Cerberus Guardião do Inferno [Portões do Castelo Demoníaco]";
+
   
     experienciaCerberus = experienciaCerberus + 1;
     experienciaParaUsarNasHabilidades  =  experienciaParaUsarNasHabilidades +   1;
@@ -6902,6 +6943,9 @@ percepcao = percepcao - 40;
      .innerHTML =
      "✨ VITÓRIA ✨ Você derrotou o Mr. Kang [Recompensas: 1 ponto de experiência - 4 pontos distribuidos em seus atributos - Habilidade Furtividade]";
   
+     document.getElementById("idNome1Kang").innerHTML =  "";
+document.getElementById("idNome2Kang").innerHTML =  "Mr. Kang";
+
    document.getElementById(
       "idCheckFurtividade")
      .innerHTML =
@@ -7638,6 +7682,9 @@ if (FloracaoCompletaNivel2EmUso === 1){
           alert("✨ Novo título: Aquele que Superou a Adversidade  ✨", );
           alert("📢 ATENÇÃO 📢 Você achou o primeiro código de salvamento para usar na Taça da Reencarnação!", );
           alert("Código do Igris: trono", );
+
+          document.getElementById("idNome1Igris").innerHTML =  "";
+document.getElementById("idNome2Igris").innerHTML =  "Igris o Vermelho-Sangue";
   
   }
   
@@ -9507,6 +9554,9 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
 
     document.getElementById("trocar-conteudo").innerHTML = "Clique aqui para aceitar a Classe Necromante [Monarca das Sombras]";
 
+    document.getElementById("idNome16Magos").innerHTML =  "";
+document.getElementById("idNome26Magos").innerHTML =  "6 Magos Necromantes";
+
     alert("Aonde o Jogador vai, o anjo da morte o segue. Qualquer caminho que o Jogador seguir estará repleto de cadáveres e o fedor de sangue permanecerá. Além disso, o Jogador anseia por grande poder e abriu seu próprio caminho sem depender de outros. Sua sede de poder invoca os espíritos que vagam pelo vale da morte. Os fantasmas convocados pelo exército das sombras seguirão as ordens do Jogador e obedecerão apenas o Jogador.");
     alert("Sua classe foi alterada para: Necromante - Monarca das Sombras");
     alert("✨✨ Parabéns por derrotar um exército, nada mais justo que recolher os espólios da batalha ✨✨");
@@ -9530,6 +9580,16 @@ document.getElementById("idAlertaNoMenuInventario").innerHTML = "Inventário";
     
   
      document.getElementById("idLutaContraMagosBotao") .innerHTML = "Magos derrotados";
+
+ /*INÍCIO IR PARA O Solo Leveling Arise from the Shadow*/
+
+  document.getElementById("idClasse").innerHTML = "Classe: Necromante [Monarca das Sombras]";
+  Magos = 2;
+
+  var conteudo = document.getElementById("conteudo");
+  var conteudoAlternativo = document.getElementById("conteudo-alternativo");
+  conteudo.innerHTML = conteudoAlternativo.innerHTML;
+/*FIM IR PARA O SOLO LEVELING ARISE*/
 
          /*INÍCIO DO REMOVER ECLIPSE LUNAR */
 if (AdagasSombraLuaNivel2EmUso === 1){
@@ -11036,6 +11096,8 @@ function abrirAbaNova(id) {
         if (Ursos === 6){
           document.getElementById("idChecDoTank").innerHTML = "⚠️ Tank - Urso de gelo escuro";
           document.getElementById("idAlertaNoMenuClasseTitulo").innerHTML = "⚠️ Classe e Títulos";
+          document.getElementById("idNome1Ursos").innerHTML =  "";
+document.getElementById("idNome2Ursos").innerHTML =  "Ursos de Gelo";
         }
         
             /*INÍCIO DO REMOVER ECLIPSE LUNAR */
@@ -11497,7 +11559,8 @@ criarVagalumes();
       SomaPedraDeEssenciaElfos = SomaPedraDeEssenciaElfos + 2;
       document.getElementById("idPedrasDeEssenciaElfos").innerHTML = "💎 Pedras de Essência: " + SomaPedraDeEssenciaElfos;
   
-     
+     document.getElementById("idNome1Elfos").innerHTML =  "";
+document.getElementById("idNome2Elfos").innerHTML =  "Elfos do gelo";
   
         document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
 
@@ -11915,6 +11978,9 @@ else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
      document.getElementById("idChecDoIron").innerHTML = "⚠️ Iron - Caçador Rank A";
      document.getElementById("idAlertaNoMenuClasseTitulo").innerHTML = "⚠️ Classe e Títulos";
       
+     document.getElementById("idNome1Chul").innerHTML =  "";
+document.getElementById("idNome2Chul").innerHTML =  "Kim Chul";
+
          /*INÍCIO DO REMOVER ECLIPSE LUNAR */
 if (AdagasSombraLuaNivel2EmUso === 1){
  AdagasSombraLuaNivel2EmUso = 0;
@@ -12385,6 +12451,9 @@ function AnalisarLutaContraBarukaBotao() {
       alert("Parabéns você subiu do Rank B para o Rank A",);
    mostrarEstrela4(); /* Efeito Estrela 4 */
           document.getElementById("idItemAdagaDeBarukaAdquirida").innerHTML = "⚠️ Adaga de Baruka";
+
+          document.getElementById("idNome1Baruka").innerHTML =  "";
+document.getElementById("idNome2Baruka").innerHTML =  "Baruka Elfo do gelo";
        }
 
            /*INÍCIO DO REMOVER ECLIPSE LUNAR */
@@ -12790,6 +12859,9 @@ function AnalisarLutaContraKargalganBotao() {
   
       document.getElementById("idQuadroDeRetornoKargalgan").innerHTML = 
       "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 4 Pontos de Atributos - 2 Pedras de Essência]";
+
+      document.getElementById("idNome1Kargalgan").innerHTML =  "";
+document.getElementById("idNome2Kargalgan").innerHTML =  "Kargalgan";
 
       document.getElementById("idChecDoTusk").innerHTML = "⚠️ Tusk - Xamã das Sombras";
      document.getElementById("idAlertaNoMenuClasseTitulo").innerHTML = "⚠️ Classe e Títulos";
@@ -13430,6 +13502,9 @@ function AnalisarLutaContraVulcanoBotao() {
       document.getElementById("idItemOrbeVulcanoAdquirida").innerHTML = "⚠️ Orbe da Avareza";
       document.getElementById("idItemBrincoAdquirida").innerHTML = "⚠️ Brinco do Monarca Demoníaco";
 
+      document.getElementById("idNome1Vulcano").innerHTML =  "";
+document.getElementById("idNome2Vulcano").innerHTML =  "Vulcano Avarento [50º Andar]";
+
       experienciaVulcano = experienciaVulcano + 10;
       document.getElementById("idexperienciaVulcano").innerHTML =  "🏆 Experiência: " + experienciaVulcano;
 
@@ -13889,6 +13964,9 @@ function AnalisarLutaContraMetusBotao() {
 
       AguaNascenteDaFlorestaEcoante = 1;
       document.getElementById("idCheckAguaNascenteDaFlorestaEcoante").innerHTML =  "✅ Água nascente da floresta ecoante";
+
+      document.getElementById("idNome1Metus").innerHTML =  "";
+document.getElementById("idNome2Metus").innerHTML =  "Metus guía das almas [75º Andar]";
 
       document.getElementById("idQuadroDeRetornoMetus").innerHTML = 
       "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 5 Pontos de Atributos - 10 Pedras de Essência - Equipamento Colar do Monarca Demônio - Água nascente da floresta ecoante]";
@@ -14387,7 +14465,8 @@ function AnalisarLutaContraBaranBotao() {
     document.getElementById("idQuadroDeRetornoBaran").innerHTML = 
     "✨ VITÓRIA ✨ [Recompensas: 10 ponto de experiência - 5 Pontos de Atributos - 10 Pedras de Essência - Equipamento Espada do Monarca Demônio - Equipamento Anel do Monarca Demoníaco - Sangue Purificado do Monarca Demoníaco]";
 
-
+document.getElementById("idNome1Baran").innerHTML =  "";
+document.getElementById("idNome2Baran").innerHTML =  "Monarca das Chamas Branca [100º Andar]";
 
     experienciaBaran = experienciaBaran + 10;
     document.getElementById("idexperienciaBaran").innerHTML =  "🏆 Experiência: " + experienciaBaran;
@@ -14994,6 +15073,10 @@ criarVagalumes();
   document.getElementById("idPouparVidaDaEsilTransferirMana").innerHTML = "Transferir Mana: 500 Pontos de Mana restante";
   document.getElementById("idPouparVidaDaEsil").innerHTML = "Esil se apaixonou por um rapaz de outro mundo que visitou seu reino e, quando ele foi embora, ela decidiu segui-lo. Ao lado dele, ela está pronta para aceitar qualquer surpresa do destino. Esil te presentou com uma ligação de fios de mana. [Nova Habilidade: Nobreza - Você pode transferir mana da Easil Radiru para você]";
   alert("Um demônio Nobre se juntou ao seu grupo!");
+
+     document.getElementById("idNome1Esil").innerHTML =  "";
+document.getElementById("idNome2Esil").innerHTML =  "Esil Radiru [80º Andar]";
+
 }
 
   else if (AmizadeEsil === 3){
@@ -15110,6 +15193,9 @@ if(AmizadeEsil === 1){
 
       alert("✨ Nova habilidade adquirida: Gula! ✨", );
    alert("Você dobra a eficiência de tudo que você bebe, como poções de Vida, Recuperação e Mana", );
+
+   document.getElementById("idNome1Esil").innerHTML =  "";
+document.getElementById("idNome2Esil").innerHTML =  "Esil Radiru [80º Andar]";
 
 AmizadeEsil = 3;
 
@@ -15587,6 +15673,9 @@ function AnalisarLutaContraEnxameBotao() {
    document.getElementById("idAlertaNoMenuHabilidade").innerHTML = "⚠️ Habilidades";
 
     document.getElementById("idLutaContraEnxameBotao").innerHTML = "Enxame de Formigas derrotado";
+
+    document.getElementById("idNome1Enxame").innerHTML =  "";
+document.getElementById("idNome2Enxame").innerHTML =  "Enxame de Formigas";
 
     /*INÍCIO DO REMOVER ECLIPSE LUNAR */
 if (AdagasSombraLuaNivel2EmUso === 1){
@@ -16085,6 +16174,9 @@ function AnalisarLutaContraAntaresBotao() {
     alert("✨ Parabéns você subiu do Rank S para o Rank Monarca ✨",);
 
      alert("✨ Obrigado por jogar até aqui! ✨", );
+
+ document.getElementById("idNome1Antares").innerHTML =  "";
+document.getElementById("idNome2Antares").innerHTML =  "Antares - Rei dos Dragões - Monarca da Destruição";
 
     /*Início do rastro de Sombra*/
        RastroDeSombra = RastroDeSombra + 200;
@@ -16633,6 +16725,9 @@ function AnalisarLutaContraYogumuntBotao() {
     document.getElementById("idLutaContraYogumuntBotao").innerHTML = "Yogumunt derrotado";
      alert("Uma fenda dimencional se abre e de dentro dela sai BELLION, um dia ele já foi um dos 'Fragmentos de luz' mas hoje ele é um presente do Rei Monarca para você!", );
 
+     document.getElementById("idNome1Yogumunt").innerHTML =  "";
+document.getElementById("idNome2Yogumunt").innerHTML =  "Yogumunt - Rei dos Espectros Demoníacos - Monarca da Transfiguração";
+
     /*Início do rastro de Sombra*/
        RastroDeSombra = RastroDeSombra + 200;
        document.getElementById("idTotalDosRastrosDeSombra").innerHTML = "Rastro de Sombras: " + RastroDeSombra;
@@ -17146,6 +17241,9 @@ function AnalisarLutaContraSilladBotao() {
 
     document.getElementById("idLutaContraSilladBotao").innerHTML = "Sillad derrotado";
 
+    document.getElementById("idNome1Sillad").innerHTML =  "";
+document.getElementById("idNome2Sillad").innerHTML =  "Sillad - Rei do povo do gelo - Monarca do Gelo";
+
     /*INÍCIO DO REMOVER ECLIPSE LUNAR */
 if (AdagasSombraLuaNivel2EmUso === 1){
  AdagasSombraLuaNivel2EmUso = 0;
@@ -17651,6 +17749,8 @@ function AnalisarLutaContraRakanBotao() {
 
     document.getElementById("idQuadroDeRetornoRakan").innerHTML =     "✨ VITÓRIA ✨ Você derrotou um dos 8 Monarcas [50 pontos de Atributo]";
 
+    document.getElementById("idNome1Rakan").innerHTML =  "";
+document.getElementById("idNome2Rakan").innerHTML =  "Rakan - Rei das Feras - Monarca das Presas";
 
     document.getElementById("idLutaContraRakanBotao").innerHTML = "Rakan derrotado";
 
@@ -18112,9 +18212,9 @@ function AnalisarLutaContraQuerehshaBotao() {
   if (percepcao > 800) {document.getElementById("idPercepcaoQuerehsha").innerHTML =  "👀 Percepção: 800/" +  percepcao + " ✅";
   }
  
-  if (inteligencia < 901) {document.getElementById( "idInteligenciaQuerehsha").innerHTML = "🧠 Inteligência: 900/" +  inteligencia + " ❌";
+  if (inteligencia < 956) {document.getElementById( "idInteligenciaQuerehsha").innerHTML = "🧠 Inteligência: 955/" +  inteligencia + " ❌";
   }
-  if (inteligencia > 900) { document.getElementById( "idInteligenciaQuerehsha").innerHTML = "🧠 Inteligência: 900/" + inteligencia + " ✅";
+  if (inteligencia > 955) { document.getElementById( "idInteligenciaQuerehsha").innerHTML = "🧠 Inteligência: 955/" + inteligencia + " ✅";
   }
  
 
@@ -18164,6 +18264,9 @@ function AnalisarLutaContraQuerehshaBotao() {
    document.getElementById("idAlertaNoMenuInventario").innerHTML = "⚠️ Inventário";
  
     document.getElementById("idLutaContraQuerehshaBotao").innerHTML = "Querehsha derrotada";
+
+    document.getElementById("idNome1Querehsha").innerHTML =  "";
+document.getElementById("idNome2Querehsha").innerHTML =  "Querehsha - Rainha dos insetos - Monarca das Pragas";
 
     /*INÍCIO DO REMOVER ECLIPSE LUNAR */
 if (AdagasSombraLuaNivel2EmUso === 1){
@@ -18670,6 +18773,8 @@ function AnalisarLutaContraLegiaBotao() {
 
     document.getElementById("idQuadroDeRetornoLegia").innerHTML =     "✨ VITÓRIA ✨ Você derrotou um dos 8 Monarcas [50 pontos de Atributo]";
 
+    document.getElementById("idNome1Legia").innerHTML =  "";
+document.getElementById("idNome2Legia").innerHTML =  "Legia - Rei dos Gigantes - Monarca do Princípio";
 
     document.getElementById("idLutaContraLegiaBotao").innerHTML = "Legia derrotado";
 
@@ -19191,6 +19296,9 @@ function AnalisarLutaContraArquitetoBotao() {
     alert(" Antes de morrer o Arquiteto fez uma profecia: Quando os pilares de fogo que sustentam o céu estiverem erguidos, a morte inevitável irá bater a sua porta.");
 
     document.getElementById("idLutaContraArquitetoBotao").innerHTML = "Arquiteto derrotado";
+
+    document.getElementById("idNome1OArquiteto").innerHTML =  "";
+document.getElementById("idNome2OArquiteto").innerHTML =  "O Arquiteto";
 
     /*INÍCIO DO REMOVER ECLIPSE LUNAR */
 if (AdagasSombraLuaNivel2EmUso === 1){
@@ -19717,6 +19825,8 @@ document.getElementById("idTituloAlerta").innerHTML = "⚠️";
     document.getElementById("idChecDoBeru").innerHTML = "⚠️ Beru - Rei das Formigas";
    document.getElementById("idAlertaNoMenuClasseTitulo").innerHTML = "⚠️ Classe e Títulos";
 
+document.getElementById("idNome1Rei").innerHTML =  "";
+document.getElementById("idNome2Rei").innerHTML =  "Rei Formiga";
 
     document.getElementById("idLutaContraReiBotao").innerHTML = "Rei das Formigas derrotado";
 
@@ -20204,7 +20314,8 @@ function AnalisarLutaContraTarnakBotao() {
 
     document.getElementById("idLutaContraTarnakBotao").innerHTML = "Tarnak derrotado";
 
-   
+   document.getElementById("idNome1Tarnak").innerHTML =  "";
+document.getElementById("idNome2Tarnak").innerHTML =  "Tarnak - Rei dos Monstros humanoides - Monarca do Corpo de Aço";
    
   
        /*INÍCIO DO REMOVER ECLIPSE LUNAR */
@@ -20783,8 +20894,10 @@ function AnalisarLutaContraRainhaBotao() {
 
     document.getElementById("idQuadroDeRetornoRainha").innerHTML =     "✨ VITÓRIA ✨ Você derrotou a Rainha das Formiga";
 
+document.getElementById("idNome1Rainha").innerHTML =  "";
+document.getElementById("idNome2Rainha").innerHTML =  "Rainha Formiga";
 
-    document.getElementById("idLutaContraRainhaBotao").innerHTML = "Rainha das Formigas derrotada";
+    document.getElementById("idLutaContraRainhaBotao").innerHTML = "Rainha Formiga";
 
     experienciaParaUsarNasHabilidades = experienciaParaUsarNasHabilidades + 10;
       document.getElementById("idContarExperienciaNoQuadroHabilidades",)
@@ -21738,6 +21851,8 @@ function AnalisarLutaContraDemoniosBotao() {
 
     document.getElementById("idQuadroDeRetornoDemonios").innerHTML =  "✨ VITÓRIA ✨ As Sombras derrotaram os Demônios [Recompensa: 1000 moedas de ouro]";
 
+document.getElementById("idNome1Demonios").innerHTML =  "";
+document.getElementById("idNome2Demonios").innerHTML =  "Demônios [Andares inferiores]";
 
     document.getElementById("idLutaContraDemoniosBotao").innerHTML = "Demônios derrotados";
 
