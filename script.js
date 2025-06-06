@@ -615,7 +615,7 @@ Yogumunt = 1;
  
 
 /*INÍCIO FUNÇÃO*/
-function deus() {
+function deusAPAGARessaPARTE() {
 
 /*usado para teste, tem muito de tudo*/
   if (Deus === 0){
