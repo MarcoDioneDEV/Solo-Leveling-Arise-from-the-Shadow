@@ -7988,7 +7988,7 @@ document.getElementById("idNome2Igris").innerHTML =  "Igris o Vermelho-Sangue";
    }  
    
    
-   else if (vida > 49 && fadiga < 51 && forca > 150 && agilidade > 200 && percepcao > 125) {
+   else if (vida > 49 && fadiga < 51 && forca > 150 && agilidade > 200 && percepcao > 125 && Yoo < 20) {
 
     vida = vida - 50;
     if (vida < 1) {vida = 0;}
@@ -8001,7 +8001,7 @@ document.getElementById("idNome2Igris").innerHTML =  "Igris o Vermelho-Sangue";
     document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
   
   Yoo = Yoo + 1;
-    document.getElementById("idYoo").innerHTML = "🚶‍♂️Dangeons: " + Yoo + "/Dangeons Infinitas";
+    document.getElementById("idYoo").innerHTML = "🚶‍♂️Dangeons: " + Yoo + "/20";
   
   
     document.getElementById("idQuadroDeRetornoYoo") .innerHTML = "✨ VITÓRIA ✨ Você derrotou uma Dangeon [Recompensas: 1 ponto de experiência - 1 ponto de atributo para distribuir onde quiser]";
@@ -8022,12 +8022,13 @@ document.getElementById("idNome2Igris").innerHTML =  "Igris o Vermelho-Sangue";
         document.getElementById("idAlertaNoMenuAtributos").innerHTML = "⚠️ Atributos";
     
 
- /*INÍCIO DOS PRÊMIOS DA MISSÃO DE SUBIR DE NÍVEL 1*/
+             /*INÍCIO DOS PRÊMIOS DA MISSÃO DE SUBIR DE NÍVEL 1*/
 if(Yoo === 1){
      document.getElementById("iditem1").innerHTML = "✅ Item: Peitoral do grande cavaleiro [+ 1 ponto de atributo adicionado em Força]";
 
    forca = forca + 1;
      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     alert("Item: Peitoral do grande cavaleiro [+ 1 ponto de atributo adicionado em Força]");
 }
 
 if(Yoo === 2){
@@ -8035,13 +8036,15 @@ if(Yoo === 2){
 
      agilidade = agilidade + 1;
     document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    alert("Item: Manopla do grande guerreiro [+ 1 ponto de atributo adicionado em Agilidade]");
 }
 
 if(Yoo === 3){
-     document.getElementById("iditem3").innerHTML = "✅ Item: Item: Botas do grande Assassino [+ 2 ponto de atributo adicionado em Inteligência]";
+     document.getElementById("iditem3").innerHTML = "✅ Item: Botas do grande Assassino [+ 2 ponto de atributo adicionado em Inteligência]";
 
      inteligencia = inteligencia + 2;
      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+     alert("Item: Botas do grande Assassino [+ 2 ponto de atributo adicionado em Inteligência]");
 }
 
 if(Yoo === 4){
@@ -8049,6 +8052,7 @@ if(Yoo === 4){
 
      percepcao = percepcao + 2;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+   alert("Item: Luvas do Arqueiro [+ 2 ponto de atributo adicionado em Percepção]");
 }
   
 if(Yoo === 5){
@@ -8056,6 +8060,7 @@ if(Yoo === 5){
 
   inteligencia = inteligencia + 3;
      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+     alert("Item: Anel do grande Mago [+ 3 ponto de atributo adicionado em Inteligência]");
 }
 
 if(Yoo === 6){
@@ -8063,6 +8068,7 @@ if(Yoo === 6){
 
  ouro = ouro + 500;
   document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+  alert("Item: Saco de couro [+ 500 moedas de ouro adicionadas no seu inventário]");
 }
 
 if(Yoo === 7){
@@ -8070,6 +8076,7 @@ if(Yoo === 7){
 
  inteligencia = inteligencia + 3;
      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+      alert("Habilidade: Perseverança [+ 3 pontos de atributos adicionados em Inteligência]");
 }
 
 if(Yoo === 8){
@@ -8077,6 +8084,7 @@ if(Yoo === 8){
 
   agilidade = agilidade + 4;
     document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    alert("Habilidade: Ataque Vital [+ 4 pontos de atributos adicionados em Agilidade]");
 }
 
 if(Yoo === 9){
@@ -8084,12 +8092,14 @@ if(Yoo === 9){
 
  forca = forca + 4;
      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+      alert("Habilidade: Artes Avançadas com Adagas [+ 4 pontos de atributos adicionados em Força]");
 }
 if(Yoo === 10){
      document.getElementById("iditem10").innerHTML = "✅ Habilidade: Detectar [+ 4 pontos de atributos adicionados em Percepção]";
 
  percepcao = percepcao + 4;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+   alert("Habilidade: Detectar [+ 4 pontos de atributos adicionados em Percepção]");
 }
 
 if(Yoo === 11){
@@ -8097,6 +8107,7 @@ if(Yoo === 11){
 
   agilidade = agilidade + 5;
     document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    alert("Habilidade: Arremesso de Adaga [+ 5 pontos de atributos adicionados em Agilidade]");
 }
 
 if(Yoo === 12){
@@ -8104,6 +8115,7 @@ if(Yoo === 12){
 
    inteligencia = inteligencia + 5;
      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+      alert("Efeito: Orbe da Avareza - Desejo pela destruição [+ 5 pontos de atributos adicionados em Inteligência]");
 }
 
 if(Yoo === 14){
@@ -8111,6 +8123,7 @@ if(Yoo === 14){
 
  percepcao = percepcao + 4;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+    alert("Habilidade: Golpe Fatal[+ 4 pontos de atributos adicionados em Percepção]");
 }
 
 if(Yoo === 15){
@@ -8118,6 +8131,7 @@ if(Yoo === 15){
 
    HabilidadeLiberadaFlameSpear = 1;
      document.getElementById("idCheckFlameSpear").innerHTML =  "⚠️ Habilidade: Flame Spear";
+       alert("Habilidade: Flame Spear desbloqueada [Aba ➜ Habilidades ➜ Healer e Magos]");
 }
 
 if(Yoo === 16){
@@ -8129,6 +8143,7 @@ if(Yoo === 16){
         document.getElementById("idvida")
          .innerHTML = "❤️ Vida: " + vida +
          "%";
+         alert("Item: Veneno da Kasaka Azul de Presas Venenosas [Recupere 100% da sua vida]");
 }
 
 if(Yoo === 19){
@@ -8137,6 +8152,7 @@ if(Yoo === 19){
      vida = 100;
      progresso2.setAttribute("style", "width: " + vida + "%");
         document.getElementById("idvida") .innerHTML = "❤️ Vida: " + vida + "%";
+         alert("Habilidade: Força de vontade [Recupere 100% da sua vida]");
 }
 
  if(Yoo === 20){
@@ -8144,6 +8160,7 @@ if(Yoo === 19){
 
  ouro = ouro + 3000;
   document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+   alert("Posição: Mestre de Guilda [+ 3000 moedas de ouro adicionadas no seu inventário]");
 }
 /*FIM DOS PRÊMIOS DA MISSÃO DE SUBIR DE NÍVEL*/
 
@@ -8586,6 +8603,10 @@ else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
   
    } 
    
+   else if(Yoo > 19){
+     document.getElementById(      "idQuadroDeRetornoYoo")     .innerHTML =     "Parabéns, você já realizou as 20 Dangeons";
+   }
+
    else { 
     
     vida = vida - 50;
@@ -8621,6 +8642,8 @@ else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
      "Tentar novamente";
    }
     }
+
+
      /* início da luta do yoo com o título exterminador de goblins */
      if (TituloExterminadorDeGoblinsEstaEmUso === 1){
 
@@ -8637,7 +8660,7 @@ else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
        }  
        
        
-       else if (vida > 49 && fadiga < 51 && forca > 95 && agilidade > 85 && percepcao > 65) {
+       else if (vida > 49 && fadiga < 51 && forca > 95 && agilidade > 85 && percepcao > 65 && Yoo < 20) {
     
         vida = vida - 50;
         if (vida < 1) {vida = 0;}
@@ -8650,7 +8673,7 @@ else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
         document.getElementById("idfadiga").innerHTML = "🪫Fadiga: " + fadiga + "%";
       
       Yoo = Yoo + 1;
-        document.getElementById("idYoo").innerHTML = "🚶‍♂️População: " + Yoo + "/?";
+        document.getElementById("idYoo").innerHTML = "🚶‍♂️Dangeons: " + Yoo + "/20";
       
       
         document.getElementById("idQuadroDeRetornoYoo") .innerHTML = "✨ VITÓRIA ✨ Você derrotou um Mostro [Recompensas: 1 ponto de experiência - 2 pontos de atributos para distribuir onde quiser]";
@@ -8676,6 +8699,7 @@ if(Yoo === 1){
 
    forca = forca + 1;
      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+     alert("Item: Peitoral do grande cavaleiro [+ 1 ponto de atributo adicionado em Força]");
 }
 
 if(Yoo === 2){
@@ -8683,13 +8707,15 @@ if(Yoo === 2){
 
      agilidade = agilidade + 1;
     document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    alert("Item: Manopla do grande guerreiro [+ 1 ponto de atributo adicionado em Agilidade]");
 }
 
 if(Yoo === 3){
-     document.getElementById("iditem3").innerHTML = "✅ Item: Item: Botas do grande Assassino [+ 2 ponto de atributo adicionado em Inteligência]";
+     document.getElementById("iditem3").innerHTML = "✅ Item: Botas do grande Assassino [+ 2 ponto de atributo adicionado em Inteligência]";
 
      inteligencia = inteligencia + 2;
      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+     alert("Item: Botas do grande Assassino [+ 2 ponto de atributo adicionado em Inteligência]");
 }
 
 if(Yoo === 4){
@@ -8697,6 +8723,7 @@ if(Yoo === 4){
 
      percepcao = percepcao + 2;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+   alert("Item: Luvas do Arqueiro [+ 2 ponto de atributo adicionado em Percepção]");
 }
   
 if(Yoo === 5){
@@ -8704,6 +8731,7 @@ if(Yoo === 5){
 
   inteligencia = inteligencia + 3;
      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+     alert("Item: Anel do grande Mago [+ 3 ponto de atributo adicionado em Inteligência]");
 }
 
 if(Yoo === 6){
@@ -8711,6 +8739,7 @@ if(Yoo === 6){
 
  ouro = ouro + 500;
   document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+  alert("Item: Saco de couro [+ 500 moedas de ouro adicionadas no seu inventário]");
 }
 
 if(Yoo === 7){
@@ -8718,6 +8747,7 @@ if(Yoo === 7){
 
  inteligencia = inteligencia + 3;
      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+      alert("Habilidade: Perseverança [+ 3 pontos de atributos adicionados em Inteligência]");
 }
 
 if(Yoo === 8){
@@ -8725,6 +8755,7 @@ if(Yoo === 8){
 
   agilidade = agilidade + 4;
     document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    alert("Habilidade: Ataque Vital [+ 4 pontos de atributos adicionados em Agilidade]");
 }
 
 if(Yoo === 9){
@@ -8732,12 +8763,14 @@ if(Yoo === 9){
 
  forca = forca + 4;
      document.getElementById("idforca").innerHTML = "💪 Força: " + forca;
+      alert("Habilidade: Artes Avançadas com Adagas [+ 4 pontos de atributos adicionados em Força]");
 }
 if(Yoo === 10){
      document.getElementById("iditem10").innerHTML = "✅ Habilidade: Detectar [+ 4 pontos de atributos adicionados em Percepção]";
 
  percepcao = percepcao + 4;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+   alert("Habilidade: Detectar [+ 4 pontos de atributos adicionados em Percepção]");
 }
 
 if(Yoo === 11){
@@ -8745,6 +8778,7 @@ if(Yoo === 11){
 
   agilidade = agilidade + 5;
     document.getElementById("idagilidade").innerHTML = "🦵 Agilidade: " + agilidade;
+    alert("Habilidade: Arremesso de Adaga [+ 5 pontos de atributos adicionados em Agilidade]");
 }
 
 if(Yoo === 12){
@@ -8752,6 +8786,7 @@ if(Yoo === 12){
 
    inteligencia = inteligencia + 5;
      document.getElementById("idinteligencia").innerHTML = "🧠 Inteligência: " + inteligencia;
+      alert("Efeito: Orbe da Avareza - Desejo pela destruição [+ 5 pontos de atributos adicionados em Inteligência]");
 }
 
 if(Yoo === 14){
@@ -8759,6 +8794,7 @@ if(Yoo === 14){
 
  percepcao = percepcao + 4;
   document.getElementById("idpercepcao").innerHTML = "👀 Percepção: " + percepcao;
+    alert("Habilidade: Golpe Fatal[+ 4 pontos de atributos adicionados em Percepção]");
 }
 
 if(Yoo === 15){
@@ -8766,6 +8802,7 @@ if(Yoo === 15){
 
    HabilidadeLiberadaFlameSpear = 1;
      document.getElementById("idCheckFlameSpear").innerHTML =  "⚠️ Habilidade: Flame Spear";
+       alert("Habilidade: Flame Spear desbloqueada [Aba ➜ Habilidades ➜ Healer e Magos]");
 }
 
 if(Yoo === 16){
@@ -8777,6 +8814,7 @@ if(Yoo === 16){
         document.getElementById("idvida")
          .innerHTML = "❤️ Vida: " + vida +
          "%";
+         alert("Item: Veneno da Kasaka Azul de Presas Venenosas [Recupere 100% da sua vida]");
 }
 
 if(Yoo === 19){
@@ -8785,6 +8823,7 @@ if(Yoo === 19){
      vida = 100;
      progresso2.setAttribute("style", "width: " + vida + "%");
         document.getElementById("idvida") .innerHTML = "❤️ Vida: " + vida + "%";
+         alert("Habilidade: Força de vontade [Recupere 100% da sua vida]");
 }
 
  if(Yoo === 20){
@@ -8792,6 +8831,7 @@ if(Yoo === 19){
 
  ouro = ouro + 3000;
   document.getElementById("idouro").innerHTML = "Ouro: " + ouro;
+   alert("Posição: Mestre de Guilda [+ 3000 moedas de ouro adicionadas no seu inventário]");
 }
 /*FIM DOS PRÊMIOS DA MISSÃO DE SUBIR DE NÍVEL*/
 
@@ -9232,6 +9272,10 @@ else if (FuncaoAqueleQueSuperouAdversidadeUplevel2 === 1){
       
        } 
        
+         else if(Yoo > 19){
+     document.getElementById(      "idQuadroDeRetornoYoo")     .innerHTML =     "Parabéns, você já realizou as 20 Dangeons";
+   }
+
        else { 
         
         vida = vida - 50;
