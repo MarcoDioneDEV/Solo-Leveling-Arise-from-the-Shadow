@@ -22751,3 +22751,410 @@ function atualizarGrafico(dados) {
 }
 /*FIM GRÁFICO */
 
+
+
+
+
+/*INÍCIO DOS DADOS*/
+const jogadores = document.querySelectorAll('.jogador');
+
+jogadores.forEach(jogador => {
+  const gerarDadosButton = jogador.querySelector('.gerar-dados');
+  const dadosContainer = jogador.querySelector('.dados');
+  const novosDadosContainer = jogador.querySelector('.novos-dados');
+
+  gerarDadosButton.addEventListener('click', () => {
+    dadosContainer.innerHTML = '';
+    novosDadosContainer.innerHTML = '';
+    for (let i = 0; i < 9; i++) {
+      const dado = document.createElement('button');
+      dado.classList.add('dado');
+      const numero = Math.floor(Math.random() * 6) + 1;
+      desenharBolinhas(dado, numero);
+      dadosContainer.appendChild(dado);
+      dado.addEventListener('click', () => {
+        dado.remove();
+        const novoDado = document.createElement('button');
+        novoDado.classList.add('dado');
+        desenharBolinhas(novoDado, numero);
+        novosDadosContainer.appendChild(novoDado);
+      });
+    }
+    const dadoAzul = document.createElement('button');
+    dadoAzul.classList.add('dado');
+    dadoAzul.style.background = 'blue';
+    dadoAzul.style.color = 'white';
+    dadoAzul.textContent = '?';
+    dadosContainer.appendChild(dadoAzul);
+    dadoAzul.addEventListener('click', () => {
+      dadoAzul.remove();
+      const novoDado = document.createElement('button');
+      novoDado.classList.add('dado');
+      novoDado.textContent = '?';
+      novosDadosContainer.appendChild(novoDado);
+    });
+    const dadoVermelho = document.createElement('button');
+    dadoVermelho.classList.add('dado');
+    dadoVermelho.style.background = 'red';
+    dadoVermelho.style.color = 'white';
+    dadoVermelho.textContent = '?';
+    dadosContainer.appendChild(dadoVermelho);
+    dadoVermelho.addEventListener('click', () => {
+      dadoVermelho.remove();
+      const novoDado = document.createElement('button');
+      novoDado.classList.add('dado');
+      novoDado.textContent = '?';
+      novosDadosContainer.appendChild(novoDado);
+    });
+  });
+});
+
+function desenharBolinhas(dado, numero) {
+  switch (numero) {
+    case 1:
+      criarBolinha(dado, 'bolinha-1');
+      break;
+    case 2:
+      criarBolinha(dado, 'bolinha-2');
+      criarBolinha(dado, 'bolinha-5');
+      break;
+    case 3:
+      criarBolinha(dado, 'bolinha-1');
+      criarBolinha(dado, 'bolinha-2');
+      criarBolinha(dado, 'bolinha-5');
+      break;
+    case 4:
+      criarBolinha(dado, 'bolinha-2');
+      criarBolinha(dado, 'bolinha-3');
+      criarBolinha(dado, 'bolinha-4');
+      criarBolinha(dado, 'bolinha-5');
+      break;
+    case 5:
+      criarBolinha(dado, 'bolinha-1');
+      criarBolinha(dado, 'bolinha-2');
+      criarBolinha(dado, 'bolinha-3');
+      criarBolinha(dado, 'bolinha-4');
+      criarBolinha(dado, 'bolinha-5');
+      break;
+    case 6:
+      criarBolinha(dado, 'bolinha-2');
+      criarBolinha(dado, 'bolinha-3');
+      criarBolinha(dado, 'bolinha-4');
+      criarBolinha(dado, 'bolinha-5');
+      criarBolinha(dado, 'bolinha-6');
+      criarBolinha(dado, 'bolinha-7');
+      break;
+  }
+}
+
+function criarBolinha(dado, classe) {
+  const bolinha = document.createElement('div');
+  bolinha.classList.add('bolinha');
+  bolinha.classList.add(classe);
+  dado.appendChild(bolinha);
+}
+/*FIM DOS DADOS*/
+
+
+/*INÍCIO ADICIONAR O NOME DO CAÇADOR 1*/
+const inputNome = document.getElementById('nome-jogador');
+const botaoEnviar = document.getElementById('enviar-nome');
+const mensagem = document.getElementById('mensagem');
+
+botaoEnviar.addEventListener('click', () => {
+  const nomeJogador = inputNome.value.trim();
+  if (nomeJogador !== '') {
+    mensagem.textContent = `${nomeJogador}`;
+    inputNome.value = '';
+  } else {
+    mensagem.textContent = 'Por favor, digite o nome do Caçador!';
+  }
+});
+/*FIM ADICIONAR O NOME DO CAÇADOR 1*/
+
+
+
+
+/*INÍCIO ADICIONAR O NOME DO CAÇADOR 2*/
+const inputNome2 = document.getElementById('nome-jogador2');
+const botaoEnviar2 = document.getElementById('enviar-nome2');
+const mensagem2 = document.getElementById('mensagem2');
+
+botaoEnviar2.addEventListener('click', () => {
+  const nomeJogador2 = inputNome2.value.trim();
+  if (nomeJogador2 !== '') {
+    mensagem2.textContent = `${nomeJogador2}`;
+    inputNome2.value = '';
+  } else {
+    mensagem2.textContent = 'Por favor, digite o nome do Caçador!';
+  }
+});
+/*FIM ADICIONAR O NOME DO CAÇADOR 2*/
+
+/*INÍCIO ADICIONAR O NOME DO CAÇADOR 3*/
+const inputNome3 = document.getElementById('nome-jogador3');
+const botaoEnviar3 = document.getElementById('enviar-nome3');
+const mensagem3 = document.getElementById('mensagem3');
+
+botaoEnviar3.addEventListener('click', () => {
+  const nomeJogador3 = inputNome3.value.trim();
+  if (nomeJogador3 !== '') {
+    mensagem3.textContent = `${nomeJogador3}`;
+    inputNome3.value = '';
+  } else {
+    mensagem3.textContent = 'Por favor, digite o nome do Caçador!';
+  }
+});
+/*FIM ADICIONAR O NOME DO CAÇADOR 3*/
+
+/*INÍCIO ADICIONAR O NOME DO CAÇADOR 4*/
+const inputNome4 = document.getElementById('nome-jogador4');
+const botaoEnviar4 = document.getElementById('enviar-nome4');
+const mensagem4 = document.getElementById('mensagem4');
+
+botaoEnviar4.addEventListener('click', () => {
+  const nomeJogador4 = inputNome4.value.trim();
+  if (nomeJogador4 !== '') {
+    mensagem4.textContent = `${nomeJogador4}`;
+    inputNome4.value = '';
+  } else {
+    mensagem4.textContent = 'Por favor, digite o nome do Caçador!';
+  }
+});
+/*FIM ADICIONAR O NOME DO CAÇADOR 4*/
+
+/*INÍCIO DO SORTEAR O JOGADOR*/
+const botaoSortear = document.getElementById('sortear');
+const resultadoSorteio = document.getElementById('resultado-sorteio');
+
+botaoSortear.addEventListener('click', () => {
+  const nomeJogador1 = document.getElementById('mensagem').textContent.replace('Primeiro: ', '');
+  const nomeJogador2 = document.getElementById('mensagem2').textContent.replace('Segundo: ', '');
+  const nomeJogador3 = document.getElementById('mensagem3').textContent.replace('Terceiro: ', '');
+  const nomeJogador4 = document.getElementById('mensagem4').textContent.replace('Quarto: ', '');
+
+  const jogadores = [nomeJogador1, nomeJogador2, nomeJogador3, nomeJogador4];
+  const jogadoresSorteados = jogadores.sort(() => Math.random() - 0.5);
+
+  resultadoSorteio.innerHTML = '';
+  jogadoresSorteados.forEach((jogador, indice) => {
+    const paragrafo = document.createElement('p');
+    paragrafo.textContent = `Jogador ${indice + 1}: ${jogador}`;
+    resultadoSorteio.appendChild(paragrafo);
+  });
+});
+/*FIM DO SORTEAR O JOGADOR*/
+
+/*INÍCIO DO DADO VERMELHO JOGADOR 1*/
+const inputNumero = document.getElementById('numero');
+const botaoMostrar = document.getElementById('mostrar-valor');
+const resultadoNumero = document.getElementById('resultado-numero');
+
+botaoMostrar.addEventListener('click', () => {
+  const numero = parseInt(inputNumero.value);
+  if (!isNaN(numero) && numero >= 1 && numero <= 6) {
+    resultadoNumero.textContent = `Dado Vermelho : ${numero}`;
+    inputNumero.value = '';
+  } else {
+    resultadoNumero.textContent = 'Por favor, digite um número entre 1 e 6!';
+  }
+});
+/*FIM DO DADO VERMELHO JOGADOR 1*/
+
+/*INÍCIO DO DADO VERMELHO JOGADOR 2*/
+const inputNumero2 = document.getElementById('numero2');
+const botaoMostrar2 = document.getElementById('mostrar-valor2');
+const resultadoNumero2 = document.getElementById('resultado-numero2');
+
+botaoMostrar2.addEventListener('click', () => {
+  const numero2 = parseInt(inputNumero2.value);
+  if (!isNaN(numero2) && numero2 >= 1 && numero2 <= 6) {
+    resultadoNumero2.textContent = `Dado Azul : ${numero2}`;
+    inputNumero2.value = '';
+  } else {
+    resultadoNumero2.textContent = 'Por favor, digite um número entre 1 e 6!';
+  }
+});
+/*FIM DO DADO VERMELHO JOGADOR 2*/
+
+/*INÍCIO DO DADO VERMELHO JOGADOR 3*/
+const inputNumero3 = document.getElementById('numero3');
+const botaoMostrar3 = document.getElementById('mostrar-valor3');
+const resultadoNumero3 = document.getElementById('resultado-numero3');
+
+botaoMostrar3.addEventListener('click', () => {
+  const numero3 = parseInt(inputNumero3.value);
+  if (!isNaN(numero3) && numero3 >= 1 && numero3 <= 6) {
+    resultadoNumero3.textContent = `Dado Vermelho : ${numero3}`;
+    inputNumero3.value = '';
+  } else {
+    resultadoNumero3.textContent = 'Por favor, digite um número entre 1 e 6!';
+  }
+});
+/*FIM DO DADO VERMELHO JOGADOR 3*/
+
+/*INÍCIO DO DADO VERMELHO JOGADOR 4*/
+const inputNumero4 = document.getElementById('numero4');
+const botaoMostrar4 = document.getElementById('mostrar-valor4');
+const resultadoNumero4 = document.getElementById('resultado-numero4');
+
+botaoMostrar4.addEventListener('click', () => {
+  const numero4 = parseInt(inputNumero4.value);
+  if (!isNaN(numero4) && numero4 >= 1 && numero4 <= 6) {
+    resultadoNumero4.textContent = `Dado Azul : ${numero4}`;
+    inputNumero4.value = '';
+  } else {
+    resultadoNumero4.textContent = 'Por favor, digite um número entre 1 e 6!';
+  }
+});
+/*FIM DO DADO VERMELHO JOGADOR 4*/
+
+/*INÍCIO DO DADO VERMELHO JOGADOR 5*/
+const inputNumero5 = document.getElementById('numero5');
+const botaoMostrar5 = document.getElementById('mostrar-valor5');
+const resultadoNumero5 = document.getElementById('resultado-numero5');
+
+botaoMostrar5.addEventListener('click', () => {
+  const numero5 = parseInt(inputNumero5.value);
+  if (!isNaN(numero5) && numero5 >= 1 && numero5 <= 6) {
+    resultadoNumero5.textContent = `Dado Vermelho : ${numero5}`;
+    inputNumero5.value = '';
+  } else {
+    resultadoNumero5.textContent = 'Por favor, digite um número entre 1 e 6!';
+  }
+});
+/*FIM DO DADO VERMELHO JOGADOR 5*/
+
+/*INÍCIO DO DADO VERMELHO JOGADOR 6*/
+const inputNumero6 = document.getElementById('numero6');
+const botaoMostrar6 = document.getElementById('mostrar-valor6');
+const resultadoNumero6 = document.getElementById('resultado-numero6');
+
+botaoMostrar6.addEventListener('click', () => {
+  const numero6 = parseInt(inputNumero6.value);
+  if (!isNaN(numero6) && numero6 >= 1 && numero6 <= 6) {
+    resultadoNumero6.textContent = `Dado Azul : ${numero6}`;
+    inputNumero6.value = '';
+  } else {
+    resultadoNumero6.textContent = 'Por favor, digite um número entre 1 e 6!';
+  }
+});
+/*FIM DO DADO VERMELHO JOGADOR 6*/
+
+/*INÍCIO DO DADO VERMELHO JOGADOR 7*/
+const inputNumero7 = document.getElementById('numero7');
+const botaoMostrar7 = document.getElementById('mostrar-valor7');
+const resultadoNumero7 = document.getElementById('resultado-numero7');
+
+botaoMostrar7.addEventListener('click', () => {
+  const numero7 = parseInt(inputNumero7.value);
+  if (!isNaN(numero7) && numero7 >= 1 && numero7 <= 6) {
+    resultadoNumero7.textContent = `Dado Vermelho : ${numero7}`;
+    inputNumero7.value = '';
+  } else {
+    resultadoNumero7.textContent = 'Por favor, digite um número entre 1 e 6!';
+  }
+});
+/*FIM DO DADO VERMELHO JOGADOR 7*/
+
+/*INÍCIO DO DADO VERMELHO JOGADOR 8*/
+const inputNumero8 = document.getElementById('numero8');
+const botaoMostrar8 = document.getElementById('mostrar-valor8');
+const resultadoNumero8 = document.getElementById('resultado-numero8');
+
+botaoMostrar8.addEventListener('click', () => {
+  const numero8 = parseInt(inputNumero8.value);
+  if (!isNaN(numero8) && numero8 >= 1 && numero8 <= 6) {
+    resultadoNumero8.textContent = `Dado Azul : ${numero8}`;
+    inputNumero8.value = '';
+  } else {
+    resultadoNumero8.textContent = 'Por favor, digite um número entre 1 e 6!';
+  }
+});
+/*FIM DO DADO VERMELHO JOGADOR 8*/
+
+/*INÍCIO PREVISÃO P2*/
+const inputNomeP2 = document.getElementById('nome-jogadorP2');
+const botaoEnviarP2 = document.getElementById('enviar-nomeP2');
+const mensagemP2 = document.getElementById('mensagemP2');
+
+botaoEnviarP2.addEventListener('click', () => {
+  const nomeJogadorP2 = inputNomeP2.value.trim();
+  if (nomeJogadorP2 !== '') {
+    mensagemP2.textContent = `Previsão: ${nomeJogadorP2}`;
+    inputNomeP2.value = '';
+  } else {
+    mensagemP2.textContent = 'Você não digitou uma previsão';
+  }
+});
+/*FIM PREVISÃO P2*/
+
+/*INÍCIO PREVISÃO P3*/
+const inputNomeP3 = document.getElementById('nome-jogadorP3');
+const botaoEnviarP3 = document.getElementById('enviar-nomeP3');
+const mensagemP3 = document.getElementById('mensagemP3');
+
+botaoEnviarP3.addEventListener('click', () => {
+  const nomeJogadorP3 = inputNomeP3.value.trim();
+  if (nomeJogadorP3 !== '') {
+    mensagemP3.textContent = `Previsão: ${nomeJogadorP3}`;
+    inputNomeP3.value = '';
+  } else {
+    mensagemP3.textContent = 'Você não digitou uma previsão';
+  }
+});
+/*FIM PREVISÃO P3*/
+
+/*INÍCIO PREVISÃO P4*/
+const inputNomeP4 = document.getElementById('nome-jogadorP4');
+const botaoEnviarP4 = document.getElementById('enviar-nomeP4');
+const mensagemP4 = document.getElementById('mensagemP4');
+
+botaoEnviarP4.addEventListener('click', () => {
+  const nomeJogadorP4 = inputNomeP4.value.trim();
+  if (nomeJogadorP4 !== '') {
+    mensagemP4.textContent = `Previsão: ${nomeJogadorP4}`;
+    inputNomeP4.value = '';
+  } else {
+    mensagemP4.textContent = 'Você não digitou uma previsão';
+  }
+});
+/*FIM PREVISÃO P4*/
+
+/*INÍCIO PREVISÃO P5*/
+const inputNomeP5 = document.getElementById('nome-jogadorP5');
+const botaoEnviarP5 = document.getElementById('enviar-nomeP5');
+const mensagemP5 = document.getElementById('mensagemP5');
+
+botaoEnviarP5.addEventListener('click', () => {
+  const nomeJogadorP5 = inputNomeP5.value.trim();
+  if (nomeJogadorP5 !== '') {
+    mensagemP5.textContent = `Previsão: ${nomeJogadorP5}`;
+    inputNomeP5.value = '';
+  } else {
+    mensagemP5.textContent = 'Você não digitou uma previsão';
+  }
+});
+/*FIM PREVISÃO P5*/
+
+/*INÍCIO LIMPAR AS MENSAGEM DOS DADOS VERMELHOS, AZUIS E PREVISÃO*/
+function ApagarMensagemDosDados() {
+   document.getElementById("resultado-numero").innerHTML = "";
+   document.getElementById("resultado-numero2").innerHTML = "";
+   document.getElementById("mensagemP2").innerHTML = "";
+
+    document.getElementById("resultado-numero3").innerHTML = "";
+   document.getElementById("resultado-numero4").innerHTML = "";
+   document.getElementById("mensagemP3").innerHTML = "";
+
+    document.getElementById("resultado-numero5").innerHTML = "";
+   document.getElementById("resultado-numero6").innerHTML = "";
+   document.getElementById("mensagemP4").innerHTML = "";
+
+    document.getElementById("resultado-numero7").innerHTML = "";
+   document.getElementById("resultado-numero8").innerHTML = "";
+   document.getElementById("mensagemP5").innerHTML = "";
+}
+/*FIM LIMPAR AS MENSAGEM DOS DADOS VERMELHOS, AZUIS E PREVISÃO*/
+
+
