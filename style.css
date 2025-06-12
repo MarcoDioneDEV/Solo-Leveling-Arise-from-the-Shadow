@@ -66,6 +66,13 @@ border: solid 2px #17e5f2;
 border-radius: 20px;
 }
 
+.imgperfilJogador{
+width: 50px;
+height: 50px;
+border: solid 2px #17e5f2;
+border-radius: 20px;
+}
+
 .imgqrcode{
 width: 250px;
 height: 250px;
@@ -1558,3 +1565,81 @@ border-radius: 10px;
 }
 /*fim dos vagalumes*/
 
+/*Início dos dados*/
+.jogador {
+  display: inline-block;
+  margin: 20px;
+  vertical-align: top;
+}
+
+.dados {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dado {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+}
+
+.bolinha {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+}
+
+.bolinha-1 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bolinha-2 {
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.bolinha-3 {
+  top: 25%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+.bolinha-4 {
+  top: 75%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.bolinha-5 {
+  top: 75%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+.bolinha-6 {
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bolinha-7 {
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*Fim dos dados*/
+
+.mensagem {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
