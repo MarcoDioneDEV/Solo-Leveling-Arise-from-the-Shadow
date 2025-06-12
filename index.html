@@ -2189,7 +2189,204 @@ src="https://www.youtube.com/embed/umSfk3V1tXw?si=YFpIQnav01xgxdeY" title="YouTu
       </div>
       <!-- FIM do Treino diário -->
 
- 
+  <!-- INÍCIO DADOS -->
+ <div class="grid-item2" >   
+
+  <h1>Arena de Duelos</h1>
+
+  <img class="img1" src="https://png.pngtree.com/thumb_back/fh260/background/20250109/pngtree-rolling-red-dice-with-poker-chips-on-a-casino-table-vibrant-image_16862919.jpg" />
+
+   
+ <br><br>
+    <details>
+      <summary class="sumario">EXPLORAR</summary>
+      <br>
+ <fieldset class="temafieldset">
+            <h2>Yoo Jin-Ho criou um torneio para encontrar os caçadores mais fortes. <br> Desafi outros jogadores para o duelo dos dados!</h2>
+<details>
+      <summary class="sumario">Regras do Jogo</summary>
+
+
+  <h4>
+        <ul>
+          <br><br>
+          <li>Você deve atingir a maior pontuação com 3 dados.</li>
+          <li>Cada jogador irá receber 9 dados brancos, 1 vermelho e 1 azul.</li>
+          <li>Os dados brancos são abertos e todos os jogadores podem ver os resultados. Os dados vermelho e azul são ocultos e somente pode ser visto pelo dono do dado.</li>
+          <li>O primeiro jogador deve escolher 3 dados para a sua primeira combinação e depois os outros jogadores irão seguir a sequência mostrando os seus dados. Caso queira usar um dado vermelho ou azul um marcador deve ser previamente colocado em campo (é possível usar os dois dados coloridos ao mesmo tempo), os dados ocultos só serão mostrados depois que todos os jogares fizerem sua jogada.</li>
+          <li>Como pontuar:<br>
+Triplo - Todos os dados conter o mesmo número.<br>
+Sequência - Os 3 dados devem formar uma sequência (6 e 1 não são considerados consecutivos).<br>
+Duplo - 2 dos 3 dados devem conter o mesmo lado.<br>
+Simples: Os 3 dados não formam nenhuma das opções acima</li>
+          <li>Caso os jogadores tenham a mesma combinação, o vencedor será quem tiver a pontuação mais alta. se mesmo assim houver um empate irá contar o terceiro dado em campo, e se mesmo assim os 3 dados forem iguais irá haver um empate e ninguém pontua.</li>
+          <li>Para o primeiro lugar será atribuído 6 pontos, para o segundo 3 pontos, para o terceiro lugar 1 ponto e para o 4 lugar 0 ponto.</li>
+          <li>Para a segunda rodada, o jogador com maior número de pontos irá ser o primeiro, segue essa mesma regra para as demais partidas.</li>
+          <li>Após a terceira rodada, os 2 ultimos dados serão descartados.</li>
+          <li>Antes da primeira partida cada Caçador deverar escolher uma previsão para a sua pontuação:<br>
+              Zero = 0  (O Caçador ganha +40 pontos)<br>
+              MIN do 1 até o 6 (O Caçador dobra os pontos)<br>
+              MORE do 7 até o 10 (O Caçador dobra os pontos)<br>
+             MAX acima de 10 (O Caçador dobra os pontos)</li><br>
+             <br><br>
+        </ul> 
+      </h4>
+
+      </details>
+<br>
+<details>
+      <summary class="sumario">Preparativos para o Jogo</summary>
+
+
+  <h3>Passo 1 - Definir a ordem dos jogadores.</h3>
+
+  <button id="sortear">Sortear</button>
+<div id="resultado-sorteio"></div>
+
+ <h3>Escreva o nome dos Caçadores</h3>
+
+<input id="nome-jogador" type="text" placeholder="Nome do Caçador 1">
+<button id="enviar-nome">Salvar</button>
+<br><br>
+<input id="nome-jogador2" type="text" placeholder="Nome do Caçador 2">
+<button id="enviar-nome2">Salvar</button>
+<br><br>
+<input id="nome-jogador3" type="text" placeholder="Nome do Caçador 3">
+<button id="enviar-nome3">Salvar</button>
+<br><br>
+<input id="nome-jogador4" type="text" placeholder="Nome do Caçador 4">
+<button id="enviar-nome4">Salvar</button>
+<br><br>
+
+ <h3>Passo 2 - Gere os dados brancos.</h3>
+
+ <h3>Passo 3 - Escolha os dados de cor Vermelho e Azul e faça a sua Previsão.</h3>
+
+<br>
+  <button onclick="ApagarMensagemDosDados()"> Limpar mensagens da partida anterior </button>
+<br><br>
+
+<img class="imgperfilJogador" src="https://img.asmedia.epimg.net/resizer/v2/OMOKJVJSUZCVPESY6GK67O275I.jpg?auth=88c977cc5df457e188b8dc4c01be7c2df8aee8a22532007291ad37917155e1b2&width=1200&height=1200&smart=true" />
+<br><br>
+ <details>
+      <summary class="sumario">Jogador 1</summary><br>
+<input id="numero" type="text" placeholder="Dado Vermelho">
+<input id="numero2" type="text" placeholder="Dado Azul">
+<input id="nome-jogadorP2" type="text" placeholder="Zero - MIN  - MORE - MAX">
+ </details><br><br>
+
+
+
+ <img class="imgperfilJogador" src="https://pt.quizur.com/_image?href=https://dev-beta.quizur.com/storage/v1/object/public//imagens//20784520/adbad4fc-8d8d-4a6e-939f-eef1dc185297.png&w=1024&h=1024&f=webp" />
+<br><br>
+<details>
+      <summary class="sumario">Jogador 2</summary><br>
+<input id="numero3" type="text" placeholder="Dado Vermelho">
+<input id="numero4" type="text" placeholder="Dado Azul">
+<input id="nome-jogadorP3" type="text" placeholder="Zero - MIN  - MORE - MAX">
+ </details><br><br>
+
+
+
+<img class="imgperfilJogador" src="https://i.pinimg.com/736x/30/f1/9f/30f19f5dbb42400dbf181816e97740c0.jpg" />
+<br><br>
+<details>
+      <summary class="sumario">Jogador 3</summary><br>
+<input id="numero5" type="text" placeholder="Dado Vermelho">
+<input id="numero6" type="text" placeholder="Dado Azul">
+<input id="nome-jogadorP4" type="text" placeholder="Zero - MIN  - MORE - MAX">
+ </details><br><br>
+
+
+ <img class="imgperfilJogador" src="https://meusitedeanime.com.br/wp-content/uploads/2025/03/Cha-Hae-In-Esta-Viva-A-Verdade-em-Solo-Leveling-Ragnarok-780x470.jpg" />
+<br><br>
+<details>
+      <summary class="sumario">Jogador 4</summary><br>
+<input id="numero7" type="text" placeholder="Dado Vermelho">
+<input id="numero8" type="text" placeholder="Dado Azul">
+<input id="nome-jogadorP5" type="text" placeholder="Zero - MIN  - MORE - MAX">
+ </details><br><br>
+
+
+
+
+
+      </details><br>
+    </fieldset>
+
+
+<div class="jogadores">
+  <div class="jogador" id="jogador1">
+    <h2 id="mensagem">Caçador 1</h2>
+     <button class="gerar-dados">Dados branco</button>
+     <button id="mostrar-valor">Dado vermelho</button>
+       <button id="mostrar-valor2">Dado azul</button>
+       <button id="enviar-nomeP2">Previsão</button>
+     <input placeholder="ANOTE OS PONTOS AQUI">
+    <div class="dados"></div>
+    <div class="novos-dados"></div>
+    <h3 id="resultado-numero"></h3>
+      <h3 id="resultado-numero2"></h3>
+      <h3 id="mensagemP2"></h3>
+  </div>
+  
+  <br>
+
+  <div class="jogador" id="jogador2">
+      <h2 id="mensagem2">Caçador 2</h2>
+    <button class="gerar-dados">Dados branco</button>
+     <button id="mostrar-valor3">Dado vermelho</button>
+       <button id="mostrar-valor4">Dado azul</button>
+         <button id="enviar-nomeP3">Previsão</button>
+     <input placeholder="ANOTE OS PONTOS AQUI">
+    <div class="dados"></div>
+    <div class="novos-dados"></div>
+    <h3 id="resultado-numero3"></h3>
+      <h3 id="resultado-numero4"></h3>
+       <h3 id="mensagemP3"></h3>
+  </div>
+
+  <br>
+
+  <div class="jogador" id="jogador3">
+    <h2 id="mensagem3">Caçador 3</h2>
+     <button class="gerar-dados">Dados branco</button>
+      <button id="mostrar-valor5">Dado vermelho</button>
+       <button id="mostrar-valor6">Dado azul</button>
+         <button id="enviar-nomeP4">Previsão</button>
+      <input placeholder="ANOTE OS PONTOS AQUI">
+    <div class="dados"></div>
+    <div class="novos-dados"></div>
+    <h3 id="resultado-numero5"></h3>
+      <h3 id="resultado-numero6"></h3>
+       <h3 id="mensagemP4"></h3>
+  </div>
+
+  <br>
+
+  <div class="jogador" id="jogador4">
+    <h2 id="mensagem4">Caçador 4</h2>
+        <button class="gerar-dados">Dados branco</button>
+         <button id="mostrar-valor7">Dado vermelho</button>
+       <button id="mostrar-valor8">Dado azul</button>
+         <button id="enviar-nomeP5">Previsão</button>
+         <input placeholder="ANOTE OS PONTOS AQUI">
+    <div class="dados"></div>
+    <div class="novos-dados"></div>
+    <h3 id="resultado-numero7"></h3>
+      <h3 id="resultado-numero8"></h3>
+       <h3 id="mensagemP5"></h3>
+  </div>
+</div>
+
+
+
+
+
+    </details><br>
+ </div>
+<!-- FIM DADOS -->
+
  <!-- INÍCIO MENU PARA AS DUNGEOS -->
  <div class="grid-item2" >   
 
