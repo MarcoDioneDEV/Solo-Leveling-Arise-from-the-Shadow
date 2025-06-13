@@ -22866,6 +22866,7 @@ botaoEnviar.addEventListener('click', () => {
   if (nomeJogador !== '') {
     mensagem.textContent = `${nomeJogador}`;
     inputNome.value = '';
+    document.getElementById("mensagem11").innerHTML = nomeJogador;
   } else {
     mensagem.textContent = 'Por favor, digite o nome do Caçador!';
   }
@@ -22885,6 +22886,7 @@ botaoEnviar2.addEventListener('click', () => {
   if (nomeJogador2 !== '') {
     mensagem2.textContent = `${nomeJogador2}`;
     inputNome2.value = '';
+     document.getElementById("mensagem22").innerHTML = nomeJogador2;
   } else {
     mensagem2.textContent = 'Por favor, digite o nome do Caçador!';
   }
@@ -22901,6 +22903,7 @@ botaoEnviar3.addEventListener('click', () => {
   if (nomeJogador3 !== '') {
     mensagem3.textContent = `${nomeJogador3}`;
     inputNome3.value = '';
+     document.getElementById("mensagem33").innerHTML = nomeJogador3;
   } else {
     mensagem3.textContent = 'Por favor, digite o nome do Caçador!';
   }
@@ -22917,6 +22920,7 @@ botaoEnviar4.addEventListener('click', () => {
   if (nomeJogador4 !== '') {
     mensagem4.textContent = `${nomeJogador4}`;
     inputNome4.value = '';
+     document.getElementById("mensagem44").innerHTML = nomeJogador4;
   } else {
     mensagem4.textContent = 'Por favor, digite o nome do Caçador!';
   }
