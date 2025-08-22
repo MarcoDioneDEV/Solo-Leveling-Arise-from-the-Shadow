@@ -1,86 +1,7 @@
 
-.imgMenor{
-  width: 150px;
-  height: 100px;
-  border: solid 2px #17e5f2;
-  border-radius: 20px;
-  }
-
-.img1{
-width: 250px;
-height: 150px;
-border: solid 2px #17e5f2;
-border-radius: 20px;
-}
-
-.imgqrcode{
-width: 250px;
-height: 250px;
-border: solid 2px #17e5f2;
-border-radius: 20px;
-}
-.imgurso{
-width: 250px;
-height: 250px;
-}
-
-.imagemDeCapaParaCasteloDemoniaco{
-  width: 350px;
-  height: 200px;
-  border: solid 2px #17e5f2;
-  border-radius: 20px;
-  }
-  
-.pipoca{
-height: 100px;
-border-radius: 10px;
-}
-
-.luta{
-   background-color: #212338;
-  text-align: left;
-}
-.PontosExtras{
-  color: lawngreen;
-}
-
-.PontosExtrasDosSoldadosDasSombras{
-  color: #f700f6;
-}
-.PontosPontosExtrasDosTitulos{
-  color: yellow;
-}
-.sublinhado{
-  border-radius: 5px;
-border: solid 1px white;
-background-color: #031833;
-padding: 5px 5px 0 5px;
-}
-
-.TestaqueEmVermelho{
-background-color: red;
-}
-.imagemParaItens{
-height: 75px;
-border-radius: 10px;
-}
-.botaoNovo{
-padding: 10px;
-display:inline-block;
-color: white;
-text-decoration: none;
-font-weight: bold;
-background-color: #031833;
-border-radius: 10px;
-border: solid 3px #373960;
-}
 h3{
   color:white;
 }
-
-  h2{
-    color: white;
-  }
 
   p{
     color: white;
@@ -91,33 +12,6 @@ background-color: black;
 color: white;
   }
 
-
-legend{
-color: white;
-}
-
-.nota{
-  background-color: #212338;
-}
-ul{
-  color: white;
-  text-align: left;
-  background-color: #212338;
-}
-
-.destaqueEquipamento{
-  text-align: left;
-  background-color: #212338;
-}
-
-ol{
-  color: white;
-  background-color: green;
-}
-
-details{
-  color: white
-}
 
   .grid-container{
 display: grid;
@@ -241,40 +135,9 @@ padding: 5px 10px 5px 10px;
 box-shadow: 2px 2px 2px  #17e5f2;
 }
 
-.imglupa{
-    height: 40px;
-}
-
-.imgicones{
-height: 30px;
-width: 30px;
-transform: rotate(50deg);
-margin: 5px;
-
- }
-
- 
- .html{
-color: #ec6630;
-font-style: italic;
-font-family:cursive;
-}
-.css{
-color: #0096e6;
-font-style: italic;
-font-family:cursive;
-}
-.java{
-color: #eeaf4b; 
-font-style: italic;
-font-family:cursive;
-}
 button{
   border-radius: 10px;
 }
-
-
-
 
 
 .cards-container{
@@ -348,8 +211,6 @@ background-color: transparent;
   color: #f1c40f;
 }
 
-
-
 .blob {
   font-size: 50px;
 padding: 10px;
@@ -382,27 +243,6 @@ border: solid 3px #373960;
 		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*  INÍCIO DO CARROSSEL */
 .galery {
